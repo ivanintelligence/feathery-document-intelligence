@@ -50,7 +50,7 @@
       "entities": [
         {
           "id": "7a7b5208-bd39-4787-8ec9-02d07643315c",
-          "entity": "<GROUND_RULES>\nUse ONLY the explicit Q&A in context. No assumptions.\nIf no explicit termination timing rule is stated, output Null.\n\nOUTPUT:\n- Only termination timing rules. Ignore continuation/waiver/reinstatement/FMLA-USERRA unless they state when coverage TERMINATES.\n- If one general timing rule applies: output exactly 1 line:\n  Coverage terminates <timing> <trigger>\n- If timing differs by trigger: output 1 line per unique timing rule:\n  <Trigger>: Coverage terminates <timing>\nNo extra lines.\n\nTRIGGER LABELS:\nUse short trigger labels when needed: Employment, Eligibility, Policy, Military, Grace.\n(Use the closest label to the trigger stated in the Q&A.)\n\nNORMALIZE TIMING:\nlast day of the month -> end of month\nend of the month following termination -> end of month following termination\nlast day of employment -> day of termination\non the date of termination -> day of termination\n</GROUND_RULES>\n\nTermination Provision Q&A:\n<CONTEXT>\n{{DR_LTerminationProvisionQA}}\n</CONTEXT>\n\n<QUESTIONS>\nReturn the termination timing rule(s) in the required format. <Answer/Null>\n</QUESTIONS>\n\n<EXAMPLES>\nCoverage terminates end of month of employment termination\nEmployment: Coverage terminates day of termination\nPolicy: Coverage terminates day policy terminates\nMilitary: Coverage terminates day active duty begins\nNull\n</EXAMPLES>",
+          "entity": "<GROUND_RULES>\nUse ONLY the explicit extracted context. No assumptions.\nIf termination timing cannot be determined explicitly, output Null (by itself).\n\nOutput EXACTLY one line:\nCoverage terminates <timing>\nOR\nNull\n\nWhere <timing> is the shortest explicit timing phrase tied to employee coverage ending\n(e.g., date of employment termination, end of month of employment termination, last day worked).\n\nSelection:\n- If an employment-termination timing phrase exists (employment termination/last day worked/cessation of employment), use it.\n- Otherwise, use the most direct employee coverage-end timing stated (avoid continuation/exception mechanics).\nTelegram fragments only. No extra triggers list. No fluff.\n</GROUND_RULES>\n\nTermination Provision Q&A:\n<CONTEXT>\n{{DR_LTerminationProvisionQA}}\n</CONTEXT>\n\n<QUESTION>\nReturn the termination timing in the required format. <timing/Null>\n</QUESTION>\n\n<OUTPUT_FORMAT>\nCoverage terminates <timing>\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nCoverage terminates date of employment termination\nCoverage terminates end of month of employment termination\nCoverage terminates last day worked\nNull\n</EXAMPLES>",
           "save_to": "DR_LTerminationProvisionFFQ",
           "type": "",
           "unique": false,
@@ -76,7 +76,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": false,
+          "date": true,
           "math": false
         },
         "table_filter": null,
@@ -205,7 +205,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": false,
+          "date": true,
           "math": false
         },
         "table_filter": null,

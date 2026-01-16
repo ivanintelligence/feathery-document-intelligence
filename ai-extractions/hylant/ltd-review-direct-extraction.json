@@ -511,7 +511,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": false,
+          "date": true,
           "math": false
         },
         "table_filter": null,
@@ -1367,7 +1367,7 @@
     {
       "id": "eca82655-5286-4a8b-99cb-5cb04fe85764",
       "type": "multiple_value",
-      "details": "Extract questions and answers that explicitly state when LTD coverage/insurance ends and the trigger for that termination (e.g., employment termination, no longer eligible, policy terminates, military duty, grace period). Prioritize timing phrases (day of termination, end of month, end of month following, end of pay period, etc.) and the trigger they apply to. Exclude continuation, waiver of premium, FMLA/USERRA continuation, and reinstatement/rehire unless they explicitly define a termination timing rule.",
+      "details": "Extract the termination provision that states when LTD coverage/insurance ends. Capture termination rules whether written as questions/answers, headings, or narrative clauses (e.g., “Termination of Insurance/Coverage,” “When Insurance Ends,” “Coverage will end,” “Insurance ends,” “Termination Date”). Prioritize rules tied to employment termination / cessation of employment / last day worked / termination date / end of active employment (including end-of-month/pay-period wording if stated). If the document uses “no longer eligible,” also capture any definition of eligibility that explicitly links ineligibility to employment ending. If an employment-termination rule exists, include it even if other termination triggers appear.",
       "entities": [
         {
           "id": "ba8a1a85-e15b-4696-8833-172b5837aa99",
@@ -1376,7 +1376,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Questions asking when coverage/insurance ends/terminates and what event triggers termination (termination of employment/eligibility, policy termination, military duty, grace period).",
+          "criteria": "Extract the exact question, heading, or clause label that introduces the termination rule (e.g., “When does coverage end?”, “When Insurance Ends”, “Termination of Insurance/Coverage”, “Coverage will end”). If no label exists, extract the leading phrase that signals the rule (e.g., “Insurance ends…”).",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1389,7 +1389,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "The corresponding answer stating termination timing and trigger, preserving timing language exactly.",
+          "criteria": "Extract the termination rule text that states the timing + trigger, preserving timing language exactly (e.g., “date of employment termination,” “last day worked,” “end of month,” “end of pay period”). Prefer the clause tied to employment termination when present; otherwise capture the most direct “coverage ends” rule stated.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1410,7 +1410,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": true,
+          "date": false,
           "math": false
         },
         "table_filter": null,
@@ -1591,6 +1591,14 @@
   ],
   "variants": [
     {
+      "id": "71411346-490e-4523-859f-6f37d92fbd96",
+      "variant_name": "File 2",
+      "file_sources": [
+        "FileUpload2"
+      ],
+      "group_variants": []
+    },
+    {
       "id": "ceb8e51e-9dab-47b6-949f-cc11ed85860f",
       "variant_name": "File 3",
       "file_sources": [
@@ -1603,14 +1611,6 @@
       "variant_name": "File 4",
       "file_sources": [
         "FileUpload4"
-      ],
-      "group_variants": []
-    },
-    {
-      "id": "71411346-490e-4523-859f-6f37d92fbd96",
-      "variant_name": "File 2",
-      "file_sources": [
-        "FileUpload2"
       ],
       "group_variants": []
     }

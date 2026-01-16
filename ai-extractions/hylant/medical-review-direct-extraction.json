@@ -1537,7 +1537,7 @@
     {
       "id": "ca167e1e-a1fa-4044-ac17-c94b6db7e3f2",
       "type": "multiple_value",
-      "details": "Extract all explicit eligibility language stating who is eligible for coverage and under what conditions for employees and dependents, including class definitions (FT/PT), minimum hours, active-at-work rules, waiting period and eligibility/effective date triggers, enrollment timing if stated, student status/age limits, spouse/domestic partner/common-law and dependent-child eligibility, and any rehire/layoff or leave/medical leave eligibility impacts. Capture this wherever it appears (Q&A, tables, bullets, or eligibility/admin sections) and do not skip items in other sections. If the document is not in Q&A format, use the most relevant eligibility section heading (e.g., “Eligibility,” “Who Is Eligible,” “Dependent Eligibility,” “Waiting Period,” “Active Work,” “When Coverage Begins,” “Effective Date,” “Enrollment”) as the “Question,” and extract the verbatim text beneath it as the “Answer” until the next major section break; do not infer or rewrite.",
+      "details": "Extract only the document language required to determine employee eligibility and enrollment start rules, eligible spouse/dependent definitions, and any explicit rehire/reinstatement eligibility rule. Prioritize coverage eligibility thresholds (e.g., full-time/regular class, minimum hours/week), coverage effective date triggers (date of hire, 30 days then 1st of month, 90th day, etc.), and any active-at-work requirement only if it directly conditions eligibility or coverage start. Also capture eligible spouse language (legal spouse/domestic partner/common law) and dependent child age limit language (e.g., to age 26). Include rehire/reinstatement/break-in-service rules only when explicitly stated. Exclude content that is not needed to determine eligibility structure, such as open enrollment/QLE change rules, “making changes during the year,” COBRA/HRA claims/reimbursement instructions, employer contribution/minimum participation/GI amounts, and coverage end/termination timing.",
       "entities": [
         {
           "id": "93c96b14-2f53-44c4-83bc-7407c0e26bf0",
@@ -1546,7 +1546,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract each eligibility-related question verbatim (including form/table questions); if no explicit question exists for a captured block, extract the relevant eligibility section heading verbatim.",
+          "criteria": "Extract the exact question text or section heading that corresponds to employee eligibility threshold, coverage effective date trigger, eligible spouse definition, dependent child age limit, or rehire/reinstatement rule; if the document is not in Q&A format, use the relevant heading verbatim (e.g., “Eligibility,” “Covered Members,” “Who’s Eligible,” “Eligible Dependents,” “Coverage Begins,” “Effective Date,” “Rehire,” “Reinstatement”).",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1559,7 +1559,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the verbatim text answering the eligibility question, including hours/class, dependent definitions, student/age rules, waiting period, effective date/coverage start timing, and any explicit active-at-work or enrollment constraints. If using a section heading as the “Question,” extract the bullets/rows/paragraphs directly under it up to the next major section break, without summarizing.",
+          "criteria": "Extract the verbatim text directly answering the eligibility item, limited to employee hours/class, coverage start trigger (DOH / 30 days then 1st of month / 90th day), spouse eligibility type, child age limit, and rehire/reinstatement rule if present; include active-at-work only when explicitly tied to eligibility/coverage start. Do not include QLE/open enrollment change language, reimbursement/claims language, contribution/participation/GI fields, or coverage end/termination language.",
           "examples": [],
           "required": false,
           "default_option": "",

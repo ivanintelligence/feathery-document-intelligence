@@ -1593,7 +1593,7 @@
     {
       "id": "1c433f6c-aab0-4be7-9f6c-7594c25c50df",
       "type": "multiple_value",
-      "details": "Extract the document’s explicit termination rules for when coverage ends, including triggers for employees, spouses, dependents, and contract termination, plus loss of eligibility, rehire/layoff, and leave/medical leave impacts, and timing language (end-of-month or date-of-event). Include continuation/extension language (e.g., COBRA) only if explicitly stated. If the document is not in Q&A format, use the most relevant termination/continuation section heading (e.g., “When Coverage Ends,” “Termination of Coverage,” “Loss of Eligibility,” “Continuation of Coverage,” “COBRA”) as the “Question,” and extract the verbatim content beneath it as the “Answer” until the next major section break; do not infer or rewrite.",
+      "details": "Extract only the document’s explicit termination timing rules for when coverage ends, including the trigger (employment termination, loss of eligibility, etc.) and the timing (end of month, end of month following, day of termination/last day worked), and capture any benefit-line differences when explicitly stated (e.g., different timing for medical, dental, vision, Rx, etc.). If the document is not in Q&A format, use the most relevant termination timing heading (e.g., “Coverage Ends,” “When Coverage Ends,” “Termination of Coverage,” “When Coverage Terminates,” “Coverage Termination”) as the “Question,” and extract the verbatim termination timing text beneath it as the “Answer” until the next major section break. Exclude continuation-only content (e.g., COBRA rights/descriptions, agency contact info, Marketplace text) unless it explicitly states when coverage terminates, and exclude reimbursement/claims language (e.g., HRA rules).",
       "entities": [
         {
           "id": "041e8629-d909-4a61-bf21-dfcf0d81a5c4",
@@ -1602,7 +1602,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the exact termination-related question text; if none exists, extract the relevant termination/continuation section heading verbatim.",
+          "criteria": "Extract the exact question text or section heading that asks/states when coverage ends or terminates (coverage ends/termination of coverage/when coverage ends), including benefit-specific termination headings if present.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1615,7 +1615,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the verbatim termination language that answers the question, including trigger(s), who it applies to, timing (end-of-month/date-of-event), and any explicitly stated continuation option. If using a section heading as the “Question,” extract the bullets/rows/paragraphs directly under it up to the next major section break, without summarizing.",
+          "criteria": "Extract the verbatim termination timing language that answers when coverage ends, including trigger and timing (EOM, EOM following, day of termination/last day of employment) and any explicitly stated benefit-line split; exclude continuation-only language and administrative/claims text unless it contains explicit termination timing.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1636,7 +1636,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": false,
+          "date": true,
           "math": false
         },
         "table_filter": null,

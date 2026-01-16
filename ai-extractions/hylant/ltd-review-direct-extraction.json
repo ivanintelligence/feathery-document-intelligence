@@ -1311,7 +1311,7 @@
     {
       "id": "cb4ab424-bd01-420e-9700-7ee2817b231c",
       "type": "multiple_value",
-      "details": "Extract all questions and their corresponding answers that define who is eligible for LTD coverage and under what conditions. Capture eligibility class definitions (e.g., active full-time/part-time, hours worked), employee classes, covered dependents (spouse, domestic partner/common law, dependent children, student status/age limits), waiting periods, actively-at-work requirements, coverage effective dates tied to eligibility, rehire/layoff impacts on eligibility, and any minimum service requirements.",
+      "details": "Extract all questions and corresponding answers that define employee eligibility mechanics for LTD. Capture minimum hours worked (e.g., hours per week), the eligibility waiting period and when eligibility is met, the coverage effective date rule (e.g., first day of the month that coincides with or follows eligibility), and any active-at-work requirement that delays coverage or increases until return to active work. Also capture reinstatement/rehire rules that restore coverage without a new waiting period, including the reinstatement window in days (e.g., return within 90 days) for layoff/termination, involuntary reduction in hours, and approved leaves; include military leave timing only if explicitly stated.",
       "entities": [
         {
           "id": "297a4bf5-e666-4919-8114-389d414991b2",
@@ -1320,7 +1320,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Questions relating to eligibility language for LTD coverage (who is eligible, dependents, waiting periods, active-at-work, student/age rules, spouse/DP rules).",
+          "criteria": "Questions about LTD eligibility mechanics, including hours/week thresholds, waiting period rules, when eligibility is achieved, coverage start timing (e.g., 1st of month), active-at-work gating, and reinstatement/rehire rules without a new waiting period with a stated window in days.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1333,7 +1333,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "The answer corresponding to the eligibility language question (include all stated conditions, thresholds, and exceptions).",
+          "criteria": "The corresponding answer, preserving stated numeric thresholds and timing rules exactly (hours, days, “1st of month” language), including active-at-work conditions and any reinstatement window and “no new waiting period” wording when present.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1367,7 +1367,7 @@
     {
       "id": "eca82655-5286-4a8b-99cb-5cb04fe85764",
       "type": "multiple_value",
-      "details": "Extract all questions and answers describing when coverage terminates and any continuation/extension situations. Capture contract termination provisions, employee termination provisions, termination due to leave (medical leave), layoff/rehire rules affecting termination/continuation, end-of-month rules, premium stop rules, portability/conversion triggers when tied to termination, and any continuation periods.",
+      "details": "Extract questions and answers that explicitly state when LTD coverage/insurance ends and the trigger for that termination (e.g., employment termination, no longer eligible, policy terminates, military duty, grace period). Prioritize timing phrases (day of termination, end of month, end of month following, end of pay period, etc.) and the trigger they apply to. Exclude continuation, waiver of premium, FMLA/USERRA continuation, and reinstatement/rehire unless they explicitly define a termination timing rule.",
       "entities": [
         {
           "id": "ba8a1a85-e15b-4696-8833-172b5837aa99",
@@ -1376,7 +1376,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Questions relating to termination of coverage and termination provisions (employee termination, contract termination, leave/layoff/rehire).",
+          "criteria": "Questions asking when coverage/insurance ends/terminates and what event triggers termination (termination of employment/eligibility, policy termination, military duty, grace period).",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1389,7 +1389,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "The answer corresponding to termination provision questions (include timing, conditions, and continuation options if stated).",
+          "criteria": "The corresponding answer stating termination timing and trigger, preserving timing language exactly.",
           "examples": [],
           "required": false,
           "default_option": "",

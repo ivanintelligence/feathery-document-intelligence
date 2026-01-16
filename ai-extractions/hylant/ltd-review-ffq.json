@@ -7,7 +7,7 @@
       "entities": [
         {
           "id": "dff5c90d-2ee6-407e-9f40-2959514ac372",
-          "entity": "<GROUND_RULES>\nBase your response ONLY on the explicit questions and answers provided in the context below.\nDo NOT add assumptions or policy knowledge not stated in the context.\nIf the topic cannot be answered from the provided context, output Null.\nOutput MUST be key findings only (telegram style), NOT a full sentence.\nMAX 12 words total.\nPrefer numeric thresholds and timing rules (hours/week, waiting period, effective date trigger).\nNo fluff (avoid “subject to”, “includes”, “may”, “under”).\nUse commas to separate fragments; no line breaks.\n</GROUND_RULES>\n\nEligibility Language Q&A:\n<CONTEXT>\n{{DR_LEligibilityLanguageQA}}\n</CONTEXT>\n\n<QUESTIONS>\nSummarize the Eligibility Language as key findings only. <Key findings/Null>\n</QUESTIONS>\n\n<OUTPUT_FORMAT>\nEligibility Language: <key findings>\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nEligibility Language: 35 hrs/week, 30-day active work, coverage starts next month\nEligibility Language: active full-time, 20+ hrs/week, 1st of month after eligibility\n</EXAMPLES>",
+          "entity": "<GROUND_RULES>\nUse ONLY the explicit Q&A in context. No assumptions. If missing, write Null.\n\nOutput EXACTLY 2 lines:\nEE: <hrs/week>, <waiting>, <1st-of-month trigger>, <active-at-work>\nRehire: <days window>\n\nEE must include: minimum hrs/week, waiting period, effective date trigger (1st of month after eligibility), and active-at-work gating (coverage delayed until return).\nRehire must be: reinstatement/rehire window (days) without new waiting period; prefer 90 days if stated, else next explicit days, else Null.\n\nTelegram fragments only. Prefer numbers/timing. No fluff. Commas only; no line breaks within a line.\n</GROUND_RULES>\n\nEligibility Language Q&A:\n<CONTEXT>\n{{DR_LEligibilityLanguageQA}}\n</CONTEXT>\n\n<QUESTIONS>\nProduce the required 2-line output.\n</QUESTIONS>\n\n<EXAMPLES>\nEE: 35 hrs/week, 30-day active work, 1st of month after eligibility, actively at work\nRehire: 90 days\n</EXAMPLES>",
           "save_to": "DR_LEligibilityLanguageFFQ",
           "type": "",
           "unique": false,
@@ -50,7 +50,7 @@
       "entities": [
         {
           "id": "7a7b5208-bd39-4787-8ec9-02d07643315c",
-          "entity": "<GROUND_RULES>\nBase your response ONLY on the explicit questions and answers provided in the context below.\nDo NOT add assumptions or policy knowledge not stated in the context.\nIf the topic cannot be answered from the provided context, output Null.\nOutput MUST be key findings only (telegram style), NOT a full sentence.\nMAX 12 words total.\nPrioritize termination triggers + timing rule (if stated); include continuation/reinstatement only if explicit.\nNo fluff (avoid “subject to”, “includes”, “may”, “under”).\nUse commas or semicolons; no line breaks.\n</GROUND_RULES>\n\nTermination Provision Q&A:\n<CONTEXT>\n{{DR_LTerminationProvisionQA}}\n</CONTEXT>\n\n<QUESTIONS>\nSummarize the Termination Provision as key findings only. <Key findings/Null>\n</QUESTIONS>\n\n<OUTPUT_FORMAT>\nTermination Provision: <key findings>\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nTermination Provision: ends when ineligible, policy ends, military duty; reinstatement per leave\nTermination Provision: ends end-of-month after termination; portability available\n</EXAMPLES>",
+          "entity": "<GROUND_RULES>\nUse ONLY the explicit Q&A in context. No assumptions.\nIf no explicit termination timing rule is stated, output Null.\n\nOUTPUT:\n- Only termination timing rules. Ignore continuation/waiver/reinstatement/FMLA-USERRA unless they state when coverage TERMINATES.\n- If one general timing rule applies: output exactly 1 line:\n  Coverage terminates <timing> <trigger>\n- If timing differs by trigger: output 1 line per unique timing rule:\n  <Trigger>: Coverage terminates <timing>\nNo extra lines.\n\nTRIGGER LABELS:\nUse short trigger labels when needed: Employment, Eligibility, Policy, Military, Grace.\n(Use the closest label to the trigger stated in the Q&A.)\n\nNORMALIZE TIMING:\nlast day of the month -> end of month\nend of the month following termination -> end of month following termination\nlast day of employment -> day of termination\non the date of termination -> day of termination\n</GROUND_RULES>\n\nTermination Provision Q&A:\n<CONTEXT>\n{{DR_LTerminationProvisionQA}}\n</CONTEXT>\n\n<QUESTIONS>\nReturn the termination timing rule(s) in the required format. <Answer/Null>\n</QUESTIONS>\n\n<EXAMPLES>\nCoverage terminates end of month of employment termination\nEmployment: Coverage terminates day of termination\nPolicy: Coverage terminates day policy terminates\nMilitary: Coverage terminates day active duty begins\nNull\n</EXAMPLES>",
           "save_to": "DR_LTerminationProvisionFFQ",
           "type": "",
           "unique": false,
@@ -205,7 +205,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": true,
+          "date": false,
           "math": false
         },
         "table_filter": null,

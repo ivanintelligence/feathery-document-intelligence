@@ -1,0 +1,134 @@
+{
+  "queries": [
+    {
+      "id": "7fdd952f-ab44-46e4-bc13-61375b0788ce",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "9451cc1a-dca5-4963-b4c0-421f3e11b45c",
+          "entity": "<GROUND_RULES>\nBase your response ONLY on the explicit questions and answers provided in the context below.\nDo NOT add assumptions or policy knowledge not stated in the context.\nIf the topic cannot be answered from the provided context, output Null.\nOutput MUST be key findings only (telegram style), NOT a full sentence.\nMAX 12 words total.\nPrefer numeric thresholds and timing rules (hours/week, waiting period, effective date trigger).\nNo fluff (avoid “subject to”, “includes”, “may”, “under”).\nUse commas to separate fragments; no line breaks.\n</GROUND_RULES>\n\nEligibility Language Q&A:\n<CONTEXT>\n{{DR_MEligibilityLanguageQA}}\n</CONTEXT>\n\n<QUESTIONS>\nSummarize the Eligibility Language as key findings only. <Key findings/Null>\n</QUESTIONS>\n\n<OUTPUT_FORMAT>\nEligibility Language: <key findings>\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nEligibility Language: 35 hrs/week, 30-day active work, coverage starts next month\nEligibility Language: active full-time, 20+ hrs/week, 1st of month after eligibility\n</EXAMPLES>",
+          "save_to": "DR_MEligibilityLanguageFFQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "0a5e116b-942c-47c1-ab14-db762444025c",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "813d4b93-3db9-409c-9a16-0254b982e607",
+          "entity": "<GROUND_RULES>\nBase your response ONLY on the explicit questions and answers provided in the context below.\nDo NOT add assumptions or policy knowledge not stated in the context.\nIf the topic cannot be answered from the provided context, output Null.\nOutput MUST be key findings only (telegram style), NOT a full sentence.\nMAX 12 words total.\nPrioritize termination timing + trigger (EOM/DOE), then continuation if explicitly stated.\nNo fluff (avoid “subject to”, “includes”, “may”, “under”).\nUse commas to separate fragments; no line breaks.\n</GROUND_RULES>\n\nTermination Provisions Q&A:\n<CONTEXT>\n{{DR_MTerminationProvisionQA}}\n</CONTEXT>\n\n<QUESTIONS>\nSummarize the Termination Provision as key findings only. <Key findings/Null>\n</QUESTIONS>\n\n<OUTPUT_FORMAT>\nTermination Provision: <key findings>\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nTermination Provision: ends EOM employment termination, COBRA available\nTermination Provision: ends DOE ineligibility, 30-day nonpayment grace, rescission fraud\n</EXAMPLES>",
+          "save_to": "DR_MTerminationProvisionFFQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "69c0bb50-0683-42b5-a4c3-01e9b6842cf9",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "8b4afaef-6133-4bab-bd02-7c429e864469",
+          "entity": "<GROUND_RULES>\nBase your response ONLY on the explicit questions and answers provided in the context below.\nDo NOT add assumptions or policy knowledge not stated in the context.\nIf the topic cannot be answered from the provided context, output Null.\nOutput MUST be key findings only (telegram style), NOT a full sentence.\nMAX 12 words total.\nPrioritize broad exclusions + hard caps/limits + network restrictions (most material only).\nNo fluff (avoid “subject to”, “includes”, “may”, “under”).\nUse commas to separate fragments; no line breaks.\n</GROUND_RULES>\n\nExclusions & Limitations Q&A:\n<CONTEXT>\n{{DR_MExclusionLimitationQA}}\n</CONTEXT>\n\n<QUESTIONS>\nSummarize the Exclusions and Limitations as key findings only. <Key findings/Null>\n</QUESTIONS>\n\n<OUTPUT_FORMAT>\nExclusions and Limitations: <key findings>\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nExclusions and Limitations: noncovered services, visit limits, option-specific max, network restrictions\nExclusions and Limitations: prior auth required, medical necessity limits, balance billing OON\n</EXAMPLES>",
+          "save_to": "DR_MExclusionLimitationFFQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    }
+  ],
+  "variants": []
+}

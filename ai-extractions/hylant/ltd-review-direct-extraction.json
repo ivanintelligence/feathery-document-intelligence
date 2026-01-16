@@ -1,0 +1,1618 @@
+{
+  "queries": [
+    {
+      "id": "02d6f723-eb73-4de2-886d-8b5d3d0f3cc2",
+      "type": "multiple_value",
+      "details": "Rates Section",
+      "entities": [
+        {
+          "id": "6ce67831-8009-4058-901f-e69c6fb49518",
+          "entity": "Rates",
+          "save_to": "DR_LRates",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The cost associated with the plan as defined in the document. Extract premium rates, contribution amounts, or pricing structures exactly as shown. This may include employee-paid, employer-paid, or split contributions, and may be expressed as dollar amounts, percentages, or payroll-based rates.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "e1c75b19-c9fe-4379-9331-8be6ced06457",
+          "entity": "Age Banded Rate Update Rule",
+          "save_to": "DR_LAgeBandedRateUpdateRule",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Describes when age-based rates are recalculated following a participant’s birthday. Extract the timing rule exactly as stated (e.g., on birthday, end of month, next policy anniversary).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Rates",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "634bfa44-2855-40eb-ad0a-86807a1cbce0",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "027b20de-5280-498d-aee6-f440fc8bff87",
+          "entity": "Effective Dates",
+          "save_to": "DR_LEffectiveDates",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The date on which coverage under the plan becomes effective. Extract the effective date or coverage start date exactly as written. Do not infer dates unless explicitly stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "f8a206e7-687c-4e70-a87b-3083acc70767",
+      "type": "multiple_value",
+      "details": "Eligibility/Enrollment/Termination/Leave/Continuation sections; capture exact rule text, time windows, and effective/end dates.",
+      "entities": [
+        {
+          "id": "1dc37ca8-4f08-4ba5-b8e4-c887accef883",
+          "entity": "Eligibility Rules",
+          "save_to": "DR_LEligibilityRules",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return one concise sentence summarizing who is eligible for coverage based on employment status and required work hours. Exclude procedural steps, waiting period details, and legal language.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "6daaa367-2614-45c6-9426-d434b3437a80",
+          "entity": "Student Age/Status",
+          "save_to": "DR_LStudentAgeStatus",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return one concise sentence summarizing eligibility based on student status and any applicable age limits. If not addressed, return “Not applicable.” Exclude procedural or documentation language.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "7d56aa5a-93a8-4e46-a2f8-b64900d78b56",
+          "entity": "Domestic Partners/Common Law",
+          "save_to": "DR_LDomesticPartnersCommonLaw",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return one concise sentence indicating whether domestic partners or common-law relationships are eligible for coverage. Exclude documentation, affidavits, and administrative requirements.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "bd4abeb9-b0c6-44f2-b690-9d2915b74bc4",
+          "entity": "Spouse",
+          "save_to": "DR_LSpouse",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return one concise sentence stating whether a legal spouse is eligible for coverage and any high-level eligibility conditions. Exclude procedural or enrollment language.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "875cf083-8cb2-4dc2-8feb-c939b2a27f25",
+          "entity": "Dependent Children",
+          "save_to": "DR_LDependentChildren",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return one concise sentence summarizing eligibility for dependent children, including age limits or dependency requirements. Exclude administrative or continuation details.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "d829b45b-ff9e-4483-8933-4e07b51cfc22",
+          "entity": "Waiting Period Rules",
+          "save_to": "DR_LWaitingPeriodRules",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return one concise sentence summarizing how long an eligible individual must wait before coverage becomes effective and when the waiting period begins. Exclude examples and procedural wording.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Eligibility, Enrollment, and Continuation Rules",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "007a69b0-1691-4a4e-963c-aaecd9c3f6a6",
+      "type": "multiple_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "1cf92b73-1355-4ea3-98ec-e37465f96389",
+          "entity": "Contract Termination Provisions",
+          "save_to": "DR_LContractTerminationProvisions",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return one concise sentence summarizing when and under what circumstances the plan or contract may be terminated. Exclude notice periods, administrative requirements, and legal clauses.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "588f2910-2080-4bf0-9698-e66a53369f9c",
+          "entity": "Employee Termination Provisions",
+          "save_to": "DR_LEmployeeTerminationProvisions",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return one concise sentence summarizing when employee coverage ends due to termination of employment or loss of eligibility. Exclude COBRA, notice, or administrative details.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Termination Provisions",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "08a63b37-968d-4a5c-8b0e-9599562557a3",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "0eb9fac4-eb9e-468f-a3aa-f74a07040480",
+          "entity": "Re-hire/Layoff Provisions",
+          "save_to": "DR_LRehireLayoffProvisions",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Rules describing how coverage is handled following rehire, temporary layoff, or break in service. Extract reinstatement timelines, conditions, and any evidence requirements exactly as written.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "2b26606a-7208-4f98-b01c-b314b13b30ad",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "48297055-151f-4cbe-870b-005d04258771",
+          "entity": "Medical Leave Provisions",
+          "save_to": "DR_LMedicalLeaveProvisions",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Describes how coverage is treated during approved leaves of absence. Extract continuation rules, duration limits, and premium responsibility exactly as stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "4f83b43a-0c47-4960-bc8a-57f165f0d4ab",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "c9cb7a1f-0e22-49ec-a9e6-edf562b4de6e",
+          "entity": "FICA / W2 tax reporting",
+          "save_to": "DR_LFicaW2TaxReporting",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Indicates whether benefits or premiums are subject to FICA taxation and/or reported for tax purposes. Extract the tax treatment exactly as described.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "6b39ffa7-f12e-467e-9f27-2656221f1267",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "940f6cd0-8bd9-47b3-939b-cbea09a9b345",
+          "entity": "Benefit % and Dollar Maximum",
+          "save_to": "DR_LBenefitPercentAndDollarMaximum",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The percentage of pre-disability earnings payable as an LTD benefit, subject to a stated maximum monthly dollar amount. Extract both the benefit percentage and the maximum benefit exactly as written.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "05ff5de8-7bc2-4622-9ea9-a4278810f7ab",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "50f0faae-4b4c-4720-bbb5-cb461ca0af5e",
+          "entity": "Maximum Benefit Duration",
+          "save_to": "DR_LMaximumBenefitDuration",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The maximum length of time LTD benefits are payable for a covered disability. Extract the duration exactly as stated (e.g., “To age 65”, “5 years”, “Social Security Normal Retirement Age”).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "f8eb7300-41bc-4157-995f-416e3c5afb09",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "6bd8c0a5-c4c6-4371-84c3-d7ee2ab2de3d",
+          "entity": "Elimination Period",
+          "save_to": "DR_LEliminationPeriod",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The waiting period between the onset of disability and the start of LTD benefit payments. Extract the duration exactly as written (e.g., “180 days”).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "6b18790a-4b5f-4a8b-963e-44e8a0a2892d",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "d1d0f0cb-8391-4b69-8643-f4f7b3bc48cb",
+          "entity": "Residual",
+          "save_to": "DR_LResidual",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Describes eligibility for partial or residual disability benefits when an insured can work in a reduced capacity. Extract the definition and eligibility conditions exactly as stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "9bad3137-6553-4d4b-8a32-80d2ccfc174e",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "f9ec3207-3eb2-4453-8c0c-97e029c31e0b",
+          "entity": "Pre-Existing Conditions Exclusion",
+          "save_to": "DR_LPreExistingConditionsExclusion",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return one concise sentence summarizing whether disabilities related to pre-existing conditions are excluded and for how long. Prefer a standardized format (e.g., “3/12 limitation”) when applicable.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "b47691cd-d3bd-4f36-ac48-58972e7f62ec",
+      "type": "multiple_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "081b588b-0cbd-4d92-b076-aa4c4793d896",
+          "entity": "Disability Definition",
+          "save_to": "DR_LDisabilityDefinition",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return one concise sentence defining disability based on the inability to perform the material duties of the insured’s own occupation, including any stated transition to another definition. Exclude legal qualifiers.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Disability Definition",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "c32dd01c-9e59-406e-9010-7d6205ba297f",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "71e3de5d-412b-4536-a499-f2f5d1f686f0",
+          "entity": "Waiver of Premium",
+          "save_to": "DR_LWaiverOfPremium",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Indicates whether premium payments are waived while the insured is receiving LTD benefits. Extract the conditions and effective timing exactly as written.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "d625583c-fbc8-4317-a97b-bfba1fcaa424",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "d15d1871-2a26-4d39-910a-30af56aef135",
+          "entity": "Portability",
+          "save_to": "DR_LPortability",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Indicates whether LTD coverage may be continued after employment ends, typically by direct payment. Extract eligibility requirements, time limits, and benefit changes exactly as stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "c8e74ce3-15c6-435b-bc03-06376378e248",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "3666d856-5463-4b51-8da3-eebd63f53149",
+          "entity": "Conversion",
+          "save_to": "DR_LConversion",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Indicates whether LTD coverage may be converted to an individual policy upon loss of eligibility. Extract conversion rights, deadlines, and limitations exactly as written.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "f3d18d0b-a052-449f-8e21-bcb8db04e680",
+      "type": "multiple_value",
+      "details": "Earnings/Earnings Change Rules",
+      "entities": [
+        {
+          "id": "e88bf12d-f97e-4d04-8041-8d2557e9d8e6",
+          "entity": "Definition of Earnings",
+          "save_to": "DR_LDefinitionOfEarnings",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Defines what compensation components are used to calculate LTD benefits (e.g., base salary, bonuses, commissions). Extract the definition exactly as stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "ab027345-feee-472b-a7f3-24d7f709c82d",
+          "entity": "Earnings Change Effective Rule",
+          "save_to": "DR_LEarningsChangeEffectiveRule",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Describes when LTD benefit calculations are updated following a change in earnings. Extract the timing rule exactly as written (e.g., on date of change, next policy anniversary).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Definition of Earnings",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "1c42e6d2-ff51-4a15-9643-b761491d3c27",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "60ae0e53-7de5-4e99-bb73-bb35dfce2d5e",
+          "entity": "Offset/Reduction of Benefits",
+          "save_to": "DR_LOffsetReductionOfBenefits",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Describes income sources that reduce LTD benefits, such as Social Security, workers’ compensation, or other disability income. Extract listed offsets exactly as stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "003e28fe-fccb-4dd8-be3c-1ba4b48a449c",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "0c3c7b19-e4ac-448c-9a00-46838b579a64",
+          "entity": "Limitations ",
+          "save_to": "DR_LLimitations",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Specifies benefit duration or payment limitations for certain conditions or diagnoses. Extract the conditions and limitation periods exactly as written.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "525bc305-bddf-442b-9746-d2289483f2a6",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "d9755238-6755-439d-bc6e-76a4a7e79521",
+          "entity": "Family Survivor Benefit",
+          "save_to": "DR_LFamilySurvivorBenefit",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Describes any benefit payable to surviving dependents upon the insured’s death while disabled. Extract eligibility and benefit amount exactly as stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "cd2002e3-2606-4b46-b89e-d991d18f7e56",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "2ae480fa-6085-4b3f-a215-abb5c07cd0fc",
+          "entity": "Return to work provision",
+          "save_to": "DR_LReturnToWorkProvision",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Describes incentives or provisions allowing continued or partial benefits when returning to work. Extract conditions and duration exactly as written.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "1bb36d4e-c3c4-4f6a-82dd-31979d365f3a",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "7d25fb21-032b-4a58-93df-c7e025f33fd1",
+          "entity": "Travel Assistance and EAP Services",
+          "save_to": "DR_LTravelAssistanceAndEapServices",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Indicates whether travel assistance or employee assistance program services are included, and whether benefits are insured or administrative only. Extract details exactly as stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "1f7f9a40-eff9-40a7-aacd-600facbea75b",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "847920d2-210a-4976-aae5-d1d197750f4a",
+          "entity": "Earning Test",
+          "save_to": "DR_LEarningTest",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Defines how post-disability earnings affect benefit eligibility or payment amounts. Extract thresholds and calculation rules exactly as written.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "f6858b32-c47f-414c-966b-6bddaa77a2d9",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "339c5941-e94f-4f3f-8500-2452cb76c093",
+          "entity": "Mandatory Rehabilitation",
+          "save_to": "DR_LMandatoryRehabilitation",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Indicates whether participation in rehabilitation programs is required to continue receiving LTD benefits. Extract requirements exactly as stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "d09909aa-bd03-40e2-bbb6-63289d021ba4",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "469058c4-5221-46dc-8ddd-cbce98154c97",
+          "entity": "Vocational Rehabilitation",
+          "save_to": "DR_LVocationalRehabilitation",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Describes services provided to assist disabled individuals in retraining or returning to work. Extract scope and eligibility exactly as written.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "15b353b6-59be-416a-b74f-dfc0baba8ea7",
+      "type": "multiple_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "b900637e-c30f-466e-99fd-bd8fe141e089",
+          "entity": "Partial Disability",
+          "save_to": "DR_LPartial",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return one concise sentence summarizing when partial disability benefits apply due to reduced work capacity and income loss. Exclude benefit calculation formulas.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Partial Disability",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "ae95e573-edbf-409b-8041-5752e3bd25ff",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "54fb1f90-f2ea-45e7-82cf-0fe281adb861",
+          "entity": "Recurrent Disability/Temporary Recovery",
+          "save_to": "DR_LRecurrentDisabilityTemporaryRecovery",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Defines how benefits resume if a disability recurs after a temporary recovery or return to work. Extract timeframes and conditions exactly as written.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": true,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "42414d26-25b5-4173-a515-a52da8b2beb8",
+      "type": "multiple_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "8f59a994-04f5-4555-8be2-2c94a955160e",
+          "entity": "Exclusion and limitation",
+          "save_to": "DR_LExclusionAndLimitation",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return one high-level sentence summarizing the types of conditions or circumstances excluded or limited under the plan. Do not list individual exclusions unless explicitly required.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Exclusion and limitation",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "cb4ab424-bd01-420e-9700-7ee2817b231c",
+      "type": "multiple_value",
+      "details": "Extract all questions and their corresponding answers that define who is eligible for LTD coverage and under what conditions. Capture eligibility class definitions (e.g., active full-time/part-time, hours worked), employee classes, covered dependents (spouse, domestic partner/common law, dependent children, student status/age limits), waiting periods, actively-at-work requirements, coverage effective dates tied to eligibility, rehire/layoff impacts on eligibility, and any minimum service requirements.",
+      "entities": [
+        {
+          "id": "297a4bf5-e666-4919-8114-389d414991b2",
+          "entity": "Eligibility Language Question",
+          "save_to": "DR_LEligibilityLanguageQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Questions relating to eligibility language for LTD coverage (who is eligible, dependents, waiting periods, active-at-work, student/age rules, spouse/DP rules).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "802eb6d5-4f2b-46c7-ae3d-60caaf9860cd",
+          "entity": "Eligibility Language Answer",
+          "save_to": "DR_LEligibilityLanguageA",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The answer corresponding to the eligibility language question (include all stated conditions, thresholds, and exceptions).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Eligibility Language Q&A",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "eca82655-5286-4a8b-99cb-5cb04fe85764",
+      "type": "multiple_value",
+      "details": "Extract all questions and answers describing when coverage terminates and any continuation/extension situations. Capture contract termination provisions, employee termination provisions, termination due to leave (medical leave), layoff/rehire rules affecting termination/continuation, end-of-month rules, premium stop rules, portability/conversion triggers when tied to termination, and any continuation periods.",
+      "entities": [
+        {
+          "id": "ba8a1a85-e15b-4696-8833-172b5837aa99",
+          "entity": "Termination Provision Question",
+          "save_to": "DR_LTerminationProvisionQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Questions relating to termination of coverage and termination provisions (employee termination, contract termination, leave/layoff/rehire).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "505f23ad-1bbf-4f85-b7dd-bbfb5f660cb8",
+          "entity": "Termination Provision Answer",
+          "save_to": "DR_LTerminationProvisionA",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The answer corresponding to termination provision questions (include timing, conditions, and continuation options if stated).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Termination Provision Q&A",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": true,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "8849b9d5-8485-4e81-9f63-894bd00872f8",
+      "type": "multiple_value",
+      "details": "Extract all questions and answers that define partial disability and related partial/return-to-work mechanics. Capture partial disability definition wording, residual/partial benefits, earnings test or income loss thresholds, return-to-work provisions, recurrent disability/temporary recovery language if it clarifies partial status, and vocational/rehabilitation provisions if explicitly tied to partial benefits.",
+      "entities": [
+        {
+          "id": "62046772-3b78-4ca9-bedf-c8635b5fbdfb",
+          "entity": "Definition of Partial Disability Question",
+          "save_to": "DR_LPartialDisabilityDefinitionQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Questions relating to the definition of partial disability / residual / partial benefits / earnings test / return-to-work provisions.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "eae86652-2d16-42a3-85b4-956ee85a4530",
+          "entity": "Definition of Partial Disability Answer",
+          "save_to": "DR_LPartialDisabilityDefinitionA",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The answer corresponding to the partial disability definition question (include thresholds, conditions, and benefit triggers if stated).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Definition of Partial Disability Q&A",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "2233646e-c262-4131-aa9b-07aafdc829c6",
+      "type": "multiple_value",
+      "details": "Extract all questions and answers describing the pre-existing conditions exclusion. Capture lookback period, exclusion duration, definition of pre-existing condition, whether it applies to late entrants, any waiver language, and how it interacts with effective date/eligibility/waiting period if explicitly stated.",
+      "entities": [
+        {
+          "id": "09768416-a319-4625-8b16-fec380d3a6f1",
+          "entity": "Pre-Existing Conditions Exclusion Question",
+          "save_to": "DR_LPreExistingConditionsExclusionQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Questions relating to the pre-existing conditions exclusion (lookback, exclusion period, definition, waivers, late entrant rules if stated).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "dfe59565-966f-43b6-bce2-724169b64c50",
+          "entity": "Pre-Existing Conditions Exclusion Answer",
+          "save_to": "DR_LPreExistingConditionsExclusionA",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The answer corresponding to pre-existing conditions exclusion questions (include all periods, definitions, and exceptions).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Pre-Existing Conditions Exclusion Q&A",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": true,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "4e6f565c-5657-4251-8e52-b47698e7df33",
+      "type": "multiple_value",
+      "details": "Extract all questions and answers defining disability under the LTD policy. Capture own-occupation vs any-occupation language, elimination period linkage if explicitly part of the definition section, partial vs total disability distinctions when explicitly defined here, definition of earnings if directly referenced within the disability definition, and offsets/reductions only if explicitly defined as part of disability qualification.",
+      "entities": [
+        {
+          "id": "290a4510-c7d1-4fa7-bd3f-5b6cca7354d1",
+          "entity": "Definition of Disability Question",
+          "save_to": "DR_LDisabilityDefinitionQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Questions relating to the definition of disability (own occ/any occ, qualifying criteria, related definition terms explicitly stated).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "e90a6f62-476e-44ae-ad7e-5332edfc21b3",
+          "entity": "Definition of Disability Answer",
+          "save_to": "DR_LDisabilityDefinitionA",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The answer corresponding to disability definition questions (include the qualifying criteria and any stated transitions/periods).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Definition of Disability Q&A",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    }
+  ],
+  "variants": [
+    {
+      "id": "ceb8e51e-9dab-47b6-949f-cc11ed85860f",
+      "variant_name": "File 3",
+      "file_sources": [
+        "FileUpload3"
+      ],
+      "group_variants": []
+    },
+    {
+      "id": "dbd3041a-3229-4639-9cc4-9b87adb306b1",
+      "variant_name": "File 4",
+      "file_sources": [
+        "FileUpload4"
+      ],
+      "group_variants": []
+    },
+    {
+      "id": "71411346-490e-4523-859f-6f37d92fbd96",
+      "variant_name": "File 2",
+      "file_sources": [
+        "FileUpload2"
+      ],
+      "group_variants": []
+    }
+  ]
+}

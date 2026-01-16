@@ -1,0 +1,1731 @@
+{
+  "queries": [
+    {
+      "id": "3dec6a7b-949e-41d1-b791-7572d180e73c",
+      "type": "multiple_value",
+      "details": "Rates/Premiums/Contributions tables; capture tier, coverage level, pay frequency, and employee vs employer share.",
+      "entities": [
+        {
+          "id": "55cb6b42-87d7-45cd-a5df-b78d698e8bae",
+          "entity": "Rates",
+          "save_to": "DR_MRates",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "All premium rates/contributions shown (employee + dependent tiers, coverage level, plan option, pay frequency); include employee vs employer share if stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Premiums and Contributions",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "c19d0e76-43a0-4c15-9dd7-0c910dd4363a",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "cc915bcd-d162-4210-850b-6770b9bc8142",
+          "entity": "Effective Dates",
+          "save_to": "DR_MEffectiveDates",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Describes who is eligible for coverage based on employment status and required work hours.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "74b208c3-255f-453d-b9e4-203f9cf2d0e1",
+      "type": "multiple_value",
+      "details": "Eligibility/Enrollment/Termination/Leave/Continuation sections; capture exact rule text, time windows, and effective/end dates.",
+      "entities": [
+        {
+          "id": "fd5e0af2-df26-41a3-950c-3de88076184a",
+          "entity": "Eligibility Rules",
+          "save_to": "DR_MEligibilityRules",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return one concise sentence summarizing who is eligible for coverage based on employment status and required work hours. Exclude procedural steps, waiting period details, and legal language.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "9f740ce4-ee49-47ba-a913-7b15b6f93aed",
+          "entity": "Student Age/Status",
+          "save_to": "DR_MStudentAgeStatus",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract rules for student dependents: maximum age, required student status (full-time/credit hours), verification, and when coverage ends.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "e3ec6495-a231-4e60-8c39-f69d4a65072f",
+          "entity": "Domestic Partners/Common Law",
+          "save_to": "DR_MDomesticPartnersCommonLaw",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract eligibility rules for domestic partners and/or common-law spouses: definition, required proof, enrollment timing, and termination triggers.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "e89daee6-665c-4e3e-8afd-f2d911327506",
+          "entity": "Spouse",
+          "save_to": "DR_MSpouse",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Describes when a spouse’s coverage ends due to loss of eligibility or qualifying events such as divorce or legal separation.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "c0657876-cc24-4ca2-bc97-fa065d542cc4",
+          "entity": "Dependent Children",
+          "save_to": "DR_MDependentChildren",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Explains when dependent coverage ends due to age limits, status changes, or loss of eligibility.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "c9af3eae-1e53-473f-9075-3a79f2a7b1ef",
+          "entity": "Waiting Period Rules",
+          "save_to": "DR_MWaitingPeriodRules",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the waiting period: length, when it starts (hire date/first of month), when coverage begins, and any exceptions.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Eligibility, Enrollment, and Continuation Rules",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "ae14df21-5870-46b5-b665-e7d05bad7c40",
+      "type": "multiple_value",
+      "details": "Deductible section/SBC; capture in/out-of-network, per person vs family, embedded vs aggregate, and calendar vs plan year accumulation/reset wording.",
+      "entities": [
+        {
+          "id": "1d33a4c6-c781-4113-8ec6-e50f81c5b43a",
+          "entity": "Individual Deductible (Network/Non-network)",
+          "save_to": "DR_MIndividualDeductibleNetworkNonNetwork",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The individual/person deductible for in-network/participating and out-of-network/non-network; capture amount, per-person wording, and any notes (e.g., “deductible does not apply”).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "7297ec02-77bb-4f48-a2ab-0f36ac5a8970",
+          "entity": "Family Deductible (Network/Non-network)",
+          "save_to": "DR_MFamilyDeductibleNetworkNonNetwork",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The family deductible for in-network/participating and out-of-network/non-network; capture amount, how it’s met (combined family vs per member), and any notes.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "d0f86e3c-b4c9-472c-a2bc-95f9777fbbcb",
+          "entity": "Embedded or Aggregate Deductible",
+          "save_to": "DR_MEmbeddedOrAggregateDeductible",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Identify whether the plan uses an embedded or aggregate family deductible (or both); extract the exact label/description and any related thresholds (e.g., individual embedded amount).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "9ab617ca-1ccd-42a0-8e63-b8287cd1624d",
+          "entity": "Calendar Year or Plan Year Deductible accumulation",
+          "save_to": "DR_MCalendarYearOrPlanYearDeductibleAccumulation",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Identify whether the deductible accumulates/resets by calendar year or plan year (benefit year); include any reset date or coverage period start/end.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Deductibles and Accumulation Basis",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "442948bd-3c7b-4a23-8939-82b0440c3746",
+      "type": "multiple_value",
+      "details": "Cost Sharing/Coinsurance section; capture in/out-of-network, %, “after deductible” notes, and any coinsurance maximum definitions.",
+      "entities": [
+        {
+          "id": "3cb5a55b-db30-422a-88db-702601763af9",
+          "entity": "Coinsurance (Network/Non-network)",
+          "save_to": "DR_MCoinsuranceNetworkNonNetwork",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Identify the coinsurance rate (%) for in-network and out-of-network (or “Not covered”); include any triggers like “after deductible” and the exact phrasing.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "ceb385e9-97b6-49d0-8514-e955c4eb82a9",
+          "entity": "Individual Coinsurance Maximum (Network/Non-network)",
+          "save_to": "DR_MIndividualCoinsuranceMaximumNetworkNonNetwork",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Any per-person cap on coinsurance (e.g., “coinsurance maximum,” “max coinsurance amount”) for in-network and out-of-network; include the amount and definition.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "27eb8bd6-9195-4e37-9308-110c0b1ec371",
+          "entity": "Family Coinsurance Maximum (Network/Non-network)",
+          "save_to": "DR_MFamilyCoinsuranceMaximumNetworkNonNetwork",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Any family cap on coinsurance for in-network and out-of-network; include the amount and definition.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Coinsurance and Coinsurance Caps",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "2ab73901-198a-463e-bf2c-30f9bff67fae",
+      "type": "multiple_value",
+      "details": "Out-of-Pocket Maximum section/SBC; capture in/out-of-network, and whether copays/deductible/coinsurance count (exact wording).",
+      "entities": [
+        {
+          "id": "f00302b9-767d-4cde-872a-0672cd99b95a",
+          "entity": "Individual Out of Pocket Maximum  (Network/Non-Network)",
+          "save_to": "DR_MIndividualOutOfPocketMaximumNetworkNonNetwork",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The individual/person out-of-pocket maximum/limit for in-network and out-of-network; include what expenses count toward it (e.g., deductible, coinsurance, copays) if stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "a9b02588-4623-4aa3-90ed-339849410c64",
+          "entity": "Family Out of Pocket Maximum (Network/Non-Network)",
+          "save_to": "DR_MFamilyOutOfPocketMaximumNetworkNonNetwork",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The family out-of-pocket maximum/limit for in-network and out-of-network; include whether there is an embedded individual OOP and what counts toward it (if stated).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Out-of-Pocket Maximum",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "a298a4b5-460a-4152-aa33-a218f6ee4fb1",
+      "type": "multiple_value",
+      "details": "Office Visit/Telehealth/Virtual Visit benefits; capture copay vs coinsurance, in/out-of-network, and visit-type qualifiers.",
+      "entities": [
+        {
+          "id": "75491a29-520b-4d63-a798-4b50f767fea1",
+          "entity": "Primary Care Physician Office Visit Copayment",
+          "save_to": "DR_MPrimaryCarePhysicianOfficeVisitCopayment",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The PCP office visit copay (and if copay differs by in/out-of-network); include visit type qualifiers (routine/sick).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "d725cb6f-afb6-4683-8009-d45d03ff80ea",
+          "entity": "Specialist Office Visit Copayment",
+          "save_to": "DR_MSpecialistOfficeVisitCopayment",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The specialist visit copay (or coinsurance) and any referral requirement note; include in/out-of-network if shown.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "b096b284-0ea8-442e-88c5-e12bafd34ca3",
+          "entity": "Telehealth Services Copayment",
+          "save_to": "DR_MTelehealthServicesCopayment",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The telehealth copay (or coinsurance) and whether it differs by in/out-of-network or provider type; include any “deductible applies” note.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "ac30e44c-98a9-4ade-b4c9-39f3ef255419",
+          "entity": "Virtual Visits",
+          "save_to": "DR_MVirtualVisits",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The cost share for virtual visits/online visits/e-visits (copay/coinsurance) and any limits; include in/out-of-network if shown.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Office Visits and Virtual Care",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "d4977518-9b5b-424d-8005-21d107219183",
+      "type": "multiple_value",
+      "details": "Extract from Urgent Care/Emergency Room benefits; capture copay vs coinsurance, waiver if admitted (ER), and in/out-of-network wording.",
+      "entities": [
+        {
+          "id": "aa00f03d-4d34-4b5c-b4b4-26d541e3ff77",
+          "entity": "Urgent Care Copayment",
+          "save_to": "DR_MUrgentCareCopayment",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The urgent care copay (or coinsurance); include in/out-of-network if shown and any deductible note.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "944b85cc-d814-4055-b8b2-ddaffe866f38",
+          "entity": "Emergency Room Copayment",
+          "save_to": "DR_MEmergencyRoomCopayment",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The ER copay (and any waiver if admitted); include in/out-of-network wording and deductible applicability.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Urgent and Emergency Care",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "cddbd923-2b1a-489d-9901-d3b79f613bf2",
+      "type": "multiple_value",
+      "details": "Lab/Diagnostics/Imaging sections; capture office vs outpatient hospital/facility differences and deductible applies notes.",
+      "entities": [
+        {
+          "id": "4328f313-9ab6-422f-b839-b63fff6b8a14",
+          "entity": "Lab/Diagnostic",
+          "save_to": "DR_MLabDiagnostic",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The cost share for lab services/diagnostic testing (office vs outpatient hospital if separated); include deductible applicability and in/out-of-network if shown.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "ac0a14aa-1dca-4c95-8236-4bea28ad73ba",
+          "entity": "Imaging Copay (MRI, CT scan)",
+          "save_to": "DR_MImagingCopayMRICtScan",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The cost share for advanced imaging (MRI/CT/PET); capture whether it’s copay vs coinsurance, facility vs office, and in/out-of-network if shown.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Diagnostic Testing and Imaging",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "30b8fd14-3eb8-4daa-ac6b-dd9f8960ff79",
+      "type": "multiple_value",
+      "details": "Inpatient/Outpatient/Facility Services benefits; capture per day/per stay copays, coinsurance, deductible applies, and in/out-of-network.",
+      "entities": [
+        {
+          "id": "a2003481-b53f-4330-b746-f36d5a0c92f4",
+          "entity": "Inpatient Hospital Copayment",
+          "save_to": "DR_MInpatientHospitalCopayment",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The cost share for inpatient hospital admission (copay per stay/day and/or coinsurance); include deductible applicability and in/out-of-network if shown.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "c0f5fe5f-f462-42bc-bb6c-4a7af8c8ca3e",
+          "entity": "Outpatient Services",
+          "save_to": "DR_MOutpatientServices",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The cost share for outpatient hospital/ambulatory services (facility services); include copay/coinsurance, deductible applicability, and in/out-of-network if shown.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Hospital and Outpatient Facility Services",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "1bd7e17e-4553-495c-9144-4aac65203745",
+      "type": "multiple_value",
+      "details": "Prescription Drug/Rx section; capture tiers, copay/coinsurance per tier, and any Rx deductible/limits.",
+      "entities": [
+        {
+          "id": "8ace9b47-e689-4a4d-aafe-22404359829e",
+          "entity": "Prescription Drug Benefit",
+          "save_to": "DR_MPrescriptionDrugBenefit",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The prescription drug benefits: tiers (generic/preferred/non-preferred/specialty), copay/coinsurance per tier, and any Rx deductible or limits (mail order, specialty).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Prescription Drug Benefits",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "de2478d1-8fda-46cc-b446-0f03f1808999",
+      "type": "multiple_value",
+      "details": "Mental Health/Substance Use Disorder section; capture inpatient vs outpatient (if separated), cost share, and any authorization/limits.",
+      "entities": [
+        {
+          "id": "dfe6ffc1-bbc6-4a8c-8f3e-2fbe2178d8fe",
+          "entity": "Mental Health/Substance Abuse Coverage",
+          "save_to": "DR_MMentalHealthSubstanceAbuseCoverage",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The coverage/cost share for mental health and substance use disorder services (inpatient/outpatient if separated); include copay/coinsurance, deductible applicability, and limits/authorization if stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Mental Health and Substance Use Benefits",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "8ee3e0bb-6b64-417d-947d-d7fad09bf41f",
+      "type": "multiple_value",
+      "details": "Therapy/Rehab benefits; capture copay/coinsurance, visit/session limits, and prior authorization notes.",
+      "entities": [
+        {
+          "id": "3c5888cd-4ab4-4b3f-9e95-8b7f07530699",
+          "entity": "Physical Therapy",
+          "save_to": "DR_MPhysicalTherapy",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The cost share for physical therapy; include visit limits and authorization notes.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "8c81de75-2f99-4a8c-880c-e1fc0b24af6d",
+          "entity": "Speech Therapy",
+          "save_to": "DR_MSpeechTherapy",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The cost share for speech therapy; include visit limits and authorization notes.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "9fe21447-c2b4-4608-91bd-50231a07ae89",
+          "entity": "Occupational Therapy",
+          "save_to": "DR_MOccupationalTherapy",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The cost share for occupational therapy; include visit limits and authorization notes.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "e046ec1b-c343-4423-a42b-bc7e6cf35ce2",
+          "entity": "Cardiac Rehabilitation Therapy",
+          "save_to": "DR_MCardiacRehabilitationTherapy",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The coverage and cost share for cardiac rehabilitation; include session limits and authorization notes.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "a2ae986c-766c-4631-9618-a760e54d87be",
+          "entity": "Pulmonary Rehabilitation Therapy",
+          "save_to": "DR_MPulmonaryRehabilitationTherapy",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The coverage and cost share for pulmonary rehabilitation; include session limits and authorization notes.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "c69db0f7-7263-43db-b9af-f36c857ed50e",
+          "entity": "Other Rehabilitation Therapy",
+          "save_to": "DR_MOtherRehabilitationTherapy",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The coverage and cost share for other rehab therapies (e.g., post-acute rehab categories used by the plan); include limits/authorization.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Therapies and Rehabilitation Services",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "a8c2915d-5a7c-46ce-9033-0802339441d1",
+      "type": "multiple_value",
+      "details": "Chiropractic/Acupuncture benefits; capture cost share and visit limits/authorization.",
+      "entities": [
+        {
+          "id": "c795fd01-cf0b-4d79-891b-944d9133342d",
+          "entity": "Chiropractic",
+          "save_to": "DR_MChiropractic",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The cost share for chiropractic services; include any visit limit and referral/authorization notes.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "4508cd07-73fa-451e-bae5-a30101297c88",
+          "entity": "Acupuncture",
+          "save_to": "DR_MAcupuncture",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The cost share for acupuncture; include any limits/authorization.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Alternative and Complementary Services",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "6b18fad8-c9bc-4a3a-ad61-2517b6720720",
+      "type": "multiple_value",
+      "details": "Home Health/Hospice/SNF/DME benefits; capture cost share, day/visit limits, and authorization.",
+      "entities": [
+        {
+          "id": "d9546a55-07e6-4dd0-a5aa-01a625a0a85f",
+          "entity": "Durable Medical Equipment",
+          "save_to": "DR_MDurableMedicalEquipment",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The cost share for DME (durable medical equipment); include deductible applicability, coinsurance/copay, and any limits/authorization.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "6a9e471e-cdc8-418e-870a-a6d310fa22a3",
+          "entity": "Home Health Care",
+          "save_to": "DR_MHomeHealthCare",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The cost share for home health care/home nursing; include visit limits and authorization notes if stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "e48b9c3e-8e85-466f-b71c-439e2e9ff9ff",
+          "entity": "Hospice",
+          "save_to": "DR_MHospice",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The cost share for hospice care (inpatient/outpatient if separated); include limits/authorization if stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "38bd9892-22be-4e3d-8f04-e0d5d79af430",
+          "entity": "Skilled Nursing",
+          "save_to": "DR_MSkilledNursing",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The cost share for skilled nursing facility (SNF); include per-day copay/coinsurance, day limits, and authorization notes.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Home, Hospice, Skilled Nursing, and Equipment",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "26bc27f4-0761-4362-a1cb-2cea076e369e",
+      "type": "multiple_value",
+      "details": "Maternity/Newborn/Pediatric sections; capture cost share, coverage limits, and any age restrictions.",
+      "entities": [
+        {
+          "id": "34649f91-a1cd-4a67-b659-e3b6b022b510",
+          "entity": "Maternity Services",
+          "save_to": "DR_MMaternityServices",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The coverage/cost share for maternity/prenatal/delivery (office visits, facility, professional fees if separated); include deductible applicability and limits.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "a6390b03-b99a-4eba-bc5f-f351d28562b9",
+          "entity": "Newborn Services",
+          "save_to": "DR_MNewbornServices",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The coverage/cost share for newborn care (routine nursery, complications/NICU if stated); include deductible applicability and limits.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "3eae26bc-3d42-4ba0-bf9a-d5aeffe91a84",
+          "entity": "Pediatric Dental",
+          "save_to": "DR_MPediatricDental",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract whether pediatric dental is covered and the cost share/limits; include age limits if stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "731c3e3d-d4ad-4ba9-aa42-3c7dd99a852d",
+          "entity": "Pediatric Vision",
+          "save_to": "DR_MPediatricVision",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract whether pediatric vision is covered and the cost share/limits (exam, materials if listed); include age limits if stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Maternity, Newborn, and Pediatric Benefits",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "290249c3-53ee-48eb-bdf3-5b9d420a6586",
+      "type": "multiple_value",
+      "details": "Condition-specific sections; capture coverage vs exclusion, cost share, and limits/authorization.",
+      "entities": [
+        {
+          "id": "a8ace1d2-283e-4d65-bc5c-34a4f5303235",
+          "entity": "Infertility",
+          "save_to": "DR_MInfertility",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The coverage and cost share for infertility evaluation/treatment; capture any exclusions (e.g., IVF not covered) and limits.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "462997e5-be37-4fbe-9885-e67277579633",
+          "entity": "Autism",
+          "save_to": "DR_MAutism",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The coverage/cost share for autism services (ABA/behavioral therapy if mentioned); include limits/authorization or exclusions.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "e9c976c8-c024-4d50-bb05-cd81bd12a695",
+          "entity": "Allergy Testing and Treatment",
+          "save_to": "DR_MAllergyTestingAndTreatment",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The cost share for allergy testing and allergy immunotherapy/shots (if separated); include limits/authorization if stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Specialized Conditions and Services",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "f79bc70e-7fc8-45d5-8712-5ab9a19e4bb7",
+      "type": "multiple_value",
+      "details": "Ambulance/Transport benefits; capture ground vs air cost share and in/out-of-network wording.",
+      "entities": [
+        {
+          "id": "62a4dbed-238e-4a36-8777-eefe0bc5f16e",
+          "entity": "Ambulance - Ground",
+          "save_to": "DR_MAmbulanceGround",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The cost share for ground ambulance; include deductible applicability and in/out-of-network if shown.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "1ef37de5-5653-44a4-a135-80b317342b63",
+          "entity": "Ambulance - Air",
+          "save_to": "DR_MAmbulanceAir",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The cost share for air ambulance; include deductible applicability and in/out-of-network if shown.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Ambulance Services",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "f076b5e3-6786-4858-bffa-7b72d667f528",
+      "type": "multiple_value",
+      "details": "The plan’s stated coverage period basis (plan year/calendar year/benefit year) and any effective start/end dates.",
+      "entities": [
+        {
+          "id": "0c2fe643-9db2-413e-98ad-75cca853f50e",
+          "entity": "Calendar Year or Plan Year",
+          "save_to": "DR_MCalendarYearOrPlanYear",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The plan’s stated coverage period label (plan year/calendar year/benefit year) and any effective dates (start/end) shown in the document.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Plan Year vs Calendar Year Basis",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "3384bfe7-4488-46b6-92bc-95eb9aa61164",
+      "type": "multiple_value",
+      "details": "Exclusions/Limitations/Not Covered sections; list explicit exclusions, caps, and restrictive clauses using exact wording.",
+      "entities": [
+        {
+          "id": "d6b46d26-aa29-415f-9e3a-d81724d4afdd",
+          "entity": "Exclusion and Limitation",
+          "save_to": "DR_MExclusionAndLimitation",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The Exclusions & Limitations section: list the explicit exclusions/limits (services not covered, visit/day caps, special restrictions) using the document’s exact wording",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Exclusions and Limitations",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "8eccde01-88e7-485b-b9b7-c81740b954e6",
+      "type": "multiple_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "72c8412f-ff2a-4393-a799-a8dbb5df5f8e",
+          "entity": "Contract Termination Provisions",
+          "save_to": "DR_MContractTerminationProvisions",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return one concise sentence summarizing when and under what circumstances the plan or contract may be terminated. Exclude notice periods, administrative requirements, and legal clauses.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Contract Termination Provisions",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "ae67bcab-0d08-4f00-987a-f2c8c02598b9",
+      "type": "multiple_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "a9e3a88a-0b99-4e36-975e-c1c71f195dae",
+          "entity": "Employee Termination Provisions",
+          "save_to": "DR_MEmployeeTerminationProvisions",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return one concise sentence summarizing when employee coverage ends due to termination of employment or loss of eligibility. Exclude COBRA, notice, or administrative details.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Employee Termination Provisions",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "b5e481b6-8865-46f4-8c3a-771d76ca5150",
+      "type": "multiple_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "18c71cca-a4ad-4532-a0a7-5cafc1289cdf",
+          "entity": "Spouse Termination Provisions",
+          "save_to": "DR_MSpouseTerminationProvisions",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return one concise sentence summarizing when a spouse’s coverage ends due to loss of eligibility or qualifying events such as divorce or legal separation. Exclude notice and enrollment procedures.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Spouse Termination Provisions",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "9fccef6d-75d0-47a6-bee3-e6a10d3a6e03",
+      "type": "multiple_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "10c80f18-7b3e-4068-a593-56c4bc09f469",
+          "entity": "Dependent Termination Provisions",
+          "save_to": "DR_MDependentTerminationProvisions",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return one concise sentence summarizing when dependent coverage ends due to age limits or loss of eligibility. Exclude continuation or administrative details.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Dependent Termination Provisions",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": true,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "e2afb430-dbca-40c4-a1aa-450d5d37487b",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "3cb1decb-da0d-474d-a656-f3a6bcf9e267",
+          "entity": "Re-hire/Layoff Provisions",
+          "save_to": "DR_MReHireLayoffProvisions",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract coverage rules for rehire/recall/layoff: waiting period restart vs waive, eligibility continuity window, and effective date upon return.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "69aa9ce6-84fa-4d03-99b0-c8d4fc7df011",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "bb705678-1c2a-4cde-b3fb-56543a833e62",
+          "entity": "Medical Leave Provisions",
+          "save_to": "DR_MMedicalLeaveProvisions",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract coverage rules during medical leave/LOA/FMLA: whether coverage continues, required premium payment, maximum duration, and reinstatement upon return.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "ca167e1e-a1fa-4044-ac17-c94b6db7e3f2",
+      "type": "multiple_value",
+      "details": "Extract all explicit eligibility language stating who is eligible for coverage and under what conditions for employees and dependents, including class definitions (FT/PT), minimum hours, active-at-work rules, waiting period and eligibility/effective date triggers, enrollment timing if stated, student status/age limits, spouse/domestic partner/common-law and dependent-child eligibility, and any rehire/layoff or leave/medical leave eligibility impacts. Capture this wherever it appears (Q&A, tables, bullets, or eligibility/admin sections) and do not skip items in other sections. If the document is not in Q&A format, use the most relevant eligibility section heading (e.g., “Eligibility,” “Who Is Eligible,” “Dependent Eligibility,” “Waiting Period,” “Active Work,” “When Coverage Begins,” “Effective Date,” “Enrollment”) as the “Question,” and extract the verbatim text beneath it as the “Answer” until the next major section break; do not infer or rewrite.",
+      "entities": [
+        {
+          "id": "93c96b14-2f53-44c4-83bc-7407c0e26bf0",
+          "entity": "Eligibility Language Question",
+          "save_to": "DR_MEligibilityLanguageQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract each eligibility-related question verbatim (including form/table questions); if no explicit question exists for a captured block, extract the relevant eligibility section heading verbatim.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "549ed9ee-d327-498a-9e34-84a7d0960cad",
+          "entity": "Eligibility Language Answer",
+          "save_to": "DR_MEligibilityLanguageA",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the verbatim text answering the eligibility question, including hours/class, dependent definitions, student/age rules, waiting period, effective date/coverage start timing, and any explicit active-at-work or enrollment constraints. If using a section heading as the “Question,” extract the bullets/rows/paragraphs directly under it up to the next major section break, without summarizing.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Eligibility Language Q&A",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "1c433f6c-aab0-4be7-9f6c-7594c25c50df",
+      "type": "multiple_value",
+      "details": "Extract the document’s explicit termination rules for when coverage ends, including triggers for employees, spouses, dependents, and contract termination, plus loss of eligibility, rehire/layoff, and leave/medical leave impacts, and timing language (end-of-month or date-of-event). Include continuation/extension language (e.g., COBRA) only if explicitly stated. If the document is not in Q&A format, use the most relevant termination/continuation section heading (e.g., “When Coverage Ends,” “Termination of Coverage,” “Loss of Eligibility,” “Continuation of Coverage,” “COBRA”) as the “Question,” and extract the verbatim content beneath it as the “Answer” until the next major section break; do not infer or rewrite.",
+      "entities": [
+        {
+          "id": "041e8629-d909-4a61-bf21-dfcf0d81a5c4",
+          "entity": "Termination Provision Question",
+          "save_to": "DR_MTerminationProvisionQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the exact termination-related question text; if none exists, extract the relevant termination/continuation section heading verbatim.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "3f6cd4c3-22d5-48a5-aabd-c13c7c5d6f64",
+          "entity": "Termination Provision Answer",
+          "save_to": "DR_MTerminationProvisionA",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the verbatim termination language that answers the question, including trigger(s), who it applies to, timing (end-of-month/date-of-event), and any explicitly stated continuation option. If using a section heading as the “Question,” extract the bullets/rows/paragraphs directly under it up to the next major section break, without summarizing.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Termination Provision Q&A",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "269fe68e-cfb0-443f-a26b-ebeb9a40365b",
+      "type": "multiple_value",
+      "details": "Extract the document’s explicit exclusions and limitations for medical benefits, including non-covered services, restrictions, caps/maximums, visit or frequency limits, dollar limits, network vs non-network constraints (including balance billing), and requirements like prior authorization or medical necessity when stated. If the document is not in Q&A format, use the most relevant section heading (e.g., “Exclusions,” “Limitations,” “Exclusions and Limitations,” “What’s Not Covered,” “Non-Covered Services,” “Benefit Limitations”) as the “Question,” and extract the verbatim content under that heading as the “Answer” until the next major section break; do not infer or rewrite.",
+      "entities": [
+        {
+          "id": "a35d7be0-87af-4d49-9db0-821670f1e551",
+          "entity": "Exclusions & Limitations Question",
+          "save_to": "DR_MExclusionLimitationQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the exact question text about exclusions/limitations; if none exists, extract the relevant exclusions/limitations section heading verbatim.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": []
+        },
+        {
+          "id": "0c6cff60-f006-4494-83f6-b41f25d5529f",
+          "entity": "Exclusions & Limitations Answer",
+          "save_to": "DR_MExclusionLimitationA",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the verbatim text that answers the exclusions/limitations question, including any stated non-covered items, limits, caps/maximums, network/OON restrictions, balance billing, and prior authorization or medical-necessity requirements. If the “Question” is a section heading, extract the bullets/rows/paragraphs directly under it up to the next major section break, without summarizing.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Exclusions & Limitations Q&A",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    }
+  ],
+  "variants": [
+    {
+      "id": "dd45dccf-6b9a-4ae8-8d40-360cd4b154d7",
+      "variant_name": "File 2",
+      "file_sources": [
+        "FileUpload2"
+      ],
+      "group_variants": []
+    },
+    {
+      "id": "635e29b1-fdd0-4a15-8914-92008c9e7d58",
+      "variant_name": "File 3",
+      "file_sources": [
+        "FileUpload3"
+      ],
+      "group_variants": []
+    },
+    {
+      "id": "078a3dc2-e6c7-4edd-b0d8-d80a52e42c24",
+      "variant_name": "File 4",
+      "file_sources": [],
+      "group_variants": []
+    }
+  ]
+}

@@ -1649,7 +1649,7 @@
     {
       "id": "269fe68e-cfb0-443f-a26b-ebeb9a40365b",
       "type": "multiple_value",
-      "details": "Extract exclusions and limitations content needed to (1) flag whether a full exclusions/limitations section exists for review and (2) determine whether specific high-priority medical exclusions are present. Capture the document’s exclusions/limitations section heading and the verbatim text beneath it (bullets/paragraphs/table rows) up to the next major section break. Also capture any explicit language that references these targeted exclusions: Mental Health/Substance Use Disorder exclusions, gene therapy or orphan drug exclusions, exclusions for coverage while traveling abroad/foreign country, exclusions for injuries sustained in commission of a crime/felony/illegal acts, and exclusions related to weight loss or weight loss drugs. Do not infer; extract verbatim text only.",
+      "details": "Extract all exclusions, limitations, restrictions, and non-coverage language found anywhere in the document, including headings, benefit descriptions, tables, footnotes, and “important information” callouts. Capture both (a) any global exclusions/limitations section text and (b) any embedded micro-exclusions/limits within specific services. Treat any statement that uses exclusion/limit language as in-scope, such as “excluded,” “not covered,” “no coverage,” “does not include,” “not payable,” “limited to,” “maximum,” “cap,” “visit limit,” “frequency limit,” “prior authorization required,” “precertification,” “medical necessity required,” “experimental/investigational,” “cosmetic,” “out-of-network restriction,” or “outside the U.S./foreign travel.” Also capture explicit language related to the five priority medical exclusions: Mental Health/Substance Use Disorder, gene therapy/orphan drugs, foreign travel/out-of-country coverage, injury during crime/felony/illegal acts, and weight loss/weight loss drugs. Extract verbatim only; do not infer or summarize.",
       "entities": [
         {
           "id": "a35d7be0-87af-4d49-9db0-821670f1e551",
@@ -1658,7 +1658,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the exact exclusion/limitation question text if the document is in Q&A format; otherwise extract the closest relevant section heading verbatim (e.g., “Exclusions,” “Limitations,” “Exclusions and Limitations,” “What’s Not Covered,” “Non-Covered Services,” “General Exclusions,” “Benefit Limitations”), and also capture targeted headings that clearly correspond to the five priority exclusions when present.",
+          "criteria": "Extract the exact question text if the document is in Q&A format; otherwise extract the closest applicable heading or label verbatim that introduces the exclusion/limitation language. This may be a major section heading (e.g., “Exclusions,” “Limitations,” “What’s Not Covered,” “Non-Covered Services”) or a local label within a benefit table/callout (e.g., “Limitations, Exceptions, & Other Important Information,” “Not covered,” “Excludes,” “Coverage limitations,” “Plan limitations,” “Important”).",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1672,7 +1672,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the verbatim text that answers the exclusion/limitation item. If the “Question” is a section heading, extract the bullets/rows/paragraphs directly under that heading up to the next major section break, without summarizing. Ensure any language relevant to the five priority exclusions is included verbatim when present (MH/SUD, gene therapy/orphan drugs, foreign travel/abroad, crime/felony/illegal acts injury, weight loss/weight loss drugs).",
+          "criteria": "Extract the verbatim exclusion/limitation language associated with the question/heading/label, including any non-coverage statements, limits (visits/frequency/dollar caps), conditions (medical necessity, prior authorization/precertification), network restrictions, geographic restrictions (foreign travel/outside U.S.), and named excluded services/drugs. If the “Question” is a section heading or table label, extract the bullets/rows/footnotes/paragraphs directly under it up to the next major section break or label change, without summarizing. Include even short or intricate clauses and footnotes when they contain exclusion/limitation language, especially for the five priority exclusions.",
           "examples": [],
           "required": false,
           "default_option": "",

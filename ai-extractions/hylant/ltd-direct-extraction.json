@@ -1,0 +1,2382 @@
+{
+  "queries": [
+    {
+      "id": "732fa489-db15-4bfc-811b-ea9d6ee5e50e",
+      "type": "multiple_value",
+      "details": "Plan Identification details exactly as it is written on the document.",
+      "entities": [
+        {
+          "id": "30da4154-3789-4642-b83b-2ec30157e147",
+          "entity": "Carrier Name",
+          "save_to": "AP_LTDCarrier",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Name of the insurance carrier providing the long-term disability plan",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "33b0d1e6-e75f-47cb-be9a-b8202eb88d83",
+          "entity": "Plan Summary",
+          "save_to": "AP_LTDPlanSummary",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "plan summary name for the specified plan option (Current, Renewal, or Alternative).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Plan Identification",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "8a5d2339-05c1-4493-b612-7ad7842807d8",
+      "type": "multiple_value",
+      "details": "The eligibility or class description details in the document",
+      "entities": [
+        {
+          "id": "2bb7e8b1-a9c1-4883-ba9b-a0f2132c5471",
+          "entity": "Eligibility / Class Description",
+          "save_to": "AP_LTDElig",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Text describing which employees are eligible for LTD coverage and how eligible employees are grouped into classes, including employment status, hours worked, waiting period, and class definitions.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "4421e4bd-d5ad-4fdd-9bfe-99fd0c40e314",
+          "entity": "Class 1 – Eligibility",
+          "save_to": "AP_LTDElig1",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Description of employee group classified as Class 1 for eligibility purposes.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "77ff195f-8451-4e88-92c6-2be1a7b48627",
+          "entity": "Class 2 – Eligibility",
+          "save_to": "AP_LTDElig2",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Description of employee group classified as Class 2 for eligibility purposes.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "8dc0452d-6784-41bd-b0cd-195280c8e64f",
+          "entity": "Class 3 – Eligibility",
+          "save_to": "AP_LTDElig3",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Description of employee group classified as Class 3 for eligibility purposes.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Eligibility",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "bb904095-6d80-4e62-8164-cb79343ba50f",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "a0aff157-5a50-40ab-93b1-78b905be38a6",
+          "entity": "Elimination Period",
+          "save_to": "AP_LTDElimPeriod",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Length of time an employee must be disabled before LTD benefits begin",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "d736b1d1-0bce-40d8-97a2-360cfbce2c5e",
+      "type": "multiple_value",
+      "details": "Benefit Amount details exactly as it is written on the document.",
+      "entities": [
+        {
+          "id": "7a9ffcae-fd55-452f-b081-1c292a7226d1",
+          "entity": "Benefit Amount",
+          "save_to": "AP_LTDBenefitAmount",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Percentage of covered earnings or fixed amount payable as a monthly LTD benefit.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "2239f490-8a06-44b2-aebe-5d5afc99f511",
+          "entity": "Class 1 – Benefit Amount",
+          "save_to": "AP_LTDBenefitAmount1",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Benefit percentage or amount applicable to Class 1 employees.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "62d007ee-d7c0-49d5-b34f-cc94cf008a8b",
+          "entity": "Class 2 – Benefit Amount",
+          "save_to": "AP_LTDBenefitAmount2",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Benefit percentage or amount applicable to Class 2 employees.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "273dd9f1-2109-42e8-9dbf-c4f1a2198279",
+          "entity": "Class 3 – Benefit Amount",
+          "save_to": "AP_LTDBenefitAmount3",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Benefit percentage or amount applicable to Class 3 employees.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Benefit Amount",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "93862e9f-df5b-44d5-872e-c9b9b6fb0a7e",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "bc497338-5c5e-46f8-8066-3bacf612c964",
+          "entity": "Minimum Monthly Benefit Limits",
+          "save_to": "AP_LTDMinMonthBen",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Minimum monthly LTD benefit payable",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "8c6411df-6ef8-4f9c-b8e2-f43ec54b65f3",
+      "type": "multiple_value",
+      "details": "Maximum Monthly Benefit exactly as it is written on the document",
+      "entities": [
+        {
+          "id": "1da9388c-c6e8-437c-8460-15410d1150ba",
+          "entity": "Maximum Monthly Benefit",
+          "save_to": "AP_LTDMaxMonBen",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Maximum Monthly Benefit",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "54eeb1f8-8d25-438c-9156-deedeaaef9e6",
+          "entity": "Class 1",
+          "save_to": "AP_LTDMaxMonBen1",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Maximum monthly benefit applicable to Class 1 employees",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "9dfb3015-ec68-4587-8e43-8ebed836b053",
+          "entity": "Class 2",
+          "save_to": "AP_LTDMaxMonBen2",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Maximum monthly benefit applicable to Class 2 employees",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "e019debd-ff6d-4e7c-bd72-ab69c10edd43",
+          "entity": "Class 3",
+          "save_to": "AP_LTDMaxMonBen3",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Maximum monthly benefit applicable to Class 3 employees",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Maximum Monthly Benefit",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "8719f3f8-900a-447e-9c1d-1df31d73e022",
+      "type": "multiple_value",
+      "details": "Maximum Benefit Duration exactly as it is written on the document",
+      "entities": [
+        {
+          "id": "ef86073c-265f-40c5-872e-c9c7a4342433",
+          "entity": "Maximum Benefit Duration",
+          "save_to": "AP_LTDMaxBenDur",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Longest period LTD benefits are payable",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "07143df0-cee2-4635-89bf-cfa96e8329cf",
+          "entity": "Class 1",
+          "save_to": "AP_LTDMaxBenDur1",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Maximum benefit duration applicable to Class 1 employees",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "e36479e6-ceba-4702-943d-4aa504e51384",
+          "entity": "Class 2",
+          "save_to": "AP_LTDMaxBenDur2",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Maximum benefit duration applicable to Class 2 employees",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "3ba846eb-d1d7-4612-a082-932e8b03f0d0",
+          "entity": "Class 3",
+          "save_to": "AP_LTDMaxBenDur3",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Maximum benefit duration applicable to Class 3 employees",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Maximum Benefit Duration",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "a6927381-eff5-488f-bb8e-b2efb83dd9ec",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "164ee95f-caa4-4908-ac52-a761d988b2d3",
+          "entity": "Definition of Disability",
+          "save_to": "AP_LTDDefDisab",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Plan definition used to determine total disability eligibility",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "db3db225-b90d-4d65-a3f2-769a66d2caa8",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "a54f200e-eae7-4849-bb32-451a7d7ba849",
+          "entity": "Partial Disability",
+          "save_to": "AP_LTDPartialDis",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Definition and conditions under which partial disability benefits apply.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "8d135ad4-e6d7-445e-88c6-d0a36ae58cc5",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "ee89aefc-4834-41e6-a16d-57aa8ca73b64",
+          "entity": "Gainful Earnings Test",
+          "save_to": "AP_LTDGainfulEarnTrust",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Criteria used to determine ongoing disability based on post-disability earnings or work capacity.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "1fdbc0d1-3af1-4930-bbf0-7b2f1e30c800",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "2ccd4b12-9407-425e-91a8-179c30802ec4",
+          "entity": "Self-Reported Limitations",
+          "save_to": "AP_LTDSelfReport",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Limitations on benefit duration for disabilities based on self-reported symptoms.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "bddbd3f0-572f-4c3f-b590-eb638f4db64c",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "3a3375a2-4750-4182-8f70-e79ca0753ef7",
+          "entity": "Mental Illness Limitations",
+          "save_to": "AP_LTDMentalIllness",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Limitations on benefit duration for disabilities caused by mental or nervous conditions.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "0ed16c7a-7060-4343-8762-1822c20e7ff4",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "80282db2-06a6-45e3-b921-335a5584fca3",
+          "entity": "Substance Abuse Limitations",
+          "save_to": "AP_LTDSubsAbuse",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Limitations on benefit duration for disabilities related to substance or alcohol abuse.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "92776ca2-0eef-4b0f-9e41-223884999264",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "5055a834-ca38-4e00-a043-82be4869f8f7",
+          "entity": "Return to Work Incentive Benefit",
+          "save_to": "AP_LTDReturntoWork",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Benefit provision encouraging return to work while receiving LTD benefits",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "76ac373a-7caf-43b2-b07b-6c3386145e8f",
+      "type": "multiple_value",
+      "details": "Own Occupation description exactly as it is written on the document",
+      "entities": [
+        {
+          "id": "f33a0fd3-3465-4f0f-b2be-a0e6e8058f57",
+          "entity": "Own Occupation",
+          "save_to": "AP_LTDOwnOcc",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Period during which disability is defined as inability to perform own occupation",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "973a05dc-e43a-4f9c-8794-5fc3e944a340",
+          "entity": "Class 1",
+          "save_to": "AP_LTDOwnOcc1",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Own occupation period applicable to Class 1 employees",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "8cf5fca4-05af-48d9-ad69-3f3b66349b3d",
+          "entity": "Class 2",
+          "save_to": "AP_LTDOwnOcc2",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Own occupation period applicable to Class 2 employees",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "feb37eeb-aa93-4f2c-bef2-59f3c9f8a07c",
+          "entity": "Class 3",
+          "save_to": "AP_LTDOwnOcc3",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Own occupation period applicable to Class 3 employees",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Own Occupation",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "c3745bea-befe-4d3e-a07a-f03d8ff28c35",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "2dc1b4a8-6b92-4fce-8501-3a39b24deb45",
+          "entity": "Zero Day Residual",
+          "save_to": "AP_LTDZeroDayRes",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Whether residual disability benefits are payable without a waiting period",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "867b9df7-86bc-42cf-a746-30cabbf3201a",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "da1a4b1a-0426-4f46-9a3c-d31f6f47d4b9",
+          "entity": "Pre-Existing Condition Limitations",
+          "save_to": "AP_LTDPreEx",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Limitations applied to disabilities resulting from pre-existing conditions",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "7eaab4fd-7543-483e-bf01-1d3cedff8271",
+      "type": "multiple_value",
+      "details": "Employer Contribution details exactly as it is written in the document",
+      "entities": [
+        {
+          "id": "6cdad5a1-682b-4652-af56-dc613691f622",
+          "entity": "Employer Contribution",
+          "save_to": "AP_LTDEmpCon",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Portion of LTD premium paid by the employer",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "2481e192-9d57-4f7a-8097-0958782c38ac",
+          "entity": "Class 1",
+          "save_to": "AP_LTDEmpCon1",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Employer contribution applicable to Class 1 employees",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "921ef41c-8a63-4cde-b549-4cb3d104b9c7",
+          "entity": "Class 2",
+          "save_to": "AP_LTDEmpCon2",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Employer contribution applicable to Class 2 employees",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "11d72fe5-dba4-46e3-977e-ff803519cea3",
+          "entity": "Class 3",
+          "save_to": "AP_LTDEmpCon3",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Employer contribution applicable to Class 3 employees",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Employer Contribution",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "5f6e8b94-84f2-432f-be9a-ec443bd7ef19",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "acde280a-0001-4504-b755-e0dc7e56532e",
+          "entity": "Participation Requirement",
+          "save_to": "AP_LTDPartReq",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Minimum enrollment percentage required for plan issuance",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "2dffb5d4-f4dc-4f58-bd6f-fec2c1192589",
+      "type": "multiple_value",
+      "details": "Rates & Guarantees details exactly as it is written on the document",
+      "entities": [
+        {
+          "id": "6c1876bb-b083-4220-b3b7-62326eecf06b",
+          "entity": "Rate Guarantee",
+          "save_to": "AP_LTDRateGuar",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Length of time LTD rates are guaranteed not to change",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "def0fdb7-6ffd-4e14-aaab-fa875dc7512f",
+          "entity": "Rate Per $100 of Monthly Covered",
+          "save_to": "AP_LTDRatePer",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Cost rate per $100 of covered monthly earnings",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "9d77b545-c1e0-4039-bd9c-5b0cc0f05885",
+          "entity": "Rate",
+          "save_to": "AP_LTDRate",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Applicable LTD rate based on covered payroll",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Rates & Guarantees",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "1323c116-4df7-4801-85e0-d50802b17108",
+      "type": "multiple_value",
+      "details": "Premium details exactly as it is written on the document",
+      "entities": [
+        {
+          "id": "2a55a06a-8904-4310-a317-b6042dde6320",
+          "entity": "Estimated Monthly Volume",
+          "save_to": "AP_LTDEstMonVol",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Estimated total monthly covered payroll used for pricing",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "99d2e0f6-dfba-4ec2-ab5d-38343c7ac43b",
+          "entity": "Monthly Premium",
+          "save_to": "AP_LTDMonPrem",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Total monthly LTD premium",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "55eed318-af27-4f06-84fa-97804f5a2b4d",
+          "entity": "Annual Premium",
+          "save_to": "AP_LTDAnnPrem",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Total annual LTD premium",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "c3fd920f-45f5-4957-955b-1b6ff83d49e0",
+          "entity": "% Change",
+          "save_to": "AP_LTDPerChange",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Percentage increase or decrease from prior LTD rates",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Premium",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "b8ced847-69d2-4f3c-ad70-45d73c62e602",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "714b926f-a166-4122-a000-ae887ccf4f73",
+          "entity": "Client Name",
+          "save_to": "AP_LTDClientName",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The Client Name as stated in the LTD plan",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "5e57386a-194b-467c-b852-e53e7846b4e0",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "67b6771d-5511-44e3-95d8-ee39234d0903",
+          "entity": "Effective Date",
+          "save_to": "AP_LTDEffDate",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The date on which the LTD benefit plans shown in the comparison become effective.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": true,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "3f0a1a4c-8ae4-4222-a7b5-e460b79bf6ca",
+      "type": "multiple_value",
+      "details": "Extract all questions and corresponding answers that define employee eligibility mechanics for LTD. Capture minimum hours worked (e.g., hours per week), the eligibility waiting period and when eligibility is met, the coverage effective date rule (e.g., first day of the month that coincides with or follows eligibility), and any active-at-work requirement that delays coverage or increases until return to active work. Also capture reinstatement/rehire rules that restore coverage without a new waiting period, including the reinstatement window in days (e.g., return within 90 days) for layoff/termination, involuntary reduction in hours, and approved leaves; include military leave timing only if explicitly stated.",
+      "entities": [
+        {
+          "id": "5fa57d68-a3ff-4ca0-9587-4a80de02788d",
+          "entity": "Eligibility Language Question",
+          "save_to": "AP_LTDEligibilityLanguageQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Questions about LTD eligibility mechanics, including hours/week thresholds, waiting period rules, when eligibility is achieved, coverage start timing (e.g., 1st of month), active-at-work gating, and reinstatement/rehire rules without a new waiting period with a stated window in days.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "7467a1c4-a5e9-4b9e-92e8-d7f1a1d3a8ce",
+          "entity": "Eligibility Language Answer",
+          "save_to": "AP_LTDEligibilityLanguageA",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The corresponding answer, preserving stated numeric thresholds and timing rules exactly (hours, days, “1st of month” language), including active-at-work conditions and any reinstatement window and “no new waiting period” wording when present.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Eligibility Language Q&A",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "dca0b003-1bf3-4bf5-84ac-2441901c0990",
+      "type": "multiple_value",
+      "details": "Extract the termination provision that states when LTD coverage/insurance ends. Capture termination rules whether written as questions/answers, headings, or narrative clauses (e.g., “Termination of Insurance/Coverage,” “When Insurance Ends,” “Coverage will end,” “Insurance ends,” “Termination Date”). Prioritize rules tied to employment termination / cessation of employment / last day worked / termination date / end of active employment (including end-of-month/pay-period wording if stated). If the document uses “no longer eligible,” also capture any definition of eligibility that explicitly links ineligibility to employment ending. If an employment-termination rule exists, include it even if other termination triggers appear.",
+      "entities": [
+        {
+          "id": "00bb6c41-e8ae-49df-b0f8-020852bf33cd",
+          "entity": "Termination Provision Question",
+          "save_to": "AP_LTDTerminationProvisionQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the exact question, heading, or clause label that introduces the termination rule (e.g., “When does coverage end?”, “When Insurance Ends”, “Termination of Insurance/Coverage”, “Coverage will end”). If no label exists, extract the leading phrase that signals the rule (e.g., “Insurance ends…”).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "183e0420-c10c-4295-bf70-fd26f9f32490",
+          "entity": "Termination Provision Answer",
+          "save_to": "AP_LTDTerminationProvisionA",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the termination rule text that states the timing + trigger, preserving timing language exactly (e.g., “date of employment termination,” “last day worked,” “end of month,” “end of pay period”). Prefer the clause tied to employment termination when present; otherwise capture the most direct “coverage ends” rule stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Termination Provision Q&A",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "06a1d7b0-e206-45c0-b05b-95343d2c8bf6",
+      "type": "multiple_value",
+      "details": "Extract all questions/answers or clause/heading + corresponding provision text that define partial disability and how partial benefits work under LTD. Capture the definition test (material duty + earnings threshold + timing), and prioritize any partial benefit mechanics that indicate an earnings-integrated design (e.g., 20% earnings threshold, benefit+earnings cap such as 100% of BME, reduction-by-excess formula, “incentive to work,” step changes like “after 2 years,” and maximum payable percent such as 85% of BME). Include only information explicitly stated.",
+      "entities": [
+        {
+          "id": "a22dabf0-8feb-41d1-88dd-ba8b4ba8389f",
+          "entity": "Definition of Partial Disability Question",
+          "save_to": "AP_LTDPartialDisabilityDefinitionQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Questions, headings, or clause labels related to partial disability/residual benefits/earnings test/return-to-work and partial benefit calculation (e.g., “Partial Disability,” “Monthly Benefit for Partial Disability,” “Earnings Test,” “Work Incentive”).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "aeb4c0c1-486b-4c63-b362-5c481fe9723c",
+          "entity": "Definition of Partial Disability Answer",
+          "save_to": "AP_LTDPartialDisabilityDefinitionA",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The corresponding answer/provision text preserving explicit thresholds and formulas (percent of BME, caps like 100% of BME, reduction rules, timing triggers such as after elimination period or after 2 years).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Definition of Partial Disability Q&A",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "5f75aeb6-5a60-4d26-95db-462db66a4523",
+      "type": "multiple_value",
+      "details": "Extract questions/answers (or headings/clauses + provision text) that define Disability/Disabled under the LTD policy. Prioritize capturing the duty-based test (e.g., inability to perform material duties) and any earnings-based test (e.g., earnings must not exceed a stated % of pre-disability/basic monthly earnings). Capture any time-based transitions (e.g., after 24 months any occupation) only if explicitly part of the definition.",
+      "entities": [
+        {
+          "id": "d6b6bae3-0e64-43c1-936e-2773da64c567",
+          "entity": "Definition of Disability Question",
+          "save_to": "AP_LTDDisabilityDefinitionQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Questions/headings/clauses about the definition of Disability/Disabled, especially those stating material duty requirements and any earnings threshold.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "cdba46fb-ac05-4580-b742-cc0a7166f78e",
+          "entity": "Definition of Disability Answer",
+          "save_to": "AP_LTDDisabilityDefinitionA",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The corresponding definition text, preserving the duty test and earnings threshold wording/percent exactly.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Definition of Disability Q&A",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "53fa1b60-c895-453f-a283-9ad966d06896",
+      "type": "multiple_value",
+      "details": "Extract the document’s Exclusions & Limitations language for LTD and capture evidence for five high-priority exclusions/limitations. First, identify whether a dedicated exclusions/limitations section exists and extract the heading and the verbatim text that belongs to that section (bullets/paragraphs/table rows) until the next major section break. Then, specifically locate and extract the exact wording (verbatim) for each targeted item if present: Pre-Existing Condition exclusion (include timeframes like 3/12, 3/6/12, etc.), Mental Health & Substance Use Disorder limitation/exclusion (include months if limited), Self-reported symptoms limitation/exclusion (include months if limited), Self-inflicted injury exclusion (present/not), and On-the-job injury/work-related injury exclusion (present/not). Do not infer; extract only explicit text.",
+      "entities": [
+        {
+          "id": "dc18e41c-def9-4546-a7a6-48169618f6b4",
+          "entity": "Exclusions & Limitations Question",
+          "save_to": "AP_LTDExclusionLimitationQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the exact question text if the document is in Q&A form; otherwise extract the closest relevant section heading or subheading verbatim (e.g., “Exclusions,” “Limitations,” “Exclusions and Limitations,” “What’s Not Covered,” “General Exclusions,” “Limitations”). If extracting targeted items, use the closest heading/subheading that introduces that item (e.g., “Pre-Existing Condition Limitation,” “Mental Disorders Limitation,” “Self-Reported Symptoms,” “Self-Inflicted Injury,” “Work-Related Injury”).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "da4826ed-9bd1-435e-8dd9-bf279f637e69",
+          "entity": "Exclusions & Limitations Answer",
+          "save_to": "AP_LTDExclusionLimitationA",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the verbatim text under the identified heading/question that contains the exclusions/limitations language. Include the full relevant clause(s) for the overall exclusions/limitations section and for each targeted item when found. Preserve timeframes (lookback/exclusion durations), month limits, definitions, and qualifiers exactly as written. If the section is long, capture the complete list content up to the next major section break; if that is not possible, capture the most complete continuous excerpt that contains the full exclusion list. Do not summarize; do not infer.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Exclusions & Limitations Q&A",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    }
+  ],
+  "variants": [
+    {
+      "id": "a3b69d40-2347-48a8-afd6-f02544a70066",
+      "variant_name": "Renewal Plan",
+      "file_sources": [
+        "FileUpload6"
+      ],
+      "group_variants": [
+        {
+          "question_group_id": "732fa489-db15-4bfc-811b-ea9d6ee5e50e",
+          "save_to_fields": [
+            "AP_LTD_Carrier_Renewal",
+            "AP_LTDPlanSummary_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "8a5d2339-05c1-4493-b612-7ad7842807d8",
+          "save_to_fields": [
+            "AP_LTDElig_Renewal",
+            "AP_LTDElig1_Renewal",
+            "AP_LTDElig2_Renewal",
+            "AP_LTDElig3_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "bb904095-6d80-4e62-8164-cb79343ba50f",
+          "save_to_fields": [
+            "AP_LTDElimPeriod_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "d736b1d1-0bce-40d8-97a2-360cfbce2c5e",
+          "save_to_fields": [
+            "AP_LTDBenefitAmount_Renewal",
+            "AP_LTDBenefitAmount1_Renewal",
+            "AP_LTDBenefitAmount2_Renewal",
+            "AP_LTDBenefitAmount3_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "93862e9f-df5b-44d5-872e-c9b9b6fb0a7e",
+          "save_to_fields": [
+            "AP_LTDMinMonthBen_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "8c6411df-6ef8-4f9c-b8e2-f43ec54b65f3",
+          "save_to_fields": [
+            "AP_LTDMaxMonBen_Renewal",
+            "AP_LTDMaxMonBen1_Renewal",
+            "AP_LTDMaxMonBen2_Renewal",
+            "AP_LTDMaxMonBen3_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "8719f3f8-900a-447e-9c1d-1df31d73e022",
+          "save_to_fields": [
+            "AP_LTDMaxBenDur_Renewal",
+            "AP_LTDMaxBenDur1_Renewal",
+            "AP_LTDMaxBenDur2_Renewal",
+            "AP_LTDMaxBenDur3_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "a6927381-eff5-488f-bb8e-b2efb83dd9ec",
+          "save_to_fields": [
+            "AP_LTDDefDisab_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "db3db225-b90d-4d65-a3f2-769a66d2caa8",
+          "save_to_fields": [
+            "AP_LTDPartialDis_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "8d135ad4-e6d7-445e-88c6-d0a36ae58cc5",
+          "save_to_fields": [
+            "AP_LTDGainfulEarnTrust_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "1fdbc0d1-3af1-4930-bbf0-7b2f1e30c800",
+          "save_to_fields": [
+            "AP_LTDSelfReport_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "bddbd3f0-572f-4c3f-b590-eb638f4db64c",
+          "save_to_fields": [
+            "AP_LTDMentalIllness_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "0ed16c7a-7060-4343-8762-1822c20e7ff4",
+          "save_to_fields": [
+            "AP_LTDSubsAbuse_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "92776ca2-0eef-4b0f-9e41-223884999264",
+          "save_to_fields": [
+            "AP_LTDReturntoWork_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "76ac373a-7caf-43b2-b07b-6c3386145e8f",
+          "save_to_fields": [
+            "AP_LTDOwnOcc_Renewal",
+            "AP_LTDOwnOcc1_Renewal",
+            "AP_LTDOwnOcc2_Renewal",
+            "AP_LTDOwnOcc3_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "c3745bea-befe-4d3e-a07a-f03d8ff28c35",
+          "save_to_fields": [
+            "AP_LTDZeroDayRes_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "867b9df7-86bc-42cf-a746-30cabbf3201a",
+          "save_to_fields": [
+            "AP_LTDPreEx_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "7eaab4fd-7543-483e-bf01-1d3cedff8271",
+          "save_to_fields": [
+            "AP_LTDEmpCon_Renewal",
+            "AP_LTDEmpCon1_Renewal",
+            "AP_LTDEmpCon2_Renewal",
+            "AP_LTDEmpCon3_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "5f6e8b94-84f2-432f-be9a-ec443bd7ef19",
+          "save_to_fields": [
+            "AP_LTDPartReq_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "2dffb5d4-f4dc-4f58-bd6f-fec2c1192589",
+          "save_to_fields": [
+            "AP_LTDRateGuar_Renewal",
+            "AP_LTDRatePer_Renewal",
+            "AP_LTDRate_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "1323c116-4df7-4801-85e0-d50802b17108",
+          "save_to_fields": [
+            "AP_LTDEstMonVol_Renewal",
+            "AP_LTDMonPrem_Renewal",
+            "AP_LTDAnnPrem_Renewal",
+            "AP_LTDPerChange_Renewal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "667545e6-e631-410d-ab75-cc6ee5004408",
+      "variant_name": "Alternative Plan 1",
+      "file_sources": [
+        "FileUpload7"
+      ],
+      "group_variants": [
+        {
+          "question_group_id": "8a5d2339-05c1-4493-b612-7ad7842807d8",
+          "save_to_fields": [
+            "AP_LTDElig_AP1",
+            "AP_LTDElig1_AP1",
+            "AP_LTDElig2_AP1",
+            "AP_LTDElig3_AP1"
+          ]
+        },
+        {
+          "question_group_id": "bb904095-6d80-4e62-8164-cb79343ba50f",
+          "save_to_fields": [
+            "AP_LTDElimPeriod_AP1"
+          ]
+        },
+        {
+          "question_group_id": "d736b1d1-0bce-40d8-97a2-360cfbce2c5e",
+          "save_to_fields": [
+            "AP_LTDBenefitAmount_AP1",
+            "AP_LTDBenefitAmount1_AP1",
+            "AP_LTDBenefitAmount2_AP1",
+            "AP_LTDBenefitAmount3_AP1"
+          ]
+        },
+        {
+          "question_group_id": "93862e9f-df5b-44d5-872e-c9b9b6fb0a7e",
+          "save_to_fields": [
+            "AP_LTDMinMonthBen_AP1"
+          ]
+        },
+        {
+          "question_group_id": "8c6411df-6ef8-4f9c-b8e2-f43ec54b65f3",
+          "save_to_fields": [
+            "AP_LTDMaxMonBen_AP1",
+            "AP_LTDMaxMonBen1_AP1",
+            "AP_LTDMaxMonBen2_AP1",
+            "AP_LTDMaxMonBen3_AP1"
+          ]
+        },
+        {
+          "question_group_id": "8719f3f8-900a-447e-9c1d-1df31d73e022",
+          "save_to_fields": [
+            "AP_LTDMaxBenDur_AP1",
+            "AP_LTDMaxBenDur1_AP1",
+            "AP_LTDMaxBenDur2_AP1",
+            "AP_LTDMaxBenDur3_AP1"
+          ]
+        },
+        {
+          "question_group_id": "a6927381-eff5-488f-bb8e-b2efb83dd9ec",
+          "save_to_fields": [
+            "AP_LTDDefDisab_AP1"
+          ]
+        },
+        {
+          "question_group_id": "db3db225-b90d-4d65-a3f2-769a66d2caa8",
+          "save_to_fields": [
+            "AP_LTDPartialDis_AP1"
+          ]
+        },
+        {
+          "question_group_id": "8d135ad4-e6d7-445e-88c6-d0a36ae58cc5",
+          "save_to_fields": [
+            "AP_LTDGainfulEarnTrust_AP1"
+          ]
+        },
+        {
+          "question_group_id": "1fdbc0d1-3af1-4930-bbf0-7b2f1e30c800",
+          "save_to_fields": [
+            "AP_LTDSelfReport_AP1"
+          ]
+        },
+        {
+          "question_group_id": "bddbd3f0-572f-4c3f-b590-eb638f4db64c",
+          "save_to_fields": [
+            "AP_LTDMentalIllness_AP1"
+          ]
+        },
+        {
+          "question_group_id": "0ed16c7a-7060-4343-8762-1822c20e7ff4",
+          "save_to_fields": [
+            "AP_LTDSubsAbuse_AP1"
+          ]
+        },
+        {
+          "question_group_id": "92776ca2-0eef-4b0f-9e41-223884999264",
+          "save_to_fields": [
+            "AP_LTDReturntoWork_AP1"
+          ]
+        },
+        {
+          "question_group_id": "76ac373a-7caf-43b2-b07b-6c3386145e8f",
+          "save_to_fields": [
+            "AP_LTDOwnOcc_AP1",
+            "AP_LTDOwnOcc1_AP1",
+            "AP_LTDOwnOcc2_AP1",
+            "AP_LTDOwnOcc3_AP1"
+          ]
+        },
+        {
+          "question_group_id": "c3745bea-befe-4d3e-a07a-f03d8ff28c35",
+          "save_to_fields": [
+            "AP_LTDZeroDayRes_AP1"
+          ]
+        },
+        {
+          "question_group_id": "867b9df7-86bc-42cf-a746-30cabbf3201a",
+          "save_to_fields": [
+            "AP_LTDPreEx_AP1"
+          ]
+        },
+        {
+          "question_group_id": "7eaab4fd-7543-483e-bf01-1d3cedff8271",
+          "save_to_fields": [
+            "AP_LTDEmpCon_AP1",
+            "AP_LTDEmpCon1_AP1",
+            "AP_LTDEmpCon2_AP1",
+            "AP_LTDEmpCon3_AP1"
+          ]
+        },
+        {
+          "question_group_id": "5f6e8b94-84f2-432f-be9a-ec443bd7ef19",
+          "save_to_fields": [
+            "AP_LTDPartReq_AP1"
+          ]
+        },
+        {
+          "question_group_id": "2dffb5d4-f4dc-4f58-bd6f-fec2c1192589",
+          "save_to_fields": [
+            "AP_LTDRateGuar_AP1",
+            "AP_LTDRatePer_AP1",
+            "AP_LTDRate_AP1"
+          ]
+        },
+        {
+          "question_group_id": "1323c116-4df7-4801-85e0-d50802b17108",
+          "save_to_fields": [
+            "AP_LTDEstMonVol_AP1",
+            "AP_LTDMonPrem_AP1",
+            "AP_LTDAnnPrem_AP1",
+            "AP_LTDPerChange_AP1"
+          ]
+        },
+        {
+          "question_group_id": "732fa489-db15-4bfc-811b-ea9d6ee5e50e",
+          "save_to_fields": [
+            "AP_LTDCarrier_AP1",
+            "AP_LTDPlanSummary_AP1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "39c95e5b-0839-4bd2-8b02-f522ca00120e",
+      "variant_name": "Alternative Plan 2",
+      "file_sources": [
+        "FileUpload8"
+      ],
+      "group_variants": [
+        {
+          "question_group_id": "732fa489-db15-4bfc-811b-ea9d6ee5e50e",
+          "save_to_fields": [
+            "AP_LTDCarrier_AP2",
+            "AP_LTDPlanSummary_AP2"
+          ]
+        },
+        {
+          "question_group_id": "8a5d2339-05c1-4493-b612-7ad7842807d8",
+          "save_to_fields": [
+            "AP_LTDElig_AP2",
+            "AP_LTDElig1_AP2",
+            "AP_LTDElig2_AP2",
+            "AP_LTDElig3_AP2"
+          ]
+        },
+        {
+          "question_group_id": "bb904095-6d80-4e62-8164-cb79343ba50f",
+          "save_to_fields": [
+            "AP_LTDElimPeriod_AP2"
+          ]
+        },
+        {
+          "question_group_id": "d736b1d1-0bce-40d8-97a2-360cfbce2c5e",
+          "save_to_fields": [
+            "AP_LTDBenefitAmount_AP2",
+            "AP_LTDBenefitAmount1_AP2",
+            "AP_LTDBenefitAmount2_AP2",
+            "AP_LTDBenefitAmount3_AP2"
+          ]
+        },
+        {
+          "question_group_id": "93862e9f-df5b-44d5-872e-c9b9b6fb0a7e",
+          "save_to_fields": [
+            "AP_LTDMinMonthBen_AP2"
+          ]
+        },
+        {
+          "question_group_id": "8c6411df-6ef8-4f9c-b8e2-f43ec54b65f3",
+          "save_to_fields": [
+            "AP_LTDMaxMonBen_AP2",
+            "AP_LTDMaxMonBen1_AP2",
+            "AP_LTDMaxMonBen2_AP2",
+            "AP_LTDMaxMonBen3_AP2"
+          ]
+        },
+        {
+          "question_group_id": "8719f3f8-900a-447e-9c1d-1df31d73e022",
+          "save_to_fields": [
+            "AP_LTDMaxBenDur_AP2",
+            "AP_LTDMaxBenDur1_AP2",
+            "AP_LTDMaxBenDur2_AP2",
+            "AP_LTDMaxBenDur3_AP2"
+          ]
+        },
+        {
+          "question_group_id": "a6927381-eff5-488f-bb8e-b2efb83dd9ec",
+          "save_to_fields": [
+            "AP_LTDDefDisab_AP2"
+          ]
+        },
+        {
+          "question_group_id": "db3db225-b90d-4d65-a3f2-769a66d2caa8",
+          "save_to_fields": [
+            "AP_LTDPartialDis_AP2"
+          ]
+        },
+        {
+          "question_group_id": "8d135ad4-e6d7-445e-88c6-d0a36ae58cc5",
+          "save_to_fields": [
+            "AP_LTDGainfulEarnTrust_AP2"
+          ]
+        },
+        {
+          "question_group_id": "1fdbc0d1-3af1-4930-bbf0-7b2f1e30c800",
+          "save_to_fields": [
+            "AP_LTDSelfReport_AP2"
+          ]
+        },
+        {
+          "question_group_id": "bddbd3f0-572f-4c3f-b590-eb638f4db64c",
+          "save_to_fields": [
+            "AP_LTDMentalIllness_AP2"
+          ]
+        },
+        {
+          "question_group_id": "0ed16c7a-7060-4343-8762-1822c20e7ff4",
+          "save_to_fields": [
+            "AP_LTDSubsAbuse_AP2"
+          ]
+        },
+        {
+          "question_group_id": "92776ca2-0eef-4b0f-9e41-223884999264",
+          "save_to_fields": [
+            "AP_LTDReturntoWork_AP2"
+          ]
+        },
+        {
+          "question_group_id": "76ac373a-7caf-43b2-b07b-6c3386145e8f",
+          "save_to_fields": [
+            "AP_LTDOwnOcc_AP2",
+            "AP_LTDOwnOcc1_AP2",
+            "AP_LTDOwnOcc2_AP2",
+            "AP_LTDOwnOcc3_AP2"
+          ]
+        },
+        {
+          "question_group_id": "c3745bea-befe-4d3e-a07a-f03d8ff28c35",
+          "save_to_fields": [
+            "AP_LTDZeroDayRes_AP2"
+          ]
+        },
+        {
+          "question_group_id": "867b9df7-86bc-42cf-a746-30cabbf3201a",
+          "save_to_fields": [
+            "AP_LTDPreEx_AP2"
+          ]
+        },
+        {
+          "question_group_id": "7eaab4fd-7543-483e-bf01-1d3cedff8271",
+          "save_to_fields": [
+            "AP_LTDEmpCon_AP2",
+            "AP_LTDEmpCon1_AP2",
+            "AP_LTDEmpCon2_AP2",
+            "AP_LTDEmpCon3_AP2"
+          ]
+        },
+        {
+          "question_group_id": "5f6e8b94-84f2-432f-be9a-ec443bd7ef19",
+          "save_to_fields": [
+            "AP_LTDPartReq_AP2"
+          ]
+        },
+        {
+          "question_group_id": "2dffb5d4-f4dc-4f58-bd6f-fec2c1192589",
+          "save_to_fields": [
+            "AP_LTDRateGuar_AP2",
+            "AP_LTDRatePer_AP2",
+            "AP_LTDRate_AP2"
+          ]
+        },
+        {
+          "question_group_id": "1323c116-4df7-4801-85e0-d50802b17108",
+          "save_to_fields": [
+            "AP_LTDEstMonVol_AP2",
+            "AP_LTDMonPrem_AP2",
+            "AP_LTDAnnPrem_AP2",
+            "AP_LTDPerChange_AP2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1d430c87-e0d6-437e-802c-64c7e4ac863b",
+      "variant_name": "Alternative Plan 3",
+      "file_sources": [
+        "FileUpload9"
+      ],
+      "group_variants": [
+        {
+          "question_group_id": "1323c116-4df7-4801-85e0-d50802b17108",
+          "save_to_fields": [
+            "AP_LTDEstMonVol_AP3",
+            "AP_LTDMonPrem_AP3",
+            "AP_LTDAnnPrem_AP3",
+            "AP_LTDPerChange_AP3"
+          ]
+        },
+        {
+          "question_group_id": "867b9df7-86bc-42cf-a746-30cabbf3201a",
+          "save_to_fields": [
+            "AP_LTDPreEx_AP3"
+          ]
+        },
+        {
+          "question_group_id": "732fa489-db15-4bfc-811b-ea9d6ee5e50e",
+          "save_to_fields": [
+            "AP_LTDCarrier_AP3",
+            "AP_LTDPlanSummary_AP3"
+          ]
+        },
+        {
+          "question_group_id": "8a5d2339-05c1-4493-b612-7ad7842807d8",
+          "save_to_fields": [
+            "AP_LTDElig_AP3",
+            "AP_LTDElig1_AP3",
+            "AP_LTDElig2_AP3",
+            "AP_LTDElig3_AP3"
+          ]
+        },
+        {
+          "question_group_id": "bb904095-6d80-4e62-8164-cb79343ba50f",
+          "save_to_fields": [
+            "AP_LTDElimPeriod_AP3"
+          ]
+        },
+        {
+          "question_group_id": "d736b1d1-0bce-40d8-97a2-360cfbce2c5e",
+          "save_to_fields": [
+            "AP_LTDBenefitAmount_AP3",
+            "AP_LTDBenefitAmount1_AP3",
+            "AP_LTDBenefitAmount2_AP3",
+            "AP_LTDBenefitAmount3_AP3"
+          ]
+        },
+        {
+          "question_group_id": "93862e9f-df5b-44d5-872e-c9b9b6fb0a7e",
+          "save_to_fields": [
+            "AP_LTDMinMonthBen_AP3"
+          ]
+        },
+        {
+          "question_group_id": "8c6411df-6ef8-4f9c-b8e2-f43ec54b65f3",
+          "save_to_fields": [
+            "AP_LTDMaxMonBen_AP3",
+            "AP_LTDMaxMonBen1_AP3",
+            "AP_LTDMaxMonBen2_AP3",
+            "AP_LTDMaxMonBen3_AP3"
+          ]
+        },
+        {
+          "question_group_id": "8719f3f8-900a-447e-9c1d-1df31d73e022",
+          "save_to_fields": [
+            "AP_LTDMaxBenDur_AP3",
+            "AP_LTDMaxBenDur1_AP3",
+            "AP_LTDMaxBenDur2_AP3",
+            "AP_LTDMaxBenDur3_AP3"
+          ]
+        },
+        {
+          "question_group_id": "a6927381-eff5-488f-bb8e-b2efb83dd9ec",
+          "save_to_fields": [
+            "AP_LTDDefDisab_AP3"
+          ]
+        },
+        {
+          "question_group_id": "db3db225-b90d-4d65-a3f2-769a66d2caa8",
+          "save_to_fields": [
+            "AP_LTDPartialDis_AP3"
+          ]
+        },
+        {
+          "question_group_id": "8d135ad4-e6d7-445e-88c6-d0a36ae58cc5",
+          "save_to_fields": [
+            "AP_LTDGainfulEarnTrust_AP3"
+          ]
+        },
+        {
+          "question_group_id": "1fdbc0d1-3af1-4930-bbf0-7b2f1e30c800",
+          "save_to_fields": [
+            "AP_LTDSelfReport_AP3"
+          ]
+        },
+        {
+          "question_group_id": "bddbd3f0-572f-4c3f-b590-eb638f4db64c",
+          "save_to_fields": [
+            "AP_LTDMentalIllness_AP3"
+          ]
+        },
+        {
+          "question_group_id": "0ed16c7a-7060-4343-8762-1822c20e7ff4",
+          "save_to_fields": [
+            "AP_LTDSubsAbuse_AP3"
+          ]
+        },
+        {
+          "question_group_id": "92776ca2-0eef-4b0f-9e41-223884999264",
+          "save_to_fields": [
+            "AP_LTDReturntoWork_AP3"
+          ]
+        },
+        {
+          "question_group_id": "76ac373a-7caf-43b2-b07b-6c3386145e8f",
+          "save_to_fields": [
+            "AP_LTDOwnOcc_AP3",
+            "AP_LTDOwnOcc1_AP3",
+            "AP_LTDOwnOcc2_AP3",
+            "AP_LTDOwnOcc3_AP3"
+          ]
+        },
+        {
+          "question_group_id": "c3745bea-befe-4d3e-a07a-f03d8ff28c35",
+          "save_to_fields": [
+            "AP_LTDZeroDayRes_AP3"
+          ]
+        },
+        {
+          "question_group_id": "7eaab4fd-7543-483e-bf01-1d3cedff8271",
+          "save_to_fields": [
+            "AP_LTDEmpCon_AP3",
+            "AP_LTDEmpCon1_AP3",
+            "AP_LTDEmpCon2_AP3",
+            "AP_LTDEmpCon3_AP3"
+          ]
+        },
+        {
+          "question_group_id": "5f6e8b94-84f2-432f-be9a-ec443bd7ef19",
+          "save_to_fields": [
+            "AP_LTDPartReq_AP3"
+          ]
+        },
+        {
+          "question_group_id": "2dffb5d4-f4dc-4f58-bd6f-fec2c1192589",
+          "save_to_fields": [
+            "AP_LTDRateGuar_AP3",
+            "AP_LTDRatePer_AP3",
+            "AP_LTDRate_AP3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8f3a5ea7-6908-48ad-befa-a698333f6d84",
+      "variant_name": "Alternative Plan 4",
+      "file_sources": [
+        "FileUpload10"
+      ],
+      "group_variants": [
+        {
+          "question_group_id": "732fa489-db15-4bfc-811b-ea9d6ee5e50e",
+          "save_to_fields": [
+            "AP_LTDCarrier_AP4",
+            "AP_LTDPlanSummary_AP4"
+          ]
+        },
+        {
+          "question_group_id": "8a5d2339-05c1-4493-b612-7ad7842807d8",
+          "save_to_fields": [
+            "AP_LTDElig_AP4",
+            "AP_LTDElig1_AP4",
+            "AP_LTDElig2_AP4",
+            "AP_LTDElig3_AP4"
+          ]
+        },
+        {
+          "question_group_id": "bb904095-6d80-4e62-8164-cb79343ba50f",
+          "save_to_fields": [
+            "AP_LTDElimPeriod_AP4"
+          ]
+        },
+        {
+          "question_group_id": "d736b1d1-0bce-40d8-97a2-360cfbce2c5e",
+          "save_to_fields": [
+            "AP_LTDBenefitAmount_AP4",
+            "AP_LTDBenefitAmount1_AP4",
+            "AP_LTDBenefitAmount2_AP4",
+            "AP_LTDBenefitAmount3_AP4"
+          ]
+        },
+        {
+          "question_group_id": "93862e9f-df5b-44d5-872e-c9b9b6fb0a7e",
+          "save_to_fields": [
+            "AP_LTDMinMonthBen_AP4"
+          ]
+        },
+        {
+          "question_group_id": "8c6411df-6ef8-4f9c-b8e2-f43ec54b65f3",
+          "save_to_fields": [
+            "AP_LTDMaxMonBen_AP4",
+            "AP_LTDMaxMonBen1_AP4",
+            "AP_LTDMaxMonBen2_AP4",
+            "AP_LTDMaxMonBen3_AP4"
+          ]
+        },
+        {
+          "question_group_id": "8719f3f8-900a-447e-9c1d-1df31d73e022",
+          "save_to_fields": [
+            "AP_LTDMaxBenDur_AP4",
+            "AP_LTDMaxBenDur1_AP4",
+            "AP_LTDMaxBenDur2_AP4",
+            "AP_LTDMaxBenDur3_AP4"
+          ]
+        },
+        {
+          "question_group_id": "a6927381-eff5-488f-bb8e-b2efb83dd9ec",
+          "save_to_fields": [
+            "AP_LTDDefDisab_AP4"
+          ]
+        },
+        {
+          "question_group_id": "db3db225-b90d-4d65-a3f2-769a66d2caa8",
+          "save_to_fields": [
+            "AP_LTDPartialDis_AP4"
+          ]
+        },
+        {
+          "question_group_id": "8d135ad4-e6d7-445e-88c6-d0a36ae58cc5",
+          "save_to_fields": [
+            "AP_LTDGainfulEarnTrust_AP4"
+          ]
+        },
+        {
+          "question_group_id": "1fdbc0d1-3af1-4930-bbf0-7b2f1e30c800",
+          "save_to_fields": [
+            "AP_LTDSelfReport_AP4"
+          ]
+        },
+        {
+          "question_group_id": "bddbd3f0-572f-4c3f-b590-eb638f4db64c",
+          "save_to_fields": [
+            "AP_LTDMentalIllness_AP4"
+          ]
+        },
+        {
+          "question_group_id": "0ed16c7a-7060-4343-8762-1822c20e7ff4",
+          "save_to_fields": [
+            "AP_LTDSubsAbuse_AP4"
+          ]
+        },
+        {
+          "question_group_id": "92776ca2-0eef-4b0f-9e41-223884999264",
+          "save_to_fields": [
+            "AP_LTDReturntoWork_AP4"
+          ]
+        },
+        {
+          "question_group_id": "76ac373a-7caf-43b2-b07b-6c3386145e8f",
+          "save_to_fields": [
+            "AP_LTDOwnOcc_AP4",
+            "AP_LTDOwnOcc1_AP4",
+            "AP_LTDOwnOcc2_AP4",
+            "AP_LTDOwnOcc3_AP4"
+          ]
+        },
+        {
+          "question_group_id": "c3745bea-befe-4d3e-a07a-f03d8ff28c35",
+          "save_to_fields": [
+            "AP_LTDZeroDayRes_AP4"
+          ]
+        },
+        {
+          "question_group_id": "867b9df7-86bc-42cf-a746-30cabbf3201a",
+          "save_to_fields": [
+            "AP_LTDPreEx_AP4"
+          ]
+        },
+        {
+          "question_group_id": "7eaab4fd-7543-483e-bf01-1d3cedff8271",
+          "save_to_fields": [
+            "AP_LTDEmpCon_AP4",
+            "AP_LTDEmpCon1_AP4",
+            "AP_LTDEmpCon2_AP4",
+            "AP_LTDEmpCon3_AP4"
+          ]
+        },
+        {
+          "question_group_id": "5f6e8b94-84f2-432f-be9a-ec443bd7ef19",
+          "save_to_fields": [
+            "AP_LTDPartReq_AP4"
+          ]
+        },
+        {
+          "question_group_id": "2dffb5d4-f4dc-4f58-bd6f-fec2c1192589",
+          "save_to_fields": [
+            "AP_LTDRateGuar_AP4",
+            "AP_LTDRatePer_AP4",
+            "AP_LTDRate_AP4"
+          ]
+        },
+        {
+          "question_group_id": "1323c116-4df7-4801-85e0-d50802b17108",
+          "save_to_fields": [
+            "AP_LTDEstMonVol_AP4",
+            "AP_LTDMonPrem_AP4",
+            "AP_LTDAnnPrem_AP4",
+            "AP_LTDPerChange_AP4"
+          ]
+        }
+      ]
+    }
+  ]
+}

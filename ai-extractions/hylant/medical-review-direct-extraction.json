@@ -1711,7 +1711,31 @@
       "file_sources": [
         "FileUpload2"
       ],
-      "group_variants": []
+      "group_variants": [
+        {
+          "question_group_id": "3dec6a7b-949e-41d1-b791-7572d180e73c",
+          "save_to_fields": [
+            "DR_MRates_F2"
+          ]
+        },
+        {
+          "question_group_id": "c19d0e76-43a0-4c15-9dd7-0c910dd4363a",
+          "save_to_fields": [
+            "DR_MEffectiveDates_F2"
+          ]
+        },
+        {
+          "question_group_id": "74b208c3-255f-453d-b9e4-203f9cf2d0e1",
+          "save_to_fields": [
+            "DR_MEligibilityRules_F2",
+            "DR_MStudentAgeStatus_F2",
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
     },
     {
       "id": "635e29b1-fdd0-4a15-8914-92008c9e7d58",

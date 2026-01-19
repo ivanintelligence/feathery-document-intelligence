@@ -28,7 +28,7 @@
         "skip_ai_page_filter": false,
         "page_filter_start": null,
         "page_filter_end": null,
-        "group_name": null,
+        "group_name": "Eligibility Language",
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
@@ -71,7 +71,7 @@
         "skip_ai_page_filter": false,
         "page_filter_start": null,
         "page_filter_end": null,
-        "group_name": null,
+        "group_name": "Termination Provision",
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
@@ -114,7 +114,7 @@
         "skip_ai_page_filter": false,
         "page_filter_start": null,
         "page_filter_end": null,
-        "group_name": null,
+        "group_name": "Partial Disability Definition",
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
@@ -157,7 +157,7 @@
         "skip_ai_page_filter": false,
         "page_filter_start": null,
         "page_filter_end": null,
-        "group_name": null,
+        "group_name": "Disability Definition",
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
@@ -179,7 +179,7 @@
       "entities": [
         {
           "id": "77d48a67-59cb-4c6f-aba4-034aefb20ab8",
-          "entity": "{{prompt5}}",
+          "entity": "{{DR_Lprompt5}}",
           "save_to": "DR_LExclusionLimitationFFQ",
           "type": "",
           "unique": false,
@@ -200,7 +200,7 @@
         "skip_ai_page_filter": false,
         "page_filter_start": null,
         "page_filter_end": null,
-        "group_name": null,
+        "group_name": "Exclusions & Limitations",
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
@@ -216,5 +216,87 @@
       "data_validation_rules": []
     }
   ],
-  "variants": []
+  "variants": [
+    {
+      "id": "6730cec1-014e-443d-9e5f-2be124be7a66",
+      "variant_name": "File 2",
+      "file_sources": [],
+      "group_variants": [
+        {
+          "question_group_id": "94bd95de-5bfa-41c3-a3f4-548a4a834da0",
+          "save_to_fields": ["DR_LEligibilityLanguageFFQ_F2"]
+        },
+        {
+          "question_group_id": "da4a14c1-0c66-4063-8eb8-9394f85f3edc",
+          "save_to_fields": ["DR_LTerminationProvisionFFQ_F2"]
+        },
+        {
+          "question_group_id": "d302acad-537f-4536-8ee6-f467790ef0c0",
+          "save_to_fields": ["DR_LPartialDisabilityDefinitionFFQ_F2"]
+        },
+        {
+          "question_group_id": "2852a729-48b4-4ce9-9501-fb28d68fe72b",
+          "save_to_fields": ["DR_LDisabilityDefinitionFFQ_F2"]
+        },
+        {
+          "question_group_id": "c78e73d9-09cb-4be3-901c-ef446edc9ae7",
+          "save_to_fields": ["DR_LExclusionLimitationFFQ_F2"]
+        }
+      ]
+    },
+    {
+      "id": "d7f1b7c7-8519-46a9-a7e3-158876be1747",
+      "variant_name": "File 3",
+      "file_sources": [],
+      "group_variants": [
+        {
+          "question_group_id": "94bd95de-5bfa-41c3-a3f4-548a4a834da0",
+          "save_to_fields": ["DR_LEligibilityLanguageFFQ_F3"]
+        },
+        {
+          "question_group_id": "da4a14c1-0c66-4063-8eb8-9394f85f3edc",
+          "save_to_fields": ["DR_LTerminationProvisionFFQ_F3"]
+        },
+        {
+          "question_group_id": "d302acad-537f-4536-8ee6-f467790ef0c0",
+          "save_to_fields": ["DR_LPartialDisabilityDefinitionFFQ_F3"]
+        },
+        {
+          "question_group_id": "2852a729-48b4-4ce9-9501-fb28d68fe72b",
+          "save_to_fields": ["DR_LDisabilityDefinitionFFQ_F3"]
+        },
+        {
+          "question_group_id": "c78e73d9-09cb-4be3-901c-ef446edc9ae7",
+          "save_to_fields": ["DR_LExclusionLimitationFFQ_F3"]
+        }
+      ]
+    },
+    {
+      "id": "9abc788b-5541-4db2-b61d-6a41d7af7908",
+      "variant_name": "File 4",
+      "file_sources": [],
+      "group_variants": [
+        {
+          "question_group_id": "94bd95de-5bfa-41c3-a3f4-548a4a834da0",
+          "save_to_fields": ["DR_LEligibilityLanguageFFQ_F4"]
+        },
+        {
+          "question_group_id": "da4a14c1-0c66-4063-8eb8-9394f85f3edc",
+          "save_to_fields": ["DR_LTerminationProvisionFFQ_F4"]
+        },
+        {
+          "question_group_id": "d302acad-537f-4536-8ee6-f467790ef0c0",
+          "save_to_fields": ["DR_LPartialDisabilityDefinitionFFQ_F4"]
+        },
+        {
+          "question_group_id": "2852a729-48b4-4ce9-9501-fb28d68fe72b",
+          "save_to_fields": ["DR_LDisabilityDefinitionFFQ_F4"]
+        },
+        {
+          "question_group_id": "c78e73d9-09cb-4be3-901c-ef446edc9ae7",
+          "save_to_fields": ["DR_LExclusionLimitationFFQ_F4"]
+        }
+      ]
+    }
+  ]
 }

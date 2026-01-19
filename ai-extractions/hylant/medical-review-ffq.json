@@ -28,7 +28,7 @@
         "skip_ai_page_filter": false,
         "page_filter_start": null,
         "page_filter_end": null,
-        "group_name": null,
+        "group_name": "Eligibility Language",
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
@@ -71,7 +71,7 @@
         "skip_ai_page_filter": false,
         "page_filter_start": null,
         "page_filter_end": null,
-        "group_name": null,
+        "group_name": "Termination Provision",
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
@@ -114,7 +114,7 @@
         "skip_ai_page_filter": false,
         "page_filter_start": null,
         "page_filter_end": null,
-        "group_name": null,
+        "group_name": "Exclusions & Limitations",
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
@@ -130,5 +130,25 @@
       "data_validation_rules": []
     }
   ],
-  "variants": []
+  "variants": [
+    {
+      "id": "020a6515-289f-4ca5-948e-044e72413d6c",
+      "variant_name": "File 2",
+      "file_sources": [],
+      "group_variants": [
+        {
+          "question_group_id": "7fdd952f-ab44-46e4-bc13-61375b0788ce",
+          "save_to_fields": [
+            "DR_MEligibilityLanguageFFQ_F2"
+          ]
+        },
+        {
+          "question_group_id": "0a5e116b-942c-47c1-ab14-db762444025c",
+          "save_to_fields": [
+            "DR_MTerminationProvisionFFQ_F2"
+          ]
+        }
+      ]
+    }
+  ]
 }

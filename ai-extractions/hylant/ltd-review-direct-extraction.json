@@ -1596,7 +1596,21 @@
       "file_sources": [
         "FileUpload2"
       ],
-      "group_variants": []
+      "group_variants": [
+        {
+          "question_group_id": "02d6f723-eb73-4de2-886d-8b5d3d0f3cc2",
+          "save_to_fields": [
+            "DR_LRates_F2",
+            "DR_LAgeBandedRateUpdateRule_F2"
+          ]
+        },
+        {
+          "question_group_id": "634bfa44-2855-40eb-ad0a-86807a1cbce0",
+          "save_to_fields": [
+            "DR_LEffectiveDates_F2"
+          ]
+        }
+      ]
     },
     {
       "id": "ceb8e51e-9dab-47b6-949f-cc11ed85860f",

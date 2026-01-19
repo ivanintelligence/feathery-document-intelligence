@@ -22,19 +22,19 @@ const FIELD_CFG_LIST = [
     A: 'DR_LPartialDisabilityDefinitionA',
     store: 'DR_LPartialDisabilityDefinitionQA'
   },
-  // Pre-Existing Conditions Exclusion Q&A
-  {
-    title: 'Pre-Existing Conditions Exclusion Q&A',
-    Q: 'DR_LPreExistingConditionsExclusionQ',
-    A: 'DR_LPreExistingConditionsExclusionA',
-    store: 'DR_LPreExistingConditionsExclusionQA'
-  },
   // Definition of Disability Q&A
   {
     title: 'Definition of Disability Q&A',
     Q: 'DR_LDisabilityDefinitionQ',
     A: 'DR_LDisabilityDefinitionA',
     store: 'DR_LDisabilityDefinitionQA'
+  },
+  // Exclusion Limitation Q&A
+  {
+    title: 'Exclusion Limitation Q&A',
+    Q: 'DR_LExclusionLimitationQ',
+    A: 'DR_LExclusionLimitationA',
+    store: 'DR_LExclusionLimitationQA'
   }
 ];
 

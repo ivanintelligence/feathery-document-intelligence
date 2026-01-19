@@ -7,7 +7,7 @@
       "entities": [
         {
           "id": "dff5c90d-2ee6-407e-9f40-2959514ac372",
-          "entity": "<GROUND_RULES>\nUse ONLY the explicit Q&A in context. No assumptions. If missing, write Null.\n\nOutput EXACTLY 2 lines:\nEE: <hrs/week>, <waiting>, <1st-of-month trigger>, <active-at-work>\nRehire: <days window>\n\nEE must include: minimum hrs/week, waiting period, effective date trigger (1st of month after eligibility), and active-at-work gating (coverage delayed until return).\nRehire must be: reinstatement/rehire window (days) without new waiting period; prefer 90 days if stated, else next explicit days, else Null.\n\nTelegram fragments only. Prefer numbers/timing. No fluff. Commas only; no line breaks within a line.\n</GROUND_RULES>\n\nEligibility Language Q&A:\n<CONTEXT>\n{{DR_LEligibilityLanguageQA}}\n</CONTEXT>\n\n<QUESTIONS>\nProduce the required 2-line output.\n</QUESTIONS>\n\n<EXAMPLES>\nEE: 35 hrs/week, 30-day active work, 1st of month after eligibility, actively at work\nRehire: 90 days\n</EXAMPLES>",
+          "entity": "<GROUND_RULES>\nUse ONLY the explicit context provided. No assumptions or external policy knowledge.\nIf missing, write Null.\n\nOutput EXACTLY 2 lines:\nEE: <hrs/week>, <waiting>, <1st-of-month trigger>, <active-at-work>\nRehire: <days window>\n\nEE must include: minimum hrs/week, waiting period, effective date trigger (1st of month after eligibility), and active-at-work gating (coverage delayed until return).\nRehire must be: reinstatement/rehire window (days) without new waiting period; prefer 90 days if stated, else next explicit days, else Null.\n\nTelegram fragments only. Prefer numbers/timing. No fluff. Commas only; no line breaks within a line.\n</GROUND_RULES>\n\nEligibility Language Q&A:\n<CONTEXT>\n{{DR_LEligibilityLanguageQA}}\n</CONTEXT>\n\n<QUESTIONS>\nProduce the required 2-line output.\n</QUESTIONS>\n\n<EXAMPLES>\nEE: 35 hrs/week, 30-day active work, 1st of month after eligibility, actively at work\nRehire: 90 days\n</EXAMPLES>",
           "save_to": "DR_LEligibilityLanguageFFQ",
           "type": "",
           "unique": false,
@@ -50,51 +50,8 @@
       "entities": [
         {
           "id": "7a7b5208-bd39-4787-8ec9-02d07643315c",
-          "entity": "<GROUND_RULES>\nUse ONLY the explicit extracted context. No assumptions.\nIf termination timing cannot be determined explicitly, output Null (by itself).\n\nOutput EXACTLY one line:\nCoverage terminates <timing>\nOR\nNull\n\nWhere <timing> is the shortest explicit timing phrase tied to employee coverage ending\n(e.g., date of employment termination, end of month of employment termination, last day worked).\n\nSelection:\n- If an employment-termination timing phrase exists (employment termination/last day worked/cessation of employment), use it.\n- Otherwise, use the most direct employee coverage-end timing stated (avoid continuation/exception mechanics).\nTelegram fragments only. No extra triggers list. No fluff.\n</GROUND_RULES>\n\nTermination Provision Q&A:\n<CONTEXT>\n{{DR_LTerminationProvisionQA}}\n</CONTEXT>\n\n<QUESTION>\nReturn the termination timing in the required format. <timing/Null>\n</QUESTION>\n\n<OUTPUT_FORMAT>\nCoverage terminates <timing>\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nCoverage terminates date of employment termination\nCoverage terminates end of month of employment termination\nCoverage terminates last day worked\nNull\n</EXAMPLES>",
+          "entity": "<GROUND_RULES>\nUse ONLY the explicit context provided. No assumptions or external policy knowledge.\nIf termination timing cannot be determined explicitly, output Null.\n\nOutput EXACTLY one line:\nCoverage terminates <timing>\nOR\nNull\n\nWhere <timing> is the shortest explicit timing phrase tied to employee coverage ending\n(e.g., date of employment termination, end of month of employment termination, last day worked).\n\nSelection:\n- If an employment-termination timing phrase exists (employment termination/last day worked/cessation of employment), use it.\n- Otherwise, use the most direct employee coverage-end timing stated (avoid continuation/exception mechanics).\nTelegram fragments only. No extra triggers list. No fluff.\n</GROUND_RULES>\n\nTermination Provision Q&A:\n<CONTEXT>\n{{DR_LTerminationProvisionQA}}\n</CONTEXT>\n\n<QUESTION>\nReturn the termination timing in the required format. <timing/Null>\n</QUESTION>\n\n<OUTPUT_FORMAT>\nCoverage terminates <timing>\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nCoverage terminates date of employment termination\nCoverage terminates end of month of employment termination\nCoverage terminates last day worked\nNull\n</EXAMPLES>",
           "save_to": "DR_LTerminationProvisionFFQ",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        }
-      ],
-      "multi_file_name_field": null,
-      "run_email_mode": "document_only",
-      "toggle_page_question": false,
-      "properties": {
-        "limit_relevant_pages": null,
-        "single_occurrence": false,
-        "skip_ai_page_filter": false,
-        "page_filter_start": null,
-        "page_filter_end": null,
-        "group_name": null,
-        "page_filter_query": null,
-        "enable_tool_usage": false,
-        "tools": {
-          "web": false,
-          "date": true,
-          "math": false
-        },
-        "table_filter": null,
-        "sheet_filter": null,
-        "page_limit": null,
-        "multiple_occurrences": true
-      },
-      "data_validation_rules": []
-    },
-    {
-      "id": "d302acad-537f-4536-8ee6-f467790ef0c0",
-      "type": "column_value",
-      "details": "",
-      "entities": [
-        {
-          "id": "6ecc2420-e431-4f35-916b-384e2cea1b23",
-          "entity": "<GROUND_RULES>\nBase your response ONLY on the explicit questions and answers provided in the context below.\nDo NOT add assumptions or policy knowledge not stated in the context.\nIf the topic cannot be answered from the provided context, output Null.\nOutput MUST be key findings only (telegram style), NOT a full sentence.\nMAX 12 words total.\nInclude BOTH the definition test AND any partial benefit mechanics (e.g., %BME, benefit+earnings cap/reduction, time trigger) if present.\nNo fluff (avoid “subject to”, “includes”, “may”, “under”).\nUse commas; no line breaks.\n</GROUND_RULES>\n\nDefinition of Partial Disability Q&A:\n<CONTEXT>\n{{DR_LPartialDisabilityDefinitionQA}}\n</CONTEXT>\n\n<QUESTIONS>\nSummarize the Definition of Partial Disability as key findings only. <Key findings/Null>\n</QUESTIONS>\n\n<OUTPUT_FORMAT>\nDefinition of Partial Disability: <key findings>\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nDefinition of Partial Disability: can’t do 1 material duty, earnings ≤99% BME, post-elimination\nDefinition of Partial Disability: partial work allowed, 20% income loss required\n</EXAMPLES>",
-          "save_to": "DR_LPartialDisabilityDefinitionFFQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -130,14 +87,14 @@
       "data_validation_rules": []
     },
     {
-      "id": "c78e73d9-09cb-4be3-901c-ef446edc9ae7",
+      "id": "d302acad-537f-4536-8ee6-f467790ef0c0",
       "type": "column_value",
       "details": "",
       "entities": [
         {
-          "id": "77d48a67-59cb-4c6f-aba4-034aefb20ab8",
-          "entity": "<GROUND_RULES>\nBase your response ONLY on the explicit questions and answers provided in the context below.\nDo NOT add assumptions or policy knowledge not stated in the context.\nIf the topic cannot be answered from the provided context, output Null.\nOutput MUST be key findings only (telegram style), NOT a full sentence.\nMAX 12 words total.\nPrioritize lookback period + exclusion duration + trigger definition (treatment/medication/etc.).\nNo fluff (avoid “subject to”, “includes”, “may”, “under”).\nUse commas; no line breaks.\n</GROUND_RULES>\n\nPre-Existing Conditions Exclusion Q&A:\n<CONTEXT>\n{{DR_LPreExistingConditionsExclusionQA}}\n</CONTEXT>\n\n<QUESTIONS>\nSummarize the Pre-Existing Conditions Exclusion as key findings only. <Key findings/Null>\n</QUESTIONS>\n\n<OUTPUT_FORMAT>\nPre-Existing Conditions Exclusion: <key findings>\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nPre-Existing Conditions Exclusion: 3-month lookback, 12-month exclusion, treatment/advice/meds trigger\nPre-Existing Conditions Exclusion: 6/12 pre-ex, applies to late entrants\n</EXAMPLES>",
-          "save_to": "DR_LPreExistingConditionsExclusionFFQ",
+          "id": "6ecc2420-e431-4f35-916b-384e2cea1b23",
+          "entity": "<GROUND_RULES>\nUse ONLY the explicit context provided. No assumptions or external policy knowledge.\nIf the partial disability approach cannot be determined explicitly, output Null.\n\nOutput EXACTLY ONE line, and ONLY ONE of these values:\nProgressive partial disability\nStandard partial disability\nNull\n\nClassification rules:\n- Output \"Progressive partial disability\" if the context describes partial benefits that vary with earnings (e.g., earnings thresholds like 20%, benefit+earnings cap such as 100% of BME, reduction-by-excess, work incentive formulas, step triggers like “after 2 years,” or max payable % of BME while working).\n- Output \"Standard partial disability\" if the context only defines partial disability eligibility (material duty/income loss) but does NOT describe earnings-integrated benefit formulas/caps/reductions.\n- Output \"Null\" if neither is explicit.\n</GROUND_RULES>\n\nDefinition of Partial Disability Q&A:\n<CONTEXT>\n{{DR_LPartialDisabilityDefinitionQA}}\n</CONTEXT>\n\n<QUESTION>\nClassify the partial disability approach. <label/Null>\n</QUESTION>\n\n<EXAMPLES>\nProgressive partial disability\nStandard partial disability\nNull\n</EXAMPLES>",
+          "save_to": "DR_LPartialDisabilityDefinitionFFQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -179,7 +136,7 @@
       "entities": [
         {
           "id": "146882cc-11c9-456c-ac20-3ad2825f51c0",
-          "entity": "<GROUND_RULES>\nBase your response ONLY on the explicit questions and answers provided in the context below.\nDo NOT add assumptions or policy knowledge not stated in the context.\nIf the topic cannot be answered from the provided context, output Null.\nOutput MUST be key findings only (telegram style), NOT a full sentence.\nMAX 12 words total.\nPrioritize own-occ vs any-occ test, duty requirement, earnings threshold, change-over time if explicit.\nNo fluff (avoid “subject to”, “includes”, “may”, “under”).\nUse commas or semicolons; no line breaks.\n</GROUND_RULES>\n\nDefinition of Disability Q&A:\n<CONTEXT>\n{{DR_LDisabilityDefinitionQA}}\n</CONTEXT>\n\n<QUESTIONS>\nSummarize the Definition of Disability as key findings only. <Key findings/Null>\n</QUESTIONS>\n\n<OUTPUT_FORMAT>\nDefinition of Disability: <key findings>\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nDefinition of Disability: own occ + earnings ≤99%, shifts to any gainful occ after 24 months\nDefinition of Disability: unable 1 material duty, then any occupation after 2 years\n</EXAMPLES>",
+          "entity": "<GROUND_RULES>\nUse ONLY the explicit context provided. No assumptions or external policy knowledge.\nIf the required elements are not explicit, output Null.\n\nOutput must be a SHORT label in this format:\nDuties and <loss>% earning loss\nOR\nNull\n\nRules:\n- Output \"Duties\" only if the definition explicitly requires inability to perform material duties (e.g., at least one material duty).\n- Compute <loss>% from an explicit earnings threshold of X% (loss = 100 - X). Example: \"earnings exceed 99%\" => \"1% earning loss\".\n- Ignore own-occ/any-occ transitions and duration language unless needed to find the earnings threshold.\n- Keep wording exactly: \"Duties and <loss>% earning loss\".\n</GROUND_RULES>\n\nDefinition of Disability Q&A:\n<CONTEXT>\n{{DR_LDisabilityDefinitionQA}}\n</CONTEXT>\n\n<QUESTION>\nReturn the label as required. <label/Null>\n</QUESTION>\n\n<EXAMPLES>\nDuties and 1% earning loss\nDuties and 20% earning loss\nNull\n</EXAMPLES>",
           "save_to": "DR_LDisabilityDefinitionFFQ",
           "type": "",
           "unique": false,
@@ -205,7 +162,50 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": true,
+          "date": false,
+          "math": true
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "c78e73d9-09cb-4be3-901c-ef446edc9ae7",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "77d48a67-59cb-4c6f-aba4-034aefb20ab8",
+          "entity": "{{prompt5}}",
+          "save_to": "DR_LExclusionLimitationFFQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
           "math": false
         },
         "table_filter": null,

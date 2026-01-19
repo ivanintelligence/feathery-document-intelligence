@@ -1423,7 +1423,7 @@
     {
       "id": "8849b9d5-8485-4e81-9f63-894bd00872f8",
       "type": "multiple_value",
-      "details": "Extract all questions and answers that define partial disability and related partial/return-to-work mechanics. Capture partial disability definition wording, residual/partial benefits, earnings test or income loss thresholds, return-to-work provisions, recurrent disability/temporary recovery language if it clarifies partial status, and vocational/rehabilitation provisions if explicitly tied to partial benefits.",
+      "details": "Extract all questions/answers or clause/heading + corresponding provision text that define partial disability and how partial benefits work under LTD. Capture the definition test (material duty + earnings threshold + timing), and prioritize any partial benefit mechanics that indicate an earnings-integrated design (e.g., 20% earnings threshold, benefit+earnings cap such as 100% of BME, reduction-by-excess formula, “incentive to work,” step changes like “after 2 years,” and maximum payable percent such as 85% of BME). Include only information explicitly stated.",
       "entities": [
         {
           "id": "62046772-3b78-4ca9-bedf-c8635b5fbdfb",
@@ -1432,7 +1432,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Questions relating to the definition of partial disability / residual / partial benefits / earnings test / return-to-work provisions.",
+          "criteria": "Questions, headings, or clause labels related to partial disability/residual benefits/earnings test/return-to-work and partial benefit calculation (e.g., “Partial Disability,” “Monthly Benefit for Partial Disability,” “Earnings Test,” “Work Incentive”).",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1445,7 +1445,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "The answer corresponding to the partial disability definition question (include thresholds, conditions, and benefit triggers if stated).",
+          "criteria": "The corresponding answer/provision text preserving explicit thresholds and formulas (percent of BME, caps like 100% of BME, reduction rules, timing triggers such as after elimination period or after 2 years).",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1477,65 +1477,9 @@
       "data_validation_rules": []
     },
     {
-      "id": "2233646e-c262-4131-aa9b-07aafdc829c6",
-      "type": "multiple_value",
-      "details": "Extract all questions and answers describing the pre-existing conditions exclusion. Capture lookback period, exclusion duration, definition of pre-existing condition, whether it applies to late entrants, any waiver language, and how it interacts with effective date/eligibility/waiting period if explicitly stated.",
-      "entities": [
-        {
-          "id": "09768416-a319-4625-8b16-fec380d3a6f1",
-          "entity": "Pre-Existing Conditions Exclusion Question",
-          "save_to": "DR_LPreExistingConditionsExclusionQ",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Questions relating to the pre-existing conditions exclusion (lookback, exclusion period, definition, waivers, late entrant rules if stated).",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        },
-        {
-          "id": "dfe59565-966f-43b6-bce2-724169b64c50",
-          "entity": "Pre-Existing Conditions Exclusion Answer",
-          "save_to": "DR_LPreExistingConditionsExclusionA",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "The answer corresponding to pre-existing conditions exclusion questions (include all periods, definitions, and exceptions).",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        }
-      ],
-      "multi_file_name_field": null,
-      "run_email_mode": "document_only",
-      "toggle_page_question": false,
-      "properties": {
-        "limit_relevant_pages": null,
-        "single_occurrence": false,
-        "skip_ai_page_filter": false,
-        "page_filter_start": null,
-        "page_filter_end": null,
-        "group_name": "Pre-Existing Conditions Exclusion Q&A",
-        "page_filter_query": null,
-        "enable_tool_usage": false,
-        "tools": {
-          "web": false,
-          "date": true,
-          "math": false
-        },
-        "table_filter": null,
-        "sheet_filter": null,
-        "page_limit": null,
-        "multiple_occurrences": true
-      },
-      "data_validation_rules": []
-    },
-    {
       "id": "4e6f565c-5657-4251-8e52-b47698e7df33",
       "type": "multiple_value",
-      "details": "Extract all questions and answers defining disability under the LTD policy. Capture own-occupation vs any-occupation language, elimination period linkage if explicitly part of the definition section, partial vs total disability distinctions when explicitly defined here, definition of earnings if directly referenced within the disability definition, and offsets/reductions only if explicitly defined as part of disability qualification.",
+      "details": "Extract questions/answers (or headings/clauses + provision text) that define Disability/Disabled under the LTD policy. Prioritize capturing the duty-based test (e.g., inability to perform material duties) and any earnings-based test (e.g., earnings must not exceed a stated % of pre-disability/basic monthly earnings). Capture any time-based transitions (e.g., after 24 months any occupation) only if explicitly part of the definition.",
       "entities": [
         {
           "id": "290a4510-c7d1-4fa7-bd3f-5b6cca7354d1",
@@ -1544,7 +1488,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Questions relating to the definition of disability (own occ/any occ, qualifying criteria, related definition terms explicitly stated).",
+          "criteria": "Questions/headings/clauses about the definition of Disability/Disabled, especially those stating material duty requirements and any earnings threshold.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1557,7 +1501,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "The answer corresponding to disability definition questions (include the qualifying criteria and any stated transitions/periods).",
+          "criteria": "The corresponding definition text, preserving the duty test and earnings threshold wording/percent exactly.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1574,6 +1518,62 @@
         "page_filter_start": null,
         "page_filter_end": null,
         "group_name": "Definition of Disability Q&A",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "2233646e-c262-4131-aa9b-07aafdc829c6",
+      "type": "multiple_value",
+      "details": "Extract the document’s Exclusions & Limitations language for LTD and capture evidence for five high-priority exclusions/limitations. First, identify whether a dedicated exclusions/limitations section exists and extract the heading and the verbatim text that belongs to that section (bullets/paragraphs/table rows) until the next major section break. Then, specifically locate and extract the exact wording (verbatim) for each targeted item if present: Pre-Existing Condition exclusion (include timeframes like 3/12, 3/6/12, etc.), Mental Health & Substance Use Disorder limitation/exclusion (include months if limited), Self-reported symptoms limitation/exclusion (include months if limited), Self-inflicted injury exclusion (present/not), and On-the-job injury/work-related injury exclusion (present/not). Do not infer; extract only explicit text.",
+      "entities": [
+        {
+          "id": "09768416-a319-4625-8b16-fec380d3a6f1",
+          "entity": "Exclusions & Limitations Question",
+          "save_to": "DR_LExclusionLimitationQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the exact question text if the document is in Q&A form; otherwise extract the closest relevant section heading or subheading verbatim (e.g., “Exclusions,” “Limitations,” “Exclusions and Limitations,” “What’s Not Covered,” “General Exclusions,” “Limitations”). If extracting targeted items, use the closest heading/subheading that introduces that item (e.g., “Pre-Existing Condition Limitation,” “Mental Disorders Limitation,” “Self-Reported Symptoms,” “Self-Inflicted Injury,” “Work-Related Injury”).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "dfe59565-966f-43b6-bce2-724169b64c50",
+          "entity": "Exclusions & Limitations Answer",
+          "save_to": "DR_LExclusionLimitationA",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the verbatim text under the identified heading/question that contains the exclusions/limitations language. Include the full relevant clause(s) for the overall exclusions/limitations section and for each targeted item when found. Preserve timeframes (lookback/exclusion durations), month limits, definitions, and qualifiers exactly as written. If the section is long, capture the complete list content up to the next major section break; if that is not possible, capture the most complete continuous excerpt that contains the full exclusion list. Do not summarize; do not infer.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Exclusions & Limitations Q&A",
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {

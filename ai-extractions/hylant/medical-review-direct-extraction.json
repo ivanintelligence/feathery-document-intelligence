@@ -1708,48 +1708,506 @@
     {
       "id": "dd45dccf-6b9a-4ae8-8d40-360cd4b154d7",
       "variant_name": "File 2",
-      "file_sources": [
-        "FileUpload2"
-      ],
+      "file_sources": ["FileUpload2"],
       "group_variants": [
         {
           "question_group_id": "3dec6a7b-949e-41d1-b791-7572d180e73c",
-          "save_to_fields": [
-            "DR_MRates_F2"
-          ]
+          "save_to_fields": ["DR_MRates_F2"]
         },
         {
           "question_group_id": "c19d0e76-43a0-4c15-9dd7-0c910dd4363a",
-          "save_to_fields": [
-            "DR_MEffectiveDates_F2"
-          ]
+          "save_to_fields": ["DR_MEffectiveDates_F2"]
         },
         {
           "question_group_id": "74b208c3-255f-453d-b9e4-203f9cf2d0e1",
           "save_to_fields": [
             "DR_MEligibilityRules_F2",
             "DR_MStudentAgeStatus_F2",
-            null,
-            null,
-            null,
-            null
+            "DR_MDomesticPartnersCommonLaw_F2",
+            "DR_MSpouse_F2",
+            "DR_MDependentChildren_F2",
+            "DR_MWaitingPeriodRules_F2"
           ]
+        },
+        {
+          "question_group_id": "ae14df21-5870-46b5-b665-e7d05bad7c40",
+          "save_to_fields": [
+            "DR_MIndividualDeductibleNetworkNonNetwork_F2",
+            "DR_MFamilyDeductibleNetworkNonNetwork_F2",
+            "DR_MEmbeddedOrAggregateDeductible_F2",
+            "DR_MCalendarYearOrPlanYearDeductibleAccumulation_F2"
+          ]
+        },
+        {
+          "question_group_id": "442948bd-3c7b-4a23-8939-82b0440c3746",
+          "save_to_fields": [
+            "DR_MCoinsuranceNetworkNonNetwork_F2",
+            "DR_MIndividualCoinsuranceMaximumNetworkNonNetwork_F2",
+            "DR_MFamilyCoinsuranceMaximumNetworkNonNetwork_F2"
+          ]
+        },
+        {
+          "question_group_id": "2ab73901-198a-463e-bf2c-30f9bff67fae",
+          "save_to_fields": [
+            "DR_MIndividualOutOfPocketMaximumNetworkNonNetwork_F2",
+            "DR_MFamilyOutOfPocketMaximumNetworkNonNetwork_F2"
+          ]
+        },
+        {
+          "question_group_id": "a298a4b5-460a-4152-aa33-a218f6ee4fb1",
+          "save_to_fields": [
+            "DR_MPrimaryCarePhysicianOfficeVisitCopayment_F2",
+            "DR_MSpecialistOfficeVisitCopayment_F2",
+            "DR_MTelehealthServicesCopayment_F2",
+            "DR_MVirtualVisits_F2"
+          ]
+        },
+        {
+          "question_group_id": "d4977518-9b5b-424d-8005-21d107219183",
+          "save_to_fields": ["DR_MUrgentCareCopayment_F2", "DR_MEmergencyRoomCopayment_F2"]
+        },
+        {
+          "question_group_id": "cddbd923-2b1a-489d-9901-d3b79f613bf2",
+          "save_to_fields": ["DR_MLabDiagnostic_F2", "DR_MImagingCopayMRICtScan_F2"]
+        },
+        {
+          "question_group_id": "30b8fd14-3eb8-4daa-ac6b-dd9f8960ff79",
+          "save_to_fields": ["DR_MInpatientHospitalCopayment_F2", "DR_MOutpatientServices_F2"]
+        },
+        {
+          "question_group_id": "1bd7e17e-4553-495c-9144-4aac65203745",
+          "save_to_fields": ["DR_MPrescriptionDrugBenefit_F2"]
+        },
+        {
+          "question_group_id": "de2478d1-8fda-46cc-b446-0f03f1808999",
+          "save_to_fields": ["DR_MMentalHealthSubstanceAbuseCoverage_F2"]
+        },
+        {
+          "question_group_id": "8ee3e0bb-6b64-417d-947d-d7fad09bf41f",
+          "save_to_fields": [
+            "DR_MPhysicalTherapy_F2",
+            "DR_MSpeechTherapy_F2",
+            "DR_MOccupationalTherapy_F2",
+            "DR_MCardiacRehabilitationTherapy_F2",
+            "DR_MPulmonaryRehabilitationTherapy_F2",
+            "DR_MOtherRehabilitationTherapy_F2"
+          ]
+        },
+        {
+          "question_group_id": "a8c2915d-5a7c-46ce-9033-0802339441d1",
+          "save_to_fields": ["DR_MChiropractic_F2", "DR_MAcupuncture_F2"]
+        },
+        {
+          "question_group_id": "6b18fad8-c9bc-4a3a-ad61-2517b6720720",
+          "save_to_fields": [
+            "DR_MDurableMedicalEquipment_F2",
+            "DR_MHomeHealthCare_F2",
+            "DR_MHospice_F2",
+            "DR_MSkilledNursing_F2"
+          ]
+        },
+        {
+          "question_group_id": "26bc27f4-0761-4362-a1cb-2cea076e369e",
+          "save_to_fields": [
+            "DR_MMaternityServices_F2",
+            "DR_MNewbornServices_F2",
+            "DR_MPediatricDental_F2",
+            "DR_MPediatricVision_F2"
+          ]
+        },
+        {
+          "question_group_id": "290249c3-53ee-48eb-bdf3-5b9d420a6586",
+          "save_to_fields": [
+            "DR_MInfertility_F2",
+            "DR_MAutism_F2",
+            "DR_MAllergyTestingAndTreatment_F2"
+          ]
+        },
+        {
+          "question_group_id": "f79bc70e-7fc8-45d5-8712-5ab9a19e4bb7",
+          "save_to_fields": ["DR_MAmbulanceGround_F2", "DR_MAmbulanceAir_F2"]
+        },
+        {
+          "question_group_id": "f076b5e3-6786-4858-bffa-7b72d667f528",
+          "save_to_fields": ["DR_MCalendarYearOrPlanYear_F2"]
+        },
+        {
+          "question_group_id": "3384bfe7-4488-46b6-92bc-95eb9aa61164",
+          "save_to_fields": ["DR_MExclusionAndLimitation_F2"]
+        },
+        {
+          "question_group_id": "8eccde01-88e7-485b-b9b7-c81740b954e6",
+          "save_to_fields": ["DR_MContractTerminationProvisions_F2"]
+        },
+        {
+          "question_group_id": "ae67bcab-0d08-4f00-987a-f2c8c02598b9",
+          "save_to_fields": ["DR_MEmployeeTerminationProvisions_F2"]
+        },
+        {
+          "question_group_id": "b5e481b6-8865-46f4-8c3a-771d76ca5150",
+          "save_to_fields": ["DR_MSpouseTerminationProvisions_F2"]
+        },
+        {
+          "question_group_id": "9fccef6d-75d0-47a6-bee3-e6a10d3a6e03",
+          "save_to_fields": ["DR_MDependentTerminationProvisions_F2"]
+        },
+        {
+          "question_group_id": "e2afb430-dbca-40c4-a1aa-450d5d37487b",
+          "save_to_fields": ["DR_MReHireLayoffProvisions_F2"]
+        },
+        {
+          "question_group_id": "69aa9ce6-84fa-4d03-99b0-c8d4fc7df011",
+          "save_to_fields": ["DR_MMedicalLeaveProvisions_F2"]
+        },
+        {
+          "question_group_id": "ca167e1e-a1fa-4044-ac17-c94b6db7e3f2",
+          "save_to_fields": ["DR_MEligibilityLanguageQ_F2", "DR_MEligibilityLanguageA_F2"]
+        },
+        {
+          "question_group_id": "1c433f6c-aab0-4be7-9f6c-7594c25c50df",
+          "save_to_fields": ["DR_MTerminationProvisionQ_F2", "DR_MTerminationProvisionA_F2"]
+        },
+        {
+          "question_group_id": "269fe68e-cfb0-443f-a26b-ebeb9a40365b",
+          "save_to_fields": ["DR_MExclusionLimitationQ_F2", "DR_MExclusionLimitationA_F2"]
         }
       ]
     },
     {
       "id": "635e29b1-fdd0-4a15-8914-92008c9e7d58",
       "variant_name": "File 3",
-      "file_sources": [
-        "FileUpload3"
-      ],
-      "group_variants": []
+      "file_sources": ["FileUpload3"],
+      "group_variants": [
+        {
+          "question_group_id": "3dec6a7b-949e-41d1-b791-7572d180e73c",
+          "save_to_fields": ["DR_MRates_F3"]
+        },
+        {
+          "question_group_id": "c19d0e76-43a0-4c15-9dd7-0c910dd4363a",
+          "save_to_fields": ["DR_MEffectiveDates_F3"]
+        },
+        {
+          "question_group_id": "74b208c3-255f-453d-b9e4-203f9cf2d0e1",
+          "save_to_fields": [
+            "DR_MEligibilityRules_F3",
+            "DR_MStudentAgeStatus_F3",
+            "DR_MDomesticPartnersCommonLaw_F3",
+            "DR_MSpouse_F3",
+            "DR_MDependentChildren_F3",
+            "DR_MWaitingPeriodRules_F3"
+          ]
+        },
+        {
+          "question_group_id": "ae14df21-5870-46b5-b665-e7d05bad7c40",
+          "save_to_fields": [
+            "DR_MIndividualDeductibleNetworkNonNetwork_F3",
+            "DR_MFamilyDeductibleNetworkNonNetwork_F3",
+            "DR_MEmbeddedOrAggregateDeductible_F3",
+            "DR_MCalendarYearOrPlanYearDeductibleAccumulation_F3"
+          ]
+        },
+        {
+          "question_group_id": "442948bd-3c7b-4a23-8939-82b0440c3746",
+          "save_to_fields": [
+            "DR_MCoinsuranceNetworkNonNetwork_F3",
+            "DR_MIndividualCoinsuranceMaximumNetworkNonNetwork_F3",
+            "DR_MFamilyCoinsuranceMaximumNetworkNonNetwork_F3"
+          ]
+        },
+        {
+          "question_group_id": "2ab73901-198a-463e-bf2c-30f9bff67fae",
+          "save_to_fields": [
+            "DR_MIndividualOutOfPocketMaximumNetworkNonNetwork_F3",
+            "DR_MFamilyOutOfPocketMaximumNetworkNonNetwork_F3"
+          ]
+        },
+        {
+          "question_group_id": "a298a4b5-460a-4152-aa33-a218f6ee4fb1",
+          "save_to_fields": [
+            "DR_MPrimaryCarePhysicianOfficeVisitCopayment_F3",
+            "DR_MSpecialistOfficeVisitCopayment_F3",
+            "DR_MTelehealthServicesCopayment_F3",
+            "DR_MVirtualVisits_F3"
+          ]
+        },
+        {
+          "question_group_id": "d4977518-9b5b-424d-8005-21d107219183",
+          "save_to_fields": ["DR_MUrgentCareCopayment_F3", "DR_MEmergencyRoomCopayment_F3"]
+        },
+        {
+          "question_group_id": "cddbd923-2b1a-489d-9901-d3b79f613bf2",
+          "save_to_fields": ["DR_MLabDiagnostic_F3", "DR_MImagingCopayMRICtScan_F3"]
+        },
+        {
+          "question_group_id": "30b8fd14-3eb8-4daa-ac6b-dd9f8960ff79",
+          "save_to_fields": ["DR_MInpatientHospitalCopayment_F3", "DR_MOutpatientServices_F3"]
+        },
+        {
+          "question_group_id": "1bd7e17e-4553-495c-9144-4aac65203745",
+          "save_to_fields": ["DR_MPrescriptionDrugBenefit_F3"]
+        },
+        {
+          "question_group_id": "de2478d1-8fda-46cc-b446-0f03f1808999",
+          "save_to_fields": ["DR_MMentalHealthSubstanceAbuseCoverage_F3"]
+        },
+        {
+          "question_group_id": "8ee3e0bb-6b64-417d-947d-d7fad09bf41f",
+          "save_to_fields": [
+            "DR_MPhysicalTherapy_F3",
+            "DR_MSpeechTherapy_F3",
+            "DR_MOccupationalTherapy_F3",
+            "DR_MCardiacRehabilitationTherapy_F3",
+            "DR_MPulmonaryRehabilitationTherapy_F3",
+            "DR_MOtherRehabilitationTherapy_F3"
+          ]
+        },
+        {
+          "question_group_id": "a8c2915d-5a7c-46ce-9033-0802339441d1",
+          "save_to_fields": ["DR_MChiropractic_F3", "DR_MAcupuncture_F3"]
+        },
+        {
+          "question_group_id": "6b18fad8-c9bc-4a3a-ad61-2517b6720720",
+          "save_to_fields": [
+            "DR_MDurableMedicalEquipment_F3",
+            "DR_MHomeHealthCare_F3",
+            "DR_MHospice_F3",
+            "DR_MSkilledNursing_F3"
+          ]
+        },
+        {
+          "question_group_id": "26bc27f4-0761-4362-a1cb-2cea076e369e",
+          "save_to_fields": [
+            "DR_MMaternityServices_F3",
+            "DR_MNewbornServices_F3",
+            "DR_MPediatricDental_F3",
+            "DR_MPediatricVision_F3"
+          ]
+        },
+        {
+          "question_group_id": "290249c3-53ee-48eb-bdf3-5b9d420a6586",
+          "save_to_fields": [
+            "DR_MInfertility_F3",
+            "DR_MAutism_F3",
+            "DR_MAllergyTestingAndTreatment_F3"
+          ]
+        },
+        {
+          "question_group_id": "f79bc70e-7fc8-45d5-8712-5ab9a19e4bb7",
+          "save_to_fields": ["DR_MAmbulanceGround_F3", "DR_MAmbulanceAir_F3"]
+        },
+        {
+          "question_group_id": "f076b5e3-6786-4858-bffa-7b72d667f528",
+          "save_to_fields": ["DR_MCalendarYearOrPlanYear_F3"]
+        },
+        {
+          "question_group_id": "3384bfe7-4488-46b6-92bc-95eb9aa61164",
+          "save_to_fields": ["DR_MExclusionAndLimitation_F3"]
+        },
+        {
+          "question_group_id": "8eccde01-88e7-485b-b9b7-c81740b954e6",
+          "save_to_fields": ["DR_MContractTerminationProvisions_F3"]
+        },
+        {
+          "question_group_id": "ae67bcab-0d08-4f00-987a-f2c8c02598b9",
+          "save_to_fields": ["DR_MEmployeeTerminationProvisions_F3"]
+        },
+        {
+          "question_group_id": "b5e481b6-8865-46f4-8c3a-771d76ca5150",
+          "save_to_fields": ["DR_MSpouseTerminationProvisions_F3"]
+        },
+        {
+          "question_group_id": "9fccef6d-75d0-47a6-bee3-e6a10d3a6e03",
+          "save_to_fields": ["DR_MDependentTerminationProvisions_F3"]
+        },
+        {
+          "question_group_id": "e2afb430-dbca-40c4-a1aa-450d5d37487b",
+          "save_to_fields": ["DR_MReHireLayoffProvisions_F3"]
+        },
+        {
+          "question_group_id": "69aa9ce6-84fa-4d03-99b0-c8d4fc7df011",
+          "save_to_fields": ["DR_MMedicalLeaveProvisions_F3"]
+        },
+        {
+          "question_group_id": "ca167e1e-a1fa-4044-ac17-c94b6db7e3f2",
+          "save_to_fields": ["DR_MEligibilityLanguageQ_F3", "DR_MEligibilityLanguageA_F3"]
+        },
+        {
+          "question_group_id": "1c433f6c-aab0-4be7-9f6c-7594c25c50df",
+          "save_to_fields": ["DR_MTerminationProvisionQ_F3", "DR_MTerminationProvisionA_F3"]
+        },
+        {
+          "question_group_id": "269fe68e-cfb0-443f-a26b-ebeb9a40365b",
+          "save_to_fields": ["DR_MExclusionLimitationQ_F3", "DR_MExclusionLimitationA_F3"]
+        }
+      ]
     },
     {
       "id": "078a3dc2-e6c7-4edd-b0d8-d80a52e42c24",
       "variant_name": "File 4",
-      "file_sources": [],
-      "group_variants": []
+      "file_sources": ["FileUpload4"],
+      "group_variants": [
+        {
+          "question_group_id": "3dec6a7b-949e-41d1-b791-7572d180e73c",
+          "save_to_fields": ["DR_MRates_F4"]
+        },
+        {
+          "question_group_id": "c19d0e76-43a0-4c15-9dd7-0c910dd4363a",
+          "save_to_fields": ["DR_MEffectiveDates_F4"]
+        },
+        {
+          "question_group_id": "74b208c3-255f-453d-b9e4-203f9cf2d0e1",
+          "save_to_fields": [
+            "DR_MEligibilityRules_F4",
+            "DR_MStudentAgeStatus_F4",
+            "DR_MDomesticPartnersCommonLaw_F4",
+            "DR_MSpouse_F4",
+            "DR_MDependentChildren_F4",
+            "DR_MWaitingPeriodRules_F4"
+          ]
+        },
+        {
+          "question_group_id": "ae14df21-5870-46b5-b665-e7d05bad7c40",
+          "save_to_fields": [
+            "DR_MIndividualDeductibleNetworkNonNetwork_F4",
+            "DR_MFamilyDeductibleNetworkNonNetwork_F4",
+            "DR_MEmbeddedOrAggregateDeductible_F4",
+            "DR_MCalendarYearOrPlanYearDeductibleAccumulation_F4"
+          ]
+        },
+        {
+          "question_group_id": "442948bd-3c7b-4a23-8939-82b0440c3746",
+          "save_to_fields": [
+            "DR_MCoinsuranceNetworkNonNetwork_F4",
+            "DR_MIndividualCoinsuranceMaximumNetworkNonNetwork_F4",
+            "DR_MFamilyCoinsuranceMaximumNetworkNonNetwork_F4"
+          ]
+        },
+        {
+          "question_group_id": "2ab73901-198a-463e-bf2c-30f9bff67fae",
+          "save_to_fields": [
+            "DR_MIndividualOutOfPocketMaximumNetworkNonNetwork_F4",
+            "DR_MFamilyOutOfPocketMaximumNetworkNonNetwork_F4"
+          ]
+        },
+        {
+          "question_group_id": "a298a4b5-460a-4152-aa33-a218f6ee4fb1",
+          "save_to_fields": [
+            "DR_MPrimaryCarePhysicianOfficeVisitCopayment_F4",
+            "DR_MSpecialistOfficeVisitCopayment_F4",
+            "DR_MTelehealthServicesCopayment_F4",
+            "DR_MVirtualVisits_F4"
+          ]
+        },
+        {
+          "question_group_id": "d4977518-9b5b-424d-8005-21d107219183",
+          "save_to_fields": ["DR_MUrgentCareCopayment_F4", "DR_MEmergencyRoomCopayment_F4"]
+        },
+        {
+          "question_group_id": "cddbd923-2b1a-489d-9901-d3b79f613bf2",
+          "save_to_fields": ["DR_MLabDiagnostic_F4", "DR_MImagingCopayMRICtScan_F4"]
+        },
+        {
+          "question_group_id": "30b8fd14-3eb8-4daa-ac6b-dd9f8960ff79",
+          "save_to_fields": ["DR_MInpatientHospitalCopayment_F4", "DR_MOutpatientServices_F4"]
+        },
+        {
+          "question_group_id": "1bd7e17e-4553-495c-9144-4aac65203745",
+          "save_to_fields": ["DR_MPrescriptionDrugBenefit_F4"]
+        },
+        {
+          "question_group_id": "de2478d1-8fda-46cc-b446-0f03f1808999",
+          "save_to_fields": ["DR_MMentalHealthSubstanceAbuseCoverage_F4"]
+        },
+        {
+          "question_group_id": "8ee3e0bb-6b64-417d-947d-d7fad09bf41f",
+          "save_to_fields": [
+            "DR_MPhysicalTherapy_F4",
+            "DR_MSpeechTherapy_F4",
+            "DR_MOccupationalTherapy_F4",
+            "DR_MCardiacRehabilitationTherapy_F4",
+            "DR_MPulmonaryRehabilitationTherapy_F4",
+            "DR_MOtherRehabilitationTherapy_F4"
+          ]
+        },
+        {
+          "question_group_id": "a8c2915d-5a7c-46ce-9033-0802339441d1",
+          "save_to_fields": ["DR_MChiropractic_F4", "DR_MAcupuncture_F4"]
+        },
+        {
+          "question_group_id": "6b18fad8-c9bc-4a3a-ad61-2517b6720720",
+          "save_to_fields": [
+            "DR_MDurableMedicalEquipment_F4",
+            "DR_MHomeHealthCare_F4",
+            "DR_MHospice_F4",
+            "DR_MSkilledNursing_F4"
+          ]
+        },
+        {
+          "question_group_id": "26bc27f4-0761-4362-a1cb-2cea076e369e",
+          "save_to_fields": [
+            "DR_MMaternityServices_F4",
+            "DR_MNewbornServices_F4",
+            "DR_MPediatricDental_F4",
+            "DR_MPediatricVision_F4"
+          ]
+        },
+        {
+          "question_group_id": "290249c3-53ee-48eb-bdf3-5b9d420a6586",
+          "save_to_fields": [
+            "DR_MInfertility_F4",
+            "DR_MAutism_F4",
+            "DR_MAllergyTestingAndTreatment_F4"
+          ]
+        },
+        {
+          "question_group_id": "f79bc70e-7fc8-45d5-8712-5ab9a19e4bb7",
+          "save_to_fields": ["DR_MAmbulanceGround_F4", "DR_MAmbulanceAir_F4"]
+        },
+        {
+          "question_group_id": "f076b5e3-6786-4858-bffa-7b72d667f528",
+          "save_to_fields": ["DR_MCalendarYearOrPlanYear_F4"]
+        },
+        {
+          "question_group_id": "3384bfe7-4488-46b6-92bc-95eb9aa61164",
+          "save_to_fields": ["DR_MExclusionAndLimitation_F4"]
+        },
+        {
+          "question_group_id": "8eccde01-88e7-485b-b9b7-c81740b954e6",
+          "save_to_fields": ["DR_MContractTerminationProvisions_F4"]
+        },
+        {
+          "question_group_id": "ae67bcab-0d08-4f00-987a-f2c8c02598b9",
+          "save_to_fields": ["DR_MEmployeeTerminationProvisions_F4"]
+        },
+        {
+          "question_group_id": "b5e481b6-8865-46f4-8c3a-771d76ca5150",
+          "save_to_fields": ["DR_MSpouseTerminationProvisions_F4"]
+        },
+        {
+          "question_group_id": "9fccef6d-75d0-47a6-bee3-e6a10d3a6e03",
+          "save_to_fields": ["DR_MDependentTerminationProvisions_F4"]
+        },
+        {
+          "question_group_id": "e2afb430-dbca-40c4-a1aa-450d5d37487b",
+          "save_to_fields": ["DR_MReHireLayoffProvisions_F4"]
+        },
+        {
+          "question_group_id": "69aa9ce6-84fa-4d03-99b0-c8d4fc7df011",
+          "save_to_fields": ["DR_MMedicalLeaveProvisions_F4"]
+        },
+        {
+          "question_group_id": "ca167e1e-a1fa-4044-ac17-c94b6db7e3f2",
+          "save_to_fields": ["DR_MEligibilityLanguageQ_F4", "DR_MEligibilityLanguageA_F4"]
+        },
+        {
+          "question_group_id": "1c433f6c-aab0-4be7-9f6c-7594c25c50df",
+          "save_to_fields": ["DR_MTerminationProvisionQ_F4", "DR_MTerminationProvisionA_F4"]
+        },
+        {
+          "question_group_id": "269fe68e-cfb0-443f-a26b-ebeb9a40365b",
+          "save_to_fields": ["DR_MExclusionLimitationQ_F4", "DR_MExclusionLimitationA_F4"]
+        }
+      ]
     }
   ]
 }

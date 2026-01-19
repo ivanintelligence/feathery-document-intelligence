@@ -28,7 +28,7 @@
         "skip_ai_page_filter": false,
         "page_filter_start": null,
         "page_filter_end": null,
-        "group_name": null,
+        "group_name": "Eligibility Language",
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
@@ -71,7 +71,7 @@
         "skip_ai_page_filter": false,
         "page_filter_start": null,
         "page_filter_end": null,
-        "group_name": null,
+        "group_name": "Termination Provision",
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
@@ -114,7 +114,7 @@
         "skip_ai_page_filter": false,
         "page_filter_start": null,
         "page_filter_end": null,
-        "group_name": null,
+        "group_name": "Partial Disability Definition",
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
@@ -157,7 +157,7 @@
         "skip_ai_page_filter": false,
         "page_filter_start": null,
         "page_filter_end": null,
-        "group_name": null,
+        "group_name": "Disability Definition",
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
@@ -200,7 +200,7 @@
         "skip_ai_page_filter": false,
         "page_filter_start": null,
         "page_filter_end": null,
-        "group_name": null,
+        "group_name": "Exclusions & Limitations",
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
@@ -216,5 +216,67 @@
       "data_validation_rules": []
     }
   ],
-  "variants": []
+  "variants": [
+    {
+      "id": "1530c326-92ff-4236-a9fb-238560cf31a7",
+      "variant_name": "Renewal Plan",
+      "file_sources": [],
+      "group_variants": [
+        {
+          "question_group_id": "35b9117a-5619-440e-baca-38aa13d57abe",
+          "save_to_fields": [
+            "AP_LTDEligibilityLanguageFFQ_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "f557b6bf-5e84-4b4f-b846-79a291e23d9c",
+          "save_to_fields": [
+            "AP_LTDTerminationProvisionFFQ_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "558da2fd-3fd2-4780-9bd9-a30eb59e0477",
+          "save_to_fields": [
+            "AP_LTDPartialDisabilityDefinitionFFQ_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "e8a36b16-c189-4a09-afe6-e789ecd545f3",
+          "save_to_fields": [
+            "AP_LTDDisabilityDefinitionFFQ_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "40e0bfc8-47f0-40d0-a79c-74d2693a9ed9",
+          "save_to_fields": [
+            "AP_LTDExclusionLimitationFFQ_Renewal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4abd57bf-e543-4d14-a560-28854468fd2b",
+      "variant_name": "Alternative Plan 1",
+      "file_sources": [],
+      "group_variants": []
+    },
+    {
+      "id": "d585aa93-94c0-43be-a5f3-e5210748a56c",
+      "variant_name": "Alternative Plan 2",
+      "file_sources": [],
+      "group_variants": []
+    },
+    {
+      "id": "dc147cd6-4c2d-4a90-af08-e2e7b8acea17",
+      "variant_name": "Alternative Plan 3",
+      "file_sources": [],
+      "group_variants": []
+    },
+    {
+      "id": "9844078d-d178-4bae-b265-013444281b42",
+      "variant_name": "Alternative Plan 4",
+      "file_sources": [],
+      "group_variants": []
+    }
+  ]
 }

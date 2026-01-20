@@ -1,0 +1,693 @@
+{
+  "queries": [
+    {
+      "id": "62012980-e91f-45c0-9622-a06af6b1b697",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "c7812e9b-d038-41d2-87b7-17cdc8bf9a59",
+          "entity": "<GROUND_RULES>\nUse ONLY the Q&A in the context.\nIf the answer isn’t explicitly supported, output Null.\nOutput EXACTLY one value: Yes, No, or Null.\n(Checked/marked boxes or Y/N count as Yes/No.)\n</GROUND_RULES>\n\nGeneral Information, Operations & Relationships Q&A:\n<CONTEXT>\n{{GeneralOpsRelationshipsQA}}\n</CONTEXT>\n\n<QUESTION>\nIs the applicant a subsidiary of another entity?\n</QUESTION>",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Is the applicant a subsidiary of another entity?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "324efc7e-6d10-4ae8-b80f-c92ee84b1b4e",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "32dea023-f6c9-445a-b8e1-31cd507406ac",
+          "entity": "<GROUND_RULES>\nUse ONLY the Q&A in the context.\nIf the answer isn’t explicitly supported, output Null.\nOutput EXACTLY one value: Yes, No, or Null.\n(Checked/marked boxes or Y/N count as Yes/No.)\n</GROUND_RULES>\n\nGeneral Information, Operations & Relationships Q&A:\n<CONTEXT>\n{{GeneralOpsRelationshipsQA}}\n</CONTEXT>\n\n<QUESTION>\nDoes the applicant have any subsidiary companies?\n</QUESTION>",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Does the applicant have any subsidiary companies?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "10fc6eea-3b4b-4e84-bbf5-850f97746393",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "93ee838a-a5ee-473a-ac34-1c803b6bfb18",
+          "entity": "<GROUND_RULES>\nUse ONLY the Q&A in the context.\nIf the answer isn’t explicitly supported, output Null.\nOutput EXACTLY one value: Yes, No, or Null.\n(Checked/marked boxes or Y/N count as Yes/No.)\n</GROUND_RULES>\n\nSafety, Hazards & Compliance Q&A:\n<CONTEXT>\n{{SafetyHazardsComplianceQA}}\n</CONTEXT>\n\n<QUESTION>\nIs a formal safety program currently in operation?\n</QUESTION>",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Is a formal safety program currently in operation?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "a4d21bab-8374-4303-9524-03332bd95cdd",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "cd050efe-386d-4509-852a-8e5136e95330",
+          "entity": "<GROUND_RULES>\nUse ONLY the Q&A in the context.\nIf the answer isn’t explicitly supported, output Null.\nOutput EXACTLY one value: Yes, No, or Null.\n(Checked/marked boxes or Y/N count as Yes/No.)\n</GROUND_RULES>\n\nSafety, Hazards & Compliance Q&A:\n<CONTEXT>\n{{SafetyHazardsComplianceQA}}\n</CONTEXT>\n\n<QUESTION>\nDoes the applicant have any exposure to flammables, explosives, or chemicals?\n</QUESTION>",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Does the applicant have any exposure to flammables, explosives, or chemicals?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "884610b6-349c-4882-82e2-b447177b6440",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "5412045d-96a8-42cf-8574-cf42a8259fc0",
+          "entity": "<GROUND_RULES>\nUse ONLY the Q&A in the context.\nIf the answer isn’t explicitly supported, output Null.\nOutput EXACTLY one value: Yes, No, or Null.\n(Checked/marked boxes or Y/N count as Yes/No.)\n</GROUND_RULES>\n\nInsurance History & Underwriting Q&A:\n<CONTEXT>\n{{InsuranceHistoryUnderwritingQA}}\n</CONTEXT>\n\n<QUESTION>\nAny other insurance with this company?\n</QUESTION>",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Any other insurance with this company?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "b1278508-6fcf-4252-8886-60eee73d9681",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "a1bd4a3c-1222-415a-8a75-73309a84ab78",
+          "entity": "<GROUND_RULES>\nUse ONLY the Q&A in the context.\nIf the answer isn’t explicitly supported, output Null.\nOutput EXACTLY one value: Yes, No, or Null.\n(Checked/marked boxes or Y/N count as Yes/No.)\n</GROUND_RULES>\n\nInsurance History & Underwriting Q&A:\n<CONTEXT>\n{{InsuranceHistoryUnderwritingQA}}\n</CONTEXT>\n\n<QUESTION>\nHas any policy or coverage been declined, cancelled, or non-renewed during the prior three years?\n</QUESTION>",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Has any policy or coverage been declined, cancelled, or non-renewed during the prior three years?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": true,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "1aa845cb-f728-480f-9964-e904c4847d8f",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "583cbf9a-bac5-4d16-975f-e9f186071322",
+          "entity": "<GROUND_RULES>\nUse ONLY the Q&A in the context.\nIf the answer isn’t explicitly supported, output Null.\nOutput EXACTLY one value: Yes, No, or Null.\n(Checked/marked boxes or Y/N count as Yes/No.)\n</GROUND_RULES>\n\nClaims, Losses & Legal/Financial Issues Q&A:\n<CONTEXT>\n{{ClaimsLegalFinancialQA}}\n</CONTEXT>\n\n<QUESTION>\nHas the applicant had losses or claims relating to sexual abuse, discrimination, or negligent hiring?\n</QUESTION>",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Has the applicant had losses or claims relating to sexual abuse, discrimination, or negligent hiring?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "4c69140c-42c1-4f96-be98-4da84181c785",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "f88ed9f7-908e-47da-84d0-d68fff3d07ad",
+          "entity": "<GROUND_RULES>\nUse ONLY the Q&A in the context.\nIf the answer isn’t explicitly supported, output Null.\nOutput EXACTLY one value: Yes, No, or Null.\n(Checked/marked boxes or Y/N count as Yes/No.)\n</GROUND_RULES>\n\nClaims, Losses & Legal/Financial Issues Q&A:\n<CONTEXT>\n{{ClaimsLegalFinancialQA}}\n</CONTEXT>\n\n<QUESTION>\nHas any applicant been indicted or convicted of fraud, bribery, or arson?\n</QUESTION>",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Has any applicant been indicted or convicted of fraud, bribery, or arson?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "1f727e1d-b1d3-4f93-b93d-f47d58e5610f",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "3716b6b6-0887-4b80-9f0d-33e83dd541ae",
+          "entity": "<GROUND_RULES>\nUse ONLY the Q&A in the context.\nIf the answer isn’t explicitly supported, output Null.\nOutput EXACTLY one value: Yes, No, or Null.\n(Checked/marked boxes or Y/N count as Yes/No.)\n</GROUND_RULES>\n\nSafety, Hazards & Compliance Q&A:\n<CONTEXT>\n{{SafetyHazardsComplianceQA}}\n</CONTEXT>\n\n<QUESTION>\nAre there any uncorrected fire or safety code violations?\n</QUESTION>",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Are there any uncorrected fire or safety code violations?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "3b34af28-f27d-4ad4-9c83-49457cafc1f9",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "0441bc21-b32e-4956-9598-3fb22dade456",
+          "entity": "<GROUND_RULES>\nUse ONLY the Q&A in the context.\nIf the answer isn’t explicitly supported, output Null.\nOutput EXACTLY one value: Yes, No, or Null.\n(Checked/marked boxes or Y/N count as Yes/No.)\n</GROUND_RULES>\n\nClaims, Losses & Legal/Financial Issues Q&A:\n<CONTEXT>\n{{ClaimsLegalFinancialQA}}\n</CONTEXT>\n\n<QUESTION>\nHas the applicant had foreclosure, repossession, or bankruptcy in the last five years?\n</QUESTION>",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Has the applicant had foreclosure, repossession, or bankruptcy in the last five years?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": true,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "f15c960f-cde1-419b-bfbe-16b553f14d5d",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "1b45a301-4e23-4155-936a-0bd1bf86313f",
+          "entity": "<GROUND_RULES>\nUse ONLY the Q&A in the context.\nIf the answer isn’t explicitly supported, output Null.\nOutput EXACTLY one value: Yes, No, or Null.\n(Checked/marked boxes or Y/N count as Yes/No.)\n</GROUND_RULES>\n\nClaims, Losses & Legal/Financial Issues Q&A:\n<CONTEXT>\n{{ClaimsLegalFinancialQA}}\n</CONTEXT>\n\n<QUESTION>\nHas the applicant had any judgment or lien in the last five years?\n</QUESTION>",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Has the applicant had any judgment or lien in the last five years?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": true,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "b8ba5d0d-2066-4589-92a9-f9c5056416f5",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "17e8c365-ee7e-4de6-b159-c50199962ee8",
+          "entity": "<GROUND_RULES>\nUse ONLY the Q&A in the context.\nIf the answer isn’t explicitly supported, output Null.\nOutput EXACTLY one value: Yes, No, or Null.\n(Checked/marked boxes or Y/N count as Yes/No.)\n</GROUND_RULES>\n\nGeneral Information, Operations & Relationships Q&A:\n<CONTEXT>\n{{GeneralOpsRelationshipsQA}}\n</CONTEXT>\n\n<QUESTION>\nHas the business been placed in a trust?\n</QUESTION>",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Has the business been placed in a trust?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "5b8b61b8-cee3-4a76-a8bb-0b3a5001120c",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "5145c51b-9959-415a-b26f-2e17301c9936",
+          "entity": "<GROUND_RULES>\nUse ONLY the Q&A in the context.\nIf the answer isn’t explicitly supported, output Null.\nOutput EXACTLY one value: Yes, No, or Null.\n(Checked/marked boxes or Y/N count as Yes/No.)\n</GROUND_RULES>\n\nGeneral Information, Operations & Relationships Q&A:\n<CONTEXT>\n{{GeneralOpsRelationshipsQA}}\n</CONTEXT>\n\n<QUESTION>\nDoes the applicant have foreign operations or foreign product exposure?\n</QUESTION>",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Does the applicant have foreign operations or foreign product exposure?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "bb09928d-de80-4c53-8556-baf342014b38",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "77d12443-f824-48dd-93cf-617182289c70",
+          "entity": "<GROUND_RULES>\nUse ONLY the Q&A in the context.\nIf the answer isn’t explicitly supported, output Null.\nOutput EXACTLY one value: Yes, No, or Null.\n(Checked/marked boxes or Y/N count as Yes/No.)\n</GROUND_RULES>\n\nGeneral Information, Operations & Relationships Q&A:\n<CONTEXT>\n{{GeneralOpsRelationshipsQA}}\n</CONTEXT>\n\n<QUESTION>\nDoes the applicant have other business ventures not covered?\n</QUESTION>",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Does the applicant have other business ventures not covered?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "55a11578-fd9a-4b2a-b7a7-5edd63334538",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "ceacf63d-c7de-43c6-a762-af8ade555e1c",
+          "entity": "<GROUND_RULES>\nUse ONLY the Q&A in the context.\nIf the answer isn’t explicitly supported, output Null.\nOutput EXACTLY one value: Yes, No, or Null.\n(Checked/marked boxes or Y/N count as Yes/No.)\n</GROUND_RULES>\n\nDrones / UAS Exposure Q&A:\n<CONTEXT>\n{{DronesUASQA}}\n</CONTEXT>\n\n<QUESTION>\nDoes the applicant own, lease, or operate drones?\n</QUESTION>",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Does the applicant own, lease, or operate drones?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "fd14853f-fa3c-4020-8b0e-7b24154c52c2",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "2376811b-330e-4d6f-b45c-47191fed5412",
+          "entity": "<GROUND_RULES>\nUse ONLY the Q&A in the context.\nIf the answer isn’t explicitly supported, output Null.\nOutput EXACTLY one value: Yes, No, or Null.\n(Checked/marked boxes or Y/N count as Yes/No.)\n</GROUND_RULES>\n\nDrones / UAS Exposure Q&A:\n<CONTEXT>\n{{DronesUASQA}}\n</CONTEXT>\n\n<QUESTION>\nDoes the applicant hire others to operate drones?\n</QUESTION>",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Does the applicant hire others to operate drones?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    }
+  ],
+  "variants": []
+}

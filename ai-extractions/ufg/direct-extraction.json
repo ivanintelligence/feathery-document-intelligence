@@ -8,7 +8,7 @@
         {
           "id": "ce358126-0d99-48ba-a5f7-3de33a337d7c",
           "entity": "Agency",
-          "save_to": "",
+          "save_to": "Agency",
           "type": "",
           "unique": false,
           "options": [],
@@ -21,7 +21,7 @@
         {
           "id": "c858c69d-badf-40ce-bc1c-d5a704a5d240",
           "entity": "Agency Address",
-          "save_to": "",
+          "save_to": "AgencyAddress",
           "type": "",
           "unique": false,
           "options": [],
@@ -34,7 +34,7 @@
         {
           "id": "97c9be7f-924e-453f-b2a1-f02ce3e06e99",
           "entity": "Agency Customer ID",
-          "save_to": "",
+          "save_to": "AgencyCustomerID",
           "type": "",
           "unique": false,
           "options": [],
@@ -47,7 +47,7 @@
         {
           "id": "bb6c9757-7bb0-47c9-ba93-f473394dd253",
           "entity": "Contact Name",
-          "save_to": "",
+          "save_to": "ContactName1",
           "type": "",
           "unique": false,
           "options": [],
@@ -60,7 +60,7 @@
         {
           "id": "2b8409a0-e932-4e06-88cc-ebc153dc9a44",
           "entity": "Phone",
-          "save_to": "",
+          "save_to": "Phone",
           "type": "",
           "unique": false,
           "options": [],
@@ -73,7 +73,7 @@
         {
           "id": "4d8d5255-718c-4077-8bf4-0d4ed8e5e3b9",
           "entity": "FAX",
-          "save_to": "",
+          "save_to": "FAX",
           "type": "",
           "unique": false,
           "options": [],
@@ -86,7 +86,7 @@
         {
           "id": "5680480a-fe4b-40f0-8073-bbd6d56836e4",
           "entity": "Email",
-          "save_to": "",
+          "save_to": "Email",
           "type": "",
           "unique": false,
           "options": [],
@@ -99,7 +99,7 @@
         {
           "id": "df40cf2f-7cae-41e1-ba23-4dfc4cfe7c8c",
           "entity": "Code",
-          "save_to": "",
+          "save_to": "Code",
           "type": "",
           "unique": false,
           "options": [],
@@ -112,7 +112,7 @@
         {
           "id": "bd2da2bb-30aa-42e3-854b-d9340aefae3a",
           "entity": "Subcode",
-          "save_to": "",
+          "save_to": "Subcode",
           "type": "",
           "unique": false,
           "options": [],
@@ -155,7 +155,7 @@
         {
           "id": "7ff851b6-ae8a-4248-9181-15149e061964",
           "entity": "Carrier",
-          "save_to": "",
+          "save_to": "Carrier",
           "type": "",
           "unique": false,
           "options": [],
@@ -168,7 +168,7 @@
         {
           "id": "20195a3b-eb3e-4e27-b666-37eecac76f14",
           "entity": "Carrier NAIC Code",
-          "save_to": "",
+          "save_to": "CarrierNAICCode",
           "type": "",
           "unique": false,
           "options": [],
@@ -211,7 +211,7 @@
         {
           "id": "42bfd2e3-f149-4ac9-aa20-9c30ceb0340d",
           "entity": "Company Policy",
-          "save_to": "",
+          "save_to": "CompanyPolicy",
           "type": "",
           "unique": false,
           "options": [],
@@ -224,7 +224,7 @@
         {
           "id": "4b5b1322-fc8f-450e-ac91-ccd463155751",
           "entity": "Policy Code",
-          "save_to": "",
+          "save_to": "PolicyCode",
           "type": "",
           "unique": false,
           "options": [],
@@ -237,7 +237,7 @@
         {
           "id": "29e56a0f-0244-4bac-9db8-e3a84f05bb1e",
           "entity": "Policy Number",
-          "save_to": "",
+          "save_to": "PolicyNumber1",
           "type": "",
           "unique": false,
           "options": [],
@@ -250,7 +250,7 @@
         {
           "id": "dc254f1e-55bd-4c5c-bbfa-b7a27e89c2fc",
           "entity": "Underwriter",
-          "save_to": "",
+          "save_to": "Underwriter",
           "type": "",
           "unique": false,
           "options": [],
@@ -263,7 +263,7 @@
         {
           "id": "82d38d3a-67c3-4013-9b97-02ba0d78d5f8",
           "entity": "Underwriter Office",
-          "save_to": "",
+          "save_to": "UnderwriterOffice",
           "type": "",
           "unique": false,
           "options": [],
@@ -306,7 +306,7 @@
         {
           "id": "812f539d-1a3b-4dc9-bdd3-b82fcfa30c45",
           "entity": "Status of Transaction",
-          "save_to": "",
+          "save_to": "StatusOfTransaction",
           "type": "",
           "unique": false,
           "options": [],
@@ -349,7 +349,7 @@
         {
           "id": "9f25d6d6-4d84-48e6-b035-626a16052a2b",
           "entity": "Line of Business (Submission)",
-          "save_to": "",
+          "save_to": "LineOfBusinessSubmission",
           "type": "",
           "unique": false,
           "options": [],
@@ -392,7 +392,7 @@
         {
           "id": "d47d93a9-dfdf-48da-8aee-5ea7716bc9b5",
           "entity": "Attachments",
-          "save_to": "",
+          "save_to": "Attachments",
           "type": "",
           "unique": false,
           "options": [],
@@ -435,7 +435,7 @@
         {
           "id": "e21cd4bc-8d83-4755-9d31-5765a1ec310a",
           "entity": "Proposed Effective Date",
-          "save_to": "",
+          "save_to": "ProposedEffectiveDate",
           "type": "",
           "unique": false,
           "options": [],
@@ -478,7 +478,7 @@
         {
           "id": "e24cb24e-19b1-4167-a351-3d744b6ddab0",
           "entity": "Proposed Expiration Date",
-          "save_to": "",
+          "save_to": "ProposedExpirationDate",
           "type": "",
           "unique": false,
           "options": [],
@@ -521,7 +521,7 @@
         {
           "id": "337d06cd-f238-42e6-a765-9102b95d1a82",
           "entity": "Billing Plan",
-          "save_to": "",
+          "save_to": "BillingPlan",
           "type": "",
           "unique": false,
           "options": [],
@@ -564,7 +564,7 @@
         {
           "id": "5f238804-7a08-42aa-a402-554874d54d70",
           "entity": "Payment Plan",
-          "save_to": "",
+          "save_to": "PaymentPlan",
           "type": "",
           "unique": false,
           "options": [],
@@ -607,7 +607,7 @@
         {
           "id": "7cf0b9fc-c763-417e-bc15-f7941e8a27cb",
           "entity": "Method of Payment",
-          "save_to": "",
+          "save_to": "MethodOfPayment",
           "type": "",
           "unique": false,
           "options": [],
@@ -650,7 +650,7 @@
         {
           "id": "3e29e613-7240-4f2b-9713-bea063c3400e",
           "entity": "Audit",
-          "save_to": "",
+          "save_to": "Audit",
           "type": "",
           "unique": false,
           "options": [],
@@ -693,7 +693,7 @@
         {
           "id": "87895402-972b-47e2-b730-0a6ed06e1f32",
           "entity": "Deposit Amount",
-          "save_to": "",
+          "save_to": "DepositAmount",
           "type": "",
           "unique": false,
           "options": [],
@@ -736,7 +736,7 @@
         {
           "id": "787a610e-73ef-4a8d-9990-a12c5e9df8ce",
           "entity": "Minimum Premium",
-          "save_to": "",
+          "save_to": "MinimumPremium",
           "type": "",
           "unique": false,
           "options": [],
@@ -779,7 +779,7 @@
         {
           "id": "6bd89333-948a-4ca0-bbe4-b297a025ea6b",
           "entity": "Policy Premium",
-          "save_to": "",
+          "save_to": "PolicyPremium",
           "type": "",
           "unique": false,
           "options": [],
@@ -822,7 +822,7 @@
         {
           "id": "5a3ae99f-147d-4d60-84ab-bf8f10a0da9f",
           "entity": "Account Name",
-          "save_to": "",
+          "save_to": "AccountName",
           "type": "",
           "unique": false,
           "options": [],
@@ -835,7 +835,7 @@
         {
           "id": "3b3175b2-b03e-4b1d-85ab-3f82d38c4e3e",
           "entity": "Mailing Address",
-          "save_to": "",
+          "save_to": "MailingAddress",
           "type": "",
           "unique": false,
           "options": [],
@@ -848,7 +848,7 @@
         {
           "id": "cf67c14d-6248-48ff-8285-bb7fc04d43d8",
           "entity": "Business Phone Number",
-          "save_to": "",
+          "save_to": "BusinessPhoneNumber",
           "type": "",
           "unique": false,
           "options": [],
@@ -861,7 +861,7 @@
         {
           "id": "38f7227d-9259-4e4d-a3cc-0488e2b7b2d6",
           "entity": "Website Address",
-          "save_to": "",
+          "save_to": "WebsiteAddress",
           "type": "",
           "unique": false,
           "options": [],
@@ -874,7 +874,7 @@
         {
           "id": "cbe8466f-ff8d-4146-bc8d-f185aaba3b1b",
           "entity": "GL Class Code",
-          "save_to": "",
+          "save_to": "GLClassCode",
           "type": "",
           "unique": false,
           "options": [],
@@ -887,7 +887,7 @@
         {
           "id": "7e376b83-aaf1-4fcc-a9af-69051fa4d8e8",
           "entity": "SIC",
-          "save_to": "",
+          "save_to": "SIC",
           "type": "",
           "unique": false,
           "options": [],
@@ -900,7 +900,7 @@
         {
           "id": "40c298cb-cba0-41a0-bd02-5a49cd3006ad",
           "entity": "NAICS",
-          "save_to": "",
+          "save_to": "NAICS",
           "type": "",
           "unique": false,
           "options": [],
@@ -913,7 +913,7 @@
         {
           "id": "a1800f06-8aa4-40be-a56e-60bf5775e413",
           "entity": "FEIN or SOC SEC Number",
-          "save_to": "",
+          "save_to": "FEINOrSocSecNumber",
           "type": "",
           "unique": false,
           "options": [],
@@ -956,7 +956,7 @@
         {
           "id": "95d1cacc-5299-4eb9-b2ed-58746bfde284",
           "entity": "Contact Type",
-          "save_to": "",
+          "save_to": "ContactType",
           "type": "",
           "unique": false,
           "options": [],
@@ -969,7 +969,7 @@
         {
           "id": "5b159b96-5f54-4d53-962d-a90ce58f47cf",
           "entity": "Contact Name",
-          "save_to": "",
+          "save_to": "ContactName2",
           "type": "",
           "unique": false,
           "options": [],
@@ -982,7 +982,7 @@
         {
           "id": "78e408e5-29da-4da7-90b4-39c0343d3873",
           "entity": "Primary Phone Number",
-          "save_to": "",
+          "save_to": "PrimaryPhoneNumber",
           "type": "",
           "unique": false,
           "options": [],
@@ -995,7 +995,7 @@
         {
           "id": "07ae697f-0d0e-478a-b19b-df2ba8c1f4dd",
           "entity": "Secondary Phone Number",
-          "save_to": "",
+          "save_to": "SecondaryPhoneNumber",
           "type": "",
           "unique": false,
           "options": [],
@@ -1008,7 +1008,7 @@
         {
           "id": "d0e7dd69-0784-47a3-a2a3-d78d39a8f276",
           "entity": "Primary Email Address",
-          "save_to": "",
+          "save_to": "PrimaryEmailAddress",
           "type": "",
           "unique": false,
           "options": [],
@@ -1021,7 +1021,7 @@
         {
           "id": "be7af297-7ae0-46f8-91c9-36976377b518",
           "entity": "Secondary Email Address",
-          "save_to": "",
+          "save_to": "SecondaryEmailAddress",
           "type": "",
           "unique": false,
           "options": [],
@@ -1064,7 +1064,7 @@
         {
           "id": "1f943970-513c-4211-a5df-7dd5ae68edec",
           "entity": "Location Number",
-          "save_to": "",
+          "save_to": "LocationNumber",
           "type": "",
           "unique": false,
           "options": [],
@@ -1077,7 +1077,7 @@
         {
           "id": "5a7f3a6b-72ee-4a35-8b53-41973dee84da",
           "entity": "Building Number",
-          "save_to": "",
+          "save_to": "BuildingNumber",
           "type": "",
           "unique": false,
           "options": [],
@@ -1090,7 +1090,7 @@
         {
           "id": "2d97b224-688a-49e1-a892-c81e8bbe464f",
           "entity": "Street",
-          "save_to": "",
+          "save_to": "Street",
           "type": "",
           "unique": false,
           "options": [],
@@ -1103,7 +1103,7 @@
         {
           "id": "6a904284-b0fe-4788-8c0d-73d3e148ea85",
           "entity": "City",
-          "save_to": "",
+          "save_to": "City",
           "type": "",
           "unique": false,
           "options": [],
@@ -1116,7 +1116,7 @@
         {
           "id": "3676c769-18d3-4946-8931-00345e75641a",
           "entity": "County",
-          "save_to": "",
+          "save_to": "County",
           "type": "",
           "unique": false,
           "options": [],
@@ -1129,7 +1129,7 @@
         {
           "id": "ace5e81e-1ca6-4723-8b4c-688f28542094",
           "entity": "State",
-          "save_to": "",
+          "save_to": "State",
           "type": "",
           "unique": false,
           "options": [],
@@ -1142,7 +1142,7 @@
         {
           "id": "6c040e66-19dc-4cff-9a91-be1fa5eedbba",
           "entity": "ZIP",
-          "save_to": "",
+          "save_to": "ZIP",
           "type": "",
           "unique": false,
           "options": [],
@@ -1155,7 +1155,7 @@
         {
           "id": "1bebe598-4b91-418c-b1dc-c19703a38010",
           "entity": "City Limits",
-          "save_to": "",
+          "save_to": "CityLimits",
           "type": "",
           "unique": false,
           "options": [],
@@ -1168,7 +1168,7 @@
         {
           "id": "efa46b09-2134-425c-92b3-51b519dd74e5",
           "entity": "Interest",
-          "save_to": "",
+          "save_to": "Interest",
           "type": "",
           "unique": false,
           "options": [],
@@ -1181,7 +1181,7 @@
         {
           "id": "4b345a9a-6887-4c06-8266-64706f1d0e67",
           "entity": "Number of Full Time Employees",
-          "save_to": "",
+          "save_to": "NumberOfFullTimeEmployees",
           "type": "",
           "unique": false,
           "options": [],
@@ -1194,7 +1194,7 @@
         {
           "id": "b1898274-d91b-495d-9676-1478576a9dbb",
           "entity": "Number of Part Time Employees",
-          "save_to": "",
+          "save_to": "NumberOfPartTimeEmployees",
           "type": "",
           "unique": false,
           "options": [],
@@ -1207,7 +1207,7 @@
         {
           "id": "6440e71f-dfe0-40e8-8f22-b103eaf48a15",
           "entity": "Description of Operations",
-          "save_to": "",
+          "save_to": "DescriptionOfOperations",
           "type": "",
           "unique": false,
           "options": [],
@@ -1220,7 +1220,7 @@
         {
           "id": "074fdb5d-7857-43e0-8dfb-7093225a821e",
           "entity": "Annual Revenues",
-          "save_to": "",
+          "save_to": "AnnualRevenues",
           "type": "",
           "unique": false,
           "options": [],
@@ -1233,7 +1233,7 @@
         {
           "id": "3a6d6b05-9e18-4c32-aed7-f2da6a6aa598",
           "entity": "Occupied Area",
-          "save_to": "",
+          "save_to": "OccupiedArea",
           "type": "",
           "unique": false,
           "options": [],
@@ -1246,7 +1246,7 @@
         {
           "id": "bf601422-e2e8-45e8-be7d-c8ec5ad9ba32",
           "entity": "Open to Public Area",
-          "save_to": "",
+          "save_to": "OpenToPublicArea",
           "type": "",
           "unique": false,
           "options": [],
@@ -1259,7 +1259,7 @@
         {
           "id": "486d3e60-e09c-4932-a3ef-79f27c305aaf",
           "entity": "Total Building Area",
-          "save_to": "",
+          "save_to": "TotalBuildingArea",
           "type": "",
           "unique": false,
           "options": [],
@@ -1272,7 +1272,7 @@
         {
           "id": "4b0a0b61-a66f-44c4-9087-317e11a676b3",
           "entity": "Any Area Leased to Others? Y/N",
-          "save_to": "",
+          "save_to": "AnyAreaLeasedToOthersYN",
           "type": "",
           "unique": false,
           "options": [],
@@ -1315,7 +1315,7 @@
         {
           "id": "1d951d22-c81e-46bf-8055-991d223785ae",
           "entity": "Nature of Business",
-          "save_to": "",
+          "save_to": "NatureOfBusiness",
           "type": "",
           "unique": false,
           "options": [],
@@ -1328,7 +1328,7 @@
         {
           "id": "1919ee5f-408a-4e9f-b90a-edde952ba745",
           "entity": "Date Business Started",
-          "save_to": "",
+          "save_to": "DateBusinessStarted",
           "type": "",
           "unique": false,
           "options": [],
@@ -1341,7 +1341,7 @@
         {
           "id": "441fd1c4-fb93-420e-b28d-df28c5c0d21b",
           "entity": "Description of Primary Operations",
-          "save_to": "",
+          "save_to": "DescriptionOfPrimaryOperations",
           "type": "",
           "unique": false,
           "options": [],
@@ -1354,7 +1354,7 @@
         {
           "id": "916f63b8-ed28-4003-8d17-f9907a84083e",
           "entity": "Retail Stores or Service Operations % of Total Sales",
-          "save_to": "",
+          "save_to": "RetailStoresOrServiceOperationsPercentOfTotalSales",
           "type": "",
           "unique": false,
           "options": [],
@@ -1367,7 +1367,7 @@
         {
           "id": "e8bda865-80ea-44e6-8fbe-576afe4c6aaa",
           "entity": "Installation, Service, or Repair Work %",
-          "save_to": "",
+          "save_to": "InstallationServiceOrRepairWorkPercent",
           "type": "",
           "unique": false,
           "options": [],
@@ -1380,7 +1380,7 @@
         {
           "id": "48188ace-2e39-4f15-aca0-95dcab2c8eb2",
           "entity": "Off Premises Installation, Service or Repair Work %",
-          "save_to": "",
+          "save_to": "OffPremisesInstallationServiceOrRepairWorkPercent",
           "type": "",
           "unique": false,
           "options": [],
@@ -1423,7 +1423,7 @@
         {
           "id": "34da93cd-0010-458e-8f8c-dd6c727a1f9d",
           "entity": "Interest Type",
-          "save_to": "",
+          "save_to": "InterestType",
           "type": "",
           "unique": false,
           "options": [],
@@ -1436,7 +1436,7 @@
         {
           "id": "173503d2-3684-48bf-81dd-59073a821c23",
           "entity": "Interest Name",
-          "save_to": "",
+          "save_to": "InterestName",
           "type": "",
           "unique": false,
           "options": [],
@@ -1449,7 +1449,7 @@
         {
           "id": "71e03317-cdf3-4245-b450-cac0fd213e85",
           "entity": "Interest Address",
-          "save_to": "",
+          "save_to": "InterestAddress",
           "type": "",
           "unique": false,
           "options": [],
@@ -1462,7 +1462,7 @@
         {
           "id": "cdeefc76-e21e-403d-b495-c66cc1a56667",
           "entity": "Rank",
-          "save_to": "",
+          "save_to": "Rank",
           "type": "",
           "unique": false,
           "options": [],
@@ -1475,7 +1475,7 @@
         {
           "id": "61d8bf98-6f31-46ea-b799-512ea380c8e7",
           "entity": "Evidence",
-          "save_to": "",
+          "save_to": "Evidence",
           "type": "",
           "unique": false,
           "options": [],
@@ -1488,7 +1488,7 @@
         {
           "id": "12903184-8269-4b1e-a56a-11941658f8a7",
           "entity": "Interest in Item Number",
-          "save_to": "",
+          "save_to": "InterestInItemNumber",
           "type": "",
           "unique": false,
           "options": [],
@@ -1501,7 +1501,7 @@
         {
           "id": "281e8a5a-7dfd-455a-9c56-2266a980c982",
           "entity": "Location",
-          "save_to": "",
+          "save_to": "Location",
           "type": "",
           "unique": false,
           "options": [],
@@ -1514,7 +1514,7 @@
         {
           "id": "c63ab345-2580-4f8a-9190-0279f6684c45",
           "entity": "Building",
-          "save_to": "",
+          "save_to": "Building",
           "type": "",
           "unique": false,
           "options": [],
@@ -1527,7 +1527,7 @@
         {
           "id": "c2c5beff-d1ce-442e-bf6a-2e12901e8ef9",
           "entity": "Vehicle",
-          "save_to": "",
+          "save_to": "Vehicle",
           "type": "",
           "unique": false,
           "options": [],
@@ -1540,7 +1540,7 @@
         {
           "id": "e245278c-6732-496d-950a-02d33959d8b4",
           "entity": "Reference / Loan Number",
-          "save_to": "",
+          "save_to": "ReferenceLoanNumber",
           "type": "",
           "unique": false,
           "options": [],
@@ -1553,7 +1553,7 @@
         {
           "id": "2a86dde0-9bc4-42d6-aa28-64677bcadb65",
           "entity": "Lien Amount",
-          "save_to": "",
+          "save_to": "LienAmount",
           "type": "",
           "unique": false,
           "options": [],
@@ -1566,7 +1566,7 @@
         {
           "id": "49008527-a08e-43e9-9c84-24d853fe6305",
           "entity": "Interest End Date",
-          "save_to": "",
+          "save_to": "InterestEndDate",
           "type": "",
           "unique": false,
           "options": [],
@@ -1579,7 +1579,7 @@
         {
           "id": "8cebd4c8-56d2-453c-832d-761da92acf73",
           "entity": "Reason for Interest",
-          "save_to": "",
+          "save_to": "ReasonForInterest",
           "type": "",
           "unique": false,
           "options": [],
@@ -1592,7 +1592,7 @@
         {
           "id": "a5d6cf16-8a9a-4642-aded-b4623460690d",
           "entity": "Phone Number",
-          "save_to": "",
+          "save_to": "PhoneNumber",
           "type": "",
           "unique": false,
           "options": [],
@@ -1605,7 +1605,7 @@
         {
           "id": "3a196120-1b1e-4a7c-a820-6feb24559a6e",
           "entity": "Fax Number",
-          "save_to": "",
+          "save_to": "FaxNumber",
           "type": "",
           "unique": false,
           "options": [],
@@ -1618,7 +1618,7 @@
         {
           "id": "52875af2-f5a3-486d-a286-c76887a86abd",
           "entity": "Email Address",
-          "save_to": "",
+          "save_to": "EmailAddress",
           "type": "",
           "unique": false,
           "options": [],
@@ -1631,7 +1631,7 @@
         {
           "id": "7fcffdd4-ab24-44f3-bc4e-6fc2937a4126",
           "entity": "Item Class",
-          "save_to": "",
+          "save_to": "ItemClass",
           "type": "",
           "unique": false,
           "options": [],
@@ -1644,7 +1644,7 @@
         {
           "id": "58124faa-8efb-4868-8097-83a8c221fdf6",
           "entity": "Item",
-          "save_to": "",
+          "save_to": "Item",
           "type": "",
           "unique": false,
           "options": [],
@@ -1657,7 +1657,7 @@
         {
           "id": "ed25cf87-5d18-4e26-ae40-a99bbaf3a0bf",
           "entity": "Item Description",
-          "save_to": "",
+          "save_to": "ItemDescription",
           "type": "",
           "unique": false,
           "options": [],
@@ -1700,7 +1700,7 @@
         {
           "id": "58c8af44-f436-4c48-89c0-2e9e89bc9a0f",
           "entity": "Remarks / Processing Instructions",
-          "save_to": "",
+          "save_to": "RemarksProcessingInstructions",
           "type": "",
           "unique": false,
           "options": [],
@@ -1743,7 +1743,7 @@
         {
           "id": "915a2795-914c-4216-b4ac-c4e17d89b5ee",
           "entity": "Prior Carrier Name",
-          "save_to": "",
+          "save_to": "PriorCarrierName",
           "type": "",
           "unique": false,
           "options": [],
@@ -1756,7 +1756,7 @@
         {
           "id": "88d114bf-6ee7-4966-b102-e6f30f98ea36",
           "entity": "Year",
-          "save_to": "",
+          "save_to": "Year",
           "type": "",
           "unique": false,
           "options": [],
@@ -1769,7 +1769,7 @@
         {
           "id": "14c5c436-eb17-4189-beb9-6d43b1303964",
           "entity": "Category",
-          "save_to": "",
+          "save_to": "Category",
           "type": "",
           "unique": false,
           "options": [],
@@ -1782,7 +1782,7 @@
         {
           "id": "ed4bc544-1eae-46ec-83f4-e4befa368539",
           "entity": "Line of Business (Prior Policy)",
-          "save_to": "",
+          "save_to": "LineOfBusinessPriorPolicy",
           "type": "",
           "unique": false,
           "options": [],
@@ -1795,7 +1795,7 @@
         {
           "id": "1eac8c11-c9a8-4412-9db0-e92758ac21b8",
           "entity": "Policy Number",
-          "save_to": "",
+          "save_to": "PolicyNumber2",
           "type": "",
           "unique": false,
           "options": [],
@@ -1808,7 +1808,7 @@
         {
           "id": "416de494-26aa-491a-b1e6-fb65fa00c494",
           "entity": "Effective Date",
-          "save_to": "",
+          "save_to": "EffectiveDate",
           "type": "",
           "unique": false,
           "options": [],
@@ -1821,7 +1821,7 @@
         {
           "id": "075762de-6d9b-4020-976e-56aeb094d376",
           "entity": "Expiration Date",
-          "save_to": "",
+          "save_to": "ExpirationDate",
           "type": "",
           "unique": false,
           "options": [],
@@ -1834,7 +1834,7 @@
         {
           "id": "f0b5aaa1-653d-452e-a84e-9ebbb5dfdfea",
           "entity": "Premium",
-          "save_to": "",
+          "save_to": "Premium",
           "type": "",
           "unique": false,
           "options": [],
@@ -1877,7 +1877,7 @@
         {
           "id": "2f45ea0f-25da-484f-ab33-ac343916e11c",
           "entity": "Loss History Indicator",
-          "save_to": "",
+          "save_to": "LossHistoryIndicator",
           "type": "",
           "unique": false,
           "options": [],
@@ -1890,7 +1890,7 @@
         {
           "id": "2a345f52-ddb3-4ebc-a22d-d883d11f8de2",
           "entity": "Date of Occurrence",
-          "save_to": "",
+          "save_to": "DateOfOccurrence",
           "type": "",
           "unique": false,
           "options": [],
@@ -1903,7 +1903,7 @@
         {
           "id": "005d8ed5-1b5f-421d-aba0-17488c4cc0bc",
           "entity": "Date of Claim",
-          "save_to": "",
+          "save_to": "DateOfClaim",
           "type": "",
           "unique": false,
           "options": [],
@@ -1916,7 +1916,7 @@
         {
           "id": "ba44e5c8-a306-41a7-8c51-3fa8276f59f2",
           "entity": "Line Type (Loss)",
-          "save_to": "",
+          "save_to": "LineTypeLoss",
           "type": "",
           "unique": false,
           "options": [],
@@ -1929,7 +1929,7 @@
         {
           "id": "fae41661-3408-420b-8152-2dc499b3a254",
           "entity": "Description of Occurrence or Claim",
-          "save_to": "",
+          "save_to": "DescriptionOfOccurrenceOrClaim",
           "type": "",
           "unique": false,
           "options": [],
@@ -1942,7 +1942,7 @@
         {
           "id": "030c6c88-bb8d-457a-9028-67ccba7f7eab",
           "entity": "Amount Paid",
-          "save_to": "",
+          "save_to": "AmountPaid",
           "type": "",
           "unique": false,
           "options": [],
@@ -1955,7 +1955,7 @@
         {
           "id": "397b4780-c1cf-4720-a17e-830855d06ef4",
           "entity": "Amount Reserved",
-          "save_to": "",
+          "save_to": "AmountReserved",
           "type": "",
           "unique": false,
           "options": [],
@@ -1968,7 +1968,7 @@
         {
           "id": "1922f81a-7af5-47d2-8d80-6cffc87630c1",
           "entity": "Subrogation Indicator",
-          "save_to": "",
+          "save_to": "SubrogationIndicator",
           "type": "",
           "unique": false,
           "options": [],
@@ -1981,7 +1981,7 @@
         {
           "id": "37df5026-73d2-4601-86e7-8e6f18360751",
           "entity": "Claim Open Indicator",
-          "save_to": "",
+          "save_to": "ClaimOpenIndicator",
           "type": "",
           "unique": false,
           "options": [],
@@ -2024,7 +2024,7 @@
         {
           "id": "c38370c7-726d-46e3-a23e-5434bd81a008",
           "entity": "Producer’s Name",
-          "save_to": "",
+          "save_to": "ProducersName",
           "type": "",
           "unique": false,
           "options": [],
@@ -2037,7 +2037,7 @@
         {
           "id": "0ced6681-be99-4795-8f4b-fe874d1a299e",
           "entity": "State Producer License Number",
-          "save_to": "",
+          "save_to": "StateProducerLicenseNumber",
           "type": "",
           "unique": false,
           "options": [],
@@ -2050,7 +2050,7 @@
         {
           "id": "1f92e197-7e0e-431d-a025-32ca3f230b04",
           "entity": "National Producer Number (NPN)",
-          "save_to": "",
+          "save_to": "NationalProducerNumberNPN",
           "type": "",
           "unique": false,
           "options": [],
@@ -2063,7 +2063,7 @@
         {
           "id": "8d362221-ba57-4d45-b200-23da89690e10",
           "entity": "Signature Date",
-          "save_to": "",
+          "save_to": "SignatureDate",
           "type": "",
           "unique": false,
           "options": [],
@@ -2106,7 +2106,7 @@
         {
           "id": "f2e26241-84fa-4a22-b739-8d31eb7dbb29",
           "entity": "General/Operations/Relationships Question",
-          "save_to": "",
+          "save_to": "GeneralOpsRelationshipsQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -2119,7 +2119,7 @@
         {
           "id": "2b515213-7453-457f-a366-1f50d3a9e7fe",
           "entity": "General/Operations/Relationships Answer",
-          "save_to": "",
+          "save_to": "GeneralOpsRelationshipsA",
           "type": "",
           "unique": false,
           "options": [],
@@ -2162,7 +2162,7 @@
         {
           "id": "d653dcb9-5313-43e6-9f4b-6ab139d43768",
           "entity": "Safety/Hazards/Compliance Question",
-          "save_to": "",
+          "save_to": "SafetyHazardsComplianceQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -2175,7 +2175,7 @@
         {
           "id": "3f99ce70-842a-42a2-a908-ec0e1b807e49",
           "entity": "Safety/Hazards/Compliance Answer",
-          "save_to": "",
+          "save_to": "SafetyHazardsComplianceA",
           "type": "",
           "unique": false,
           "options": [],
@@ -2218,7 +2218,7 @@
         {
           "id": "6e14fd8a-eb84-4775-a10e-eaf1ee2165f1",
           "entity": "Insurance History/Underwriting Question",
-          "save_to": "",
+          "save_to": "InsuranceHistoryUnderwritingQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -2231,7 +2231,7 @@
         {
           "id": "d95cd47b-9b33-4e2f-a84d-f9171270cd0c",
           "entity": "Insurance History/Underwriting Answer",
-          "save_to": "",
+          "save_to": "InsuranceHistoryUnderwritingA",
           "type": "",
           "unique": false,
           "options": [],
@@ -2256,7 +2256,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": false,
+          "date": true,
           "math": false
         },
         "table_filter": null,
@@ -2274,7 +2274,7 @@
         {
           "id": "ebfe512a-f0c6-468d-ba1f-dfc9244c0c4c",
           "entity": "Claims/Legal/Financial Question",
-          "save_to": "",
+          "save_to": "ClaimsLegalFinancialQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -2287,7 +2287,7 @@
         {
           "id": "f0a87cbf-453b-4457-af13-5e0119977495",
           "entity": "Claims/Legal/Financial Answer",
-          "save_to": "",
+          "save_to": "ClaimsLegalFinancialA",
           "type": "",
           "unique": false,
           "options": [],
@@ -2312,7 +2312,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": true,
+          "date": false,
           "math": false
         },
         "table_filter": null,
@@ -2330,7 +2330,7 @@
         {
           "id": "b1400c84-fcee-4580-88dc-16689e3e9b18",
           "entity": "Drones/UAS Question",
-          "save_to": "",
+          "save_to": "DronesUASQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -2343,7 +2343,7 @@
         {
           "id": "e712317a-2462-4d1a-85eb-25434a0d7cca",
           "entity": "Drones/UAS Answer",
-          "save_to": "",
+          "save_to": "DronesUASA",
           "type": "",
           "unique": false,
           "options": [],

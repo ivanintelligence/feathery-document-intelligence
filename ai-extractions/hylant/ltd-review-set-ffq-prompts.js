@@ -1,6 +1,6 @@
-prompt5.value=`<GROUND_RULES>
+DR_Lprompt5.value=`<GROUND_RULES>
 Use ONLY explicit text in the provided context. No assumptions.
-Use ONLY these status values: Present or Not found.
+Use ONLY these flag values: Present or Not found.
 If a topic is Present, include 1 verbatim supporting snippet.
 If Not found, output Language: Null.
 Do NOT rewrite the snippet; copy verbatim only.
@@ -25,47 +25,61 @@ Produce the Exclusions & Limitations checklist in the required format. <Answer>
 </QUESTIONS>
 
 <OUTPUT_FORMAT>
-Exclusions & Limitations Section: <Present/Not found>
-Language: "<snippet/Null>"
+A) EXCLUSIONS & LIMITATIONS SECTION
+- FLAG: <Present/Not found>
+- LANGUAGE: "<snippet/Null>"
 
-Pre-Existing Condition: <Present/Not found>
-Timeframe: <timeframe/Null>
-Language: "<snippet/Null>"
+B) KEY EXCLUSIONS
+1) PRE-EXISTING CONDITION
+- FLAG: <Present/Not found>
+- TIMEFRAME: <timeframe/Null>
+- LANGUAGE: "<snippet/Null>"
 
-Mental Health / Substance Use Disorder: <Present/Not found>
-Limit: <# months/Null>
-Language: "<snippet/Null>"
+2) MENTAL HEALTH / SUBSTANCE USE DISORDER
+- FLAG: <Present/Not found>
+- LIMIT: <# months/Null>
+- LANGUAGE: "<snippet/Null>"
 
-Self-Reported Symptoms: <Present/Not found>
-Limit: <# months/Null>
-Language: "<snippet/Null>"
+3) SELF-REPORTED SYMPTOMS
+- FLAG: <Present/Not found>
+- LIMIT: <# months/Null>
+- LANGUAGE: "<snippet/Null>"
 
-Self-Inflicted Injury: <Present/Not found>
-Language: "<snippet/Null>"
+4) SELF-INFLICTED INJURY
+- FLAG: <Present/Not found>
+- LANGUAGE: "<snippet/Null>"
 
-On-the-Job / Work-Related Injury: <Present/Not found>
-Language: "<snippet/Null>"
+5) ON-THE-JOB / WORK-RELATED INJURY
+- FLAG: <Present/Not found>
+- LANGUAGE: "<snippet/Null>"
 </OUTPUT_FORMAT>
 
 <EXAMPLES>
-Exclusions & Limitations Section: Present
-Language: "EXCLUSIONS AND LIMITATIONS: Benefits will not be paid for..."
+A) EXCLUSIONS & LIMITATIONS SECTION
+- FLAG: Present
+- LANGUAGE: "EXCLUSIONS AND LIMITATIONS: Benefits will not be paid for..."
 
-Pre-Existing Condition: Present
-Timeframe: 3/12
-Language: "Pre-Existing Condition Limitation: ... 3 months ... 12 months..."
+B) KEY EXCLUSIONS
+1) PRE-EXISTING CONDITION
+- FLAG: Present
+- TIMEFRAME: 3/12
+- LANGUAGE: "Pre-Existing Condition Limitation: ... 3 months ... 12 months..."
 
-Mental Health / Substance Use Disorder: Present
-Limit: 24 months
-Language: "Mental Health/Substance Use Disorders: Benefits limited to 24 months..."
+2) MENTAL HEALTH / SUBSTANCE USE DISORDER
+- FLAG: Present
+- LIMIT: 24 months
+- LANGUAGE: "Mental Health/Substance Use Disorders: Benefits limited to 24 months..."
 
-Self-Reported Symptoms: Not found
-Limit: Null
-Language: Null
+3) SELF-REPORTED SYMPTOMS
+- FLAG: Not found
+- LIMIT: Null
+- LANGUAGE: Null
 
-Self-Inflicted Injury: Present
-Language: "No benefits for intentionally self-inflicted injury..."
+4) SELF-INFLICTED INJURY
+- FLAG: Present
+- LANGUAGE: "No benefits for intentionally self-inflicted injury..."
 
-On-the-Job / Work-Related Injury: Not found
-Language: Null
+5) ON-THE-JOB / WORK-RELATED INJURY
+- FLAG: Not found
+- LANGUAGE: Null
 </EXAMPLES>`

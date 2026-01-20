@@ -45,6 +45,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -126,6 +127,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -457,6 +459,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -499,6 +502,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -756,6 +760,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -880,6 +885,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -1047,6 +1053,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -1115,6 +1122,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -1196,6 +1204,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -1238,6 +1247,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -1280,7 +1290,8 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
-          "date": false,
+          "web": false,
+          "date": true,
           "math": false
         },
         "table_filter": null,
@@ -1391,6 +1402,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -1502,6 +1514,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -1557,6 +1570,63 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "863966ed-901a-4463-b9ff-c0f560ddadda",
+      "type": "multiple_value",
+      "details": "Extract the document language that defines Maximum Benefit Duration (MBD) for LTD, including tables or narrative clauses. Capture age-based schedules (age bands or specific ages) and the corresponding duration/rule (e.g., “to age 65,” “to SSNRA,” “24 months,” “5 years,” “lifetime”), including any qualifiers such as “whichever is longer/longest,” “but not beyond…,” or similar. If the document is not in Q&A form, treat headings/subheadings or lead-in phrases as the “question” and extract the associated table rows or clause text as the “answer.” Do not infer; extract verbatim.",
+      "entities": [
+        {
+          "id": "5a93a522-487f-4308-8b77-9a940f875f4d",
+          "entity": "Maximum Benefit Duration Question",
+          "save_to": "AP_LTDMaximumBenefitDurationQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the exact question text if Q&A format exists; otherwise extract the closest relevant heading/subheading or lead-in phrase verbatim (e.g., “Maximum Benefit Duration,” “Maximum Payment Period,” “Duration of Benefits,” “When Benefits End,” “Benefit Duration Schedule,” “Age Reductions”).",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "e7d162ff-3c17-4d7c-91ab-a63893e62379",
+          "entity": "Maximum Benefit Duration Answer",
+          "save_to": "AP_LTDMaximumBenefitDurationA",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the verbatim MBD content tied to the question/heading, including full table rows and/or clauses showing age/age range and the corresponding duration/rule. Preserve numbers, age ranges, units (months/years), “to age/SSNRA” wording, and “whichever is longer/longest” language exactly.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Maximum Benefit Duration Q&A",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -1612,6 +1682,858 @@
     }
   ],
   "variants": [
+    {
+      "id": "667545e6-e631-410d-ab75-cc6ee5004408",
+      "variant_name": "Alternative Plan 1",
+      "file_sources": [
+        "FileUpload7"
+      ],
+      "group_variants": [
+        {
+          "question_group_id": "8a5d2339-05c1-4493-b612-7ad7842807d8",
+          "save_to_fields": [
+            "AP_LTDElig_AP1",
+            "AP_LTDElig1_AP1",
+            "AP_LTDElig2_AP1",
+            "AP_LTDElig3_AP1"
+          ]
+        },
+        {
+          "question_group_id": "bb904095-6d80-4e62-8164-cb79343ba50f",
+          "save_to_fields": [
+            "AP_LTDElimPeriod_AP1"
+          ]
+        },
+        {
+          "question_group_id": "d736b1d1-0bce-40d8-97a2-360cfbce2c5e",
+          "save_to_fields": [
+            "AP_LTDBenefitAmount_AP1",
+            "AP_LTDBenefitAmount1_AP1",
+            "AP_LTDBenefitAmount2_AP1",
+            "AP_LTDBenefitAmount3_AP1"
+          ]
+        },
+        {
+          "question_group_id": "93862e9f-df5b-44d5-872e-c9b9b6fb0a7e",
+          "save_to_fields": [
+            "AP_LTDMinMonthBen_AP1"
+          ]
+        },
+        {
+          "question_group_id": "8c6411df-6ef8-4f9c-b8e2-f43ec54b65f3",
+          "save_to_fields": [
+            "AP_LTDMaxMonBen_AP1",
+            "AP_LTDMaxMonBen1_AP1",
+            "AP_LTDMaxMonBen2_AP1",
+            "AP_LTDMaxMonBen3_AP1"
+          ]
+        },
+        {
+          "question_group_id": "8719f3f8-900a-447e-9c1d-1df31d73e022",
+          "save_to_fields": [
+            "AP_LTDMaxBenDur_AP1",
+            "AP_LTDMaxBenDur1_AP1",
+            "AP_LTDMaxBenDur2_AP1",
+            "AP_LTDMaxBenDur3_AP1"
+          ]
+        },
+        {
+          "question_group_id": "a6927381-eff5-488f-bb8e-b2efb83dd9ec",
+          "save_to_fields": [
+            "AP_LTDDefDisab_AP1"
+          ]
+        },
+        {
+          "question_group_id": "db3db225-b90d-4d65-a3f2-769a66d2caa8",
+          "save_to_fields": [
+            "AP_LTDPartialDis_AP1"
+          ]
+        },
+        {
+          "question_group_id": "8d135ad4-e6d7-445e-88c6-d0a36ae58cc5",
+          "save_to_fields": [
+            "AP_LTDGainfulEarnTrust_AP1"
+          ]
+        },
+        {
+          "question_group_id": "1fdbc0d1-3af1-4930-bbf0-7b2f1e30c800",
+          "save_to_fields": [
+            "AP_LTDSelfReport_AP1"
+          ]
+        },
+        {
+          "question_group_id": "bddbd3f0-572f-4c3f-b590-eb638f4db64c",
+          "save_to_fields": [
+            "AP_LTDMentalIllness_AP1"
+          ]
+        },
+        {
+          "question_group_id": "0ed16c7a-7060-4343-8762-1822c20e7ff4",
+          "save_to_fields": [
+            "AP_LTDSubsAbuse_AP1"
+          ]
+        },
+        {
+          "question_group_id": "92776ca2-0eef-4b0f-9e41-223884999264",
+          "save_to_fields": [
+            "AP_LTDReturntoWork_AP1"
+          ]
+        },
+        {
+          "question_group_id": "76ac373a-7caf-43b2-b07b-6c3386145e8f",
+          "save_to_fields": [
+            "AP_LTDOwnOcc_AP1",
+            "AP_LTDOwnOcc1_AP1",
+            "AP_LTDOwnOcc2_AP1",
+            "AP_LTDOwnOcc3_AP1"
+          ]
+        },
+        {
+          "question_group_id": "c3745bea-befe-4d3e-a07a-f03d8ff28c35",
+          "save_to_fields": [
+            "AP_LTDZeroDayRes_AP1"
+          ]
+        },
+        {
+          "question_group_id": "867b9df7-86bc-42cf-a746-30cabbf3201a",
+          "save_to_fields": [
+            "AP_LTDPreEx_AP1"
+          ]
+        },
+        {
+          "question_group_id": "7eaab4fd-7543-483e-bf01-1d3cedff8271",
+          "save_to_fields": [
+            "AP_LTDEmpCon_AP1",
+            "AP_LTDEmpCon1_AP1",
+            "AP_LTDEmpCon2_AP1",
+            "AP_LTDEmpCon3_AP1"
+          ]
+        },
+        {
+          "question_group_id": "5f6e8b94-84f2-432f-be9a-ec443bd7ef19",
+          "save_to_fields": [
+            "AP_LTDPartReq_AP1"
+          ]
+        },
+        {
+          "question_group_id": "2dffb5d4-f4dc-4f58-bd6f-fec2c1192589",
+          "save_to_fields": [
+            "AP_LTDRateGuar_AP1",
+            "AP_LTDRatePer_AP1",
+            "AP_LTDRate_AP1"
+          ]
+        },
+        {
+          "question_group_id": "1323c116-4df7-4801-85e0-d50802b17108",
+          "save_to_fields": [
+            "AP_LTDEstMonVol_AP1",
+            "AP_LTDMonPrem_AP1",
+            "AP_LTDAnnPrem_AP1",
+            "AP_LTDPerChange_AP1"
+          ]
+        },
+        {
+          "question_group_id": "732fa489-db15-4bfc-811b-ea9d6ee5e50e",
+          "save_to_fields": [
+            "AP_LTDCarrier_AP1",
+            "AP_LTDPlanSummary_AP1"
+          ]
+        },
+        {
+          "question_group_id": "b8ced847-69d2-4f3c-ad70-45d73c62e602",
+          "save_to_fields": [
+            "AP_LTDClientName_AP1"
+          ]
+        },
+        {
+          "question_group_id": "5e57386a-194b-467c-b852-e53e7846b4e0",
+          "save_to_fields": [
+            "AP_LTDEffectiveDate_AP1"
+          ]
+        },
+        {
+          "question_group_id": "3f0a1a4c-8ae4-4222-a7b5-e460b79bf6ca",
+          "save_to_fields": [
+            "AP_LTDEligibilityLanguageQ_AP1",
+            "AP_LTDEligibilityLanguageA_AP1"
+          ]
+        },
+        {
+          "question_group_id": "dca0b003-1bf3-4bf5-84ac-2441901c0990",
+          "save_to_fields": [
+            "AP_LTDTerminationProvisionQ_AP1",
+            "AP_LTDTerminationProvisionA_AP1"
+          ]
+        },
+        {
+          "question_group_id": "06a1d7b0-e206-45c0-b05b-95343d2c8bf6",
+          "save_to_fields": [
+            "AP_LTDPartialDisabilityDefinitionQ_AP1",
+            "AP_LTDPartialDisabilityDefinitionA_AP1"
+          ]
+        },
+        {
+          "question_group_id": "5f75aeb6-5a60-4d26-95db-462db66a4523",
+          "save_to_fields": [
+            "AP_LTDDisabilityDefinitionQ_AP1",
+            "AP_LTDDisabilityDefinitionA_AP1"
+          ]
+        },
+        {
+          "question_group_id": "53fa1b60-c895-453f-a283-9ad966d06896",
+          "save_to_fields": [
+            "AP_LTDExclusionLimitationQ_AP1",
+            "AP_LTDExclusionLimitationA_AP1"
+          ]
+        },
+        {
+          "question_group_id": "863966ed-901a-4463-b9ff-c0f560ddadda",
+          "save_to_fields": [
+            "AP_LTDMaximumBenefitDurationQ_AP1",
+            "AP_LTDMaximumBenefitDurationA_AP1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "39c95e5b-0839-4bd2-8b02-f522ca00120e",
+      "variant_name": "Alternative Plan 2",
+      "file_sources": [
+        "FileUpload8"
+      ],
+      "group_variants": [
+        {
+          "question_group_id": "732fa489-db15-4bfc-811b-ea9d6ee5e50e",
+          "save_to_fields": [
+            "AP_LTDCarrier_AP2",
+            "AP_LTDPlanSummary_AP2"
+          ]
+        },
+        {
+          "question_group_id": "8a5d2339-05c1-4493-b612-7ad7842807d8",
+          "save_to_fields": [
+            "AP_LTDElig_AP2",
+            "AP_LTDElig1_AP2",
+            "AP_LTDElig2_AP2",
+            "AP_LTDElig3_AP2"
+          ]
+        },
+        {
+          "question_group_id": "bb904095-6d80-4e62-8164-cb79343ba50f",
+          "save_to_fields": [
+            "AP_LTDElimPeriod_AP2"
+          ]
+        },
+        {
+          "question_group_id": "d736b1d1-0bce-40d8-97a2-360cfbce2c5e",
+          "save_to_fields": [
+            "AP_LTDBenefitAmount_AP2",
+            "AP_LTDBenefitAmount1_AP2",
+            "AP_LTDBenefitAmount2_AP2",
+            "AP_LTDBenefitAmount3_AP2"
+          ]
+        },
+        {
+          "question_group_id": "93862e9f-df5b-44d5-872e-c9b9b6fb0a7e",
+          "save_to_fields": [
+            "AP_LTDMinMonthBen_AP2"
+          ]
+        },
+        {
+          "question_group_id": "8c6411df-6ef8-4f9c-b8e2-f43ec54b65f3",
+          "save_to_fields": [
+            "AP_LTDMaxMonBen_AP2",
+            "AP_LTDMaxMonBen1_AP2",
+            "AP_LTDMaxMonBen2_AP2",
+            "AP_LTDMaxMonBen3_AP2"
+          ]
+        },
+        {
+          "question_group_id": "8719f3f8-900a-447e-9c1d-1df31d73e022",
+          "save_to_fields": [
+            "AP_LTDMaxBenDur_AP2",
+            "AP_LTDMaxBenDur1_AP2",
+            "AP_LTDMaxBenDur2_AP2",
+            "AP_LTDMaxBenDur3_AP2"
+          ]
+        },
+        {
+          "question_group_id": "a6927381-eff5-488f-bb8e-b2efb83dd9ec",
+          "save_to_fields": [
+            "AP_LTDDefDisab_AP2"
+          ]
+        },
+        {
+          "question_group_id": "db3db225-b90d-4d65-a3f2-769a66d2caa8",
+          "save_to_fields": [
+            "AP_LTDPartialDis_AP2"
+          ]
+        },
+        {
+          "question_group_id": "8d135ad4-e6d7-445e-88c6-d0a36ae58cc5",
+          "save_to_fields": [
+            "AP_LTDGainfulEarnTrust_AP2"
+          ]
+        },
+        {
+          "question_group_id": "1fdbc0d1-3af1-4930-bbf0-7b2f1e30c800",
+          "save_to_fields": [
+            "AP_LTDSelfReport_AP2"
+          ]
+        },
+        {
+          "question_group_id": "bddbd3f0-572f-4c3f-b590-eb638f4db64c",
+          "save_to_fields": [
+            "AP_LTDMentalIllness_AP2"
+          ]
+        },
+        {
+          "question_group_id": "0ed16c7a-7060-4343-8762-1822c20e7ff4",
+          "save_to_fields": [
+            "AP_LTDSubsAbuse_AP2"
+          ]
+        },
+        {
+          "question_group_id": "92776ca2-0eef-4b0f-9e41-223884999264",
+          "save_to_fields": [
+            "AP_LTDReturntoWork_AP2"
+          ]
+        },
+        {
+          "question_group_id": "76ac373a-7caf-43b2-b07b-6c3386145e8f",
+          "save_to_fields": [
+            "AP_LTDOwnOcc_AP2",
+            "AP_LTDOwnOcc1_AP2",
+            "AP_LTDOwnOcc2_AP2",
+            "AP_LTDOwnOcc3_AP2"
+          ]
+        },
+        {
+          "question_group_id": "c3745bea-befe-4d3e-a07a-f03d8ff28c35",
+          "save_to_fields": [
+            "AP_LTDZeroDayRes_AP2"
+          ]
+        },
+        {
+          "question_group_id": "867b9df7-86bc-42cf-a746-30cabbf3201a",
+          "save_to_fields": [
+            "AP_LTDPreEx_AP2"
+          ]
+        },
+        {
+          "question_group_id": "7eaab4fd-7543-483e-bf01-1d3cedff8271",
+          "save_to_fields": [
+            "AP_LTDEmpCon_AP2",
+            "AP_LTDEmpCon1_AP2",
+            "AP_LTDEmpCon2_AP2",
+            "AP_LTDEmpCon3_AP2"
+          ]
+        },
+        {
+          "question_group_id": "5f6e8b94-84f2-432f-be9a-ec443bd7ef19",
+          "save_to_fields": [
+            "AP_LTDPartReq_AP2"
+          ]
+        },
+        {
+          "question_group_id": "2dffb5d4-f4dc-4f58-bd6f-fec2c1192589",
+          "save_to_fields": [
+            "AP_LTDRateGuar_AP2",
+            "AP_LTDRatePer_AP2",
+            "AP_LTDRate_AP2"
+          ]
+        },
+        {
+          "question_group_id": "1323c116-4df7-4801-85e0-d50802b17108",
+          "save_to_fields": [
+            "AP_LTDEstMonVol_AP2",
+            "AP_LTDMonPrem_AP2",
+            "AP_LTDAnnPrem_AP2",
+            "AP_LTDPerChange_AP2"
+          ]
+        },
+        {
+          "question_group_id": "b8ced847-69d2-4f3c-ad70-45d73c62e602",
+          "save_to_fields": [
+            "AP_LTDClientName_AP2"
+          ]
+        },
+        {
+          "question_group_id": "5e57386a-194b-467c-b852-e53e7846b4e0",
+          "save_to_fields": [
+            "AP_LTDEffectiveDate_AP2"
+          ]
+        },
+        {
+          "question_group_id": "3f0a1a4c-8ae4-4222-a7b5-e460b79bf6ca",
+          "save_to_fields": [
+            "AP_LTDEligibilityLanguageQ_AP2",
+            "AP_LTDEligibilityLanguageA_AP2"
+          ]
+        },
+        {
+          "question_group_id": "dca0b003-1bf3-4bf5-84ac-2441901c0990",
+          "save_to_fields": [
+            "AP_LTDTerminationProvisionQ_AP2",
+            "AP_LTDTerminationProvisionA_AP2"
+          ]
+        },
+        {
+          "question_group_id": "06a1d7b0-e206-45c0-b05b-95343d2c8bf6",
+          "save_to_fields": [
+            "AP_LTDPartialDisabilityDefinitionQ_AP2",
+            "AP_LTDPartialDisabilityDefinitionA_AP2"
+          ]
+        },
+        {
+          "question_group_id": "5f75aeb6-5a60-4d26-95db-462db66a4523",
+          "save_to_fields": [
+            "AP_LTDDisabilityDefinitionQ_AP2",
+            "AP_LTDDisabilityDefinitionA_AP2"
+          ]
+        },
+        {
+          "question_group_id": "53fa1b60-c895-453f-a283-9ad966d06896",
+          "save_to_fields": [
+            "AP_LTDExclusionLimitationQ_AP2",
+            "AP_LTDExclusionLimitationA_AP2"
+          ]
+        },
+        {
+          "question_group_id": "863966ed-901a-4463-b9ff-c0f560ddadda",
+          "save_to_fields": [
+            "AP_LTDMaximumBenefitDurationQ_AP2",
+            "AP_LTDMaximumBenefitDurationA_AP2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1d430c87-e0d6-437e-802c-64c7e4ac863b",
+      "variant_name": "Alternative Plan 3",
+      "file_sources": [
+        "FileUpload9"
+      ],
+      "group_variants": [
+        {
+          "question_group_id": "1323c116-4df7-4801-85e0-d50802b17108",
+          "save_to_fields": [
+            "AP_LTDEstMonVol_AP3",
+            "AP_LTDMonPrem_AP3",
+            "AP_LTDAnnPrem_AP3",
+            "AP_LTDPerChange_AP3"
+          ]
+        },
+        {
+          "question_group_id": "867b9df7-86bc-42cf-a746-30cabbf3201a",
+          "save_to_fields": [
+            "AP_LTDPreEx_AP3"
+          ]
+        },
+        {
+          "question_group_id": "732fa489-db15-4bfc-811b-ea9d6ee5e50e",
+          "save_to_fields": [
+            "AP_LTDCarrier_AP3",
+            "AP_LTDPlanSummary_AP3"
+          ]
+        },
+        {
+          "question_group_id": "8a5d2339-05c1-4493-b612-7ad7842807d8",
+          "save_to_fields": [
+            "AP_LTDElig_AP3",
+            "AP_LTDElig1_AP3",
+            "AP_LTDElig2_AP3",
+            "AP_LTDElig3_AP3"
+          ]
+        },
+        {
+          "question_group_id": "bb904095-6d80-4e62-8164-cb79343ba50f",
+          "save_to_fields": [
+            "AP_LTDElimPeriod_AP3"
+          ]
+        },
+        {
+          "question_group_id": "d736b1d1-0bce-40d8-97a2-360cfbce2c5e",
+          "save_to_fields": [
+            "AP_LTDBenefitAmount_AP3",
+            "AP_LTDBenefitAmount1_AP3",
+            "AP_LTDBenefitAmount2_AP3",
+            "AP_LTDBenefitAmount3_AP3"
+          ]
+        },
+        {
+          "question_group_id": "93862e9f-df5b-44d5-872e-c9b9b6fb0a7e",
+          "save_to_fields": [
+            "AP_LTDMinMonthBen_AP3"
+          ]
+        },
+        {
+          "question_group_id": "8c6411df-6ef8-4f9c-b8e2-f43ec54b65f3",
+          "save_to_fields": [
+            "AP_LTDMaxMonBen_AP3",
+            "AP_LTDMaxMonBen1_AP3",
+            "AP_LTDMaxMonBen2_AP3",
+            "AP_LTDMaxMonBen3_AP3"
+          ]
+        },
+        {
+          "question_group_id": "8719f3f8-900a-447e-9c1d-1df31d73e022",
+          "save_to_fields": [
+            "AP_LTDMaxBenDur_AP3",
+            "AP_LTDMaxBenDur1_AP3",
+            "AP_LTDMaxBenDur2_AP3",
+            "AP_LTDMaxBenDur3_AP3"
+          ]
+        },
+        {
+          "question_group_id": "a6927381-eff5-488f-bb8e-b2efb83dd9ec",
+          "save_to_fields": [
+            "AP_LTDDefDisab_AP3"
+          ]
+        },
+        {
+          "question_group_id": "db3db225-b90d-4d65-a3f2-769a66d2caa8",
+          "save_to_fields": [
+            "AP_LTDPartialDis_AP3"
+          ]
+        },
+        {
+          "question_group_id": "8d135ad4-e6d7-445e-88c6-d0a36ae58cc5",
+          "save_to_fields": [
+            "AP_LTDGainfulEarnTrust_AP3"
+          ]
+        },
+        {
+          "question_group_id": "1fdbc0d1-3af1-4930-bbf0-7b2f1e30c800",
+          "save_to_fields": [
+            "AP_LTDSelfReport_AP3"
+          ]
+        },
+        {
+          "question_group_id": "bddbd3f0-572f-4c3f-b590-eb638f4db64c",
+          "save_to_fields": [
+            "AP_LTDMentalIllness_AP3"
+          ]
+        },
+        {
+          "question_group_id": "0ed16c7a-7060-4343-8762-1822c20e7ff4",
+          "save_to_fields": [
+            "AP_LTDSubsAbuse_AP3"
+          ]
+        },
+        {
+          "question_group_id": "92776ca2-0eef-4b0f-9e41-223884999264",
+          "save_to_fields": [
+            "AP_LTDReturntoWork_AP3"
+          ]
+        },
+        {
+          "question_group_id": "76ac373a-7caf-43b2-b07b-6c3386145e8f",
+          "save_to_fields": [
+            "AP_LTDOwnOcc_AP3",
+            "AP_LTDOwnOcc1_AP3",
+            "AP_LTDOwnOcc2_AP3",
+            "AP_LTDOwnOcc3_AP3"
+          ]
+        },
+        {
+          "question_group_id": "c3745bea-befe-4d3e-a07a-f03d8ff28c35",
+          "save_to_fields": [
+            "AP_LTDZeroDayRes_AP3"
+          ]
+        },
+        {
+          "question_group_id": "7eaab4fd-7543-483e-bf01-1d3cedff8271",
+          "save_to_fields": [
+            "AP_LTDEmpCon_AP3",
+            "AP_LTDEmpCon1_AP3",
+            "AP_LTDEmpCon2_AP3",
+            "AP_LTDEmpCon3_AP3"
+          ]
+        },
+        {
+          "question_group_id": "5f6e8b94-84f2-432f-be9a-ec443bd7ef19",
+          "save_to_fields": [
+            "AP_LTDPartReq_AP3"
+          ]
+        },
+        {
+          "question_group_id": "2dffb5d4-f4dc-4f58-bd6f-fec2c1192589",
+          "save_to_fields": [
+            "AP_LTDRateGuar_AP3",
+            "AP_LTDRatePer_AP3",
+            "AP_LTDRate_AP3"
+          ]
+        },
+        {
+          "question_group_id": "b8ced847-69d2-4f3c-ad70-45d73c62e602",
+          "save_to_fields": [
+            "AP_LTDClientName_AP3"
+          ]
+        },
+        {
+          "question_group_id": "5e57386a-194b-467c-b852-e53e7846b4e0",
+          "save_to_fields": [
+            "AP_LTDEffectiveDate_AP3"
+          ]
+        },
+        {
+          "question_group_id": "3f0a1a4c-8ae4-4222-a7b5-e460b79bf6ca",
+          "save_to_fields": [
+            "AP_LTDEligibilityLanguageQ_AP3",
+            "AP_LTDEligibilityLanguageA_AP3"
+          ]
+        },
+        {
+          "question_group_id": "dca0b003-1bf3-4bf5-84ac-2441901c0990",
+          "save_to_fields": [
+            "AP_LTDTerminationProvisionQ_AP3",
+            "AP_LTDTerminationProvisionA_AP3"
+          ]
+        },
+        {
+          "question_group_id": "06a1d7b0-e206-45c0-b05b-95343d2c8bf6",
+          "save_to_fields": [
+            "AP_LTDPartialDisabilityDefinitionQ_AP3",
+            "AP_LTDPartialDisabilityDefinitionA_AP3"
+          ]
+        },
+        {
+          "question_group_id": "5f75aeb6-5a60-4d26-95db-462db66a4523",
+          "save_to_fields": [
+            "AP_LTDDisabilityDefinitionQ_AP3",
+            "AP_LTDDisabilityDefinitionA_AP3"
+          ]
+        },
+        {
+          "question_group_id": "53fa1b60-c895-453f-a283-9ad966d06896",
+          "save_to_fields": [
+            "AP_LTDExclusionLimitationQ_AP3",
+            "AP_LTDExclusionLimitationA_AP3"
+          ]
+        },
+        {
+          "question_group_id": "863966ed-901a-4463-b9ff-c0f560ddadda",
+          "save_to_fields": [
+            "AP_LTDMaximumBenefitDurationQ_AP3",
+            "AP_LTDMaximumBenefitDurationA_AP3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8f3a5ea7-6908-48ad-befa-a698333f6d84",
+      "variant_name": "Alternative Plan 4",
+      "file_sources": [
+        "FileUpload10"
+      ],
+      "group_variants": [
+        {
+          "question_group_id": "732fa489-db15-4bfc-811b-ea9d6ee5e50e",
+          "save_to_fields": [
+            "AP_LTDCarrier_AP4",
+            "AP_LTDPlanSummary_AP4"
+          ]
+        },
+        {
+          "question_group_id": "8a5d2339-05c1-4493-b612-7ad7842807d8",
+          "save_to_fields": [
+            "AP_LTDElig_AP4",
+            "AP_LTDElig1_AP4",
+            "AP_LTDElig2_AP4",
+            "AP_LTDElig3_AP4"
+          ]
+        },
+        {
+          "question_group_id": "bb904095-6d80-4e62-8164-cb79343ba50f",
+          "save_to_fields": [
+            "AP_LTDElimPeriod_AP4"
+          ]
+        },
+        {
+          "question_group_id": "d736b1d1-0bce-40d8-97a2-360cfbce2c5e",
+          "save_to_fields": [
+            "AP_LTDBenefitAmount_AP4",
+            "AP_LTDBenefitAmount1_AP4",
+            "AP_LTDBenefitAmount2_AP4",
+            "AP_LTDBenefitAmount3_AP4"
+          ]
+        },
+        {
+          "question_group_id": "93862e9f-df5b-44d5-872e-c9b9b6fb0a7e",
+          "save_to_fields": [
+            "AP_LTDMinMonthBen_AP4"
+          ]
+        },
+        {
+          "question_group_id": "8c6411df-6ef8-4f9c-b8e2-f43ec54b65f3",
+          "save_to_fields": [
+            "AP_LTDMaxMonBen_AP4",
+            "AP_LTDMaxMonBen1_AP4",
+            "AP_LTDMaxMonBen2_AP4",
+            "AP_LTDMaxMonBen3_AP4"
+          ]
+        },
+        {
+          "question_group_id": "8719f3f8-900a-447e-9c1d-1df31d73e022",
+          "save_to_fields": [
+            "AP_LTDMaxBenDur_AP4",
+            "AP_LTDMaxBenDur1_AP4",
+            "AP_LTDMaxBenDur2_AP4",
+            "AP_LTDMaxBenDur3_AP4"
+          ]
+        },
+        {
+          "question_group_id": "a6927381-eff5-488f-bb8e-b2efb83dd9ec",
+          "save_to_fields": [
+            "AP_LTDDefDisab_AP4"
+          ]
+        },
+        {
+          "question_group_id": "db3db225-b90d-4d65-a3f2-769a66d2caa8",
+          "save_to_fields": [
+            "AP_LTDPartialDis_AP4"
+          ]
+        },
+        {
+          "question_group_id": "8d135ad4-e6d7-445e-88c6-d0a36ae58cc5",
+          "save_to_fields": [
+            "AP_LTDGainfulEarnTrust_AP4"
+          ]
+        },
+        {
+          "question_group_id": "1fdbc0d1-3af1-4930-bbf0-7b2f1e30c800",
+          "save_to_fields": [
+            "AP_LTDSelfReport_AP4"
+          ]
+        },
+        {
+          "question_group_id": "bddbd3f0-572f-4c3f-b590-eb638f4db64c",
+          "save_to_fields": [
+            "AP_LTDMentalIllness_AP4"
+          ]
+        },
+        {
+          "question_group_id": "0ed16c7a-7060-4343-8762-1822c20e7ff4",
+          "save_to_fields": [
+            "AP_LTDSubsAbuse_AP4"
+          ]
+        },
+        {
+          "question_group_id": "92776ca2-0eef-4b0f-9e41-223884999264",
+          "save_to_fields": [
+            "AP_LTDReturntoWork_AP4"
+          ]
+        },
+        {
+          "question_group_id": "76ac373a-7caf-43b2-b07b-6c3386145e8f",
+          "save_to_fields": [
+            "AP_LTDOwnOcc_AP4",
+            "AP_LTDOwnOcc1_AP4",
+            "AP_LTDOwnOcc2_AP4",
+            "AP_LTDOwnOcc3_AP4"
+          ]
+        },
+        {
+          "question_group_id": "c3745bea-befe-4d3e-a07a-f03d8ff28c35",
+          "save_to_fields": [
+            "AP_LTDZeroDayRes_AP4"
+          ]
+        },
+        {
+          "question_group_id": "867b9df7-86bc-42cf-a746-30cabbf3201a",
+          "save_to_fields": [
+            "AP_LTDPreEx_AP4"
+          ]
+        },
+        {
+          "question_group_id": "7eaab4fd-7543-483e-bf01-1d3cedff8271",
+          "save_to_fields": [
+            "AP_LTDEmpCon_AP4",
+            "AP_LTDEmpCon1_AP4",
+            "AP_LTDEmpCon2_AP4",
+            "AP_LTDEmpCon3_AP4"
+          ]
+        },
+        {
+          "question_group_id": "5f6e8b94-84f2-432f-be9a-ec443bd7ef19",
+          "save_to_fields": [
+            "AP_LTDPartReq_AP4"
+          ]
+        },
+        {
+          "question_group_id": "2dffb5d4-f4dc-4f58-bd6f-fec2c1192589",
+          "save_to_fields": [
+            "AP_LTDRateGuar_AP4",
+            "AP_LTDRatePer_AP4",
+            "AP_LTDRate_AP4"
+          ]
+        },
+        {
+          "question_group_id": "1323c116-4df7-4801-85e0-d50802b17108",
+          "save_to_fields": [
+            "AP_LTDEstMonVol_AP4",
+            "AP_LTDMonPrem_AP4",
+            "AP_LTDAnnPrem_AP4",
+            "AP_LTDPerChange_AP4"
+          ]
+        },
+        {
+          "question_group_id": "b8ced847-69d2-4f3c-ad70-45d73c62e602",
+          "save_to_fields": [
+            "AP_LTDClientName_AP4"
+          ]
+        },
+        {
+          "question_group_id": "5e57386a-194b-467c-b852-e53e7846b4e0",
+          "save_to_fields": [
+            "AP_LTDEffectiveDate_AP4"
+          ]
+        },
+        {
+          "question_group_id": "3f0a1a4c-8ae4-4222-a7b5-e460b79bf6ca",
+          "save_to_fields": [
+            "AP_LTDEligibilityLanguageQ_AP4",
+            "AP_LTDEligibilityLanguageA_AP4"
+          ]
+        },
+        {
+          "question_group_id": "dca0b003-1bf3-4bf5-84ac-2441901c0990",
+          "save_to_fields": [
+            "AP_LTDTerminationProvisionQ_AP4",
+            "AP_LTDTerminationProvisionA_AP4"
+          ]
+        },
+        {
+          "question_group_id": "06a1d7b0-e206-45c0-b05b-95343d2c8bf6",
+          "save_to_fields": [
+            "AP_LTDPartialDisabilityDefinitionQ_AP4",
+            "AP_LTDPartialDisabilityDefinitionA_AP4"
+          ]
+        },
+        {
+          "question_group_id": "5f75aeb6-5a60-4d26-95db-462db66a4523",
+          "save_to_fields": [
+            "AP_LTDDisabilityDefinitionQ_AP4",
+            "AP_LTDDisabilityDefinitionA_AP4"
+          ]
+        },
+        {
+          "question_group_id": "53fa1b60-c895-453f-a283-9ad966d06896",
+          "save_to_fields": [
+            "AP_LTDExclusionLimitationQ_AP4",
+            "AP_LTDExclusionLimitationA_AP4"
+          ]
+        },
+        {
+          "question_group_id": "863966ed-901a-4463-b9ff-c0f560ddadda",
+          "save_to_fields": [
+            "AP_LTDMaximumBenefitDurationQ_AP4",
+            "AP_LTDMaximumBenefitDurationA_AP4"
+          ]
+        }
+      ]
+    },
     {
       "id": "a3b69d40-2347-48a8-afd6-f02544a70066",
       "variant_name": "Renewal Plan",
@@ -1815,641 +2737,12 @@
             "AP_LTDExclusionLimitationQ_Renewal",
             "AP_LTDExclusionLimitationA_Renewal"
           ]
-        }
-      ]
-    },
-    {
-      "id": "667545e6-e631-410d-ab75-cc6ee5004408",
-      "variant_name": "Alternative Plan 1",
-      "file_sources": [
-        "FileUpload7"
-      ],
-      "group_variants": [
-        {
-          "question_group_id": "8a5d2339-05c1-4493-b612-7ad7842807d8",
-          "save_to_fields": [
-            "AP_LTDElig_AP1",
-            "AP_LTDElig1_AP1",
-            "AP_LTDElig2_AP1",
-            "AP_LTDElig3_AP1"
-          ]
-        },
-        {
-          "question_group_id": "bb904095-6d80-4e62-8164-cb79343ba50f",
-          "save_to_fields": [
-            "AP_LTDElimPeriod_AP1"
-          ]
-        },
-        {
-          "question_group_id": "d736b1d1-0bce-40d8-97a2-360cfbce2c5e",
-          "save_to_fields": [
-            "AP_LTDBenefitAmount_AP1",
-            "AP_LTDBenefitAmount1_AP1",
-            "AP_LTDBenefitAmount2_AP1",
-            "AP_LTDBenefitAmount3_AP1"
-          ]
-        },
-        {
-          "question_group_id": "93862e9f-df5b-44d5-872e-c9b9b6fb0a7e",
-          "save_to_fields": [
-            "AP_LTDMinMonthBen_AP1"
-          ]
-        },
-        {
-          "question_group_id": "8c6411df-6ef8-4f9c-b8e2-f43ec54b65f3",
-          "save_to_fields": [
-            "AP_LTDMaxMonBen_AP1",
-            "AP_LTDMaxMonBen1_AP1",
-            "AP_LTDMaxMonBen2_AP1",
-            "AP_LTDMaxMonBen3_AP1"
-          ]
-        },
-        {
-          "question_group_id": "8719f3f8-900a-447e-9c1d-1df31d73e022",
-          "save_to_fields": [
-            "AP_LTDMaxBenDur_AP1",
-            "AP_LTDMaxBenDur1_AP1",
-            "AP_LTDMaxBenDur2_AP1",
-            "AP_LTDMaxBenDur3_AP1"
-          ]
-        },
-        {
-          "question_group_id": "a6927381-eff5-488f-bb8e-b2efb83dd9ec",
-          "save_to_fields": [
-            "AP_LTDDefDisab_AP1"
-          ]
-        },
-        {
-          "question_group_id": "db3db225-b90d-4d65-a3f2-769a66d2caa8",
-          "save_to_fields": [
-            "AP_LTDPartialDis_AP1"
-          ]
-        },
-        {
-          "question_group_id": "8d135ad4-e6d7-445e-88c6-d0a36ae58cc5",
-          "save_to_fields": [
-            "AP_LTDGainfulEarnTrust_AP1"
-          ]
-        },
-        {
-          "question_group_id": "1fdbc0d1-3af1-4930-bbf0-7b2f1e30c800",
-          "save_to_fields": [
-            "AP_LTDSelfReport_AP1"
-          ]
-        },
-        {
-          "question_group_id": "bddbd3f0-572f-4c3f-b590-eb638f4db64c",
-          "save_to_fields": [
-            "AP_LTDMentalIllness_AP1"
-          ]
-        },
-        {
-          "question_group_id": "0ed16c7a-7060-4343-8762-1822c20e7ff4",
-          "save_to_fields": [
-            "AP_LTDSubsAbuse_AP1"
-          ]
-        },
-        {
-          "question_group_id": "92776ca2-0eef-4b0f-9e41-223884999264",
-          "save_to_fields": [
-            "AP_LTDReturntoWork_AP1"
-          ]
-        },
-        {
-          "question_group_id": "76ac373a-7caf-43b2-b07b-6c3386145e8f",
-          "save_to_fields": [
-            "AP_LTDOwnOcc_AP1",
-            "AP_LTDOwnOcc1_AP1",
-            "AP_LTDOwnOcc2_AP1",
-            "AP_LTDOwnOcc3_AP1"
-          ]
-        },
-        {
-          "question_group_id": "c3745bea-befe-4d3e-a07a-f03d8ff28c35",
-          "save_to_fields": [
-            "AP_LTDZeroDayRes_AP1"
-          ]
-        },
-        {
-          "question_group_id": "867b9df7-86bc-42cf-a746-30cabbf3201a",
-          "save_to_fields": [
-            "AP_LTDPreEx_AP1"
-          ]
-        },
-        {
-          "question_group_id": "7eaab4fd-7543-483e-bf01-1d3cedff8271",
-          "save_to_fields": [
-            "AP_LTDEmpCon_AP1",
-            "AP_LTDEmpCon1_AP1",
-            "AP_LTDEmpCon2_AP1",
-            "AP_LTDEmpCon3_AP1"
-          ]
-        },
-        {
-          "question_group_id": "5f6e8b94-84f2-432f-be9a-ec443bd7ef19",
-          "save_to_fields": [
-            "AP_LTDPartReq_AP1"
-          ]
-        },
-        {
-          "question_group_id": "2dffb5d4-f4dc-4f58-bd6f-fec2c1192589",
-          "save_to_fields": [
-            "AP_LTDRateGuar_AP1",
-            "AP_LTDRatePer_AP1",
-            "AP_LTDRate_AP1"
-          ]
-        },
-        {
-          "question_group_id": "1323c116-4df7-4801-85e0-d50802b17108",
-          "save_to_fields": [
-            "AP_LTDEstMonVol_AP1",
-            "AP_LTDMonPrem_AP1",
-            "AP_LTDAnnPrem_AP1",
-            "AP_LTDPerChange_AP1"
-          ]
-        },
-        {
-          "question_group_id": "732fa489-db15-4bfc-811b-ea9d6ee5e50e",
-          "save_to_fields": [
-            "AP_LTDCarrier_AP1",
-            "AP_LTDPlanSummary_AP1"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "39c95e5b-0839-4bd2-8b02-f522ca00120e",
-      "variant_name": "Alternative Plan 2",
-      "file_sources": [
-        "FileUpload8"
-      ],
-      "group_variants": [
-        {
-          "question_group_id": "732fa489-db15-4bfc-811b-ea9d6ee5e50e",
-          "save_to_fields": [
-            "AP_LTDCarrier_AP2",
-            "AP_LTDPlanSummary_AP2"
-          ]
-        },
-        {
-          "question_group_id": "8a5d2339-05c1-4493-b612-7ad7842807d8",
-          "save_to_fields": [
-            "AP_LTDElig_AP2",
-            "AP_LTDElig1_AP2",
-            "AP_LTDElig2_AP2",
-            "AP_LTDElig3_AP2"
-          ]
-        },
-        {
-          "question_group_id": "bb904095-6d80-4e62-8164-cb79343ba50f",
-          "save_to_fields": [
-            "AP_LTDElimPeriod_AP2"
-          ]
-        },
-        {
-          "question_group_id": "d736b1d1-0bce-40d8-97a2-360cfbce2c5e",
-          "save_to_fields": [
-            "AP_LTDBenefitAmount_AP2",
-            "AP_LTDBenefitAmount1_AP2",
-            "AP_LTDBenefitAmount2_AP2",
-            "AP_LTDBenefitAmount3_AP2"
-          ]
-        },
-        {
-          "question_group_id": "93862e9f-df5b-44d5-872e-c9b9b6fb0a7e",
-          "save_to_fields": [
-            "AP_LTDMinMonthBen_AP2"
-          ]
-        },
-        {
-          "question_group_id": "8c6411df-6ef8-4f9c-b8e2-f43ec54b65f3",
-          "save_to_fields": [
-            "AP_LTDMaxMonBen_AP2",
-            "AP_LTDMaxMonBen1_AP2",
-            "AP_LTDMaxMonBen2_AP2",
-            "AP_LTDMaxMonBen3_AP2"
-          ]
-        },
-        {
-          "question_group_id": "8719f3f8-900a-447e-9c1d-1df31d73e022",
-          "save_to_fields": [
-            "AP_LTDMaxBenDur_AP2",
-            "AP_LTDMaxBenDur1_AP2",
-            "AP_LTDMaxBenDur2_AP2",
-            "AP_LTDMaxBenDur3_AP2"
-          ]
-        },
-        {
-          "question_group_id": "a6927381-eff5-488f-bb8e-b2efb83dd9ec",
-          "save_to_fields": [
-            "AP_LTDDefDisab_AP2"
-          ]
-        },
-        {
-          "question_group_id": "db3db225-b90d-4d65-a3f2-769a66d2caa8",
-          "save_to_fields": [
-            "AP_LTDPartialDis_AP2"
-          ]
-        },
-        {
-          "question_group_id": "8d135ad4-e6d7-445e-88c6-d0a36ae58cc5",
-          "save_to_fields": [
-            "AP_LTDGainfulEarnTrust_AP2"
-          ]
-        },
-        {
-          "question_group_id": "1fdbc0d1-3af1-4930-bbf0-7b2f1e30c800",
-          "save_to_fields": [
-            "AP_LTDSelfReport_AP2"
-          ]
-        },
-        {
-          "question_group_id": "bddbd3f0-572f-4c3f-b590-eb638f4db64c",
-          "save_to_fields": [
-            "AP_LTDMentalIllness_AP2"
-          ]
-        },
-        {
-          "question_group_id": "0ed16c7a-7060-4343-8762-1822c20e7ff4",
-          "save_to_fields": [
-            "AP_LTDSubsAbuse_AP2"
-          ]
-        },
-        {
-          "question_group_id": "92776ca2-0eef-4b0f-9e41-223884999264",
-          "save_to_fields": [
-            "AP_LTDReturntoWork_AP2"
-          ]
-        },
-        {
-          "question_group_id": "76ac373a-7caf-43b2-b07b-6c3386145e8f",
-          "save_to_fields": [
-            "AP_LTDOwnOcc_AP2",
-            "AP_LTDOwnOcc1_AP2",
-            "AP_LTDOwnOcc2_AP2",
-            "AP_LTDOwnOcc3_AP2"
-          ]
-        },
-        {
-          "question_group_id": "c3745bea-befe-4d3e-a07a-f03d8ff28c35",
-          "save_to_fields": [
-            "AP_LTDZeroDayRes_AP2"
-          ]
-        },
-        {
-          "question_group_id": "867b9df7-86bc-42cf-a746-30cabbf3201a",
-          "save_to_fields": [
-            "AP_LTDPreEx_AP2"
-          ]
-        },
-        {
-          "question_group_id": "7eaab4fd-7543-483e-bf01-1d3cedff8271",
-          "save_to_fields": [
-            "AP_LTDEmpCon_AP2",
-            "AP_LTDEmpCon1_AP2",
-            "AP_LTDEmpCon2_AP2",
-            "AP_LTDEmpCon3_AP2"
-          ]
-        },
-        {
-          "question_group_id": "5f6e8b94-84f2-432f-be9a-ec443bd7ef19",
-          "save_to_fields": [
-            "AP_LTDPartReq_AP2"
-          ]
-        },
-        {
-          "question_group_id": "2dffb5d4-f4dc-4f58-bd6f-fec2c1192589",
-          "save_to_fields": [
-            "AP_LTDRateGuar_AP2",
-            "AP_LTDRatePer_AP2",
-            "AP_LTDRate_AP2"
-          ]
-        },
-        {
-          "question_group_id": "1323c116-4df7-4801-85e0-d50802b17108",
-          "save_to_fields": [
-            "AP_LTDEstMonVol_AP2",
-            "AP_LTDMonPrem_AP2",
-            "AP_LTDAnnPrem_AP2",
-            "AP_LTDPerChange_AP2"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "1d430c87-e0d6-437e-802c-64c7e4ac863b",
-      "variant_name": "Alternative Plan 3",
-      "file_sources": [
-        "FileUpload9"
-      ],
-      "group_variants": [
-        {
-          "question_group_id": "1323c116-4df7-4801-85e0-d50802b17108",
-          "save_to_fields": [
-            "AP_LTDEstMonVol_AP3",
-            "AP_LTDMonPrem_AP3",
-            "AP_LTDAnnPrem_AP3",
-            "AP_LTDPerChange_AP3"
-          ]
-        },
-        {
-          "question_group_id": "867b9df7-86bc-42cf-a746-30cabbf3201a",
-          "save_to_fields": [
-            "AP_LTDPreEx_AP3"
-          ]
-        },
-        {
-          "question_group_id": "732fa489-db15-4bfc-811b-ea9d6ee5e50e",
-          "save_to_fields": [
-            "AP_LTDCarrier_AP3",
-            "AP_LTDPlanSummary_AP3"
-          ]
-        },
-        {
-          "question_group_id": "8a5d2339-05c1-4493-b612-7ad7842807d8",
-          "save_to_fields": [
-            "AP_LTDElig_AP3",
-            "AP_LTDElig1_AP3",
-            "AP_LTDElig2_AP3",
-            "AP_LTDElig3_AP3"
-          ]
-        },
-        {
-          "question_group_id": "bb904095-6d80-4e62-8164-cb79343ba50f",
-          "save_to_fields": [
-            "AP_LTDElimPeriod_AP3"
-          ]
-        },
-        {
-          "question_group_id": "d736b1d1-0bce-40d8-97a2-360cfbce2c5e",
-          "save_to_fields": [
-            "AP_LTDBenefitAmount_AP3",
-            "AP_LTDBenefitAmount1_AP3",
-            "AP_LTDBenefitAmount2_AP3",
-            "AP_LTDBenefitAmount3_AP3"
-          ]
-        },
-        {
-          "question_group_id": "93862e9f-df5b-44d5-872e-c9b9b6fb0a7e",
-          "save_to_fields": [
-            "AP_LTDMinMonthBen_AP3"
-          ]
-        },
-        {
-          "question_group_id": "8c6411df-6ef8-4f9c-b8e2-f43ec54b65f3",
-          "save_to_fields": [
-            "AP_LTDMaxMonBen_AP3",
-            "AP_LTDMaxMonBen1_AP3",
-            "AP_LTDMaxMonBen2_AP3",
-            "AP_LTDMaxMonBen3_AP3"
-          ]
-        },
-        {
-          "question_group_id": "8719f3f8-900a-447e-9c1d-1df31d73e022",
-          "save_to_fields": [
-            "AP_LTDMaxBenDur_AP3",
-            "AP_LTDMaxBenDur1_AP3",
-            "AP_LTDMaxBenDur2_AP3",
-            "AP_LTDMaxBenDur3_AP3"
-          ]
-        },
-        {
-          "question_group_id": "a6927381-eff5-488f-bb8e-b2efb83dd9ec",
-          "save_to_fields": [
-            "AP_LTDDefDisab_AP3"
-          ]
-        },
-        {
-          "question_group_id": "db3db225-b90d-4d65-a3f2-769a66d2caa8",
-          "save_to_fields": [
-            "AP_LTDPartialDis_AP3"
-          ]
-        },
-        {
-          "question_group_id": "8d135ad4-e6d7-445e-88c6-d0a36ae58cc5",
-          "save_to_fields": [
-            "AP_LTDGainfulEarnTrust_AP3"
-          ]
-        },
-        {
-          "question_group_id": "1fdbc0d1-3af1-4930-bbf0-7b2f1e30c800",
-          "save_to_fields": [
-            "AP_LTDSelfReport_AP3"
-          ]
-        },
-        {
-          "question_group_id": "bddbd3f0-572f-4c3f-b590-eb638f4db64c",
-          "save_to_fields": [
-            "AP_LTDMentalIllness_AP3"
-          ]
-        },
-        {
-          "question_group_id": "0ed16c7a-7060-4343-8762-1822c20e7ff4",
-          "save_to_fields": [
-            "AP_LTDSubsAbuse_AP3"
-          ]
-        },
-        {
-          "question_group_id": "92776ca2-0eef-4b0f-9e41-223884999264",
-          "save_to_fields": [
-            "AP_LTDReturntoWork_AP3"
-          ]
-        },
-        {
-          "question_group_id": "76ac373a-7caf-43b2-b07b-6c3386145e8f",
-          "save_to_fields": [
-            "AP_LTDOwnOcc_AP3",
-            "AP_LTDOwnOcc1_AP3",
-            "AP_LTDOwnOcc2_AP3",
-            "AP_LTDOwnOcc3_AP3"
-          ]
-        },
-        {
-          "question_group_id": "c3745bea-befe-4d3e-a07a-f03d8ff28c35",
-          "save_to_fields": [
-            "AP_LTDZeroDayRes_AP3"
-          ]
-        },
-        {
-          "question_group_id": "7eaab4fd-7543-483e-bf01-1d3cedff8271",
-          "save_to_fields": [
-            "AP_LTDEmpCon_AP3",
-            "AP_LTDEmpCon1_AP3",
-            "AP_LTDEmpCon2_AP3",
-            "AP_LTDEmpCon3_AP3"
-          ]
-        },
-        {
-          "question_group_id": "5f6e8b94-84f2-432f-be9a-ec443bd7ef19",
-          "save_to_fields": [
-            "AP_LTDPartReq_AP3"
-          ]
-        },
-        {
-          "question_group_id": "2dffb5d4-f4dc-4f58-bd6f-fec2c1192589",
-          "save_to_fields": [
-            "AP_LTDRateGuar_AP3",
-            "AP_LTDRatePer_AP3",
-            "AP_LTDRate_AP3"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "8f3a5ea7-6908-48ad-befa-a698333f6d84",
-      "variant_name": "Alternative Plan 4",
-      "file_sources": [
-        "FileUpload10"
-      ],
-      "group_variants": [
-        {
-          "question_group_id": "732fa489-db15-4bfc-811b-ea9d6ee5e50e",
-          "save_to_fields": [
-            "AP_LTDCarrier_AP4",
-            "AP_LTDPlanSummary_AP4"
-          ]
-        },
-        {
-          "question_group_id": "8a5d2339-05c1-4493-b612-7ad7842807d8",
-          "save_to_fields": [
-            "AP_LTDElig_AP4",
-            "AP_LTDElig1_AP4",
-            "AP_LTDElig2_AP4",
-            "AP_LTDElig3_AP4"
-          ]
-        },
-        {
-          "question_group_id": "bb904095-6d80-4e62-8164-cb79343ba50f",
-          "save_to_fields": [
-            "AP_LTDElimPeriod_AP4"
-          ]
-        },
-        {
-          "question_group_id": "d736b1d1-0bce-40d8-97a2-360cfbce2c5e",
-          "save_to_fields": [
-            "AP_LTDBenefitAmount_AP4",
-            "AP_LTDBenefitAmount1_AP4",
-            "AP_LTDBenefitAmount2_AP4",
-            "AP_LTDBenefitAmount3_AP4"
-          ]
-        },
-        {
-          "question_group_id": "93862e9f-df5b-44d5-872e-c9b9b6fb0a7e",
-          "save_to_fields": [
-            "AP_LTDMinMonthBen_AP4"
-          ]
-        },
-        {
-          "question_group_id": "8c6411df-6ef8-4f9c-b8e2-f43ec54b65f3",
-          "save_to_fields": [
-            "AP_LTDMaxMonBen_AP4",
-            "AP_LTDMaxMonBen1_AP4",
-            "AP_LTDMaxMonBen2_AP4",
-            "AP_LTDMaxMonBen3_AP4"
-          ]
-        },
-        {
-          "question_group_id": "8719f3f8-900a-447e-9c1d-1df31d73e022",
-          "save_to_fields": [
-            "AP_LTDMaxBenDur_AP4",
-            "AP_LTDMaxBenDur1_AP4",
-            "AP_LTDMaxBenDur2_AP4",
-            "AP_LTDMaxBenDur3_AP4"
-          ]
-        },
-        {
-          "question_group_id": "a6927381-eff5-488f-bb8e-b2efb83dd9ec",
-          "save_to_fields": [
-            "AP_LTDDefDisab_AP4"
-          ]
-        },
-        {
-          "question_group_id": "db3db225-b90d-4d65-a3f2-769a66d2caa8",
-          "save_to_fields": [
-            "AP_LTDPartialDis_AP4"
-          ]
-        },
-        {
-          "question_group_id": "8d135ad4-e6d7-445e-88c6-d0a36ae58cc5",
-          "save_to_fields": [
-            "AP_LTDGainfulEarnTrust_AP4"
-          ]
-        },
-        {
-          "question_group_id": "1fdbc0d1-3af1-4930-bbf0-7b2f1e30c800",
-          "save_to_fields": [
-            "AP_LTDSelfReport_AP4"
-          ]
-        },
-        {
-          "question_group_id": "bddbd3f0-572f-4c3f-b590-eb638f4db64c",
-          "save_to_fields": [
-            "AP_LTDMentalIllness_AP4"
-          ]
-        },
-        {
-          "question_group_id": "0ed16c7a-7060-4343-8762-1822c20e7ff4",
-          "save_to_fields": [
-            "AP_LTDSubsAbuse_AP4"
-          ]
-        },
-        {
-          "question_group_id": "92776ca2-0eef-4b0f-9e41-223884999264",
-          "save_to_fields": [
-            "AP_LTDReturntoWork_AP4"
-          ]
-        },
-        {
-          "question_group_id": "76ac373a-7caf-43b2-b07b-6c3386145e8f",
-          "save_to_fields": [
-            "AP_LTDOwnOcc_AP4",
-            "AP_LTDOwnOcc1_AP4",
-            "AP_LTDOwnOcc2_AP4",
-            "AP_LTDOwnOcc3_AP4"
-          ]
-        },
-        {
-          "question_group_id": "c3745bea-befe-4d3e-a07a-f03d8ff28c35",
-          "save_to_fields": [
-            "AP_LTDZeroDayRes_AP4"
-          ]
-        },
-        {
-          "question_group_id": "867b9df7-86bc-42cf-a746-30cabbf3201a",
-          "save_to_fields": [
-            "AP_LTDPreEx_AP4"
-          ]
-        },
-        {
-          "question_group_id": "7eaab4fd-7543-483e-bf01-1d3cedff8271",
-          "save_to_fields": [
-            "AP_LTDEmpCon_AP4",
-            "AP_LTDEmpCon1_AP4",
-            "AP_LTDEmpCon2_AP4",
-            "AP_LTDEmpCon3_AP4"
-          ]
-        },
-        {
-          "question_group_id": "5f6e8b94-84f2-432f-be9a-ec443bd7ef19",
-          "save_to_fields": [
-            "AP_LTDPartReq_AP4"
-          ]
-        },
-        {
-          "question_group_id": "2dffb5d4-f4dc-4f58-bd6f-fec2c1192589",
-          "save_to_fields": [
-            "AP_LTDRateGuar_AP4",
-            "AP_LTDRatePer_AP4",
-            "AP_LTDRate_AP4"
-          ]
         },
         {
-          "question_group_id": "1323c116-4df7-4801-85e0-d50802b17108",
+          "question_group_id": "863966ed-901a-4463-b9ff-c0f560ddadda",
           "save_to_fields": [
-            "AP_LTDEstMonVol_AP4",
-            "AP_LTDMonPrem_AP4",
-            "AP_LTDAnnPrem_AP4",
-            "AP_LTDPerChange_AP4"
+            "AP_LTDMaximumBenefitDurationQ_Renewal",
+            "AP_LTDMaximumBenefitDurationA_Renewal"
           ]
         }
       ]

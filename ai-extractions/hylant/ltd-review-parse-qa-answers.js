@@ -35,6 +35,13 @@ const FIELD_CFG_LIST = [
     Q: 'DR_LExclusionLimitationQ',
     A: 'DR_LExclusionLimitationA',
     store: 'DR_LExclusionLimitationQA'
+  },
+  // Maximum Benefit Duration Q&A
+  {
+    title: 'Maximum Benefit Duration Q&A',
+    Q: 'DR_LMaximumBenefitDurationQ',
+    A: 'DR_LMaximumBenefitDurationA',
+    store: 'DR_LMaximumBenefitDurationQA'
   }
 ];
 

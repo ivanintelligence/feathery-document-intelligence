@@ -35,6 +35,13 @@ const FIELD_CFG_LIST = [
     Q: 'AP_LTDExclusionLimitationQ',
     A: 'AP_LTDExclusionLimitationA',
     store: 'AP_LTDExclusionLimitationQA'
+  },
+  // Maximum Benefit Duration Q&A
+  {
+    title: 'Maximum Benefit Duration Q&A',
+    Q: 'AP_LTDMaximumBenefitDurationQ',
+    A: 'AP_LTDMaximumBenefitDurationA',
+    store: 'AP_LTDMaximumBenefitDurationQA'
   }
 ];
 

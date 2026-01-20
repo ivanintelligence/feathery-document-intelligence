@@ -93,7 +93,7 @@
       "entities": [
         {
           "id": "8b4afaef-6133-4bab-bd02-7c429e864469",
-          "entity": "<GROUND_RULES>\nUse ONLY explicit text in the provided context. No assumptions.\nUse ONLY these status values: Present or Not found.\nIf a topic is Present, include 1 verbatim supporting snippet.\nIf Not found, output Language: Null.\nDo NOT rewrite the snippet; copy verbatim only.\n\nTRUNCATION RULE:\n- If the best supporting language is longer than ~25 words, truncate it and end with \"...\"\n- If not truncated, do not add \"...\"\n</GROUND_RULES>\n\nExclusions & Limitations Q&A:\n<CONTEXT>\n{{DR_MExclusionLimitationQA}}\n</CONTEXT>\n\n<QUESTIONS>\nProduce the Exclusions & Limitations checklist in the required format. <Answer>\n</QUESTIONS>\n\n<OUTPUT_FORMAT>\nOverall Exclusions & Limitations Language: <Present/Not found>\nLanguage: \"<snippet/Null>\"\n\nMental Health / Substance Use Disorder: <Present/Not found>\nLanguage: \"<snippet/Null>\"\n\nGene Therapy / Orphan Drugs: <Present/Not found>\nLanguage: \"<snippet/Null>\"\n\nForeign Travel / Abroad: <Present/Not found>\nLanguage: \"<snippet/Null>\"\n\nCrime/Felony/Illegal Acts Injury: <Present/Not found>\nLanguage: \"<snippet/Null>\"\n\nWeight Loss / Weight Loss Drugs: <Present/Not found>\nLanguage: \"<snippet/Null>\"\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nOverall Exclusions & Limitations Language: Present\nLanguage: \"Exclusions and Limitations: The following services are not covered...\"\n\nMental Health / Substance Use Disorder: Not found\nLanguage: Null\n\nGene Therapy / Orphan Drugs: Present\nLanguage: \"Gene therapy and orphan drugs are excluded.\"\n\nForeign Travel / Abroad: Present\nLanguage: \"No coverage outside the United States...\"\n\nCrime/Felony/Illegal Acts Injury: Present\nLanguage: \"Injury sustained while committing a felony is excluded.\"\n\nWeight Loss / Weight Loss Drugs: Not found\nLanguage: Null\n</EXAMPLES>",
+          "entity": "<GROUND_RULES>\nUse ONLY explicit text in the provided context. No assumptions.\nUse ONLY these status values: Present or Not found.\nIf a topic is Present, include 1 verbatim supporting snippet.\nIf Not found, output Language: Null.\nDo NOT rewrite the snippet; copy verbatim only.\n\nTRUNCATION RULE:\n- If the best supporting language is longer than ~25 words, truncate it and end with \"...\"\n- If not truncated, do not add \"...\"\n</GROUND_RULES>\n\nExclusions & Limitations Q&A:\n<CONTEXT>\n{{DR_MExclusionLimitationQA}}\n</CONTEXT>\n\n<QUESTIONS>\nProduce the Exclusions & Limitations checklist in the required format. <Answer>\n</QUESTIONS>\n\n<OUTPUT_FORMAT>\nA) EXCLUSIONS & LIMITATIONS SECTION\n- FLAG: <Present/Not found>\n- LANGUAGE: \"<snippet/Null>\"\n\nB) KEY EXCLUSIONS\n1) MENTAL HEALTH / SUBSTANCE USE DISORDER\n- FLAG: <Present/Not found>\n- LANGUAGE: \"<snippet/Null>\"\n\n2) GENE THERAPY / ORPHAN DRUGS\n- FLAG: <Present/Not found>\n- LANGUAGE: \"<snippet/Null>\"\n\n3) FOREIGN TRAVEL / ABROAD\n- FLAG: <Present/Not found>\n- LANGUAGE: \"<snippet/Null>\"\n\n4) CRIME / FELONY / ILLEGAL ACTS INJURY\n- FLAG: <Present/Not found>\n- LANGUAGE: \"<snippet/Null>\"\n\n5) WEIGHT LOSS / WEIGHT LOSS DRUGS\n- FLAG: <Present/Not found>\n- LANGUAGE: \"<snippet/Null>\"\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nA) EXCLUSIONS & LIMITATIONS SECTION\n- FLAG: Present\n- LANGUAGE: \"EXCLUSIONS AND LIMITATIONS: The following services are not covered...\"\n\nB) KEY EXCLUSIONS\n1) MENTAL HEALTH / SUBSTANCE USE DISORDER\n- FLAG: Not found\n- LANGUAGE: Null\n\n2) GENE THERAPY / ORPHAN DRUGS\n- FLAG: Present\n- LANGUAGE: \"Gene therapy and orphan drugs are excluded.\"\n\n3) FOREIGN TRAVEL / ABROAD\n- FLAG: Present\n- LANGUAGE: \"No coverage outside the United States...\"\n\n4) CRIME / FELONY / ILLEGAL ACTS INJURY\n- FLAG: Present\n- LANGUAGE: \"Injury sustained while committing a felony is excluded.\"\n\n5) WEIGHT LOSS / WEIGHT LOSS DRUGS\n- FLAG: Not found\n- LANGUAGE: Null\n</EXAMPLES>",
           "save_to": "DR_MExclusionLimitationFFQ",
           "type": "",
           "unique": false,
@@ -132,6 +132,31 @@
   ],
   "variants": [
     {
+      "id": "a4f7131e-cdf3-4ad8-9ec3-1af579133728",
+      "variant_name": "File 4",
+      "file_sources": [],
+      "group_variants": [
+        {
+          "question_group_id": "7fdd952f-ab44-46e4-bc13-61375b0788ce",
+          "save_to_fields": [
+            "DR_MEligibilityLanguageFFQ_F4"
+          ]
+        },
+        {
+          "question_group_id": "0a5e116b-942c-47c1-ab14-db762444025c",
+          "save_to_fields": [
+            "DR_MTerminationProvisionFFQ_F4"
+          ]
+        },
+        {
+          "question_group_id": "69c0bb50-0683-42b5-a4c3-01e9b6842cf9",
+          "save_to_fields": [
+            "DR_MExclusionLimitationFFQ_F4"
+          ]
+        }
+      ]
+    },
+    {
       "id": "020a6515-289f-4ca5-948e-044e72413d6c",
       "variant_name": "File 2",
       "file_sources": [],
@@ -146,6 +171,37 @@
           "question_group_id": "0a5e116b-942c-47c1-ab14-db762444025c",
           "save_to_fields": [
             "DR_MTerminationProvisionFFQ_F2"
+          ]
+        },
+        {
+          "question_group_id": "69c0bb50-0683-42b5-a4c3-01e9b6842cf9",
+          "save_to_fields": [
+            "DR_MExclusionLimitationFFQ_F2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6a202ce7-63fd-4a1c-b43d-8a1b8366bc01",
+      "variant_name": "File 3",
+      "file_sources": [],
+      "group_variants": [
+        {
+          "question_group_id": "7fdd952f-ab44-46e4-bc13-61375b0788ce",
+          "save_to_fields": [
+            "DR_MEligibilityLanguageFFQ_F3"
+          ]
+        },
+        {
+          "question_group_id": "0a5e116b-942c-47c1-ab14-db762444025c",
+          "save_to_fields": [
+            "DR_MTerminationProvisionFFQ_F3"
+          ]
+        },
+        {
+          "question_group_id": "69c0bb50-0683-42b5-a4c3-01e9b6842cf9",
+          "save_to_fields": [
+            "DR_MExclusionLimitationFFQ_F3"
           ]
         }
       ]

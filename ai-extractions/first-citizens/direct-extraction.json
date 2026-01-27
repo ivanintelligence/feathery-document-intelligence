@@ -1,0 +1,1037 @@
+{
+  "queries": [
+    {
+      "id": "d8f9b954-f02e-4efc-ac83-6949d9f630d9",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "2de5de48-2e27-45f7-a466-c0b6a1fe8f94",
+          "entity": "Pledge and Securities Agreement",
+          "save_to": "ans_isPledgeAndSec",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return Yes if a document explicitly titled “Pledge and Securities Agreement” or containing clear language granting a security interest or pledge of securities/assets as collateral is present. If no such explicit agreement or language is found in any document, return No. Output Yes/No only.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isPledgeAndSec",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "721d5b84-24db-446d-a59b-ed0937e5e21a",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "2de5de48-2e27-45f7-a466-c0b6a1fe8f94",
+          "entity": "Pledge and Securities Agreement Reasoning",
+          "save_to": "src_isPledgeAndSec",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Provide the reasoning explaining whether a document titled “Pledge and Securities Agreement” exists or whether any document contains explicit language granting a security interest or pledge of securities or assets as collateral. Provide reasoning only. Do not include Yes/No.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isPledgeAndSec",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "32d8d59b-4f06-4340-b145-9174e0f05d8f",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "f89c0fd0-0090-4336-81ba-ca73f0632f47",
+          "entity": "Control Agreement",
+          "save_to": "ans_isCtrlAgr",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return Yes if a document explicitly titled “Control Agreement” (including Deposit Account Control Agreement or Securities Account Control Agreement) is present and grants control to a secured party or lender. If no such document or language exists, return No. Output Yes/No only.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isCtrlAgrmt",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "607bd3df-2f24-431f-828f-3e79da788fa4",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "f89c0fd0-0090-4336-81ba-ca73f0632f47",
+          "entity": "Control Agreement Reasoning",
+          "save_to": "src_isCtrlAgrmt",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Provide the reasoning explaining whether a document titled “Control Agreement” (including Deposit Account Control Agreement or Securities Account Control Agreement) exists and grants control to a secured party or lender. Provide reasoning only. Do not include Yes/No.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isCtrlAgrmt",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "38849caa-89bd-4562-bb35-3aa1356ae38e",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "3aea59ad-1a88-4145-9081-dbb4c8cc99cb",
+          "entity": "Loan and Collateral Match",
+          "save_to": "ans_isLoanDtlsMatchCltrl",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return Yes only if loan documentation exists and explicitly states collateral details that can be directly matched to collateral information in trust or accounting documents. If loan documents are missing or no explicit match is stated, return No. Output Yes/No only.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isLoanDtlsMatchCltrl",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "7dbb3e67-c668-4254-ac3c-262b840f47f4",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "3aea59ad-1a88-4145-9081-dbb4c8cc99cb",
+          "entity": "Loan and Collateral Match Reasoning",
+          "save_to": "src_isLoanDtlsMatchCltrl",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Provide the reasoning explaining whether loan documentation exists and whether the collateral details explicitly match the collateral information reflected in trust or accounting documents. Provide reasoning only. Do not include Yes/No.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isLoanDtlsMatchCltrl",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "fd266ce2-3c94-45f7-9829-8dc6bafed056",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "e1181b74-f729-4aee-b73e-a5ce441ea0a5",
+          "entity": "Client Is a Church",
+          "save_to": "ans_isClientAChurch",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Return Yes only if the client is explicitly identified as a church or religious organization in the documents. If the client is described only as a nonprofit, charitable organization, or 501(c)(3) without religious designation, return No. Output Yes/No only.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isClientAChurch",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "a7fa70c7-c14f-4a5b-8bf6-dd1d30a2e3fe",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "e1181b74-f729-4aee-b73e-a5ce441ea0a5",
+          "entity": "Client Is a Church Reasoning",
+          "save_to": "src_isClientAChurch",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Provide the reasoning explaining whether the client is explicitly identified as a church or religious organization in the documents, or explaining the absence of any religious designation. Provide reasoning only. Do not include Yes/No.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isClientAChurch",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "edaeb097-c203-4797-a420-e5568f332ff6",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "ac8ec73b-63cc-46da-ac87-bad8e8779965",
+          "entity": "Non-Profit Entity Confirmed",
+          "save_to": "ans_isProofNonProfit",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Determine whether documentation exists confirming the client is a not-for-profit entity, such as Articles of Incorporation stating nonprofit status, IRS 501(c)(3) determination language, or Articles of Amendment confirming nonprofit status. Explicit nonprofit language is required. Output Yes/No only.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isProofNonProfit",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "032cc114-8373-48b2-9093-f5734ba10cd2",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "ac8ec73b-63cc-46da-ac87-bad8e8779965",
+          "entity": "Non-Profit Entity Confirmed Reasoning",
+          "save_to": "src_isProofNonProfit",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Provide the reasoning explaining whether documentation exists that explicitly confirms the client is a not-for-profit entity, such as Articles of Incorporation or IRS 501(c)(3) determination language. Provide reasoning only. Do not include Yes/No.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isProofNonProfit",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "227d967e-e780-4093-8dec-a65ce5a7a5d8",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "33b0da20-65f6-4717-be5d-1f0ebd83155c",
+          "entity": "Authorized Signers Document",
+          "save_to": "ans_isAthrzdSigners",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Determine whether a Board Resolution or equivalent document exists that explicitly authorizes individuals to act on behalf of the entity for account or trust matters. The document must name authorized individuals and their authority. Output Yes/No only.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isAthrzdSigners",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "1d0b2ebf-89dc-4558-87a7-a54276da051a",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "33b0da20-65f6-4717-be5d-1f0ebd83155c",
+          "entity": "Authorized Signers Document Reasoning",
+          "save_to": "src_isAthrzdSigners",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Provide the reasoning explaining whether a Board Resolution or equivalent document exists that explicitly authorizes named individuals to act on behalf of the entity for account or trust matters. Provide reasoning only. Do not include Yes/No.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isAthrzdSigners",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "a791b636-35d6-41f1-a8cc-6b956880142e",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "8c43aeea-0ce3-4b42-85b2-d318d335a6bf",
+          "entity": "Authorized Signers Date",
+          "save_to": "ans_dtAthrzdSign",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the effective date of the Board Resolution or Authorized Signers document. Prefer the stated “effective” or “certified” date over signature dates. If no date is stated, return Not Found. Output the date only.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_dtAthrzdSign",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": true,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "b5a70359-9119-49b6-b368-326364582086",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "8c43aeea-0ce3-4b42-85b2-d318d335a6bf",
+          "entity": "Authorized Signers Date Reasoning",
+          "save_to": "src_dtAthrzdSign",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Provide the reasoning explaining whether an effective or certified date is stated on the Board Resolution or Authorized Signers document, and where that date is located if present. Provide reasoning only. ",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_dtAthrzdSign",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": true,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "dc913ed4-9680-4220-98d6-1ba75f8d7d2d",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "630c8497-d006-45fe-b287-f3d5d2a9183f",
+          "entity": "W-9 on File",
+          "save_to": "ans_isW9",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Determine whether a completed IRS Form W-9 for the client is present. The form must include the client name, TIN/EIN, and signature. Blank or unsigned forms do not qualify. Output Yes/No only.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isW9",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "92914285-5ef0-4a01-a1a9-bafaaec9c2da",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "630c8497-d006-45fe-b287-f3d5d2a9183f",
+          "entity": "W-9 on File Reasoning",
+          "save_to": "src_isW9",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Provide the reasoning explaining whether a completed and signed IRS Form W-9 for the client is present in the documents. Provide reasoning only. Do not include Yes/No.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isW9",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "74468f1e-0b2f-4d04-a883-6bf18de9fce3",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "eaa7c9b1-9d57-49eb-8d0b-007ad57b4fda",
+          "entity": "Customer Due Diligence on File",
+          "save_to": "ans_isCDD",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Determine whether a Customer Due Diligence (CDD) or Beneficial Ownership form exists for the account, including ownership and/or control information for a legal entity. The document must explicitly serve a CDD or beneficial owner certification purpose. Output Yes/No only.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isCDD",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "b85c04c0-7fc5-4bb2-aad4-c0cc2c25dc97",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "eaa7c9b1-9d57-49eb-8d0b-007ad57b4fda",
+          "entity": "Customer Due Diligence on File Reasoning",
+          "save_to": "src_isCDD",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Provide the reasoning explaining whether a Customer Due Diligence (CDD) or Beneficial Ownership form exists for the account and serves a CDD or beneficial owner certification purpose. Provide reasoning only. Do not include Yes/No.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isCDD",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "af1da830-eb69-4d8e-a475-4dbd3242c0af",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "2fcdb228-12a3-43e0-a601-36a21242f221",
+          "entity": "Investment Management Agreement",
+          "save_to": "ans_isInvMngmtAgr",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Determine whether a signed Investment Management Agreement exists appointing the institution as investment manager with discretionary or non-discretionary authority over assets. Administrative or policy documents alone do not qualify. Output Yes/No only.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isInvMngmtAgr",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "2e32a2ef-8011-4233-9be9-dd0ecc53cc61",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "2fcdb228-12a3-43e0-a601-36a21242f221",
+          "entity": "Investment Management Agreement Reasoning",
+          "save_to": "src_isInvMngmtAgr",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Provide the reasoning explaining whether a signed Investment Management Agreement exists appointing the institution as investment manager. Provide reasoning only. Do not include Yes/No.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isInvMngmtAgr",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "c3fdd260-b79f-431f-98ac-5538d1682de9",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "2530ec8b-1a7e-4f6d-b878-d30d4cbbacb4",
+          "entity": "Institutional Trust Account",
+          "save_to": "ans_isInsTrustAdmnstrd",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Determine whether documents explicitly indicate the account is administered under Institutional Trust, based on document titles, headers, or governing language. Do not infer from fee schedules or investment policies alone unless explicitly stated. Output Yes/No only.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isInsTrustAdmnstrd",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "6f8ac029-dc3d-4179-9ee0-40ac68d2ac9d",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "2530ec8b-1a7e-4f6d-b878-d30d4cbbacb4",
+          "entity": "Institutional Trust Account Reasoning",
+          "save_to": "src_isInsTrustAdmnstrd",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Provide the reasoning explaining whether the documents explicitly indicate the account is administered under Institutional Trust. Provide reasoning only. Do not include Yes/No.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isInsTrustAdmnstrd",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "5d5a903b-34ec-4509-a17b-d21c888e767e",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "d2b69803-6c59-42a2-af3d-e0f0d0be0d97",
+          "entity": "Administrative Services Agreement",
+          "save_to": "ans_isAdminSrvcAgr",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Determine whether an executed Administrative Services Agreement (ASA) exists governing administrative services for the account. The document must be explicitly titled or described as an Administrative Services Agreement. Output Yes/No only.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isAdminSrvcAgr",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "d025a438-528e-4cde-8428-b5fab6b61db6",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "d2b69803-6c59-42a2-af3d-e0f0d0be0d97",
+          "entity": "Administrative Services Agreement Reasoning",
+          "save_to": "src_isAdminSrvcAgr",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Provide the reasoning explaining whether an executed Administrative Services Agreement (ASA) exists governing administrative services for the account. Provide reasoning only. Do not include Yes/No.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": "src_isAdminSrvcAgr",
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    }
+  ],
+  "variants": []
+}

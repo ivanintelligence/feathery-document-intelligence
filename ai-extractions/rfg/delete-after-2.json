@@ -1,0 +1,148 @@
+{
+  "1": {
+    "suitability": {
+      "Household ID": "1",
+      "Household Name": "Hannah, Michael & Laura",
+      "Annual Income": "$100,001 - $250,000",
+      "Annual Expenses": "$50,001 - $100,000",
+      "Net Worth": "$1m - $3m",
+      "Liquid Net Worth": "$1m - $3m",
+      "Tax Rate": "16% - 25%",
+      "Risk Tolerance": "Conservative",
+      "Time Horizon": "More than 10 Years"
+    },
+    "accounts": {
+      "18986024": {
+        "registration_type": "IRA - Traditional",
+        "primary": {
+          "canonical_name": "Michael Dean Hannah",
+          "First Name": "Michael",
+          "Middle Name/Initial": "Dean",
+          "Last Name": "Hannah",
+          "Email": "mdhannah22@gmail.com",
+          "Mobile Phone": "216-702-7807",
+          "Gender": "Male",
+          "Date Of Birth": "6/4/58",
+          "SSN": "273-60-9748",
+          "Marital Status": "Married",
+          "Home-Street Address": "547 Malvern Rd",
+          "Home-City": "Akron",
+          "Home-State": "OH",
+          "Home-Zip Code": "44303",
+          "Employment Status": "retired",
+          "Employer Name": "Rockwell Automation",
+          "Job Title": "Marketing Professional",
+          "Annual Review list": "October"
+        },
+        "secondary": null,
+        "beneficiaries": [
+          {
+            "Name": "Laura Miller-Hannah",
+            "Relationship": "Spouse",
+            "Primary/Contingent": "Primary",
+            "DOB": "11/28/60",
+            "SSN": "279-58-2135",
+            "%": "100"
+          }
+        ]
+      },
+      "59546783": {
+        "registration_type": "IRA - Traditional",
+        "primary": {
+          "canonical_name": "Laura Miller-Hannah",
+          "First Name": "Laura",
+          "Last Name": "Miller-Hannah",
+          "Email": "lauramikehannah@yahoo.com",
+          "Mobile Phone": "330-310-9334",
+          "Gender": "Female",
+          "Date Of Birth": "11/28/60",
+          "SSN": "279-58-2135",
+          "Marital Status": "Married",
+          "Home-Street Address": "547 Malvern Rd",
+          "Home-City": "Akron",
+          "Home-State": "OH",
+          "Home-Zip Code": "44303",
+          "Employment Status": "retired",
+          "Employer Name": "Portage Lakes Career Center",
+          "Job Title": "teacher",
+          "Annual Review list": "October"
+        },
+        "secondary": null,
+        "beneficiaries": [
+          {
+            "Name": "Michael Hannah",
+            "Relationship": "Spouse",
+            "Primary/Contingent": "Primary",
+            "%": "100"
+          }
+        ]
+      }
+    }
+  },
+
+  "2": {
+    "suitability": {
+      "Household ID": "2",
+      "Household Name": "Krysevig, Stan & Carol",
+      "Annual Income": "$100,001 - $250,000",
+      "Annual Expenses": "$50,001 - $100,000",
+      "Net Worth": "$1m - $3m",
+      "Liquid Net Worth": "$1m - $3m",
+      "Tax Rate": "16% - 25%",
+      "Risk Tolerance": null,
+      "Time Horizon": "More than 10 Years"
+    },
+    "accounts": {
+      "26091017": {
+        "registration_type": "Transfer on Death - Individual",
+        "primary": {
+          "canonical_name": "Carol Krysevig",
+          "First Name": "Carol",
+          "Last Name": "Krysevig",
+          "Email": "ckrysev@gmail.com",
+          "Mobile Phone": "724-454-3084"
+        },
+        "secondary": null,
+        "beneficiaries": [] 
+      },
+      "32664994": {
+        "registration_type": "Roth IRA",
+        "primary": {
+          "canonical_name": "Carol Krysevig",
+          "First Name": "Carol",
+          "Last Name": "Krysevig",
+          "Email": "ckrysev@gmail.com",
+          "Mobile Phone": "724-454-3084"
+        },
+        "secondary": null,
+        "beneficiaries": [
+          {
+            "Name": "Stanley Krysevig",
+            "Relationship": "Spouse",
+            "Primary/Contingent": "Primary",
+            "%": "100"
+          }
+        ]
+      },
+      "52701547": {
+        "registration_type": "IRA - Traditional",
+        "primary": {
+          "canonical_name": "Carol Krysevig",
+          "First Name": "Carol",
+          "Last Name": "Krysevig",
+          "Email": "ckrysev@gmail.com",
+          "Mobile Phone": "724-454-3084"
+        },
+        "secondary": null,
+        "beneficiaries": [
+          {
+            "Name": "Stanley Krysevig",
+            "Relationship": "Spouse",
+            "Primary/Contingent": "Primary",
+            "%": "100"
+          }
+        ]
+      }
+    }
+  }
+}

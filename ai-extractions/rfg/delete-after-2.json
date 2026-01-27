@@ -15,12 +15,15 @@
       "18986024": {
         "registration_type": "IRA - Traditional",
         "primary": {
-          "canonical_name": "Michael Dean Hannah",
+          "Household ID": "1",
+          "Household Name": "Hannah, Michael & Laura",
+          "Primary/Secondary Contact": "Primary",
           "First Name": "Michael",
           "Middle Name/Initial": "Dean",
           "Last Name": "Hannah",
           "Email": "mdhannah22@gmail.com",
           "Mobile Phone": "216-702-7807",
+          "Home Phone": null,
           "Gender": "Male",
           "Date Of Birth": "6/4/58",
           "SSN": "273-60-9748",
@@ -32,28 +35,49 @@
           "Employment Status": "retired",
           "Employer Name": "Rockwell Automation",
           "Job Title": "Marketing Professional",
-          "Annual Review list": "October"
+          "Number of Dependents": 0,
+          "Mailing Address if applicable": null,
+          "Mailing City": null,
+          "Mailing State": null,
+          "Mailing Zip": null,
+          "Annual Review list": "October",
+          "License#": null,
+          "Issued": null,
+          "Expires": null,
+          "Issued State": null
         },
         "secondary": null,
         "beneficiaries": [
           {
+            "Household ID": "1",
+            "Household Name": "Hannah, Michael & Laura",
+            "Account Title": "Michael Hannah IRA - Traditional",
+            "Account Number": "18986024",
+            "Match?": "x",
             "Name": "Laura Miller-Hannah",
             "Relationship": "Spouse",
             "Primary/Contingent": "Primary",
+            "Gender": "Female",
             "DOB": "11/28/60",
             "SSN": "279-58-2135",
-            "%": "100"
+            "Address": "547 Malvern Rd. Akron, OH 44303",
+            "Phone": "330-310-9334",
+            "%": 100
           }
         ]
       },
       "59546783": {
         "registration_type": "IRA - Traditional",
         "primary": {
-          "canonical_name": "Laura Miller-Hannah",
+          "Household ID": "1",
+          "Household Name": "Hannah, Michael & Laura",
+          "Primary/Secondary Contact": "Secondary",
           "First Name": "Laura",
+          "Middle Name/Initial": null,
           "Last Name": "Miller-Hannah",
           "Email": "lauramikehannah@yahoo.com",
           "Mobile Phone": "330-310-9334",
+          "Home Phone": null,
           "Gender": "Female",
           "Date Of Birth": "11/28/60",
           "SSN": "279-58-2135",
@@ -65,21 +89,39 @@
           "Employment Status": "retired",
           "Employer Name": "Portage Lakes Career Center",
           "Job Title": "teacher",
-          "Annual Review list": "October"
+          "Number of Dependents": 0,
+          "Mailing Address if applicable": null,
+          "Mailing City": null,
+          "Mailing State": null,
+          "Mailing Zip": null,
+          "Annual Review list": "October",
+          "License#": null,
+          "Issued": null,
+          "Expires": null,
+          "Issued State": null
         },
         "secondary": null,
         "beneficiaries": [
           {
+            "Household ID": "1",
+            "Household Name": "Hannah, Michael & Laura",
+            "Account Title": "Laura Hannah IRA - Traditional",
+            "Account Number": "59546783",
+            "Match?": "x",
             "Name": "Michael Hannah",
             "Relationship": "Spouse",
             "Primary/Contingent": "Primary",
-            "%": "100"
+            "Gender": "Male",
+            "DOB": "6/4/58",
+            "SSN": "273-60-9748",
+            "Address": "547 Malvern Rd. Akron, OH 44303",
+            "Phone": "216-702-7807",
+            "%": 100
           }
         ]
       }
     }
   },
-
   "2": {
     "suitability": {
       "Household ID": "2",
@@ -96,50 +138,145 @@
       "26091017": {
         "registration_type": "Transfer on Death - Individual",
         "primary": {
-          "canonical_name": "Carol Krysevig",
+          "Household ID": "2",
+          "Household Name": "Krysevig, Stan & Carol",
+          "Primary/Secondary Contact": "Primary",
           "First Name": "Carol",
+          "Middle Name/Initial": null,
           "Last Name": "Krysevig",
           "Email": "ckrysev@gmail.com",
-          "Mobile Phone": "724-454-3084"
+          "Mobile Phone": "724-454-3084",
+          "Home Phone": null,
+          "Gender": "Female",
+          "Date Of Birth": "8/12/57",
+          "SSN": "189-46-1414",
+          "Marital Status": "Married",
+          "Home-Street Address": "110 Lamplighter Village Dr",
+          "Home-City": "Pinehurst",
+          "Home-State": "NC",
+          "Home-Zip Code": "28374",
+          "Employment Status": "retired",
+          "Employer Name": "First Energy",
+          "Job Title": "Manager",
+          "Number of Dependents": 0,
+          "Mailing Address if applicable": null,
+          "Mailing City": null,
+          "Mailing State": null,
+          "Mailing Zip": null,
+          "Annual Review list": "June",
+          "License#": null,
+          "Issued": null,
+          "Expires": null,
+          "Issued State": null
         },
         "secondary": null,
-        "beneficiaries": [] 
+        "beneficiaries": []
       },
       "32664994": {
         "registration_type": "Roth IRA",
         "primary": {
-          "canonical_name": "Carol Krysevig",
+          "Household ID": "2",
+          "Household Name": "Krysevig, Stan & Carol",
+          "Primary/Secondary Contact": "Primary",
           "First Name": "Carol",
+          "Middle Name/Initial": null,
           "Last Name": "Krysevig",
           "Email": "ckrysev@gmail.com",
-          "Mobile Phone": "724-454-3084"
+          "Mobile Phone": "724-454-3084",
+          "Home Phone": null,
+          "Gender": "Female",
+          "Date Of Birth": "8/12/57",
+          "SSN": "189-46-1414",
+          "Marital Status": "Married",
+          "Home-Street Address": "110 Lamplighter Village Dr",
+          "Home-City": "Pinehurst",
+          "Home-State": "NC",
+          "Home-Zip Code": "28374",
+          "Employment Status": "retired",
+          "Employer Name": "First Energy",
+          "Job Title": "Manager",
+          "Number of Dependents": 0,
+          "Mailing Address if applicable": null,
+          "Mailing City": null,
+          "Mailing State": null,
+          "Mailing Zip": null,
+          "Annual Review list": "June",
+          "License#": null,
+          "Issued": null,
+          "Expires": null,
+          "Issued State": null
         },
         "secondary": null,
         "beneficiaries": [
           {
+            "Household ID": "2",
+            "Household Name": "Krysevig, Stan & Carol",
+            "Account Title": "Carol Krysevig  Roth IRA",
+            "Account Number": "32664994",
+            "Match?": "x",
             "Name": "Stanley Krysevig",
             "Relationship": "Spouse",
             "Primary/Contingent": "Primary",
-            "%": "100"
+            "Gender": "Male",
+            "DOB": "9/8/57",
+            "SSN": "164-52-7402",
+            "Address": "110 Lamplighter Village Dr, Pinehurst NC, 28374",
+            "Phone": "724-454-3084",
+            "%": 100
           }
         ]
       },
       "52701547": {
         "registration_type": "IRA - Traditional",
         "primary": {
-          "canonical_name": "Carol Krysevig",
+          "Household ID": "2",
+          "Household Name": "Krysevig, Stan & Carol",
+          "Primary/Secondary Contact": "Primary",
           "First Name": "Carol",
+          "Middle Name/Initial": null,
           "Last Name": "Krysevig",
           "Email": "ckrysev@gmail.com",
-          "Mobile Phone": "724-454-3084"
+          "Mobile Phone": "724-454-3084",
+          "Home Phone": null,
+          "Gender": "Female",
+          "Date Of Birth": "8/12/57",
+          "SSN": "189-46-1414",
+          "Marital Status": "Married",
+          "Home-Street Address": "110 Lamplighter Village Dr",
+          "Home-City": "Pinehurst",
+          "Home-State": "NC",
+          "Home-Zip Code": "28374",
+          "Employment Status": "retired",
+          "Employer Name": "First Energy",
+          "Job Title": "Manager",
+          "Number of Dependents": 0,
+          "Mailing Address if applicable": null,
+          "Mailing City": null,
+          "Mailing State": null,
+          "Mailing Zip": null,
+          "Annual Review list": "June",
+          "License#": null,
+          "Issued": null,
+          "Expires": null,
+          "Issued State": null
         },
         "secondary": null,
         "beneficiaries": [
           {
+            "Household ID": "2",
+            "Household Name": "Krysevig, Stan & Carol",
+            "Account Title": "Carol Krysevig IRA - Traditional",
+            "Account Number": "52701547",
+            "Match?": "x",
             "Name": "Stanley Krysevig",
             "Relationship": "Spouse",
             "Primary/Contingent": "Primary",
-            "%": "100"
+            "Gender": "Male",
+            "DOB": "9/8/57",
+            "SSN": "164-52-7402",
+            "Address": "110 Lamplighter Village Dr, Pinehurst NC, 28374",
+            "Phone": "724-454-3084",
+            "%": 100
           }
         ]
       }

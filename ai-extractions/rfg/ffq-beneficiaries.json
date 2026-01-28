@@ -1,0 +1,48 @@
+{
+  "queries": [
+    {
+      "id": "b1960bce-0834-4aa1-852f-4892b52d9d97",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "113142f3-2bab-4791-a9e9-c0e526650ed5",
+          "entity": "<GROUND_RULES>\n- Use ONLY the information explicitly present in the provided CONTEXT blocks.\n- Output MUST be valid JSON only.\n- Never output \"N/A\"; use null.\n- Do NOT invent beneficiaries.\n</GROUND_RULES>\n\n<TARGET_HHID>\n{{target_hhid}}\n</TARGET_HHID>\n\n<ACCOUNTS_WITH_OWNERS_CONTEXT>\n{{accounts_with_owners}}\n</ACCOUNTS_WITH_OWNERS_CONTEXT>\n\n<BENEFICIARIES_HHID_CONTEXT>\n{{beneficiaries_hhid}}\n</BENEFICIARIES_HHID_CONTEXT>\n\n<IRA_RULE>\nTreat an account as IRA-type if registration_type contains the substring \"IRA\" (case-insensitive).\nIf NOT IRA-type, beneficiaries must be an empty array [].\nIf IRA-type, beneficiaries must include all beneficiary rows where:\n- Household ID == TARGET_HHID\n- Account Number == the account id key (string/number match allowed)\n</IRA_RULE>\n\n<TASK>\nFor each account in ACCOUNTS_WITH_OWNERS_CONTEXT, add:\n- beneficiaries: [ ...matching beneficiary row objects... ]\nReturn the updated JSON object keyed by account id.\n</TASK>\n\n<OUTPUT_JSON_ONLY>\n{\n  \"18986024\": {\n    \"registration_type\": \"...\",\n    \"primary_source_name\": \"...\",\n    \"secondary_source_name\": null,\n    \"primary\": { ... } ,\n    \"secondary\": null,\n    \"beneficiaries\": [ { ...full beneficiary row... }, ... ]\n  },\n  ...\n}\n</OUTPUT_JSON_ONLY>",
+          "save_to": "accounts_with_beneficiaries",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Add Beneficiaries",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    }
+  ],
+  "variants": []
+}

@@ -1,0 +1,48 @@
+{
+  "queries": [
+    {
+      "id": "3f5c3555-4ad5-4de9-925a-86a4b36a0127",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "aa7239bd-ab81-4492-b4d9-2c99e30f07e8",
+          "entity": "<GROUND_RULES>\n- Use ONLY the information explicitly present in the provided CONTEXT blocks.\n- Output MUST be valid JSON only (no markdown, no commentary).\n- The top-level HHID key MUST be a string equal to TARGET_HHID.\n- Never output \"N/A\"; use null.\n- Do NOT add extra top-level HHID keys.\n</GROUND_RULES>\n\n<TARGET_HHID>\n{{target_hhid}}\n</TARGET_HHID>\n\n<SUITABILITY_HHID_CONTEXT>\n{{suitability_hhid}}\n</SUITABILITY_HHID_CONTEXT>\n\n<ACCOUNTS_WITH_BENEFICIARIES_CONTEXT>\n{{accounts_with_beneficiaries}}\n</ACCOUNTS_WITH_BENEFICIARIES_CONTEXT>\n\n<TASK>\nOutput exactly this structure for TARGET_HHID only:\n{\n  \"<TARGET_HHID>\": {\n    \"suitability\": <suitability row object or null>,\n    \"accounts\": {\n      \"<accountid>\": {\n        \"registration_type\": ...,\n        \"primary\": ...,\n        \"secondary\": ...,\n        \"beneficiaries\": [...]\n      },\n      ...\n    }\n  }\n}\n\nInside each account:\n- Use registration_type, primary, secondary, beneficiaries from ACCOUNTS_WITH_BENEFICIARIES_CONTEXT.\n- Do NOT include the traceability fields (primary_source_name / secondary_source_name) in the final output unless explicitly required.\n</TASK>\n\n<OUTPUT_JSON_ONLY>\n{ \"1\": { \"suitability\": {...}, \"accounts\": {...} } }\n</OUTPUT_JSON_ONLY>",
+          "save_to": "final_household_output",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "HHID Output",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    }
+  ],
+  "variants": []
+}

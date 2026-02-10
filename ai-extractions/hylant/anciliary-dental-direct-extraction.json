@@ -1,0 +1,1536 @@
+{
+  "queries": [
+    {
+      "id": "bbe56c26-2743-4551-b6b3-95486a168bbc",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "9f072bff-009d-4490-bc67-5a13f57ef181",
+          "entity": "Client Name",
+          "save_to": "AP_DClientName",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The full legal name of the employer, group, or organization for whom the dental benefit comparison is prepared. It is usually stated before Proposal for:",
+          "examples": [
+            "Client A"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "e54bdc0d-0f23-4c32-b585-2350fae8e848",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "f4e41974-3ae8-40f1-bc07-409df78cbd86",
+          "entity": "Effective Date",
+          "save_to": "AP_DEffDate",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the plan effective date or coverage period exactly as stated in the document. Look for effective dates on the front cover, first page, Summary of Benefits (SOB), benefit plan year section, or within “amended and restated as of” language. Capture the date text as written and do not substitute eligibility language.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": true,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "836e9c33-1654-4826-a6da-28652177d652",
+      "type": "multiple_value",
+      "details": "Plan identification details as stated in the dental plan. The network for the plan may be on a different page than the Carrier and Plan Summary.",
+      "entities": [
+        {
+          "id": "b40f8894-c498-475b-aaa7-9b17248b7b60",
+          "entity": "Carrier",
+          "save_to": "AP_DCarrier",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Name of the insurance carrier providing the dental plan. Make it shortened instead of the full network name",
+          "examples": [
+            "Sun Life",
+            "Anthem"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "d22e5416-619f-4a25-a526-38ee94cfaaa2",
+          "entity": "Plan Summary",
+          "save_to": "AP_DPlanSummary",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The plan summary whether it is current plan, renewal plan, alternative plan",
+          "examples": [
+            "Renewal Plan",
+            "Current Plan",
+            "Alternative Plan"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "65e2f6d9-95c0-4662-9e34-817e11c910c9",
+          "entity": "Network",
+          "save_to": "AP_DNetwork",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The network associated with the plan. Do NOT extract the product name or product type.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Plan Identification",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "f3603128-aa39-4c79-b81b-688f5f4cad82",
+      "type": "multiple_value",
+      "details": "In- network benefit details as stated in the dental plan. Extract only numeric values with their symbols ($ or %) in the allowed formats (e.g., $20, 20%, $200 copay plus 25%). When both a dollar amount and a percentage appear, output $[$] copay plus [%]% and omit words like “min” or “max.” If data extracted is “covered in full,” Return \"100%\"",
+      "entities": [
+        {
+          "id": "112a6ef3-335b-477c-ac34-022cf3016a13",
+          "entity": "Deductible",
+          "save_to": "AP_DInNetworkDeductible",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Amount the member must pay before in-network benefits apply. Format should be '$X individual / SX family'\n\n If the family deductible says 3X individual, then return the correct value using the format. ",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "5aa2ed9c-c966-4c22-9368-c874f00dd21b",
+          "entity": "Waived for Preventive",
+          "save_to": "AP_DInNetworkWaived",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Whether the in-network deductible is waived for preventive services",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "c2407bab-ee33-44af-8cbf-3f143b9830af",
+          "entity": "Deductible – Calendar Year or Lifetime",
+          "save_to": "AP_DInNetworkCalendar",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Calendar Year",
+            "Lifetime"
+          ],
+          "criteria": "Basis on which the in-network deductible applies (calendar year or lifetime)",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "9b8fa6e1-3dc0-4a1a-8b94-e88267313176",
+          "entity": "Coinsurance",
+          "save_to": "AP_DInNetworkCoinsurance",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Percentage of costs shared by the member for in-network services after deductible",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "66056db2-ff57-4714-866d-ef415b43bfc2",
+          "entity": "Preventive Services (I)",
+          "save_to": "AP_DInNetworkPreventive",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Coverage details for in-network preventive dental services",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "e97098af-242f-4208-bf3c-f56a83eef510",
+          "entity": "Basic Services (II)",
+          "save_to": "AP_DInNetworkBasic",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Coverage details for in-network basic dental services",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "275255fa-56e5-4ef9-a763-221538a2d25e",
+          "entity": "Major Services (III)",
+          "save_to": "AP_DInNetworkMajor",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Coverage details for in-network major dental services",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "fd7c155d-972f-46af-8644-8336624074da",
+          "entity": "Orthodontic Services (IV)",
+          "save_to": "AP_DInNetworkOrthodon",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Coverage details for in-network orthodontic services",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "8f770caa-b791-4e82-aa8e-954165785046",
+          "entity": "Ortho Age Limit",
+          "save_to": "AP_DInNetworkOrthoAge",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Maximum eligible age for in-network orthodontic benefits. Format \"to age:X\" where \"X\" is a numerical value.",
+          "examples": [
+            "to age 26"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "d7a800fc-764e-4a10-a514-9c1e1f874834",
+          "entity": "Annual Maximum",
+          "save_to": "AP_DInNetworkAnnualMax",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Maximum benefit amount payable per year for in-network services. Return the dollar value. ",
+          "examples": [
+            "$1,000"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "0f969a79-90a0-433b-974c-ae68d990a0b4",
+          "entity": "Lifetime Orthodontia Maximum",
+          "save_to": "AP_DInNetworkLifetimeOrtho",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Maximum benefit payable over a lifetime for in-network orthodontic services. Return the dollar value. ",
+          "examples": [
+            "$1,000"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "In-Network Benefits",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "e03f875b-d3cd-4fb5-abe3-6ad75cec4e36",
+      "type": "multiple_value",
+      "details": "The out of network benefits as stated in the dental plan.  Extract only numeric values with their symbols ($ or %) in the allowed formats (e.g., $20, 20%, $200 copay plus 25%). When both a dollar amount and a percentage appear, output $[$] copay plus [%]% and omit words like “min” or “max.” If data extracted is “covered in full,” Return \"100%\"",
+      "entities": [
+        {
+          "id": "cd239fa7-5a58-4607-8e88-7d379fd32849",
+          "entity": "Deductible",
+          "save_to": "AP_DOutNetworkDeductible",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Amount the member must pay before out-of-network benefits apply. Format should be '$X individual / SX family'\n\n If the family deductible says 3X individual, then return the correct value using the format. ",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "14b6b485-d28d-4d78-9df0-46eb6e0adf9d",
+          "entity": "Waived for Preventive",
+          "save_to": "AP_DOutNetworkWaived",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Whether the out-of-network deductible is waived for preventive services",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "83837984-b975-4deb-9d99-0c1de756631b",
+          "entity": "Coinsurance",
+          "save_to": "AP_DOutNetworkCoinsurance",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Percentage of costs shared by the member for out-of-network services after deductible",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "2bb59f75-e3db-41d4-9482-536f5456ce06",
+          "entity": "Preventive Services (I)",
+          "save_to": "AP_DOutNetworkPreventive",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Coverage details for out-of-network preventive dental services",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "962750ab-c6ec-42a6-bd23-51d0f3b14482",
+          "entity": "Basic Services (II)",
+          "save_to": "AP_DOutNetworkBasic",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Coverage details for out-of-network basic dental services",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "fb09990b-917b-45a1-9cb7-3ed2804f784d",
+          "entity": "Major Services (III)",
+          "save_to": "AP_DOutNetworkMajor",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Coverage details for out-of-network major dental services",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "d4bb70e9-0579-40ba-9a2d-76bebc045055",
+          "entity": "Orthodontic Services (IV)",
+          "save_to": "AP_DOutNetworkOrthodon",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Coverage details for out-of-network orthodontic services",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "abc5e4d7-1168-47ee-809f-a48d3934fa53",
+          "entity": "Annual Maximum",
+          "save_to": "AP_DOutNetworkAnnualMax",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Maximum benefit amount payable per year for out-of-network services. Return the dollar value. ",
+          "examples": [
+            "$1,000"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "5b9d4545-e66f-475e-b452-d407c894c2dc",
+          "entity": "Lifetime Orthodontia Maximum",
+          "save_to": "AP_DOutNetworkLifetimeOrtho",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Maximum benefit payable over a lifetime for out-of-network orthodontic services. Return the dollar value",
+          "examples": [
+            "$1,000"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Out-of-Network Benefits",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "8958dd0a-d9a7-4452-85ab-ed57e0268ec0",
+      "type": "multiple_value",
+      "details": "Any additional terms, limitations, or special provisions exactly as stated in the dental plan  Extract numeric benefit values that are explicitly stated with a dollar sign ($) or a percentage symbol (%). When a numeric percentage is followed by explanatory text in parentheses (e.g., “20% (You Pay)”, “50% (Plan Pays)”), extract the numeric percentage only and ignore the parenthetical text.",
+      "entities": [
+        {
+          "id": "c156c672-4e68-40cf-bc0e-cd29147dde1f",
+          "entity": "Endodontics",
+          "save_to": "AP_DEndo",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Determine whether endodontic services (e.g., root canals) are categorized as Basic, Major, or Not Covered by locating “Endodontics,” “Non-Surgical Endodontics,” or “Surgical Endodontics” in the benefits table and identifying the service tier under which they fall.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "7978f9e4-5d1b-4427-800b-8b095b5d9094",
+          "entity": "Periodontics",
+          "save_to": "AP_DPerio",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Identify whether periodontal services (gum treatment) are classified as Basic, Major, or Not Covered by finding “Periodontics,” “Non-Surgical Periodontics,” or “Surgical Periodontics” and mapping them to the corresponding service category in the plan.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "3f7fcbd6-64dd-4547-83af-3c27d58944b7",
+          "entity": "Oral Surgery",
+          "save_to": "AP_DOralSurgery",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Determine if oral surgery services are listed under Basic, Major, or Not Covered by checking where “Oral Surgery,” “Simple Oral Surgery,” or “Complex Oral Surgery” appears within the service classification tables.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "a126127e-da02-4063-bbca-876a33aefa0d",
+          "entity": "Dental Implants",
+          "save_to": "AP_DDentalImplant",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Indicate whether dental implant services are categorized as Basic, Major, or Not Covered by identifying where implants are listed within the plan’s service classification tables.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "0f7e2905-96a5-4e6b-b843-b8b422a3b9c1",
+          "entity": "Posterior Composite (White) Fillings",
+          "save_to": "AP_DPosterior",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Indicate “Included” if posterior composite or white fillings are mentioned as covered or substituted for amalgam, otherwise return “Not Included.”",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "c79df656-278a-45b3-b33b-27f43227dfb7",
+          "entity": "Out-of-Network Reimbursement",
+          "save_to": "AP_DOONReimburse",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Basis or method used to reimburse out-of-network claims. Format should be 'Xth UCR'. Use UCR instead of percentile",
+          "examples": [
+            "90th UCR"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "dd8b70b9-ae7a-4127-8701-74236d5d51d9",
+          "entity": "Annual Maximum Rollover",
+          "save_to": "AP_DAnnualMaxRoll",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Whether unused annual maximum benefits roll over to future years as stated in the document.\nReturn “Yes” only if the proposal clearly states that unused annual maximum amounts roll over to a future year.\n\nReturn “No” only if the proposal explicitly states that rollover or carryover is not offered.\n\nIf rollover is not mentioned anywhere in the document, return NULL.\n\nDo not infer rollover from Preventive Max Waiver®, annual maximum amounts, or orthodontic lifetime maximums.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Additional Plan Specifications",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "3bdd3a89-fa80-4889-98aa-b65eb1f3330b",
+      "type": "multiple_value",
+      "details": "Employer and Eligibility details exactly as it is written on the dental plan  Extract numeric benefit values that are explicitly stated with a dollar sign ($) or a percentage symbol (%). When a numeric percentage is followed by explanatory text in parentheses (e.g., “20% (You Pay)”, “50% (Plan Pays)”), extract the numeric percentage only and ignore the parenthetical text.",
+      "entities": [
+        {
+          "id": "10a420ad-25f6-4ab2-b79e-8fe0ce07437c",
+          "entity": "Employer Contribution",
+          "save_to": "AP_DEmployerContribution",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Determine employer contribution type. Normalize to one of: Voluntary, Employer Paid, Partially Employer Paid, or Not stated.",
+          "examples": [
+            "Voluntary"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "a4f52ca3-c19f-4357-93d4-7d7bd7b203ad",
+          "entity": "Participation Requirement",
+          "save_to": "AP_DParticipationRequirement",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Minimum enrollment percentage required for the plan to be effective",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "f2b5c938-13a8-4238-92b2-91e0706bbb06",
+          "entity": "Waiting Periods",
+          "save_to": "AP_DWaitingPeriod",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Determine how dental benefit waiting periods apply. If waiting periods apply only to employees who enroll after initial eligibility (late entrants), return “Late Entrant Only” and do not include durations or service details. If waiting periods apply to all enrollees, state that. If no benefit waiting period is stated, return “Not stated.”",
+          "examples": [
+            "Late entrant only"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "b8be301c-5e36-4880-a07f-113367bce39f",
+          "entity": "True Open Enrollment",
+          "save_to": "AP_DTrueOpen",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "criteria": "Whether the dental plan allows employees to enroll during an Open Enrollment period (including an Annual Open Enrollment tied to the policy anniversary date) without Evidence of Insurability or underwriting restrictions. If an Open Enrollment period is described, return “Yes.” Only return “No” if the document explicitly states that enrollment requires Evidence of Insurability or underwriting approval",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "25e1a8bb-60c8-4b2e-9d9a-bf044b772c14",
+          "entity": "Rate Guarantee",
+          "save_to": "AP_DRateGuarantee",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Length of time premiums are guaranteed not to change. This must be in years not months. Only capture value that has time period and do NOT capture dollar value",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Employer & Eligibility",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "6ead4bcd-2a67-4b81-9d80-5a8eca73dfda",
+      "type": "multiple_value",
+      "details": "The rate and tiers details exactly as it is written on the dental plan",
+      "entities": [
+        {
+          "id": "b73756bd-8720-424a-956a-fdd8bf66e0cd",
+          "entity": "Employee",
+          "save_to": "AP_DEmp",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the employee-only monthly premium amount by locating the “Employee” row in the dental rate or renewal rate table and returning the dollar value only.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "8e644271-0342-41f3-9396-1b6507daf867",
+          "entity": "Employee + Spouse",
+          "save_to": "AP_DEmpSp",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the employee plus spouse monthly premium amount from the dental rate table and return the dollar value only.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "cad4e0c3-c69f-4ddb-863c-d650cab75a3d",
+          "entity": "Employee + Child(ren)",
+          "save_to": "AP_DEmpChi",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the employee plus child(ren) monthly premium amount from the dental rate table and return the dollar value only.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "8339b246-d310-4a72-972b-790fd2531d69",
+          "entity": "Employee + Family",
+          "save_to": "AP_DEmpFam",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the employee plus family monthly premium amount from the dental rate table and return the dollar value only.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Rates and Tiers",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "81e3a165-facb-4c25-9b7e-301edcd1036d",
+      "type": "multiple_value",
+      "details": "Administrative and Cost details exactly as it is written on the dental plan",
+      "entities": [
+        {
+          "id": "9b72c5b2-651b-4c95-92f5-78ef7ab3fddc",
+          "entity": "ASO Admin",
+          "save_to": "AP_DAso",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Whether the plan is administered on an Administrative Services Only basis",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "11bd4365-2f55-4659-9f26-0c1c7eeac84d",
+          "entity": "ASO Network Access",
+          "save_to": "AP_DAsoNet",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Network access details associated with the ASO arrangement",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "5acf3f7b-8dd1-47b0-9951-89a7b0affbd1",
+          "entity": "Monthly Admin",
+          "save_to": "AP_DMonthlyAdmin",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Monthly administrative fee associated with the plan",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "2068d81f-b113-431a-a778-0c605c208760",
+          "entity": "% Change",
+          "save_to": "AP_DPercentChange",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Percentage increase or decrease compared to prior plan rates",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            ""
+          ]
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Administrative and Cost",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "5b04a786-5b86-44c4-b958-aa873f60dc34",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "58ca17c4-60d2-418e-8cee-73e2a2359590",
+          "entity": "Monthly Premium",
+          "save_to": "AP_DMonthlyPrem",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the document-reported total monthly premium if explicitly stated.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": true,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "1d8922fe-21da-4517-b22d-d00cfbaee24b",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "9ffb0c0a-f1f4-4c3a-806e-28fe5f271215",
+          "entity": "Annual Premium",
+          "save_to": "AP_DAnnualPrem",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the annual by Multiplying the total monthly premium by 12.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": true,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    }
+  ],
+  "variants": [
+    {
+      "id": "84b6eaf4-6c67-43f3-a8e4-546cee8e893b",
+      "variant_name": "Alternative 1",
+      "file_sources": [
+        "FileUpload7"
+      ],
+      "group_variants": [
+        {
+          "question_group_id": "bbe56c26-2743-4551-b6b3-95486a168bbc",
+          "save_to_fields": [
+            "AP_DClientName_AP1"
+          ]
+        },
+        {
+          "question_group_id": "e54bdc0d-0f23-4c32-b585-2350fae8e848",
+          "save_to_fields": [
+            "AP_DEffDate_AP1"
+          ]
+        },
+        {
+          "question_group_id": "836e9c33-1654-4826-a6da-28652177d652",
+          "save_to_fields": [
+            "AP_DCarrier_AP1",
+            "AP_DPlanSummary_AP1",
+            "AP_DNetwork_AP1"
+          ]
+        },
+        {
+          "question_group_id": "f3603128-aa39-4c79-b81b-688f5f4cad82",
+          "save_to_fields": [
+            "AP_DInNetworkDeductible_AP1",
+            "AP_DInNetworkWaived_AP1",
+            "AP_DInNetworkCalendar_AP1",
+            "AP_DInNetworkCoinsurance_AP1",
+            "AP_DInNetworkPreventive_AP1",
+            "AP_DInNetworkBasic_AP1",
+            "AP_DInNetworkMajor_AP1",
+            "AP_DInNetworkOrthodon_AP1",
+            "AP_DInNetworkOrthoAge_AP1",
+            "AP_DInNetworkAnnualMax_AP1",
+            "AP_DInNetworkLifetimeOrtho_AP1"
+          ]
+        },
+        {
+          "question_group_id": "e03f875b-d3cd-4fb5-abe3-6ad75cec4e36",
+          "save_to_fields": [
+            "AP_DOutNetworkDeductible_AP1",
+            "AP_DOutNetworkWaived_AP1",
+            "AP_DOutNetworkCoinsurance_AP1",
+            "AP_DOutNetworkPreventive_AP1",
+            "AP_DOutNetworkBasic_AP1",
+            "AP_DOutNetworkMajor_AP1",
+            "AP_DOutNetworkOrthodon_AP1",
+            "AP_DOutNetworkAnnualMax_AP1",
+            "AP_DOutNetworkLifetimeOrtho_AP1"
+          ]
+        },
+        {
+          "question_group_id": "8958dd0a-d9a7-4452-85ab-ed57e0268ec0",
+          "save_to_fields": [
+            "AP_DEndo_AP1",
+            "AP_DPerio_AP1",
+            "AP_DOralSurgery_AP1",
+            "AP_DDentalImplant_AP1",
+            "AP_DPosterior_AP1",
+            "AP_DOONReimburse_AP1",
+            "AP_DAnnualMaxRoll_AP1"
+          ]
+        },
+        {
+          "question_group_id": "3bdd3a89-fa80-4889-98aa-b65eb1f3330b",
+          "save_to_fields": [
+            "AP_DEmployerContribution_AP1",
+            "AP_DParticipationRequirement_AP1",
+            "AP_DWaitingPeriod_AP1",
+            "AP_DTrueOpen_AP1",
+            "AP_DRateGuarantee_AP1"
+          ]
+        },
+        {
+          "question_group_id": "6ead4bcd-2a67-4b81-9d80-5a8eca73dfda",
+          "save_to_fields": [
+            "AP_DEmp_AP1",
+            "AP_DEmpSp_AP1",
+            "AP_DEmpChi_AP1",
+            "AP_DEmpFam_AP1"
+          ]
+        },
+        {
+          "question_group_id": "81e3a165-facb-4c25-9b7e-301edcd1036d",
+          "save_to_fields": [
+            "AP_DAso_AP1",
+            "AP_DAsoNet_AP1",
+            "AP_DMonthlyAdmin_AP1",
+            "AP_DPercentChange-AP1"
+          ]
+        },
+        {
+          "question_group_id": "5b04a786-5b86-44c4-b958-aa873f60dc34",
+          "save_to_fields": [
+            "AP_DMonthlyPrem_AP1"
+          ]
+        },
+        {
+          "question_group_id": "1d8922fe-21da-4517-b22d-d00cfbaee24b",
+          "save_to_fields": [
+            "AP_DAnnualPrem_AP1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2db59356-2092-4f4d-bfef-e38612768b66",
+      "variant_name": "Alternative 2",
+      "file_sources": [
+        "FileUpload8"
+      ],
+      "group_variants": [
+        {
+          "question_group_id": "8958dd0a-d9a7-4452-85ab-ed57e0268ec0",
+          "save_to_fields": [
+            "AP_DEndo_AP2",
+            "AP_DPerio_AP2",
+            "AP_DOralSurgery_AP2",
+            "AP_DDentalImplant_AP2",
+            "AP_DPosterior_AP2",
+            "AP_DOONReimburse_AP2",
+            "AP_DAnnualMaxRoll_AP2"
+          ]
+        },
+        {
+          "question_group_id": "3bdd3a89-fa80-4889-98aa-b65eb1f3330b",
+          "save_to_fields": [
+            "AP_DEmployerContribution_AP2",
+            "AP_DParticipationRequirement_AP2",
+            "AP_DWaitingPeriod_AP2",
+            "AP_DTrueOpen_AP2",
+            "AP_DRateGuarantee_AP2"
+          ]
+        },
+        {
+          "question_group_id": "6ead4bcd-2a67-4b81-9d80-5a8eca73dfda",
+          "save_to_fields": [
+            "AP_DEmp_AP2",
+            "AP_DEmpSp_AP2",
+            "AP_DEmpChi_AP2",
+            "AP_DEmpFam_AP2"
+          ]
+        },
+        {
+          "question_group_id": "81e3a165-facb-4c25-9b7e-301edcd1036d",
+          "save_to_fields": [
+            "AP_DAso_AP2",
+            "AP_DAsoNet_AP2",
+            "AP_DMonthlyAdmin_AP2",
+            "AP_DPercentChange_AP2"
+          ]
+        },
+        {
+          "question_group_id": "bbe56c26-2743-4551-b6b3-95486a168bbc",
+          "save_to_fields": [
+            "AP_DClientName_AP2"
+          ]
+        },
+        {
+          "question_group_id": "e54bdc0d-0f23-4c32-b585-2350fae8e848",
+          "save_to_fields": [
+            "AP_DEffDate_AP2"
+          ]
+        },
+        {
+          "question_group_id": "836e9c33-1654-4826-a6da-28652177d652",
+          "save_to_fields": [
+            "AP_DCarrier_AP2",
+            "AP_DPlanSummary_AP2",
+            "AP_DNetwork_AP2"
+          ]
+        },
+        {
+          "question_group_id": "f3603128-aa39-4c79-b81b-688f5f4cad82",
+          "save_to_fields": [
+            "AP_DInNetworkDeductible_AP2",
+            "AP_DInNetworkWaived_AP2",
+            "AP_DInNetworkCalendar_AP2",
+            "AP_DInNetworkCoinsurance_AP2",
+            "AP_DInNetworkPreventive_AP2",
+            "AP_DInNetworkBasic_AP2",
+            "AP_DInNetworkMajor_AP2",
+            "AP_DInNetworkOrthodon_AP2",
+            "AP_DInNetworkOrthoAge_AP2",
+            "AP_DInNetworkAnnualMax_AP2",
+            "AP_DInNetworkLifetimeOrtho_AP2"
+          ]
+        },
+        {
+          "question_group_id": "e03f875b-d3cd-4fb5-abe3-6ad75cec4e36",
+          "save_to_fields": [
+            "AP_DOutNetworkDeductible_AP2",
+            "AP_DOutNetworkWaived_AP2",
+            "AP_DOutNetworkCoinsurance_AP2",
+            "AP_DOutNetworkPreventive_AP2",
+            "AP_DOutNetworkBasic_AP2",
+            "AP_DOutNetworkMajor_AP2",
+            "AP_DOutNetworkOrthodon_AP2",
+            "AP_DOutNetworkAnnualMax_AP2",
+            "AP_DOutNetworkLifetimeOrtho_AP2"
+          ]
+        },
+        {
+          "question_group_id": "5b04a786-5b86-44c4-b958-aa873f60dc34",
+          "save_to_fields": [
+            "AP_DMonthlyPrem_AP2"
+          ]
+        },
+        {
+          "question_group_id": "1d8922fe-21da-4517-b22d-d00cfbaee24b",
+          "save_to_fields": [
+            "AP_DAnnualPrem_AP2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4c361749-4e3e-4ff0-808c-0df8237d3b88",
+      "variant_name": "Renewal",
+      "file_sources": [
+        "FileUpload6"
+      ],
+      "group_variants": [
+        {
+          "question_group_id": "bbe56c26-2743-4551-b6b3-95486a168bbc",
+          "save_to_fields": [
+            "AP_DClientName_R"
+          ]
+        },
+        {
+          "question_group_id": "e54bdc0d-0f23-4c32-b585-2350fae8e848",
+          "save_to_fields": [
+            "AP_DEffDate_R"
+          ]
+        },
+        {
+          "question_group_id": "836e9c33-1654-4826-a6da-28652177d652",
+          "save_to_fields": [
+            "AP_DCarrier_R",
+            "AP_DPlanSummary_R",
+            "AP_DNetwork_R"
+          ]
+        },
+        {
+          "question_group_id": "f3603128-aa39-4c79-b81b-688f5f4cad82",
+          "save_to_fields": [
+            "AP_DInNetworkDeductible_R",
+            "AP_DInNetworkWaived_R",
+            "AP_DInNetworkCalendar_R",
+            "AP_DInNetworkCoinsurance_R",
+            "AP_DInNetworkPreventive_R",
+            "AP_DInNetworkBasic_R",
+            "AP_DInNetworkMajor_R",
+            "AP_DInNetworkOrthodon_R",
+            "AP_DInNetworkOrthoAge_R",
+            "AP_DInNetworkAnnualMax_R",
+            "AP_DInNetworkLifetimeOrtho_R"
+          ]
+        },
+        {
+          "question_group_id": "e03f875b-d3cd-4fb5-abe3-6ad75cec4e36",
+          "save_to_fields": [
+            "AP_DOutNetworkDeductible_R",
+            "AP_DOutNetworkWaived_R",
+            "AP_DOutNetworkCoinsurance_R",
+            "AP_DOutNetworkPreventive_R",
+            "AP_DOutNetworkBasic_R",
+            "AP_DOutNetworkMajor_R",
+            "AP_DOutNetworkOrthodon_R",
+            "AP_DOutNetworkAnnualMax_R",
+            "AP_DOutNetworkLifetimeOrtho_R"
+          ]
+        },
+        {
+          "question_group_id": "8958dd0a-d9a7-4452-85ab-ed57e0268ec0",
+          "save_to_fields": [
+            "AP_DEndo_R",
+            "AP_DPerio_R",
+            "AP_DOralSurgery_R",
+            "AP_DDentalImplant_R",
+            "AP_DPosterior_R",
+            "AP_DOONReimburse_R",
+            "AP_DAnnualMaxRoll_R"
+          ]
+        },
+        {
+          "question_group_id": "3bdd3a89-fa80-4889-98aa-b65eb1f3330b",
+          "save_to_fields": [
+            "AP_DEmployerContribution_R",
+            "AP_DParticipationRequirement_R",
+            "AP_DWaitingPeriod_R",
+            "AP_DTrueOpen_R",
+            "AP_DRateGuarantee_R"
+          ]
+        },
+        {
+          "question_group_id": "6ead4bcd-2a67-4b81-9d80-5a8eca73dfda",
+          "save_to_fields": [
+            "AP_DEmp_R",
+            "AP_DEmpSp_R",
+            "AP_DEmpChi_R",
+            "AP_DEmpFam_R"
+          ]
+        },
+        {
+          "question_group_id": "81e3a165-facb-4c25-9b7e-301edcd1036d",
+          "save_to_fields": [
+            "AP_DAso_R",
+            "AP_DAsoNet_R",
+            "AP_DMonthlyAdmin_R",
+            "AP_DPercentChange_R"
+          ]
+        },
+        {
+          "question_group_id": "5b04a786-5b86-44c4-b958-aa873f60dc34",
+          "save_to_fields": [
+            "AP_DMonthlyPrem_R"
+          ]
+        },
+        {
+          "question_group_id": "1d8922fe-21da-4517-b22d-d00cfbaee24b",
+          "save_to_fields": [
+            "AP_DAnnualPrem_R"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "636b6299-c71f-4a82-8952-824819de9092",
+      "variant_name": "Alternative 3",
+      "file_sources": [
+        "FileUpload9"
+      ],
+      "group_variants": [
+        {
+          "question_group_id": "bbe56c26-2743-4551-b6b3-95486a168bbc",
+          "save_to_fields": [
+            "AP_DClientName_AP3"
+          ]
+        },
+        {
+          "question_group_id": "e54bdc0d-0f23-4c32-b585-2350fae8e848",
+          "save_to_fields": [
+            "AP_DEffDate_AP3"
+          ]
+        },
+        {
+          "question_group_id": "836e9c33-1654-4826-a6da-28652177d652",
+          "save_to_fields": [
+            "AP_DCarrier_AP3",
+            "AP_DPlanSummary_AP3",
+            "AP_DNetwork_AP3"
+          ]
+        },
+        {
+          "question_group_id": "f3603128-aa39-4c79-b81b-688f5f4cad82",
+          "save_to_fields": [
+            "AP_DInNetworkDeductible-AP3",
+            "AP_DInNetworkWaived_AP3",
+            "AP_DInNetworkCalendar_AP3",
+            "AP_DInNetworkCoinsurance_AP3",
+            "AP_DInNetworkPreventive_AP3",
+            "AP_DInNetworkBasic_AP3",
+            "AP_DInNetworkMajor_AP3",
+            "AP_DInNetworkOrthodon_AP3",
+            "AP_DInNetworkOrthoAge_AP3",
+            "AP_DInNetworkAnnualMax_AP3",
+            "AP_DInNetworkLifetimeOrtho_AP3"
+          ]
+        },
+        {
+          "question_group_id": "e03f875b-d3cd-4fb5-abe3-6ad75cec4e36",
+          "save_to_fields": [
+            "AP_DOutNetworkDeductible_AP3",
+            "AP_DOutNetworkWaived_AP3",
+            "AP_DOutNetworkCoinsurance_AP3",
+            "AP_DOutNetworkPreventive_AP3",
+            "AP_DOutNetworkBasic_AP3",
+            "AP_DOutNetworkMajorA_AP3",
+            "AP_DOutNetworkOrthodon_AP3",
+            "AP_DOutNetworkAnnualMax_AP3",
+            "AP_DOutNetworkLifetimeOrtho_AP3"
+          ]
+        },
+        {
+          "question_group_id": "8958dd0a-d9a7-4452-85ab-ed57e0268ec0",
+          "save_to_fields": [
+            "AP_DEndo_AP3",
+            "AP_DPerio_AP3",
+            "AP_DOralSurgery_AP3",
+            "AP_DDentalImplant_AP3",
+            "AP_DPosterior_AP3",
+            "AP_DOONReimburse_AP3",
+            "AP_DAnnualMaxRoll_AP3"
+          ]
+        },
+        {
+          "question_group_id": "3bdd3a89-fa80-4889-98aa-b65eb1f3330b",
+          "save_to_fields": [
+            "AP_DEmployerContribution_AP3",
+            "AP_DParticipationRequirement_AP3",
+            "AP_DWaitingPeriod_AP3",
+            "AP_DTrueOpen_AP3",
+            "AP_DRateGuarantee_AP3"
+          ]
+        },
+        {
+          "question_group_id": "6ead4bcd-2a67-4b81-9d80-5a8eca73dfda",
+          "save_to_fields": [
+            "AP_DEmp_AP3",
+            "AP_DEmpSp_AP3",
+            "AP_DEmpChi_AP3",
+            "AP_DEmpFam_AP3"
+          ]
+        },
+        {
+          "question_group_id": "81e3a165-facb-4c25-9b7e-301edcd1036d",
+          "save_to_fields": [
+            "AP_DAso_AP3",
+            "AP_DAsoNet_AP3",
+            "AP_DMonthlyAdmin_AP3",
+            "AP_DPercentChange_AP3"
+          ]
+        },
+        {
+          "question_group_id": "5b04a786-5b86-44c4-b958-aa873f60dc34",
+          "save_to_fields": [
+            "AP_DMonthlyPrem_AP3"
+          ]
+        },
+        {
+          "question_group_id": "1d8922fe-21da-4517-b22d-d00cfbaee24b",
+          "save_to_fields": [
+            "AP_DAnnualPrem_AP3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "067fda02-37d0-48e0-a349-05ee04024264",
+      "variant_name": "Alternative 4",
+      "file_sources": [
+        "FileUpload10"
+      ],
+      "group_variants": [
+        {
+          "question_group_id": "e54bdc0d-0f23-4c32-b585-2350fae8e848",
+          "save_to_fields": [
+            "AP_DEffDate_AP4"
+          ]
+        },
+        {
+          "question_group_id": "836e9c33-1654-4826-a6da-28652177d652",
+          "save_to_fields": [
+            "AP_DCarrier_AP4",
+            "AP_DPlanSummary_AP4",
+            "AP_DNetwork_AP4"
+          ]
+        },
+        {
+          "question_group_id": "f3603128-aa39-4c79-b81b-688f5f4cad82",
+          "save_to_fields": [
+            "AP_DInNetworkDeductible_AP4",
+            "AP_DInNetworkWaived_AP4",
+            "AP_DInNetworkCalendar_AP4",
+            "AP_DInNetworkCoinsurance_AP4",
+            "AP_DInNetworkPreventive_AP4",
+            "AP_DInNetworkBasic_AP4",
+            "AP_DInNetworkMajor_AP4",
+            "AP_DInNetworkOrthodon_AP4",
+            "AP_DInNetworkOrthoAge_AP4",
+            "AP_DInNetworkAnnualMax_AP4",
+            "AP_DInNetworkLifetimeOrtho_AP4"
+          ]
+        },
+        {
+          "question_group_id": "e03f875b-d3cd-4fb5-abe3-6ad75cec4e36",
+          "save_to_fields": [
+            "AP_DOutNetworkDeductible_AP4",
+            "AP_DOutNetworkWaived_AP4",
+            "AP_DOutNetworkCoinsurance_AP4",
+            "AP_DOutNetworkPreventive_AP4",
+            "AP_DOutNetworkBasic_AP4",
+            "AP_DOutNetworkMajor_AP4",
+            "AP_DOutNetworkOrthodon_AP4",
+            "AP_DOutNetworkAnnualMax_AP4",
+            "AP_DOutNetworkLifetimeOrtho_AP4"
+          ]
+        },
+        {
+          "question_group_id": "8958dd0a-d9a7-4452-85ab-ed57e0268ec0",
+          "save_to_fields": [
+            "AP_DEndo_AP4",
+            "AP_DPerio_AP4",
+            "AP_DOralSurgery_AP4",
+            "AP_DDentalImplant_AP4",
+            "AP_DPosterior_AP4",
+            "AP_DOONReimburse_AP4",
+            "AP_DAnnualMaxRoll_AP4"
+          ]
+        },
+        {
+          "question_group_id": "3bdd3a89-fa80-4889-98aa-b65eb1f3330b",
+          "save_to_fields": [
+            "AP_DEmployerContribution_AP4",
+            "AP_DParticipationRequirement_AP4",
+            "AP_DWaitingPeriod_AP4",
+            "AP_DTrueOpen_AP4",
+            "AP_DRateGuarantee_AP4"
+          ]
+        },
+        {
+          "question_group_id": "6ead4bcd-2a67-4b81-9d80-5a8eca73dfda",
+          "save_to_fields": [
+            "AP_DEmp_AP4",
+            "AP_DEmpSp_AP4",
+            "AP_DEmpChi_AP4",
+            "AP_DEmpFam_AP4"
+          ]
+        },
+        {
+          "question_group_id": "81e3a165-facb-4c25-9b7e-301edcd1036d",
+          "save_to_fields": [
+            "AP_DAso_AP4",
+            "AP_DAsoNet_AP4",
+            "AP_DMonthlyAdmin_AP4",
+            "AP_DPercentChange_AP4"
+          ]
+        },
+        {
+          "question_group_id": "5b04a786-5b86-44c4-b958-aa873f60dc34",
+          "save_to_fields": [
+            "AP_DMonthlyPrem_AP4"
+          ]
+        },
+        {
+          "question_group_id": "1d8922fe-21da-4517-b22d-d00cfbaee24b",
+          "save_to_fields": [
+            "AP_DAnnualPrem_AP4"
+          ]
+        },
+        {
+          "question_group_id": "bbe56c26-2743-4551-b6b3-95486a168bbc",
+          "save_to_fields": [
+            "AP_DClientName_AP4"
+          ]
+        }
+      ]
+    }
+  ]
+}

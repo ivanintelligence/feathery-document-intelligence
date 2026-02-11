@@ -32,6 +32,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -44,7 +45,7 @@
     },
     {
       "id": "c19d0e76-43a0-4c15-9dd7-0c910dd4363a",
-      "type": "one_value",
+      "type": "multiple_value",
       "details": "",
       "entities": [
         {
@@ -54,7 +55,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Describes who is eligible for coverage based on employment status and required work hours.",
+          "criteria": "Extract the plan effective date or coverage period exactly as stated in the document. Look for effective dates on the front cover, first page, Summary of Benefits (SOB), benefit plan year section, or within “amended and restated as of” language. Capture the date text as written and do not substitute eligibility language.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -70,11 +71,12 @@
         "skip_ai_page_filter": false,
         "page_filter_start": null,
         "page_filter_end": null,
-        "group_name": null,
+        "group_name": "Effective Dates",
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
-          "date": false,
+          "web": false,
+          "date": true,
           "math": false
         },
         "table_filter": null,
@@ -181,6 +183,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -262,6 +265,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -330,6 +334,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -385,6 +390,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -884,6 +890,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -1047,6 +1054,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -1194,7 +1202,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "The plan’s stated coverage period label (plan year/calendar year/benefit year) and any effective dates (start/end) shown in the document.",
+          "criteria": "The plan’s stated coverage period label (plan year, calendar year, or benefit year) and any effective dates (start and end) shown in the document. Identify the basis explicitly rather than providing definitions.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1237,7 +1245,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "The Exclusions & Limitations section: list the explicit exclusions/limits (services not covered, visit/day caps, special restrictions) using the document’s exact wording",
+          "criteria": "Identify exclusions and limitations sections even if titled differently (e.g., “Services Not Covered,” “General Exclusions”). Extract and compare content from the same section in each document, include all applicable bullet points, and ensure the summary accurately reflects the detailed review.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1257,6 +1265,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -1279,7 +1288,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Return one concise sentence summarizing when and under what circumstances the plan or contract may be terminated. Exclude notice periods, administrative requirements, and legal clauses.",
+          "criteria": "Return one concise sentence summarizing when and under what circumstances the plan or contract may be terminated. Extract only plan- or contract-level termination language. If the same termination terms appear across documents, ensure results are consistent and not returned as null. Exclude notice periods, administrative requirements, and legal clauses.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1299,6 +1308,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -1321,7 +1331,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Return one concise sentence summarizing when employee coverage ends due to termination of employment or loss of eligibility. Exclude COBRA, notice, or administrative details.",
+          "criteria": "Return one concise sentence summarizing when employee coverage ends due to termination of employment or loss of eligibility (e.g., last day worked, end of month, end of pay period). Preserve the timing exactly as stated. If documents contain the same termination rule, ensure results are consistent and not returned as null. Exclude COBRA, notice, or administrative details.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1364,7 +1374,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Return one concise sentence summarizing when a spouse’s coverage ends due to loss of eligibility or qualifying events such as divorce or legal separation. Exclude notice and enrollment procedures.",
+          "criteria": "Return one concise sentence summarizing when a spouse’s coverage ends due to loss of eligibility or qualifying events (e.g., divorce or legal separation). If spouse coverage does not apply to the plan (e.g., employee-only coverage), return “Not applicable” consistently. Exclude notice and enrollment procedures.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1407,7 +1417,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Return one concise sentence summarizing when dependent coverage ends due to age limits or loss of eligibility. Exclude continuation or administrative details.",
+          "criteria": "Return one concise sentence summarizing when dependent coverage ends due to age limits or loss of eligibility. Preserve stated age thresholds exactly as written. If dependent coverage does not apply, return “Not applicable” consistently. Exclude continuation or administrative details.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1427,6 +1437,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -1469,6 +1480,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -1525,7 +1537,7 @@
     {
       "id": "ca167e1e-a1fa-4044-ac17-c94b6db7e3f2",
       "type": "multiple_value",
-      "details": "Extract only the document language required to determine employee eligibility and enrollment start rules, eligible spouse/dependent definitions, and any explicit rehire/reinstatement eligibility rule. Prioritize coverage eligibility thresholds (e.g., full-time/regular class, minimum hours/week), coverage effective date triggers (date of hire, 30 days then 1st of month, 90th day, etc.), and any active-at-work requirement only if it directly conditions eligibility or coverage start. Also capture eligible spouse language (legal spouse/domestic partner/common law) and dependent child age limit language (e.g., to age 26). Include rehire/reinstatement/break-in-service rules only when explicitly stated. Exclude content that is not needed to determine eligibility structure, such as open enrollment/QLE change rules, “making changes during the year,” COBRA/HRA claims/reimbursement instructions, employer contribution/minimum participation/GI amounts, and coverage end/termination timing.",
+      "details": "Extract any and all source language that defines employee eligibility and dependent eligibility/definitions for Medical coverage. Capture eligibility rules whether written as Q&A, headings, bullets, tables, or narrative. Include: (1) employee definition/eligible class (full-time/part-time, scheduled hours, hours/week or hours/month), (2) eligibility waiting/probation period and when eligibility is met, (3) Medical coverage effective date trigger (e.g., date of hire, 1st of month following eligibility, 90th day, first day after waiting period), (4) active-at-work/active service requirement that delays coverage, and (5) rehire/reinstatement/reemployment rules (no new waiting period, prior service counts, return-within X days/months/1 year), including leave/layoff impacts only if explicitly tied to eligibility. Also capture Spouse and Child/Dependent Child definitions (including age limits, disabled dependent extension, student rules) even if located in a Definitions/Dependents section. Exclude benefit waiting periods that do not determine coverage start (e.g., accident/sickness benefit waiting periods). Do not summarize; copy language verbatim.",
       "entities": [
         {
           "id": "93c96b14-2f53-44c4-83bc-7407c0e26bf0",
@@ -1534,7 +1546,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the exact question text or section heading that corresponds to employee eligibility threshold, coverage effective date trigger, eligible spouse definition, dependent child age limit, or rehire/reinstatement rule; if the document is not in Q&A format, use the relevant heading verbatim (e.g., “Eligibility,” “Covered Members,” “Who’s Eligible,” “Eligible Dependents,” “Coverage Begins,” “Effective Date,” “Rehire,” “Reinstatement”).",
+          "criteria": "Extract the heading/label/lead-in line for the captured eligibility language (examples: “ELIGIBLE EMPLOYEES”, “EMPLOYEE ELIGIBILITY”, “WHO’S ELIGIBLE”, “COVERED MEMBERS”, “ELIGIBLE DEPENDENTS”, “Spouse”, “Child”, “REHIRE/REINSTATEMENT/REEMPLOYMENT”, “ACTIVE AT WORK”, “WAITING PERIOD”, “COVERAGE BEGINS/WHEN COVERAGE BEGINS”, “EFFECTIVE DATE”, “ENROLLMENT”). If no heading exists, output the first sentence of the captured eligibility language.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1547,7 +1559,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the verbatim text directly answering the eligibility item, limited to employee hours/class, coverage start trigger (DOH / 30 days then 1st of month / 90th day), spouse eligibility type, child age limit, and rehire/reinstatement rule if present; include active-at-work only when explicitly tied to eligibility/coverage start. Do not include QLE/open enrollment change language, reimbursement/claims language, contribution/participation/GI fields, or coverage end/termination language.",
+          "criteria": "Extract the full relevant paragraph(s)/bullets/table rows verbatim for the anchor above, including all stated numbers/timing (hours/week or month, days, “first day of month”, “date of hire”, “provided actively at work”, “within X days/months/1 year”, “no new waiting period”, “prior service counts”). Include surrounding sentences needed to keep the rule complete. Do not include accident/sickness benefit waiting periods unless explicitly tied to eligibility/coverage start.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1567,6 +1579,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },
@@ -1679,6 +1692,7 @@
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
+          "web": false,
           "date": false,
           "math": false
         },

@@ -46,7 +46,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": true,
+          "date": false,
           "math": false
         },
         "table_filter": null,
@@ -58,7 +58,7 @@
     },
     {
       "id": "634bfa44-2855-40eb-ad0a-86807a1cbce0",
-      "type": "one_value",
+      "type": "multiple_value",
       "details": "",
       "entities": [
         {
@@ -84,12 +84,12 @@
         "skip_ai_page_filter": false,
         "page_filter_start": null,
         "page_filter_end": null,
-        "group_name": null,
+        "group_name": "Effective Dates",
         "page_filter_query": null,
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": false,
+          "date": true,
           "math": false
         },
         "table_filter": null,
@@ -197,7 +197,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": true,
+          "date": false,
           "math": false
         },
         "table_filter": null,
@@ -511,7 +511,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": false,
+          "date": true,
           "math": false
         },
         "table_filter": null,
@@ -1311,7 +1311,7 @@
     {
       "id": "cb4ab424-bd01-420e-9700-7ee2817b231c",
       "type": "multiple_value",
-      "details": "Extract all questions and corresponding answers that define employee eligibility mechanics for LTD. Capture minimum hours worked (e.g., hours per week), the eligibility waiting period and when eligibility is met, the coverage effective date rule (e.g., first day of the month that coincides with or follows eligibility), and any active-at-work requirement that delays coverage or increases until return to active work. Also capture reinstatement/rehire rules that restore coverage without a new waiting period, including the reinstatement window in days (e.g., return within 90 days) for layoff/termination, involuntary reduction in hours, and approved leaves; include military leave timing only if explicitly stated.",
+      "details": "Extract any and all source language that defines employee eligibility and dependent eligibility/definitions. Capture eligibility rules whether written as Q&A, headings, bullets, tables, or narrative. Include: (1) employee definition/eligible class (full-time/part-time, scheduled hours, hours/week or hours/month), (2) waiting/probation/elimination-for-eligibility period and when eligibility is met, (3) coverage effective date trigger (e.g., date of hire, 1st of month following eligibility, 91st day, first day after waiting period), (4) active-at-work/active service requirement that delays coverage, and (5) rehire/reinstatement/reemployment rules (no new waiting period, prior service counts, return-within X days/months/1 year), including leave/layoff/termination and any explicitly stated windows. Also capture Spouse and Child/Dependent Child definitions (including age limits, disabled dependent extension, student rules) even if located in a Definitions/Dependents section. Do not summarize; copy language verbatim.",
       "entities": [
         {
           "id": "297a4bf5-e666-4919-8114-389d414991b2",
@@ -1320,7 +1320,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Questions about LTD eligibility mechanics, including hours/week thresholds, waiting period rules, when eligibility is achieved, coverage start timing (e.g., 1st of month), active-at-work gating, and reinstatement/rehire rules without a new waiting period with a stated window in days.",
+          "criteria": "Extract the heading/label/lead-in line for the captured eligibility language (examples: “ELIGIBLE EMPLOYEES”, “EMPLOYEE ELIGIBILITY”, “DEPENDENT ELIGIBILITY”, “ELIGIBLE DEPENDENTS”, “Spouse”, “Child”, “REHIRE/REINSTATEMENT/REEMPLOYMENT”, “ACTIVE AT WORK”, “WAITING PERIOD”, “EFFECTIVE DATE”). If no heading exists, output the first sentence of the captured eligibility language.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1333,7 +1333,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "The corresponding answer, preserving stated numeric thresholds and timing rules exactly (hours, days, “1st of month” language), including active-at-work conditions and any reinstatement window and “no new waiting period” wording when present.",
+          "criteria": "Extract the full relevant paragraph(s)/bullets/table rows verbatim for the anchor above, including all stated numbers/timing (hours/week or month, days, “first day of month”, “date of hire”, “provided actively at work”, “within X days/months/1 year”, “no new waiting period”, “prior service counts”). Include surrounding sentences needed to keep the rule complete.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1354,7 +1354,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": false,
+          "date": true,
           "math": false
         },
         "table_filter": null,

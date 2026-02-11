@@ -7,7 +7,7 @@
       "entities": [
         {
           "id": "9451cc1a-dca5-4963-b4c0-421f3e11b45c",
-          "entity": "<GROUND_RULES>\nUse ONLY the explicit Q&A in the context. No assumptions.\nIf a field is not explicitly stated, output NULL.\n\nOUTPUT EXACTLY 4 lines (no extra lines, no wrapping):\nEE:\nSp:\nChild:\nRehire:\n\nFragments only (no full sentences). Keep short.\nExclude: open enrollment/QLE, “making changes”, COBRA/HRA claims, coverage end/termination, contribution/participation/GI, other benefits.\n\nFIELD RULES:\nEE: hours/class + effective trigger (DOH / 90th day / 1st of month after X days). If one is missing, write the other; missing part = NULL.\nSp: spouse type only (legal spouse / domestic partner / common law) or NULL.\nChild: child age limit only (to age 26 / EOM age 26 / etc.) or NULL.\nRehire: rehire/reinstatement threshold only (e.g., 90 days) or NULL.\n</GROUND_RULES>\n\nEligibility Language Q&A:\n<CONTEXT>\n{{DR_MEligibilityLanguageQA}}\n</CONTEXT>\n\n<QUESTIONS>\nReturn the 4-line Eligibility output. <Answer>\n</QUESTIONS>\n\n<EXAMPLES>\nEE: 30 hrs/week, effective 1st of month after 30 days\nSp: legal spouse or domestic partner\nChild: to age 26\nRehire: NULL\n\nEE: 35 hrs/week, effective 1st of month after 30 days\nSp: legal spouse\nChild: to age 26\nRehire: 90 days\n</EXAMPLES>",
+          "entity": "<GROUND_RULES>\nUse ONLY the explicit extracted context. No assumptions.\nIf missing, write Null.\n\nOutput EXACTLY 3 lines (short fragments only):\nEMPLOYEE: <hrs>, <waiting>, <effective>, <active>\nDEPENDENTS: Spouse <key>, Child <key>\nREHIRE: <window>, <waiting impact>\n\nHARD LIMITS:\n- MAX 16 words per line.\n- Use abbreviations: hrs/wk, hrs/mo, WP, eff, AAW, EE, DP, Ch, yrs, mos, d.\n- Commas only. No semicolons. No extra clauses. No examples.\n- Ignore open enrollment/QLE/change rules unless they directly affect initial eligibility/eff date.\n\nSELECTION RULES (pick only the most important items):\nEMPLOYEE:\n- <hrs> = minimum hours threshold (prefer hrs/wk; include hrs/mo only if stated).\n- <waiting> = eligibility WP length + class split if stated.\n- <effective> = shortest explicit trigger (e.g., 90th day, DOH, 1st of month).\n- <active> = “AAW req” if explicitly stated; else Null.\n\nDEPENDENTS:\n- Spouse <key> = only 1 phrase (e.g., lawful spouse; DP if explicitly included).\n- Child <key> = only 1 phrase: age limit + one qualifier (e.g., to EOM 26; disabled ext) if stated.\n\nREHIRE:\n- <window> = most direct rehire window if stated.\n- <waiting impact> = “no new WP” or “prior svc counts” if explicitly stated; else Null.\n</GROUND_RULES>\n\nEligibility Language Q&A:\n<CONTEXT>\n{{DR_MEligibilityLanguageQA}}\n</CONTEXT>\n\n<QUESTIONS>\nProduce the required 3-line output.\n</QUESTIONS>\n\n<EXAMPLES>\nEMPLOYEE: 30 hrs/wk, WP 30d, eff 1st of mo after 30d, AAW req\nDEPENDENTS: Spouse lawful spouse/DP, Child to EOM 26\nREHIRE: 90 d, prior svc counts; no new WP\n</EXAMPLES>",
           "save_to": "DR_MEligibilityLanguageFFQ",
           "type": "",
           "unique": false,
@@ -33,7 +33,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": false,
+          "date": true,
           "math": false
         },
         "table_filter": null,
@@ -93,7 +93,7 @@
       "entities": [
         {
           "id": "8b4afaef-6133-4bab-bd02-7c429e864469",
-          "entity": "<GROUND_RULES>\nUse ONLY explicit text in the provided context. No assumptions.\nUse ONLY these status values: Present or Not found.\nIf a topic is Present, include 1 verbatim supporting snippet.\nIf Not found, output Language: Null.\nDo NOT rewrite the snippet; copy verbatim only.\n\nTRUNCATION RULE:\n- If the best supporting language is longer than ~25 words, truncate it and end with \"...\"\n- If not truncated, do not add \"...\"\n</GROUND_RULES>\n\nExclusions & Limitations Q&A:\n<CONTEXT>\n{{DR_MExclusionLimitationQA}}\n</CONTEXT>\n\n<QUESTIONS>\nProduce the Exclusions & Limitations checklist in the required format. <Answer>\n</QUESTIONS>\n\n<OUTPUT_FORMAT>\nA) EXCLUSIONS & LIMITATIONS SECTION\n- FLAG: <Present/Not found>\n- LANGUAGE: \"<snippet/Null>\"\n\nB) KEY EXCLUSIONS\n1) MENTAL HEALTH / SUBSTANCE USE DISORDER\n- FLAG: <Present/Not found>\n- LANGUAGE: \"<snippet/Null>\"\n\n2) GENE THERAPY / ORPHAN DRUGS\n- FLAG: <Present/Not found>\n- LANGUAGE: \"<snippet/Null>\"\n\n3) FOREIGN TRAVEL / ABROAD\n- FLAG: <Present/Not found>\n- LANGUAGE: \"<snippet/Null>\"\n\n4) CRIME / FELONY / ILLEGAL ACTS INJURY\n- FLAG: <Present/Not found>\n- LANGUAGE: \"<snippet/Null>\"\n\n5) WEIGHT LOSS / WEIGHT LOSS DRUGS\n- FLAG: <Present/Not found>\n- LANGUAGE: \"<snippet/Null>\"\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nA) EXCLUSIONS & LIMITATIONS SECTION\n- FLAG: Present\n- LANGUAGE: \"EXCLUSIONS AND LIMITATIONS: The following services are not covered...\"\n\nB) KEY EXCLUSIONS\n1) MENTAL HEALTH / SUBSTANCE USE DISORDER\n- FLAG: Not found\n- LANGUAGE: Null\n\n2) GENE THERAPY / ORPHAN DRUGS\n- FLAG: Present\n- LANGUAGE: \"Gene therapy and orphan drugs are excluded.\"\n\n3) FOREIGN TRAVEL / ABROAD\n- FLAG: Present\n- LANGUAGE: \"No coverage outside the United States...\"\n\n4) CRIME / FELONY / ILLEGAL ACTS INJURY\n- FLAG: Present\n- LANGUAGE: \"Injury sustained while committing a felony is excluded.\"\n\n5) WEIGHT LOSS / WEIGHT LOSS DRUGS\n- FLAG: Not found\n- LANGUAGE: Null\n</EXAMPLES>",
+          "entity": "<GROUND_RULES>\nUse ONLY explicit text in the provided context. No assumptions.\nUse ONLY these status values: Included or Not Included.\nIf a topic is Included, include 1 verbatim supporting snippet.\nIf Not found, output Language: N/A.\nDo NOT rewrite the snippet; copy verbatim only.\n\nTRUNCATION RULE:\n- If the best supporting language is longer than ~25 words, truncate it and end with \"...\"\n- If not truncated, do not add \"...\"\n</GROUND_RULES>\n\nExclusions & Limitations Q&A:\n<CONTEXT>\n{{DR_MExclusionLimitationQA}}\n</CONTEXT>\n\n<QUESTIONS>\nProduce the Exclusions & Limitations checklist in the required format. <Answer>\n</QUESTIONS>\n\n<OUTPUT_FORMAT>\nA) EXCLUSIONS & LIMITATIONS SECTION\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/(N/A)>\"\n\nB) KEY EXCLUSIONS\n1) MENTAL HEALTH / SUBSTANCE USE DISORDER\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/(N/A)>\"\n\n2) GENE THERAPY / ORPHAN DRUGS\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/(N/A)>\"\n\n3) FOREIGN TRAVEL / ABROAD\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/(N/A)>\"\n\n4) CRIME / FELONY / ILLEGAL ACTS INJURY\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/(N/A)>\"\n\n5) WEIGHT LOSS / WEIGHT LOSS DRUGS\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/(N/A)>\"\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nA) EXCLUSIONS & LIMITATIONS SECTION\n- FLAG: Included\n- LANGUAGE: \"EXCLUSIONS AND LIMITATIONS: The following services are not covered...\"\n\nB) KEY EXCLUSIONS\n1) MENTAL HEALTH / SUBSTANCE USE DISORDER\n- FLAG: Not found\n- LANGUAGE: N/A\n\n2) GENE THERAPY / ORPHAN DRUGS\n- FLAG: Included\n- LANGUAGE: \"Gene therapy and orphan drugs are excluded.\"\n\n3) FOREIGN TRAVEL / ABROAD\n- FLAG: Included\n- LANGUAGE: \"No coverage outside the United States...\"\n\n4) CRIME / FELONY / ILLEGAL ACTS INJURY\n- FLAG: Included\n- LANGUAGE: \"Injury sustained while committing a felony is excluded.\"\n\n5) WEIGHT LOSS / WEIGHT LOSS DRUGS\n- FLAG: Not Included\n- LANGUAGE: N/A\n</EXAMPLES>",
           "save_to": "DR_MExclusionLimitationFFQ",
           "type": "",
           "unique": false,
@@ -130,81 +130,5 @@
       "data_validation_rules": []
     }
   ],
-  "variants": [
-    {
-      "id": "a4f7131e-cdf3-4ad8-9ec3-1af579133728",
-      "variant_name": "File 4",
-      "file_sources": [],
-      "group_variants": [
-        {
-          "question_group_id": "7fdd952f-ab44-46e4-bc13-61375b0788ce",
-          "save_to_fields": [
-            "DR_MEligibilityLanguageFFQ_F4"
-          ]
-        },
-        {
-          "question_group_id": "0a5e116b-942c-47c1-ab14-db762444025c",
-          "save_to_fields": [
-            "DR_MTerminationProvisionFFQ_F4"
-          ]
-        },
-        {
-          "question_group_id": "69c0bb50-0683-42b5-a4c3-01e9b6842cf9",
-          "save_to_fields": [
-            "DR_MExclusionLimitationFFQ_F4"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "020a6515-289f-4ca5-948e-044e72413d6c",
-      "variant_name": "File 2",
-      "file_sources": [],
-      "group_variants": [
-        {
-          "question_group_id": "7fdd952f-ab44-46e4-bc13-61375b0788ce",
-          "save_to_fields": [
-            "DR_MEligibilityLanguageFFQ_F2"
-          ]
-        },
-        {
-          "question_group_id": "0a5e116b-942c-47c1-ab14-db762444025c",
-          "save_to_fields": [
-            "DR_MTerminationProvisionFFQ_F2"
-          ]
-        },
-        {
-          "question_group_id": "69c0bb50-0683-42b5-a4c3-01e9b6842cf9",
-          "save_to_fields": [
-            "DR_MExclusionLimitationFFQ_F2"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "6a202ce7-63fd-4a1c-b43d-8a1b8366bc01",
-      "variant_name": "File 3",
-      "file_sources": [],
-      "group_variants": [
-        {
-          "question_group_id": "7fdd952f-ab44-46e4-bc13-61375b0788ce",
-          "save_to_fields": [
-            "DR_MEligibilityLanguageFFQ_F3"
-          ]
-        },
-        {
-          "question_group_id": "0a5e116b-942c-47c1-ab14-db762444025c",
-          "save_to_fields": [
-            "DR_MTerminationProvisionFFQ_F3"
-          ]
-        },
-        {
-          "question_group_id": "69c0bb50-0683-42b5-a4c3-01e9b6842cf9",
-          "save_to_fields": [
-            "DR_MExclusionLimitationFFQ_F3"
-          ]
-        }
-      ]
-    }
-  ]
+  "variants": []
 }

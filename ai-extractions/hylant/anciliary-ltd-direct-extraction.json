@@ -12,7 +12,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Name of the insurance carrier providing the long-term disability plan",
+          "criteria": "Name of the insurance carrier providing the long-term disability plan. ",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -22,9 +22,13 @@
           "id": "33b0d1e6-e75f-47cb-be9a-b8202eb88d83",
           "entity": "Plan Summary",
           "save_to": "AP_LTDPlanSummary",
-          "type": "",
+          "type": "singleOption",
           "unique": false,
-          "options": [],
+          "options": [
+            "Current Plan",
+            "Renewal Plan",
+            "Alternative Plan"
+          ],
           "criteria": "plan summary name for the specified plan option (Current, Renewal, or Alternative).",
           "examples": [],
           "required": false,
@@ -37,7 +41,7 @@
       "toggle_page_question": false,
       "properties": {
         "limit_relevant_pages": null,
-        "single_occurrence": false,
+        "single_occurrence": true,
         "skip_ai_page_filter": false,
         "page_filter_start": null,
         "page_filter_end": null,
@@ -52,14 +56,14 @@
         "table_filter": null,
         "sheet_filter": null,
         "page_limit": null,
-        "multiple_occurrences": true
+        "multiple_occurrences": false
       },
       "data_validation_rules": []
     },
     {
       "id": "2717d43c-6c62-4d85-9d51-840c576ad7ce",
       "type": "multiple_value",
-      "details": "The eligibility or class description details in the document",
+      "details": "The eligibility or class description details in the document.\n\nExtract Eligibility and route them based on specificity. If values are provided separately for Class 1, Class 2, and/or Class 3 services, populate only the corresponding class-level fields and leave the general Eligibility field blank. Do not duplicate values into the general row.\nIf only a  Eligibility value is stated without class distinctions, populate only the general Eligibility field and leave all Class 1, Class 2, and Class 3 fields blank.\n\nExtract any explicit employee-group descriptor that applies generally to all eligible employees\nand is NOT tied to a specific class number.\n\nThis field captures broad eligibility groupings only when classes are not defined.\n\nExamples include:\n- Employees working 30 hours or more per week\n- All Eligible Employees\n- All Non-US Employees\n\nPopulate this field ONLY if no explicit Class 1 / Class 2 / Class 3 group labels exist.\n\nDo NOT:\n- infer class structure\n- normalize wording\n- extract hours, waiting periods, or effective dates",
       "entities": [
         {
           "id": "2bb7e8b1-a9c1-4883-ba9b-a0f2132c5471",
@@ -81,7 +85,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Description of employee group classified as Class 1 for eligibility purposes.",
+          "criteria": "Description of employee group classified as Class 1 for eligibility purposes. \n\nExtract the explicit employee-group label assigned to Class 1.\n\nIf the document distinguishes employee groups by pay type (Hourly vs Salaried):\n\n output: Hourly Employees for Class 1.\nIf the document labels Hourly as Class 2, reassign it to Class 1 in output.\nIf pay type is not used, extract the explicit Class 1 label exactly as written.\n\nRules:\nCapture only the group identity.\nNormalize pay-type classes so Hourly = Class 1.\nDo not include eligibility mechanics.\n\nOther valid Class 1 group labels include:\n- Executives and VPs\n- Full Time Employees\n- All Non-US Employees\n\n",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -94,7 +98,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Description of employee group classified as Class 2 for eligibility purposes.",
+          "criteria": "Description of employee group classified as Class 2 for eligibility purposes.\n\nExtract the explicit employee-group label assigned to Class 2.\n\nIf the document distinguishes employee groups by pay type (Hourly vs Salaried):\n output: Salaried Employees for Class 2.\n\nIf the document labels Salaried as Class 1, reassign it to Class 2 in output.\n\nIf pay type is not used, extract the explicit Class 2 label exactly as written.\n\nRules:\nCapture only the group identity.\nNormalize pay-type classes so Salaried = Class 2.\nDo not include eligibility mechanics.\n\nOther valid Class 2 group labels include:\n- Full Time Employees\n- Part Time Employees\n- All US Employees\n\n",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -107,7 +111,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Description of employee group classified as Class 3 for eligibility purposes.",
+          "criteria": "Description of employee group classified as Class 3 for eligibility purposes.\n\nExtract the explicit employee-group label assigned to Class 3, if present.\n\nValid labels include job category, employment type, or geography.\n\nApply the same rules as Class 1 / Class 2.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -146,12 +150,14 @@
         {
           "id": "a0aff157-5a50-40ab-93b1-78b905be38a6",
           "entity": "Elimination Period",
-          "save_to": "AP_LTDElimPeriod",
+          "save_to": "AP_LTDEliminationPeriod",
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Length of time an employee must be disabled before LTD benefits begin",
-          "examples": [],
+          "criteria": "Extract the elimination period required before benefits are payable.\nReturn the duration verbatim as stated, limited to numeric value and unit only (e.g., “180 days”).\n\nOutput format:\n<number> days\n\nRules:\n- Use lowercase \"days\"\n- No leading/trailing spaces\n- No extra text",
+          "examples": [
+            "180 days"
+          ],
           "required": false,
           "default_option": "",
           "select_multiple": false
@@ -184,7 +190,7 @@
     {
       "id": "1f674105-5d55-4c10-b738-5cf954bbea2c",
       "type": "multiple_value",
-      "details": "Benefit Amount details exactly as it is written on the document.",
+      "details": "Benefit Amount details exactly as it is written on the document. \n\nExtract Benefit Amount and route them based on specificity. If values are provided separately for Class 1, Class 2, and/or Class 3 services, populate only the corresponding class-level fields and leave the general Benefit Amount field blank. Do not duplicate values into the general row.\nIf only a  benefit Amount value is stated without class distinctions, populate only the general Benefit Amount field and leave all Class 1, Class 2, and Class 3 fields blank.",
       "entities": [
         {
           "id": "7a9ffcae-fd55-452f-b081-1c292a7226d1",
@@ -275,7 +281,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Minimum monthly LTD benefit payable",
+          "criteria": "Minimum monthly LTD benefit payable. Output must be a dollar value OR '$X', where 'X' is a numerical value",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -309,7 +315,7 @@
     {
       "id": "671e3e16-0129-47fb-8187-d1e62ecacf2c",
       "type": "multiple_value",
-      "details": "Maximum Monthly Benefit exactly as it is written on the document",
+      "details": "Maximum Monthly Benefit exactly as it is written on the document.\nIf more than one employee class exists and the Maximum Monthly Benefit differs by class or is presented in a class-based table,\nleave the “Maximum Monthly Benefit” row blank.\n\nWhen there are Class 1 / 2 / 3 values, the global row should exist but be blank, and all values should live at the class level",
       "entities": [
         {
           "id": "1da9388c-c6e8-437c-8460-15410d1150ba",
@@ -391,7 +397,7 @@
     {
       "id": "252c8514-0f09-4982-a853-312a505144a5",
       "type": "multiple_value",
-      "details": "Maximum Benefit Duration exactly as it is written on the document",
+      "details": "Locate the Maximum Benefit Duration by finding the section or table that defines how long LTD benefits are payable (e.g., “Maximum Benefit Duration,” “Duration of Benefits,” or age-based schedules).\n\nIf the document presents Maximum Benefit Duration in a class-based table (e.g., Class 1, Class 2, Class 3), extract the duration exactly as stated for each class. Do not infer or combine class values.\n\nWhen Maximum Benefit Duration differs by class, leave the global Maximum Benefit Duration blank and populate only the applicable class-level values.",
       "entities": [
         {
           "id": "ef86073c-265f-40c5-872e-c9c7a4342433",
@@ -482,8 +488,10 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Plan definition used to determine total disability eligibility",
-          "examples": [],
+          "criteria": "Extract the disability definition wherever it appears in the document. If definitions match across documents, the summary must reflect identical results and must not return null.",
+          "examples": [
+            "Loss of duties and earnings"
+          ],
           "required": false,
           "default_option": "",
           "select_multiple": false
@@ -525,7 +533,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Definition and conditions under which partial disability benefits apply.",
+          "criteria": "Definition and conditions under which partial disability benefits apply. \nIdentify the Partial Disability benefit type based on how benefits are calculated.\n\nIf benefits are based on percentage of earnings lost, classify as\n\"Proportionate (Residual) Loss\"\n\nIf benefits increase by stages or over time independent of earnings loss, classify as\n\"Progressive Partial Disability\"\n\nDo not infer “progressive” unless explicitly stated.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -568,7 +576,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Criteria used to determine ongoing disability based on post-disability earnings or work capacity.",
+          "criteria": "Criteria used to determine ongoing disability based on post-disability earnings or work capacity.\n\nNormalize the gainful earnings threshold into the format:\nOwn Occupation % / Any Occupation %.\n\nIf only one percentage is stated and no distinction between own and any occupation is made, apply the same percentage to both (e.g., 80% → 80% / 80%).\n\nIf separate percentages are stated for own and any occupation periods, reflect both values accordingly (e.g., 80% own and 60% any → 80% / 60%).\n\nStandardize formatting as percentages with a space-separated slash (e.g., “80% / 80%”).",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -611,7 +619,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Limitations on benefit duration for disabilities based on self-reported symptoms.",
+          "criteria": "Extract any explicit limitation on benefit duration that applies to disabilities\ndescribed as self-reported or subjective in nature, including language such as\n\"self-reported symptoms,\" \"subjective symptoms,\" or conditions defined as\nprimarily based on the insured’s report of pain, fatigue, or similar symptoms.\n\nReturn duration only (e.g., 24 months).\n\nDo not infer self-reported limitations from mental illness, substance abuse,\nor condition lists unless the policy explicitly ties the limitation to\nself-reported or subjective symptoms.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -654,7 +662,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Limitations on benefit duration for disabilities caused by mental or nervous conditions.",
+          "criteria": "Limitations on benefit duration for disabilities caused by mental or nervous conditions. Return duration only (e.g., 24 months).",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -697,7 +705,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Limitations on benefit duration for disabilities related to substance or alcohol abuse.",
+          "criteria": "Limitations on benefit duration for disabilities related to substance or alcohol abuse. Return duration only (e.g., 24 months).",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -740,7 +748,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Benefit provision encouraging return to work while receiving LTD benefits",
+          "criteria": "Benefit provision encouraging return to work while receiving LTD benefits. Return duration only (e.g., 24 months).",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -774,7 +782,7 @@
     {
       "id": "68bfc035-e14a-476b-aaca-8c94dd3c6f7d",
       "type": "multiple_value",
-      "details": "Own Occupation description exactly as it is written on the document",
+      "details": "Own Occupation description exactly as it is written on the document.  Return duration only (e.g., 24 months Own Occupation). When there are Class 1 / 2 / 3 values, the global row should exist but be blank, and all values should live at the class level\n\nThe output should be 'X months Own Occupation', where 'X' is the number of months.",
       "entities": [
         {
           "id": "f33a0fd3-3465-4f0f-b2be-a0e6e8058f57",
@@ -783,7 +791,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Period during which disability is defined as inability to perform own occupation",
+          "criteria": "Period during which disability is defined as inability to perform own occupation. The output should be 'X months Own Occupation', where 'X' is the number of months.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -866,7 +874,9 @@
           "unique": false,
           "options": [],
           "criteria": "Whether residual disability benefits are payable without a waiting period",
-          "examples": [],
+          "examples": [
+            "Included"
+          ],
           "required": false,
           "default_option": "",
           "select_multiple": false
@@ -904,11 +914,11 @@
         {
           "id": "da1a4b1a-0426-4f46-9a3c-d31f6f47d4b9",
           "entity": "Pre-Existing Condition Limitations",
-          "save_to": "AP_LTDPreEx",
+          "save_to": "AP_LTDPreExistingCondition",
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Limitations applied to disabilities resulting from pre-existing conditions",
+          "criteria": "Limitations applied to disabilities resulting from pre-existing conditions. Extract the lookback period prior to effective date.\nOutput should be 'X/12', where 'X' is the number of months",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -929,7 +939,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": false,
+          "date": true,
           "math": false
         },
         "table_filter": null,
@@ -942,7 +952,7 @@
     {
       "id": "7c2a8005-48b3-46ba-be33-a955646e84d3",
       "type": "multiple_value",
-      "details": "Employer Contribution details exactly as it is written in the document",
+      "details": "Employer Contribution details exactly as it is written in the document. \n\nExtract Employer Contribution and route them based on specificity. If values are provided separately for Class 1, Class 2, and/or Class 3 services, populate only the corresponding class-level fields and leave the general Employer Contribution field blank. Do not duplicate values into the general row.\n\nIf only a single Employer Contribution is stated without class distinctions, populate only the general Employer Contribution field and leave all Class 1, Class 2, and Class 3 fields blank.\n\nIf the extracted data is 100%, return \"100% Employer Paid\"",
       "entities": [
         {
           "id": "6cdad5a1-682b-4652-af56-dc613691f622",
@@ -951,8 +961,10 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Portion of LTD premium paid by the employer",
-          "examples": [],
+          "criteria": "Portion of LTD premium paid by the employer. For Example, 100% Employer Paid.",
+          "examples": [
+            "100% Employer Paid"
+          ],
           "required": false,
           "default_option": "",
           "select_multiple": false
@@ -965,7 +977,9 @@
           "unique": false,
           "options": [],
           "criteria": "Employer contribution applicable to Class 1 employees",
-          "examples": [],
+          "examples": [
+            "100% Employer Paid"
+          ],
           "required": false,
           "default_option": "",
           "select_multiple": false
@@ -978,7 +992,9 @@
           "unique": false,
           "options": [],
           "criteria": "Employer contribution applicable to Class 2 employees",
-          "examples": [],
+          "examples": [
+            "100% Employer Paid"
+          ],
           "required": false,
           "default_option": "",
           "select_multiple": false
@@ -991,7 +1007,9 @@
           "unique": false,
           "options": [],
           "criteria": "Employer contribution applicable to Class 3 employees",
-          "examples": [],
+          "examples": [
+            "100% Employer Paid"
+          ],
           "required": false,
           "default_option": "",
           "select_multiple": false
@@ -1029,12 +1047,14 @@
         {
           "id": "acde280a-0001-4504-b755-e0dc7e56532e",
           "entity": "Participation Requirement",
-          "save_to": "AP_LTDPartReq",
+          "save_to": "AP_LTDParticipationRequirement",
           "type": "",
           "unique": false,
           "options": [],
           "criteria": "Minimum enrollment percentage required for plan issuance",
-          "examples": [],
+          "examples": [
+            "100%"
+          ],
           "required": false,
           "default_option": "",
           "select_multiple": false
@@ -1076,8 +1096,11 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Length of time LTD rates are guaranteed not to change",
-          "examples": [],
+          "criteria": "Length of time LTD rates are guaranteed not to change. The output should always be in years not in months.\n\nReturn 'X years', where 'X' is a numerical value.",
+          "examples": [
+            "1 year",
+            "2 years"
+          ],
           "required": false,
           "default_option": "",
           "select_multiple": false
@@ -1136,7 +1159,7 @@
     {
       "id": "e4531e6a-e5d2-4b0b-ae99-f966986d2859",
       "type": "multiple_value",
-      "details": "Premium details exactly as it is written on the document",
+      "details": "Premium details exactly as it is written on the document. Premium Calculation Rules:\nMonthly and Annual Premium fields are calculated outputs and must never be populated directly from carrier documents.\nAny premium values found in documents are reference-only and must not be extracted. Monthly and Annual Premiums must always be whole-dollar amounts.",
       "entities": [
         {
           "id": "2a55a06a-8904-4310-a317-b6042dde6320",
@@ -1145,7 +1168,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Estimated total monthly covered payroll used for pricing",
+          "criteria": "Extract the covered payroll or benefit volume used for pricing (the exposure base). This value represents volume, not cost.\nDo not extract rates, premiums, or percentages for this field.\nOnly populate this field when the document explicitly identifies covered payroll, benefit volume, or exposure used for pricing.\nSource this value from the Renewal document and apply the same value across all carriers (Current, Renewal, and Alternative).",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1158,7 +1181,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Total monthly LTD premium",
+          "criteria": "Total monthly LTD premium. Do not extract from the document.\nCalculate as:\nRate × (Estimated Monthly Volume ÷ rate basis unit)\nExample: If rate basis is per $100 of payroll, divide volume by 100 before applying the rate.\n\nAfter calculating the Monthly Premium using the approved formula, round the result to the nearest whole dollar.\nDo not retain cents.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1171,7 +1194,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Total annual LTD premium",
+          "criteria": "Total annual LTD premium. Do not extract from the document.\nCalculate as:\nMonthly Premium × 12.\n\nDo not copy carrier-stated annual premiums. Do not independently round the Annual Premium and do not derive it directly from volume.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1184,7 +1207,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Percentage increase or decrease from prior LTD rates",
+          "criteria": "Percentage increase or decrease from prior LTD rates. \nIf a percentage change is explicitly stated, return that value.\n\nOtherwise calculate as:\n(Renewal Rate − Current Rate) ÷ Current Rate × 100",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1202,7 +1225,7 @@
         "page_filter_end": null,
         "group_name": "Premium",
         "page_filter_query": null,
-        "enable_tool_usage": false,
+        "enable_tool_usage": true,
         "tools": {
           "web": false,
           "date": false,
@@ -1227,7 +1250,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "The Client Name as stated in the LTD plan",
+          "criteria": "The Client Name as stated in the LTD plan,",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1270,7 +1293,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "The date on which the LTD benefit plans shown in the comparison become effective.",
+          "criteria": "Extract the plan effective date or coverage period exactly as stated in the document. Look for effective dates on the front cover, first page, Summary of Benefits (SOB), benefit plan year section, or within “amended and restated as of” language. Capture the date text as written and do not substitute eligibility language.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1304,7 +1327,7 @@
     {
       "id": "39293def-6392-4617-8e23-cf7f0d74e99f",
       "type": "multiple_value",
-      "details": "Extract all questions and corresponding answers that define employee eligibility mechanics for LTD. Capture minimum hours worked (e.g., hours per week), the eligibility waiting period and when eligibility is met, the coverage effective date rule (e.g., first day of the month that coincides with or follows eligibility), and any active-at-work requirement that delays coverage or increases until return to active work. Also capture reinstatement/rehire rules that restore coverage without a new waiting period, including the reinstatement window in days (e.g., return within 90 days) for layoff/termination, involuntary reduction in hours, and approved leaves; include military leave timing only if explicitly stated.",
+      "details": "Extract any and all source language that defines employee eligibility and dependent eligibility/definitions. Capture eligibility rules whether written as Q&A, headings, bullets, tables, or narrative. Include: (1) employee definition/eligible class (full-time/part-time, scheduled hours, hours/week or hours/month), (2) waiting/probation/eligibility waiting period (not the benefit elimination period payable after disability) and when eligibility is met, (3) coverage effective date trigger (e.g., date of hire, 1st of month following eligibility, 91st day, first day after waiting period), (4) active-at-work/active service requirement that delays coverage, and (5) rehire/reinstatement/reemployment rules (no new waiting period, prior service counts, return-within X days/months/1 year), including leave/layoff/termination and any explicitly stated windows. Also capture Spouse and Child/Dependent Child definitions (including age limits, disabled dependent extension, student rules) even if located in a Definitions/Dependents section. Do not summarize; copy language verbatim.  Include waiting or probationary period for eligibility only. Do NOT capture the benefit elimination period that applies after disability.",
       "entities": [
         {
           "id": "5fa57d68-a3ff-4ca0-9587-4a80de02788d",
@@ -1313,7 +1336,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Questions about LTD eligibility mechanics, including hours/week thresholds, waiting period rules, when eligibility is achieved, coverage start timing (e.g., 1st of month), active-at-work gating, and reinstatement/rehire rules without a new waiting period with a stated window in days.",
+          "criteria": "Extract the heading/label/lead-in line for the captured eligibility language (examples: “ELIGIBLE EMPLOYEES”, “EMPLOYEE ELIGIBILITY”, “DEPENDENT ELIGIBILITY”, “ELIGIBLE DEPENDENTS”, “Spouse”, “Child”, “REHIRE/REINSTATEMENT/REEMPLOYMENT”, “ACTIVE AT WORK”, “WAITING PERIOD”, “EFFECTIVE DATE”). If no heading exists, output the first sentence of the captured eligibility language.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1326,7 +1349,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "The corresponding answer, preserving stated numeric thresholds and timing rules exactly (hours, days, “1st of month” language), including active-at-work conditions and any reinstatement window and “no new waiting period” wording when present.",
+          "criteria": "Extract the full relevant paragraph(s)/bullets/table rows verbatim for the anchor above, including all stated numbers/timing (hours/week or month, days, “first day of month”, “date of hire”, “provided actively at work”, “within X days/months/1 year”, “no new waiting period”, “prior service counts”). Include surrounding sentences needed to keep the rule complete. Do NOT capture the benefit Elimination Period that applies after disability begins. Capture only timing language tied directly to eligibility for coverage.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1403,7 +1426,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": false,
+          "date": true,
           "math": false
         },
         "table_filter": null,
@@ -1640,7 +1663,7 @@
     {
       "id": "1512bbed-a097-437d-835a-06faeb0f8a9f",
       "type": "multiple_value",
-      "details": "Extract all questions and answers that explicitly define the gainful earnings test / gainful occupation earnings threshold (often within any-occupation language). Capture: (1) the percentage threshold(s), (2) the earnings basis used (e.g., indexed pre-disability earnings / indexed monthly earnings / pre-disability earnings / basic monthly earnings), and (3) any explicit split thresholds (e.g., 80% if working vs 60% if not working) only if stated.",
+      "details": "Extract verbatim document language that defines or applies a gainful occupation/gainful earnings/any occupation earnings threshold test, typically within any-occupation or gainful occupation language. Capture the heading/label/lead-in line where the rule appears (or the first sentence if no heading) and capture the full rule language around it (paragraph/bullets/table rows) including any % thresholds, earnings basis wording (indexed pre-disability/monthly earnings, basic monthly earnings, etc.), and any working vs not working split thresholds if stated. Do not summarize or infer; copy source language verbatim.",
       "entities": [
         {
           "id": "bcea8d8e-d73c-44a0-91e5-949997f64535",
@@ -1649,7 +1672,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Questions about “gainful earnings test” / “gainful occupation” / “any occupation earnings test” / “gainful” definition, especially where an earnings % threshold is stated.",
+          "criteria": "Extract the heading/label/lead-in line introducing the gainful occupation/earnings threshold test; if none, output the first sentence of the rule text.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1662,7 +1685,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "The corresponding answer showing the % threshold(s) and earnings basis verbatim (keep numbers and the basis wording intact; include 80/60 split only if explicit).",
+          "criteria": "Extract the full verbatim rule language for the gainful earnings/any occupation earnings test (paragraph/bullets/table rows), keeping all numbers, %s, and earnings-basis wording intact; include surrounding sentences needed to understand the test.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1696,7 +1719,7 @@
     {
       "id": "f8076f5f-98cb-4b15-9c11-81c31c0b6d37",
       "type": "multiple_value",
-      "details": "Extract all questions and answers that explicitly state the Return to Work Incentive / Work Incentive duration in time terms. Prioritize month-based durations (e.g., “first 12 months”, “first 24 months”). Capture the month number and the phrase that ties it to the incentive period (ignore benefit formulas unless the doc only provides duration embedded in the formula language).",
+      "details": "Extract verbatim document language that describes return-to-work/work incentive/rehabilitation incentive benefits or incentive periods tied to working while disabled, often in Partial/Residual Disability, Rehabilitation/Vocational, or benefit calculation sections. Capture the heading/label/lead-in line where the rule appears (or the first sentence if no heading) and capture the full relevant rule language around it (paragraph/bullets/table rows), prioritizing any explicit duration wording (e.g., first X months, up to X months). Do not summarize or infer; copy source language verbatim.",
       "entities": [
         {
           "id": "3e2a54fa-db9f-4399-a5c1-b5d5221d628f",
@@ -1705,7 +1728,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Questions about “Return to Work Incentive”, “Work Incentive”, “return to work incentive benefit”, and any “first X months” period tied to the incentive.",
+          "criteria": "Extract the heading/label/lead-in line introducing the return-to-work/work incentive/rehab incentive rule; if none, output the first sentence of the extracted rule text.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1714,11 +1737,11 @@
         {
           "id": "bea4bb0a-dbbd-489f-a719-99ed595ae4b2",
           "entity": "Return to Work Incentive Benefit Answer",
-          "save_to": "AP_LTDGainfulEarningsTestQA",
+          "save_to": "AP_LTDReturnToWorkIncentiveBenefitA",
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "The corresponding answer containing the explicit month duration for the incentive period (preserve the number and “months” wording).",
+          "criteria": "Extract the full verbatim rule language describing the return-to-work/work incentive/rehab incentive benefit, especially any month duration wording, plus surrounding sentences needed to interpret what the duration applies to.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1750,18 +1773,18 @@
       "data_validation_rules": []
     },
     {
-      "id": "274165d2-58aa-4505-b95b-caf46730f0d1",
+      "id": "4d95e089-11c7-46d6-a64c-ed8976784867",
       "type": "one_value",
       "details": "",
       "entities": [
         {
-          "id": "7995be35-71f4-49fc-8b8a-714d9e740caf",
-          "entity": "Effective Date",
+          "id": "57a8de13-44c5-4a9f-8de3-a6aa0778dd14",
+          "entity": "Effective Dates",
           "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "The date on which the LTD benefit plans shown in the comparison become effective.",
+          "criteria": "Extract the plan effective date or coverage period exactly as stated in the document. Look for effective dates on the front cover, first page, Summary of Benefits (SOB), benefit plan year section, or within “amended and restated as of” language. Capture the date text as written and do not substitute eligibility language.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1782,7 +1805,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": true,
+          "date": false,
           "math": false
         },
         "table_filter": null,
@@ -1819,7 +1842,7 @@
         {
           "question_group_id": "89dc1392-f98d-410b-a90e-6cdbedd13f32",
           "save_to_fields": [
-            "AP_LTDPreEx_AP1"
+            "AP_LTDPreExistingCondition_AP1"
           ]
         },
         {
@@ -1834,7 +1857,7 @@
         {
           "question_group_id": "ad56fbe2-ec0f-402a-9286-afef40089cdc",
           "save_to_fields": [
-            "AP_LTDPartReq_AP1"
+            "AP_LTDParticipationRequirement_AP1"
           ]
         },
         {
@@ -1927,7 +1950,7 @@
         {
           "question_group_id": "acf530f7-144c-4fbb-a7c9-ee08206d9a24",
           "save_to_fields": [
-            "AP_LTDElimPeriod_AP1"
+            "AP_LTDEliminationPeriod_AP1"
           ]
         },
         {
@@ -2029,37 +2052,6 @@
       ],
       "group_variants": [
         {
-          "question_group_id": "842a29a1-d499-4141-a963-28ba1a5d8b07",
-          "save_to_fields": [
-            "AP_LTDCarrier_AP2",
-            "AP_LTDPlanSummary_AP2"
-          ]
-        },
-        {
-          "question_group_id": "2717d43c-6c62-4d85-9d51-840c576ad7ce",
-          "save_to_fields": [
-            "AP_LTDElig_AP2",
-            "AP_LTDElig1_AP2",
-            "AP_LTDElig2_AP2",
-            "AP_LTDElig3_AP2"
-          ]
-        },
-        {
-          "question_group_id": "acf530f7-144c-4fbb-a7c9-ee08206d9a24",
-          "save_to_fields": [
-            "AP_LTDElimPeriod_AP2"
-          ]
-        },
-        {
-          "question_group_id": "1f674105-5d55-4c10-b738-5cf954bbea2c",
-          "save_to_fields": [
-            "AP_LTDBenefitAmount_AP2",
-            "AP_LTDBenefitAmount1_AP2",
-            "AP_LTDBenefitAmount2_AP2",
-            "AP_LTDBenefitAmount3_AP2"
-          ]
-        },
-        {
           "question_group_id": "873b075a-0869-45e5-857c-b5c39ec2ead1",
           "save_to_fields": [
             "AP_LTDMinMonthBen_AP2"
@@ -2143,7 +2135,7 @@
         {
           "question_group_id": "89dc1392-f98d-410b-a90e-6cdbedd13f32",
           "save_to_fields": [
-            "AP_LTDPreEx_AP2"
+            "AP_LTDPreExistingCondition_AP2"
           ]
         },
         {
@@ -2158,7 +2150,7 @@
         {
           "question_group_id": "ad56fbe2-ec0f-402a-9286-afef40089cdc",
           "save_to_fields": [
-            "AP_LTDPartReq_AP2"
+            "AP_LTDParticipationRequirement_AP2"
           ]
         },
         {
@@ -2188,6 +2180,27 @@
           "question_group_id": "f9488ef5-bb51-425e-b09d-6f694d51d73c",
           "save_to_fields": [
             "AP_LTDEffectiveDate_AP2"
+          ]
+        },
+        {
+          "question_group_id": "36a66c0e-d486-453e-bb6f-e40551eb10e5",
+          "save_to_fields": [
+            "AP_LTDMaximumBenefitDurationQ_AP2",
+            "AP_LTDMaximumBenefitDurationA_AP2"
+          ]
+        },
+        {
+          "question_group_id": "1512bbed-a097-437d-835a-06faeb0f8a9f",
+          "save_to_fields": [
+            "AP_LTDGainfulEarningsTestQ_AP2",
+            "AP_LTDGainfulEarningsTestA_AP2"
+          ]
+        },
+        {
+          "question_group_id": "f8076f5f-98cb-4b15-9c11-81c31c0b6d37",
+          "save_to_fields": [
+            "AP_LTDReturnToWorkIncentiveBenefitQ_AP2",
+            "AP_LTDReturnToWorkIncentiveBenefitA_AP2"
           ]
         },
         {
@@ -2226,24 +2239,34 @@
           ]
         },
         {
-          "question_group_id": "36a66c0e-d486-453e-bb6f-e40551eb10e5",
+          "question_group_id": "842a29a1-d499-4141-a963-28ba1a5d8b07",
           "save_to_fields": [
-            "AP_LTDMaximumBenefitDurationQ_AP2",
-            "AP_LTDMaximumBenefitDurationA_AP2"
+            "AP_LTDCarrier_AP2",
+            "AP_LTDPlanSummary_AP2"
           ]
         },
         {
-          "question_group_id": "1512bbed-a097-437d-835a-06faeb0f8a9f",
+          "question_group_id": "2717d43c-6c62-4d85-9d51-840c576ad7ce",
           "save_to_fields": [
-            "AP_LTDGainfulEarningsTestQ_AP2",
-            "AP_LTDGainfulEarningsTestA_AP2"
+            "AP_LTDElig_AP2",
+            "AP_LTDElig1_AP2",
+            "AP_LTDElig2_AP2",
+            "AP_LTDElig3_AP2"
           ]
         },
         {
-          "question_group_id": "f8076f5f-98cb-4b15-9c11-81c31c0b6d37",
+          "question_group_id": "acf530f7-144c-4fbb-a7c9-ee08206d9a24",
           "save_to_fields": [
-            "AP_LTDReturnToWorkIncentiveBenefitQ_AP2",
-            "AP_LTDReturnToWorkIncentiveBenefitA_AP2"
+            "AP_LTDEliminationPeriod_AP2"
+          ]
+        },
+        {
+          "question_group_id": "1f674105-5d55-4c10-b738-5cf954bbea2c",
+          "save_to_fields": [
+            "AP_LTDBenefitAmount_AP2",
+            "AP_LTDBenefitAmount1_AP2",
+            "AP_LTDBenefitAmount2_AP2",
+            "AP_LTDBenefitAmount3_AP2"
           ]
         }
       ]
@@ -2256,6 +2279,60 @@
       ],
       "group_variants": [
         {
+          "question_group_id": "52b1314c-22f3-4a70-b6ae-9145e3c12fe5",
+          "save_to_fields": [
+            "AP_LTDClientName_AP3"
+          ]
+        },
+        {
+          "question_group_id": "f9488ef5-bb51-425e-b09d-6f694d51d73c",
+          "save_to_fields": [
+            "AP_LTDEffectiveDate_AP3"
+          ]
+        },
+        {
+          "question_group_id": "39293def-6392-4617-8e23-cf7f0d74e99f",
+          "save_to_fields": [
+            "AP_LTDEligibilityLanguageQ_AP3",
+            "AP_LTDEligibilityLanguageA_AP3"
+          ]
+        },
+        {
+          "question_group_id": "9e13640f-b3ab-42d3-8ba6-39c7bd58d352",
+          "save_to_fields": [
+            "AP_LTDTerminationProvisionQ_AP3",
+            "AP_LTDTerminationProvisionA_AP3"
+          ]
+        },
+        {
+          "question_group_id": "6272d2ad-72fc-4870-8190-8a659ef50b4c",
+          "save_to_fields": [
+            "AP_LTDPartialDisabilityDefinitionQ_AP3",
+            "AP_LTDPartialDisabilityDefinitionA_AP3"
+          ]
+        },
+        {
+          "question_group_id": "55e4eeaa-078c-4184-acbe-1c4b57ac8053",
+          "save_to_fields": [
+            "AP_LTDDisabilityDefinitionQ_AP3",
+            "AP_LTDDisabilityDefinitionA_AP3"
+          ]
+        },
+        {
+          "question_group_id": "7f44f63b-635f-43f8-abf8-f6c2bdafa337",
+          "save_to_fields": [
+            "AP_LTDExclusionLimitationQ_AP3",
+            "AP_LTDExclusionLimitationA_AP3"
+          ]
+        },
+        {
+          "question_group_id": "36a66c0e-d486-453e-bb6f-e40551eb10e5",
+          "save_to_fields": [
+            "AP_LTDMaximumBenefitDurationQ_AP3",
+            "AP_LTDMaximumBenefitDurationA_AP3"
+          ]
+        },
+        {
           "question_group_id": "e4531e6a-e5d2-4b0b-ae99-f966986d2859",
           "save_to_fields": [
             "AP_LTDEstMonVol_AP3",
@@ -2267,7 +2344,7 @@
         {
           "question_group_id": "89dc1392-f98d-410b-a90e-6cdbedd13f32",
           "save_to_fields": [
-            "AP_LTDPreEx_AP3"
+            "AP_LTDPreExistingCondition_AP3"
           ]
         },
         {
@@ -2289,7 +2366,7 @@
         {
           "question_group_id": "acf530f7-144c-4fbb-a7c9-ee08206d9a24",
           "save_to_fields": [
-            "AP_LTDElimPeriod_AP3"
+            "AP_LTDEliminationPeriod_AP3"
           ]
         },
         {
@@ -2394,7 +2471,7 @@
         {
           "question_group_id": "ad56fbe2-ec0f-402a-9286-afef40089cdc",
           "save_to_fields": [
-            "AP_LTDPartReq_AP3"
+            "AP_LTDParticipationRequirement_AP3"
           ]
         },
         {
@@ -2403,60 +2480,6 @@
             "AP_LTDRateGuar_AP3",
             "AP_LTDRatePer_AP3",
             "AP_LTDRate_AP3"
-          ]
-        },
-        {
-          "question_group_id": "52b1314c-22f3-4a70-b6ae-9145e3c12fe5",
-          "save_to_fields": [
-            "AP_LTDClientName_AP3"
-          ]
-        },
-        {
-          "question_group_id": "f9488ef5-bb51-425e-b09d-6f694d51d73c",
-          "save_to_fields": [
-            "AP_LTDEffectiveDate_AP3"
-          ]
-        },
-        {
-          "question_group_id": "39293def-6392-4617-8e23-cf7f0d74e99f",
-          "save_to_fields": [
-            "AP_LTDEligibilityLanguageQ_AP3",
-            "AP_LTDEligibilityLanguageA_AP3"
-          ]
-        },
-        {
-          "question_group_id": "9e13640f-b3ab-42d3-8ba6-39c7bd58d352",
-          "save_to_fields": [
-            "AP_LTDTerminationProvisionQ_AP3",
-            "AP_LTDTerminationProvisionA_AP3"
-          ]
-        },
-        {
-          "question_group_id": "6272d2ad-72fc-4870-8190-8a659ef50b4c",
-          "save_to_fields": [
-            "AP_LTDPartialDisabilityDefinitionQ_AP3",
-            "AP_LTDPartialDisabilityDefinitionA_AP3"
-          ]
-        },
-        {
-          "question_group_id": "55e4eeaa-078c-4184-acbe-1c4b57ac8053",
-          "save_to_fields": [
-            "AP_LTDDisabilityDefinitionQ_AP3",
-            "AP_LTDDisabilityDefinitionA_AP3"
-          ]
-        },
-        {
-          "question_group_id": "7f44f63b-635f-43f8-abf8-f6c2bdafa337",
-          "save_to_fields": [
-            "AP_LTDExclusionLimitationQ_AP3",
-            "AP_LTDExclusionLimitationA_AP3"
-          ]
-        },
-        {
-          "question_group_id": "36a66c0e-d486-453e-bb6f-e40551eb10e5",
-          "save_to_fields": [
-            "AP_LTDMaximumBenefitDurationQ_AP3",
-            "AP_LTDMaximumBenefitDurationA_AP3"
           ]
         },
         {
@@ -2482,73 +2505,6 @@
         "FileUpload10"
       ],
       "group_variants": [
-        {
-          "question_group_id": "842a29a1-d499-4141-a963-28ba1a5d8b07",
-          "save_to_fields": [
-            "AP_LTDCarrier_AP4",
-            "AP_LTDPlanSummary_AP4"
-          ]
-        },
-        {
-          "question_group_id": "2717d43c-6c62-4d85-9d51-840c576ad7ce",
-          "save_to_fields": [
-            "AP_LTDElig_AP4",
-            "AP_LTDElig1_AP4",
-            "AP_LTDElig2_AP4",
-            "AP_LTDElig3_AP4"
-          ]
-        },
-        {
-          "question_group_id": "acf530f7-144c-4fbb-a7c9-ee08206d9a24",
-          "save_to_fields": [
-            "AP_LTDElimPeriod_AP4"
-          ]
-        },
-        {
-          "question_group_id": "1f674105-5d55-4c10-b738-5cf954bbea2c",
-          "save_to_fields": [
-            "AP_LTDBenefitAmount_AP4",
-            "AP_LTDBenefitAmount1_AP4",
-            "AP_LTDBenefitAmount2_AP4",
-            "AP_LTDBenefitAmount3_AP4"
-          ]
-        },
-        {
-          "question_group_id": "873b075a-0869-45e5-857c-b5c39ec2ead1",
-          "save_to_fields": [
-            "AP_LTDMinMonthBen_AP4"
-          ]
-        },
-        {
-          "question_group_id": "671e3e16-0129-47fb-8187-d1e62ecacf2c",
-          "save_to_fields": [
-            "AP_LTDMaxMonBen_AP4",
-            "AP_LTDMaxMonBen1_AP4",
-            "AP_LTDMaxMonBen2_AP4",
-            "AP_LTDMaxMonBen3_AP4"
-          ]
-        },
-        {
-          "question_group_id": "252c8514-0f09-4982-a853-312a505144a5",
-          "save_to_fields": [
-            "AP_LTDMaxBenDur_AP4",
-            "AP_LTDMaxBenDur1_AP4",
-            "AP_LTDMaxBenDur2_AP4",
-            "AP_LTDMaxBenDur3_AP4"
-          ]
-        },
-        {
-          "question_group_id": "df2a1bf5-8af5-4902-b21c-fa9718d97df6",
-          "save_to_fields": [
-            "AP_LTDDefDisab_AP4"
-          ]
-        },
-        {
-          "question_group_id": "ccf7c765-614a-4500-853c-5b641fe18285",
-          "save_to_fields": [
-            "AP_LTDPartialDis_AP4"
-          ]
-        },
         {
           "question_group_id": "6e44ce47-7161-4f91-bea5-7e4b7942c201",
           "save_to_fields": [
@@ -2597,7 +2553,7 @@
         {
           "question_group_id": "89dc1392-f98d-410b-a90e-6cdbedd13f32",
           "save_to_fields": [
-            "AP_LTDPreEx_AP4"
+            "AP_LTDPreExistingCondition_AP4"
           ]
         },
         {
@@ -2612,7 +2568,7 @@
         {
           "question_group_id": "ad56fbe2-ec0f-402a-9286-afef40089cdc",
           "save_to_fields": [
-            "AP_LTDPartReq_AP4"
+            "AP_LTDParticipationRequirement_AP4"
           ]
         },
         {
@@ -2699,6 +2655,73 @@
             "AP_LTDReturnToWorkIncentiveBenefitQ_AP4",
             "AP_LTDReturnToWorkIncentiveBenefitA_AP4"
           ]
+        },
+        {
+          "question_group_id": "842a29a1-d499-4141-a963-28ba1a5d8b07",
+          "save_to_fields": [
+            "AP_LTDCarrier_AP4",
+            "AP_LTDPlanSummary_AP4"
+          ]
+        },
+        {
+          "question_group_id": "2717d43c-6c62-4d85-9d51-840c576ad7ce",
+          "save_to_fields": [
+            "AP_LTDElig_AP4",
+            "AP_LTDElig1_AP4",
+            "AP_LTDElig2_AP4",
+            "AP_LTDElig3_AP4"
+          ]
+        },
+        {
+          "question_group_id": "acf530f7-144c-4fbb-a7c9-ee08206d9a24",
+          "save_to_fields": [
+            "AP_LTDEliminationPeriod_AP4"
+          ]
+        },
+        {
+          "question_group_id": "1f674105-5d55-4c10-b738-5cf954bbea2c",
+          "save_to_fields": [
+            "AP_LTDBenefitAmount_AP4",
+            "AP_LTDBenefitAmount1_AP4",
+            "AP_LTDBenefitAmount2_AP4",
+            "AP_LTDBenefitAmount3_AP4"
+          ]
+        },
+        {
+          "question_group_id": "873b075a-0869-45e5-857c-b5c39ec2ead1",
+          "save_to_fields": [
+            "AP_LTDMinMonthBen_AP4"
+          ]
+        },
+        {
+          "question_group_id": "671e3e16-0129-47fb-8187-d1e62ecacf2c",
+          "save_to_fields": [
+            "AP_LTDMaxMonBen_AP4",
+            "AP_LTDMaxMonBen1_AP4",
+            "AP_LTDMaxMonBen2_AP4",
+            "AP_LTDMaxMonBen3_AP4"
+          ]
+        },
+        {
+          "question_group_id": "252c8514-0f09-4982-a853-312a505144a5",
+          "save_to_fields": [
+            "AP_LTDMaxBenDur_AP4",
+            "AP_LTDMaxBenDur1_AP4",
+            "AP_LTDMaxBenDur2_AP4",
+            "AP_LTDMaxBenDur3_AP4"
+          ]
+        },
+        {
+          "question_group_id": "df2a1bf5-8af5-4902-b21c-fa9718d97df6",
+          "save_to_fields": [
+            "AP_LTDDefDisab_AP4"
+          ]
+        },
+        {
+          "question_group_id": "ccf7c765-614a-4500-853c-5b641fe18285",
+          "save_to_fields": [
+            "AP_LTDPartialDis_AP4"
+          ]
         }
       ]
     },
@@ -2709,21 +2732,6 @@
         "FileUpload6"
       ],
       "group_variants": [
-        {
-          "question_group_id": "31fe2ff0-23c1-4681-888e-cd80a86f4e4e",
-          "save_to_fields": [
-            "AP_LTDRateGuar_Renewal",
-            "AP_LTDRatePer_Renewal",
-            "AP_LTDRate_Renewal"
-          ]
-        },
-        {
-          "question_group_id": "842a29a1-d499-4141-a963-28ba1a5d8b07",
-          "save_to_fields": [
-            "AP_LTD_Carrier_Renewal",
-            "AP_LTDPlanSummary_Renewal"
-          ]
-        },
         {
           "question_group_id": "2717d43c-6c62-4d85-9d51-840c576ad7ce",
           "save_to_fields": [
@@ -2736,7 +2744,7 @@
         {
           "question_group_id": "acf530f7-144c-4fbb-a7c9-ee08206d9a24",
           "save_to_fields": [
-            "AP_LTDElimPeriod_Renewal"
+            "AP_LTDEliminationPeriod_Renewal"
           ]
         },
         {
@@ -2832,7 +2840,7 @@
         {
           "question_group_id": "89dc1392-f98d-410b-a90e-6cdbedd13f32",
           "save_to_fields": [
-            "AP_LTDPreEx_Renewal"
+            "AP_LTDPreExistingCondition_Renewal"
           ]
         },
         {
@@ -2847,7 +2855,7 @@
         {
           "question_group_id": "ad56fbe2-ec0f-402a-9286-afef40089cdc",
           "save_to_fields": [
-            "AP_LTDPartReq_Renewal"
+            "AP_LTDParticipationRequirement_Renewal"
           ]
         },
         {
@@ -2925,6 +2933,21 @@
           "save_to_fields": [
             "AP_LTDReturnToWorkIncentiveBenefitQ_Renewal",
             "AP_LTDReturnToWorkIncentiveBenefitA_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "31fe2ff0-23c1-4681-888e-cd80a86f4e4e",
+          "save_to_fields": [
+            "AP_LTDRateGuar_Renewal",
+            "AP_LTDRatePer_Renewal",
+            "AP_LTDRate_Renewal"
+          ]
+        },
+        {
+          "question_group_id": "842a29a1-d499-4141-a963-28ba1a5d8b07",
+          "save_to_fields": [
+            "AP_LTD_Carrier_Renewal",
+            "AP_LTDPlanSummary_Renewal"
           ]
         }
       ]

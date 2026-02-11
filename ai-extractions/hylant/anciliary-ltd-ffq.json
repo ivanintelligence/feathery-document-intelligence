@@ -7,7 +7,7 @@
       "entities": [
         {
           "id": "b88a7cc4-1dd3-4092-849c-3ee94f7551bb",
-          "entity": "<GROUND_RULES>\nUse ONLY the explicit context provided. No assumptions or external policy knowledge.\nIf missing, write Null.\n\nOutput EXACTLY 2 lines:\nEE: <hrs/week>, <waiting>, <1st-of-month trigger>, <active-at-work>\nRehire: <days window>\n\nEE must include: minimum hrs/week, waiting period, effective date trigger (1st of month after eligibility), and active-at-work gating (coverage delayed until return).\nRehire must be: reinstatement/rehire window (days) without new waiting period; prefer 90 days if stated, else next explicit days, else Null.\n\nTelegram fragments only. Prefer numbers/timing. No fluff. Commas only; no line breaks within a line.\n</GROUND_RULES>\n\nEligibility Language Q&A:\n<CONTEXT>\n{{AP_LTDEligibilityLanguageQA}}\n</CONTEXT>\n\n<QUESTIONS>\nProduce the required 2-line output.\n</QUESTIONS>\n\n<EXAMPLES>\nEE: 35 hrs/week, 30-day active work, 1st of month after eligibility, actively at work\nRehire: 90 days\n</EXAMPLES>",
+          "entity": "<GROUND_RULES>\nUse ONLY the explicit extracted context. No assumptions.\nIf missing, write Null.\n\nOutput EXACTLY 3 lines (short fragments only):\nEMPLOYEE: <hrs>, <waiting>, <effective>, <active>\nDEPENDENTS: Spouse <key>, Child <key>\nREHIRE: <window>, <waiting impact>\n\nHARD LIMITS:\n- MAX 16 words per line.\n- Use abbreviations: hrs/wk, hrs/mo, WP, eff, AAW, EE, DP, Ch, yrs, mos, d.\n- Commas only. No semicolons. No extra clauses. No examples.\n\nSELECTION RULES (pick only the most important items):\nEMPLOYEE:\n- <hrs> = minimum hours threshold (prefer hrs/wk; include hrs/mo only if stated).\n- <waiting> = WP length + class split if stated (e.g., hourly 90d; salary DOH).\n- <effective> = shortest explicit trigger (e.g., 91st day, DOH, 1st of month).\n- <active> = “AAW req” if explicitly stated; else Null.\n\nDEPENDENTS:\n- Spouse <key> = only 1 phrase (e.g., lawful spouse; DP if explicitly included).\n- Child <key> = only 1 phrase: age limit + one qualifier (e.g., to EOM 26; disabled child ext) if stated. If multiple child types listed, ignore.\n\nREHIRE:\n- <window> = most direct rehire/reemployment window (prefer general rehire; else USERRA windows).\n- <waiting impact> = “no new WP” or “prior svc counts” if explicitly stated; else Null.\n\n</GROUND_RULES>\n\nEligibility Language Q&A:\n<CONTEXT>\n{{AP_LTDEligibilityLanguageQA}}\n</CONTEXT>\n\n<QUESTIONS>\nProduce the required 3-line output.\n</QUESTIONS>\n\n<EXAMPLES>\nEMPLOYEE: 30 hrs/wk, hourly WP 90d; salary DOH, eff 91st day/DOH, AAW req\nDEPENDENTS: Spouse lawful spouse/DP, Child to EOM 26; disabled ext\nREHIRE: 1 yr, prior svc counts; no new WP\n</EXAMPLES>",
           "save_to": "AP_LTDEligibilityLanguageFFQ",
           "type": "",
           "unique": false,
@@ -93,7 +93,7 @@
       "entities": [
         {
           "id": "1f47c9e7-d48d-4986-92e2-ffbf662121b7",
-          "entity": "<GROUND_RULES>\nUse ONLY the explicit context provided. No assumptions or external policy knowledge.\nIf the partial disability approach cannot be determined explicitly, output Null.\n\nOutput EXACTLY ONE line, and ONLY ONE of these values:\nProgressive partial disability\nStandard partial disability\nNull\n\nClassification rules:\n- Output \"Progressive partial disability\" if the context describes partial benefits that vary with earnings (e.g., earnings thresholds like 20%, benefit+earnings cap such as 100% of BME, reduction-by-excess, work incentive formulas, step triggers like “after 2 years,” or max payable % of BME while working).\n- Output \"Standard partial disability\" if the context only defines partial disability eligibility (material duty/income loss) but does NOT describe earnings-integrated benefit formulas/caps/reductions.\n- Output \"Null\" if neither is explicit.\n</GROUND_RULES>\n\nDefinition of Partial Disability Q&A:\n<CONTEXT>\n{{AP_LTDPartialDisabilityDefinitionQA}}\n</CONTEXT>\n\n<QUESTION>\nClassify the partial disability approach. <label/Null>\n</QUESTION>\n\n<EXAMPLES>\nProgressive partial disability\nStandard partial disability\nNull\n</EXAMPLES>",
+          "entity": "<GROUND_RULES>\nUse ONLY the explicit context provided. No assumptions or external policy knowledge.\nIf the partial disability benefit approach cannot be determined explicitly, output Null.\n\nOutput EXACTLY ONE of the following values:\n- Proportionate Loss\n- Progressive partial disability\n- Null\n\nRules:\n- Output \"Proportionate Loss\" if the policy explicitly describes partial or\n  residual disability benefits where the benefit amount is reduced in direct\n  proportion to earnings while working (e.g., benefit reduced based on income\n  earned, linear reduction tied to earnings loss, benefit plus earnings capped\n  at pre-disability earnings).\n\n- Output \"Progressive partial disability\" ONLY if the policy explicitly uses\n  language such as \"progressive\", \"mutually progressive\", \"enhanced partial\",\n  tiered benefit percentages, or stepped partial disability formulas.\n\n- Do NOT classify earnings thresholds used for eligibility, benefit offsets,\n  coordination of benefits, or general earnings reduction language as\n  Progressive partial disability.\n\n- Output \"Null\" if partial or residual disability benefits are not explicitly\n  described.\n</GROUND_RULES>\n\nPartial Disability Definition Q&A:\n<CONTEXT>\n{{AP_LTDPartialDisabilityDefinitionQA}}\n</CONTEXT>\n\n<QUESTION>\nClassify the partial disability benefit approach. <label/Null>\n</QUESTION>\n\n<EXAMPLES>\nProportionate Loss\nProgressive partial disability\nNull\n</EXAMPLES>\n",
           "save_to": "AP_LTDPartialDisabilityDefinitionFFQ",
           "type": "",
           "unique": false,
@@ -136,7 +136,7 @@
       "entities": [
         {
           "id": "62edb1e0-afa9-4ed6-a7fc-72e7de86c065",
-          "entity": "<GROUND_RULES>\nUse ONLY the explicit context provided. No assumptions or external policy knowledge.\nIf the required elements are not explicit, output Null.\n\nOutput must be a SHORT label in this format:\nDuties and <loss>% earning loss\nOR\nNull\n\nRules:\n- Output \"Duties\" only if the definition explicitly requires inability to perform material duties (e.g., at least one material duty).\n- Compute <loss>% from an explicit earnings threshold of X% (loss = 100 - X). Example: \"earnings exceed 99%\" => \"1% earning loss\".\n- Ignore own-occ/any-occ transitions and duration language unless needed to find the earnings threshold.\n- Keep wording exactly: \"Duties and <loss>% earning loss\".\n</GROUND_RULES>\n\nDefinition of Disability Q&A:\n<CONTEXT>\n{{AP_LTDDisabilityDefinitionQA}}\n</CONTEXT>\n\n<QUESTION>\nReturn the label as required. <label/Null>\n</QUESTION>\n\n<EXAMPLES>\nDuties and 1% earning loss\nDuties and 20% earning loss\nNull\n</EXAMPLES>",
+          "entity": "<GROUND_RULES>\nUse ONLY the explicit context provided. No assumptions or external policy knowledge.\nIf the required elements are not explicit, output Null.\n\nOutput must be a SHORT label in this format:\nLoss of duties and earnings\nOR\nLoss of duties\nOR\nLoss of earnings\nOR\nNull\n\nRules:\n- Output \"Loss of duties\" only if the definition explicitly requires inability\n  to perform one or more material duties.\n- Output \"Loss of earnings\" only if the definition explicitly requires an\n  earnings or income loss and does NOT require loss of duties.\n- Output \"Loss of duties and earnings\" only if the definition explicitly\n  requires BOTH:\n  (a) inability to perform material duties, AND\n  (b) an earnings or income loss requirement (e.g., unable to earn X% or more).\n- Do NOT compute, restate, or include percentages or numeric thresholds.\n- Ignore own-occ/any-occ transitions and duration language.\n- Keep wording exactly as listed above.\n</GROUND_RULES>\n\nDefinition of Disability Q&A:\n<CONTEXT>\n{{AP_LTDDisabilityDefinitionQA}}\n</CONTEXT>\n\n<QUESTION>\nReturn the label as required. <label/Null>\n</QUESTION>\n\n<EXAMPLES>\nLoss of duties and earnings\nLoss of duties\nLoss of earnings\nNull\n</EXAMPLES>\n",
           "save_to": "AP_LTDDisabilityDefinitionFFQ",
           "type": "",
           "unique": false,
@@ -163,7 +163,7 @@
         "tools": {
           "web": false,
           "date": false,
-          "math": true
+          "math": false
         },
         "table_filter": null,
         "sheet_filter": null,
@@ -179,7 +179,7 @@
       "entities": [
         {
           "id": "e023e00b-467d-4ca8-94e3-c68de429bf61",
-          "entity": "{{AP_LTDprompt5}}",
+          "entity": "<GROUND_RULES>\nUse ONLY explicit text in the provided context.\nDo NOT summarize exclusions or limitations broadly.\nIgnore Mental Illness, Substance Abuse, Self-Inflicted Injury, Return-to-Work, and all other limitations.\n\nExtract ONLY the Pre-Existing Condition limitation timeframe if explicitly stated.\n\nOutput rules:\n- If a numeric pre-existing condition timeframe is stated, output EXACTLY in the format: X/12 (or X/Y/Z if explicitly stated).\n- If multiple examples are described, output ONLY the primary schedule value (e.g., \"3/12\").\n- If no numeric pre-existing condition timeframe is explicitly stated, output Null.\n- Output EXACTLY ONE value. No labels. No explanations. No lists.\n</GROUND_RULES>\n\nPre-Existing Condition Limitation Q&A:\n<CONTEXT>\n{{AP_LTDExclusionLimitationQA}}\n</CONTEXT>\n\n<QUESTION>\nReturn the pre-existing condition limitation timeframe. <X/12 or Null>\n</QUESTION>\n\n<EXAMPLES>\n3/12\n3/6/12\nNull\n</EXAMPLES>\n",
           "save_to": "AP_LTDExclusionLimitationFFQ",
           "type": "",
           "unique": false,
@@ -222,8 +222,8 @@
       "entities": [
         {
           "id": "71ae744f-9a10-4409-8e8e-223b381a4823",
-          "entity": "<GROUND_RULES>\nUse ONLY the explicit context provided. No assumptions or external policy knowledge.\nIf Maximum Benefit Duration cannot be determined, output Null.\n\nOutput MUST be bullets only. Each bullet:\n- [Age or Age Range]: [duration/rule] (, whichever is longer/longest if stated)\n\nRules:\n- Copy duration/rule wording exactly (e.g., to SSNRA/to age X, N months/years, lifetime).\n- Include all rows; sort by age ascending.\n- If “whichever is longer/longest” appears, include it verbatim.\nNo extra commentary.\n</GROUND_RULES>\n\nMaximum Benefit Duration Q&A:\n<CONTEXT>\n{{AP_LTDMaximumBenefitDurationQA}}\n</CONTEXT>\n\n<QUESTIONS>\nSummarize Maximum Benefit Duration in the required bullet format. <Answer/Null>\n</QUESTIONS>\n\n<EXAMPLES>\n- 60–64: to SSNRA, whichever is longer\n- 65: 24 months\n- 69: 12 months\n\n- 62: to age 67, whichever is longer\n- 63–64: 42 months\n</EXAMPLES>",
-          "save_to": "AP_LTDMaximumBenefitDurationQA",
+          "entity": "<GROUND_RULES>\nUse ONLY the explicit context provided. No assumptions or external policy knowledge.\nIf no Maximum Benefit Duration information exists, output Null.\n\nOutput MUST contain TWO sections in this exact order:\n\nSUMMARY:\n<one standardized label>\n\nDETAIL:\n<age-based table or fixed duration>\n\nAllowed SUMMARY values (use EXACT wording):\n- Lifetime benefit duration\n- Limited to SSNRA with age-based duration schedule\n- Limited to fixed duration\n- Not specified\n\nSUMMARY rules:\n- Output \"Lifetime benefit duration\" only if lifetime is explicitly stated.\n- Output \"Limited to SSNRA with age-based duration schedule\" if SSNRA is stated OR an age-banded duration table is present (including “whichever is later/longer” language).\n- Output \"Limited to fixed duration\" if only a fixed number of months or years is stated with no SSNRA or age table.\n- Output \"Not specified\" only if duration is not stated.\n\nDETAIL rules:\n- If an age-based duration schedule is provided, output bullets only:\n  - [Age or Age Range]: [duration or rule]\n- Copy wording exactly as stated, including “whichever is later/longer”.\n- Preserve the age order as presented.\n- If only a single fixed duration is stated, output one bullet with that duration.\n- No extra commentary.\n</GROUND_RULES>\n",
+          "save_to": "AP_LTDMaximumBenefitDurationFFQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -257,223 +257,93 @@
         "multiple_occurrences": true
       },
       "data_validation_rules": []
+    },
+    {
+      "id": "b43e4344-4e14-4046-b03e-dbf5dbc6014d",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "81f61cf0-c054-4813-bb0d-216482998c66",
+          "entity": "<GROUND_RULES>\nUse ONLY the explicit context provided. No assumptions or external policy knowledge.\nIf not explicitly stated, output Null.\nOutput ONLY the answer (no labels, no extra text).\nAnswer format (telegram phrase, not sentence):\n\n- <percent threshold> <earnings basis>\n\nIf explicit split thresholds exist by occupation period (own occupation vs any occupation),\noutput: \"<own occupation %> / <any occupation %>, <earnings basis>\"\n\nIf no distinction is made, apply the same percentage to both periods.\n\nPrefer the most direct “gainful earnings test / gainful occupation earnings test” definition.\nKeep wording short; preserve % and basis wording.\nNo quotes. No bullets. No line breaks.\n</GROUND_RULES>\n",
+          "save_to": "AP_LTDGainfulEarningsTestFFQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Gainful Earnings Test",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "a97c0d9b-78d6-417f-bbc6-d0a9b2afaae6",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "fd5d036b-61dc-4e39-b514-8492adea6177",
+          "entity": "<GROUND_RULES>\nUse ONLY the explicit context provided. No assumptions or external policy knowledge.\nIf not explicitly stated, output Null.\n\nOutput ONLY the answer (no labels, no extra text).\nAnswer must be in this format:\n<number> months\n\nRules:\n- Use the month count explicitly tied to “Return to Work Incentive / Work Incentive / first X months”.\n- If multiple phases exist, output the FIRST phase month count (“first X months”).\n- Output digits + space + \"months\" (e.g., \"12 months\").\nNo quotes. No bullets. No line breaks.\n</GROUND_RULES>\n\nReturn to Work Incentive Benefit Q&A:\n<CONTEXT>\n{{AP_LTDReturnToWorkIncentiveBenefitQA}}\n</CONTEXT>\n\n<QUESTIONS>\nWhat is the Return to Work Incentive Benefit duration? <Answer/Null>\n</QUESTIONS>\n\n<EXAMPLES>\n12 months\n24 months\nNull\n</EXAMPLES>",
+          "save_to": "AP_LTDReturnToWorkIncentiveBenefitFFQ",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Return to Work Incentive Benefit",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
     }
   ],
-  "variants": [
-    {
-      "id": "d585aa93-94c0-43be-a5f3-e5210748a56c",
-      "variant_name": "Alternative Plan 2",
-      "file_sources": [],
-      "group_variants": [
-        {
-          "question_group_id": "35b9117a-5619-440e-baca-38aa13d57abe",
-          "save_to_fields": [
-            "AP_LTDEligibilityLanguageFFQ_AP2"
-          ]
-        },
-        {
-          "question_group_id": "f557b6bf-5e84-4b4f-b846-79a291e23d9c",
-          "save_to_fields": [
-            "AP_LTDTerminationProvisionFFQ_AP2"
-          ]
-        },
-        {
-          "question_group_id": "558da2fd-3fd2-4780-9bd9-a30eb59e0477",
-          "save_to_fields": [
-            "AP_LTDPartialDisabilityDefinitionFFQ_AP2"
-          ]
-        },
-        {
-          "question_group_id": "e8a36b16-c189-4a09-afe6-e789ecd545f3",
-          "save_to_fields": [
-            "AP_LTDDisabilityDefinitionFFQ_AP2"
-          ]
-        },
-        {
-          "question_group_id": "40e0bfc8-47f0-40d0-a79c-74d2693a9ed9",
-          "save_to_fields": [
-            "AP_LTDExclusionLimitationFFQ_AP2"
-          ]
-        },
-        {
-          "question_group_id": "6aeab978-82e4-47e3-a4b6-f9828d3a3b18",
-          "save_to_fields": [
-            "AP_LTDMaximumBenefitDurationFFQ_AP2"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "dc147cd6-4c2d-4a90-af08-e2e7b8acea17",
-      "variant_name": "Alternative Plan 3",
-      "file_sources": [],
-      "group_variants": [
-        {
-          "question_group_id": "35b9117a-5619-440e-baca-38aa13d57abe",
-          "save_to_fields": [
-            "AP_LTDEligibilityLanguageFFQ_AP3"
-          ]
-        },
-        {
-          "question_group_id": "f557b6bf-5e84-4b4f-b846-79a291e23d9c",
-          "save_to_fields": [
-            "AP_LTDTerminationProvisionFFQ_AP3"
-          ]
-        },
-        {
-          "question_group_id": "558da2fd-3fd2-4780-9bd9-a30eb59e0477",
-          "save_to_fields": [
-            "AP_LTDPartialDisabilityDefinitionFFQ_AP3"
-          ]
-        },
-        {
-          "question_group_id": "e8a36b16-c189-4a09-afe6-e789ecd545f3",
-          "save_to_fields": [
-            "AP_LTDDisabilityDefinitionFFQ_AP3"
-          ]
-        },
-        {
-          "question_group_id": "40e0bfc8-47f0-40d0-a79c-74d2693a9ed9",
-          "save_to_fields": [
-            "AP_LTDExclusionLimitationFFQ_AP3"
-          ]
-        },
-        {
-          "question_group_id": "6aeab978-82e4-47e3-a4b6-f9828d3a3b18",
-          "save_to_fields": [
-            "AP_LTDMaximumBenefitDurationFFQ_AP3"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "9844078d-d178-4bae-b265-013444281b42",
-      "variant_name": "Alternative Plan 4",
-      "file_sources": [],
-      "group_variants": [
-        {
-          "question_group_id": "35b9117a-5619-440e-baca-38aa13d57abe",
-          "save_to_fields": [
-            "AP_LTDEligibilityLanguageFFQ_AP4"
-          ]
-        },
-        {
-          "question_group_id": "f557b6bf-5e84-4b4f-b846-79a291e23d9c",
-          "save_to_fields": [
-            "AP_LTDTerminationProvisionFFQ_AP4"
-          ]
-        },
-        {
-          "question_group_id": "558da2fd-3fd2-4780-9bd9-a30eb59e0477",
-          "save_to_fields": [
-            "AP_LTDPartialDisabilityDefinitionFFQ_AP4"
-          ]
-        },
-        {
-          "question_group_id": "e8a36b16-c189-4a09-afe6-e789ecd545f3",
-          "save_to_fields": [
-            "AP_LTDDisabilityDefinitionFFQ_AP4"
-          ]
-        },
-        {
-          "question_group_id": "40e0bfc8-47f0-40d0-a79c-74d2693a9ed9",
-          "save_to_fields": [
-            "AP_LTDExclusionLimitationFFQ_AP4"
-          ]
-        },
-        {
-          "question_group_id": "6aeab978-82e4-47e3-a4b6-f9828d3a3b18",
-          "save_to_fields": [
-            "AP_LTDMaximumBenefitDurationFFQ_AP4"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "1530c326-92ff-4236-a9fb-238560cf31a7",
-      "variant_name": "Renewal Plan",
-      "file_sources": [],
-      "group_variants": [
-        {
-          "question_group_id": "35b9117a-5619-440e-baca-38aa13d57abe",
-          "save_to_fields": [
-            "AP_LTDEligibilityLanguageFFQ_Renewal"
-          ]
-        },
-        {
-          "question_group_id": "f557b6bf-5e84-4b4f-b846-79a291e23d9c",
-          "save_to_fields": [
-            "AP_LTDTerminationProvisionFFQ_Renewal"
-          ]
-        },
-        {
-          "question_group_id": "558da2fd-3fd2-4780-9bd9-a30eb59e0477",
-          "save_to_fields": [
-            "AP_LTDPartialDisabilityDefinitionFFQ_Renewal"
-          ]
-        },
-        {
-          "question_group_id": "e8a36b16-c189-4a09-afe6-e789ecd545f3",
-          "save_to_fields": [
-            "AP_LTDDisabilityDefinitionFFQ_Renewal"
-          ]
-        },
-        {
-          "question_group_id": "40e0bfc8-47f0-40d0-a79c-74d2693a9ed9",
-          "save_to_fields": [
-            "AP_LTDExclusionLimitationFFQ_Renewal"
-          ]
-        },
-        {
-          "question_group_id": "6aeab978-82e4-47e3-a4b6-f9828d3a3b18",
-          "save_to_fields": [
-            "AP_LTDMaximumBenefitDurationFFQ_Renewal"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "4abd57bf-e543-4d14-a560-28854468fd2b",
-      "variant_name": "Alternative Plan 1",
-      "file_sources": [],
-      "group_variants": [
-        {
-          "question_group_id": "35b9117a-5619-440e-baca-38aa13d57abe",
-          "save_to_fields": [
-            "AP_LTDEligibilityLanguageFFQ_AP1"
-          ]
-        },
-        {
-          "question_group_id": "f557b6bf-5e84-4b4f-b846-79a291e23d9c",
-          "save_to_fields": [
-            "AP_LTDTerminationProvisionFFQ_AP1"
-          ]
-        },
-        {
-          "question_group_id": "558da2fd-3fd2-4780-9bd9-a30eb59e0477",
-          "save_to_fields": [
-            "AP_LTDPartialDisabilityDefinitionFFQ_AP1"
-          ]
-        },
-        {
-          "question_group_id": "e8a36b16-c189-4a09-afe6-e789ecd545f3",
-          "save_to_fields": [
-            "AP_LTDDisabilityDefinitionFFQ_AP1"
-          ]
-        },
-        {
-          "question_group_id": "40e0bfc8-47f0-40d0-a79c-74d2693a9ed9",
-          "save_to_fields": [
-            "AP_LTDExclusionLimitationFFQ_AP1"
-          ]
-        },
-        {
-          "question_group_id": "6aeab978-82e4-47e3-a4b6-f9828d3a3b18",
-          "save_to_fields": [
-            "AP_LTDMaximumBenefitDurationFFQ_AP1"
-          ]
-        }
-      ]
-    }
-  ]
+  "variants": []
 }

@@ -1,0 +1,134 @@
+{
+  "queries": [
+    {
+      "id": "f038f151-ba7b-46b0-9623-8873d53a792c",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "3e0053d9-ce47-4c1b-9e71-e5ccad636bf8",
+          "entity": "Eligibility Language",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "<GROUND_RULES>\nUse ONLY the explicit extracted context. No assumptions.\nIf missing, write Null.\n\nOutput EXACTLY 3 lines (short fragments only):\nEMPLOYEE: <hrs>, <waiting>, <effective>, <active>\nDEPENDENTS: Spouse <key>, Child <key>\nREHIRE: <window>, <waiting impact>\n\nHARD LIMITS:\n- MAX 16 words per line.\n- Use abbreviations: hrs/wk, hrs/mo, WP, eff, AAW, EE, DP, Ch, yrs, mos, d.\n- Commas only. No semicolons. No extra clauses. No examples.\n- Ignore open enrollment/QLE/change rules unless they directly affect initial eligibility/eff date.\n\nSELECTION RULES (pick only the most important items):\nEMPLOYEE:\n- <hrs> = minimum hours threshold (prefer hrs/wk; include hrs/mo only if stated).\n- <waiting> = eligibility WP length + class split if stated.\n- <effective> = shortest explicit trigger (e.g., 90th day, DOH, 1st of month).\n- <active> = “AAW req” if explicitly stated; else Null.\n\nDEPENDENTS:\n- Spouse <key> = only 1 phrase (e.g., lawful spouse; DP if explicitly included).\n- Child <key> = only 1 phrase: age limit + one qualifier (e.g., to EOM 26; disabled ext) if stated.\n\nREHIRE:\n- <window> = most direct rehire window if stated.\n- <waiting impact> = “no new WP” or “prior svc counts” if explicitly stated; else Null.\n</GROUND_RULES>\n\n<QUESTIONS>\nProduce the required 3-line output.\n</QUESTIONS>\n\n<EXAMPLES>\nEMPLOYEE: 30 hrs/wk, WP 30d, eff 1st of mo after 30d, AAW req\nDEPENDENTS: Spouse lawful spouse/DP, Child to EOM 26\nREHIRE: 90 d, prior svc counts; no new WP\n</EXAMPLES>",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "4239a9f8-aa1b-4b1f-b717-ec1bc079a38d",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "67c642c7-c957-44a7-a976-e5413618b15d",
+          "entity": "Termination Provision",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "<GROUND_RULES>\nUse ONLY the explicit Q&A in context. No assumptions.\nIf no explicit termination timing rule is stated, output Null.\n\nOUTPUT:\n- Only termination timing. Ignore COBRA/continuation, HRA, contacts/Marketplace.\n- If no benefit split: output exactly 1 line:\n  Coverage terminates <timing> <trigger>\n- If benefit timing differs: output 1 line per unique timing:\n  <BenefitGroup>: Coverage terminates <timing>\n  Use SHORT labels and combine same-timing benefits with slashes (e.g., Med/Vis/Rx). No duplicate-timing lines.\nNo extra lines.\n\nLABELS:\nUse short benefit labels (capitalize): Med, Vis, Dtl, Rx, Hra, Fsa, Hsa, Std, Ltd, Life, etc. If doc uses different labels, map to closest.\n\nNORMALIZE:\nlast day of the month -> end of month\nend of the month following termination -> end of month following termination\nlast day of employment -> day of termination\n</GROUND_RULES>\n\n<QUESTIONS>\nReturn the termination provision in the required format. <Answer/Null>\n</QUESTIONS>\n\n<EXAMPLES>\nCoverage terminates end of month of employment termination\nMed/Vis: Coverage terminates end of month following termination\nDtl: Coverage terminates day of termination\nMed/Vis/Rx: Coverage terminates end of month following termination\nNull\n</EXAMPLES>",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": true,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "57172d03-73c6-439c-9bac-f1d856026d8a",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "2305e4fa-abd9-4449-b534-70503ebd842c",
+          "entity": "Exclusions & Limitations",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "<GROUND_RULES>\nUse ONLY explicit text in the provided context. No assumptions.\nUse ONLY these status values: Included or Not Included.\nIf a topic is Included, include 1 verbatim supporting snippet.\nIf Not found, output Language: N/A.\nDo NOT rewrite the snippet; copy verbatim only.\n\nTRUNCATION RULE:\n- If the best supporting language is longer than ~25 words, truncate it and end with \"...\"\n- If not truncated, do not add \"...\"\n</GROUND_RULES>\n\n<QUESTIONS>\nProduce the Exclusions & Limitations checklist in the required format. <Answer>\n</QUESTIONS>\n\n<OUTPUT_FORMAT>\nA) EXCLUSIONS & LIMITATIONS SECTION\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/(N/A)>\"\n\nB) KEY EXCLUSIONS\n1) MENTAL HEALTH / SUBSTANCE USE DISORDER\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/(N/A)>\"\n\n2) GENE THERAPY / ORPHAN DRUGS\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/(N/A)>\"\n\n3) FOREIGN TRAVEL / ABROAD\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/(N/A)>\"\n\n4) CRIME / FELONY / ILLEGAL ACTS INJURY\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/(N/A)>\"\n\n5) WEIGHT LOSS / WEIGHT LOSS DRUGS\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/(N/A)>\"\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nA) EXCLUSIONS & LIMITATIONS SECTION\n- FLAG: Included\n- LANGUAGE: \"EXCLUSIONS AND LIMITATIONS: The following services are not covered...\"\n\nB) KEY EXCLUSIONS\n1) MENTAL HEALTH / SUBSTANCE USE DISORDER\n- FLAG: Not found\n- LANGUAGE: N/A\n\n2) GENE THERAPY / ORPHAN DRUGS\n- FLAG: Included\n- LANGUAGE: \"Gene therapy and orphan drugs are excluded.\"\n\n3) FOREIGN TRAVEL / ABROAD\n- FLAG: Included\n- LANGUAGE: \"No coverage outside the United States...\"\n\n4) CRIME / FELONY / ILLEGAL ACTS INJURY\n- FLAG: Included\n- LANGUAGE: \"Injury sustained while committing a felony is excluded.\"\n\n5) WEIGHT LOSS / WEIGHT LOSS DRUGS\n- FLAG: Not Included\n- LANGUAGE: N/A\n</EXAMPLES>",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    }
+  ],
+  "variants": []
+}

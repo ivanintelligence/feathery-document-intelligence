@@ -98,7 +98,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Return one concise sentence summarizing who is eligible for coverage based on employment status and required work hours. Exclude procedural steps, waiting period details, and legal language.",
+          "criteria": "Extract eligibility information only from sections explicitly labeled “Eligibility,” “Who Is Eligible,” “Eligible Employee,” or similar headings. Summarize who is eligible based on employment status and required work hours. Do not extract COBRA, qualifying event, continuation, or termination language. If the document does not contain an eligibility section, return “Not Included – No Eligibility Section Found.”",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -111,7 +111,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract rules for student dependents: maximum age, required student status (full-time/credit hours), verification, and when coverage ends.",
+          "criteria": "Extract student eligibility only if explicitly stated within a dependent eligibility section. Summarize maximum age, required student status (if any), and when coverage ends. If the document does not address student eligibility, return “Not Applicable – No Student Eligibility Provision.”",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -124,7 +124,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract eligibility rules for domestic partners and/or common-law spouses: definition, required proof, enrollment timing, and termination triggers.",
+          "criteria": "Extract domestic partner or common-law eligibility only if the document explicitly defines coverage for these relationships. Return one concise sentence stating whether coverage is allowed. If not mentioned, return “Not Applicable – No Domestic Partner Provision.”",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -137,7 +137,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Describes when a spouse’s coverage ends due to loss of eligibility or qualifying events such as divorce or legal separation.",
+          "criteria": "Extract spouse eligibility only if the plan provides coverage for spouses. Return one concise sentence stating whether a legal spouse is eligible and any high-level eligibility condition. If the plan is employee-only coverage, such as most LTD certificates, return “Not Applicable – Employee Only Coverage.” Do not extract survivor benefit language unless it explicitly defines spouse eligibility under the plan.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -150,7 +150,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Explains when dependent coverage ends due to age limits, status changes, or loss of eligibility.",
+          "criteria": "Extract dependent eligibility only if the document includes dependent coverage. Summarize maximum age and any dependency requirements. If the plan is employee-only coverage, return “Not Applicable – Employee Only Coverage.”",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -163,7 +163,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the waiting period: length, when it starts (hire date/first of month), when coverage begins, and any exceptions.",
+          "criteria": "Extract the waiting period only if explicitly stated in an eligibility or enrollment section. Summarize the length of the waiting period, when it begins, and when coverage becomes effective. Do not extract termination, COBRA, or continuation language. If no waiting period is stated, return “Not Included – No Waiting Period Stated.”",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -1533,175 +1533,6 @@
         "multiple_occurrences": true
       },
       "data_validation_rules": []
-    },
-    {
-      "id": "ca167e1e-a1fa-4044-ac17-c94b6db7e3f2",
-      "type": "multiple_value",
-      "details": "Extract any and all source language that defines employee eligibility and dependent eligibility/definitions for Medical coverage. Capture eligibility rules whether written as Q&A, headings, bullets, tables, or narrative. Include: (1) employee definition/eligible class (full-time/part-time, scheduled hours, hours/week or hours/month), (2) eligibility waiting/probation period and when eligibility is met, (3) Medical coverage effective date trigger (e.g., date of hire, 1st of month following eligibility, 90th day, first day after waiting period), (4) active-at-work/active service requirement that delays coverage, and (5) rehire/reinstatement/reemployment rules (no new waiting period, prior service counts, return-within X days/months/1 year), including leave/layoff impacts only if explicitly tied to eligibility. Also capture Spouse and Child/Dependent Child definitions (including age limits, disabled dependent extension, student rules) even if located in a Definitions/Dependents section. Exclude benefit waiting periods that do not determine coverage start (e.g., accident/sickness benefit waiting periods). Do not summarize; copy language verbatim.",
-      "entities": [
-        {
-          "id": "93c96b14-2f53-44c4-83bc-7407c0e26bf0",
-          "entity": "Eligibility Language Question",
-          "save_to": "DR_MEligibilityLanguageQ",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the heading/label/lead-in line for the captured eligibility language (examples: “ELIGIBLE EMPLOYEES”, “EMPLOYEE ELIGIBILITY”, “WHO’S ELIGIBLE”, “COVERED MEMBERS”, “ELIGIBLE DEPENDENTS”, “Spouse”, “Child”, “REHIRE/REINSTATEMENT/REEMPLOYMENT”, “ACTIVE AT WORK”, “WAITING PERIOD”, “COVERAGE BEGINS/WHEN COVERAGE BEGINS”, “EFFECTIVE DATE”, “ENROLLMENT”). If no heading exists, output the first sentence of the captured eligibility language.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        },
-        {
-          "id": "549ed9ee-d327-498a-9e34-84a7d0960cad",
-          "entity": "Eligibility Language Answer",
-          "save_to": "DR_MEligibilityLanguageA",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the full relevant paragraph(s)/bullets/table rows verbatim for the anchor above, including all stated numbers/timing (hours/week or month, days, “first day of month”, “date of hire”, “provided actively at work”, “within X days/months/1 year”, “no new waiting period”, “prior service counts”). Include surrounding sentences needed to keep the rule complete. Do not include accident/sickness benefit waiting periods unless explicitly tied to eligibility/coverage start.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        }
-      ],
-      "multi_file_name_field": null,
-      "run_email_mode": "document_only",
-      "toggle_page_question": false,
-      "properties": {
-        "limit_relevant_pages": null,
-        "single_occurrence": false,
-        "skip_ai_page_filter": false,
-        "page_filter_start": null,
-        "page_filter_end": null,
-        "group_name": "Eligibility Language Q&A",
-        "page_filter_query": null,
-        "enable_tool_usage": false,
-        "tools": {
-          "web": false,
-          "date": false,
-          "math": false
-        },
-        "table_filter": null,
-        "sheet_filter": null,
-        "page_limit": null,
-        "multiple_occurrences": true
-      },
-      "data_validation_rules": []
-    },
-    {
-      "id": "1c433f6c-aab0-4be7-9f6c-7594c25c50df",
-      "type": "multiple_value",
-      "details": "Extract only the document’s explicit termination timing rules for when coverage ends, including the trigger (employment termination, loss of eligibility, etc.) and the timing (end of month, end of month following, day of termination/last day worked), and capture any benefit-line differences when explicitly stated (e.g., different timing for medical, dental, vision, Rx, etc.). If the document is not in Q&A format, use the most relevant termination timing heading (e.g., “Coverage Ends,” “When Coverage Ends,” “Termination of Coverage,” “When Coverage Terminates,” “Coverage Termination”) as the “Question,” and extract the verbatim termination timing text beneath it as the “Answer” until the next major section break. Exclude continuation-only content (e.g., COBRA rights/descriptions, agency contact info, Marketplace text) unless it explicitly states when coverage terminates, and exclude reimbursement/claims language (e.g., HRA rules).",
-      "entities": [
-        {
-          "id": "041e8629-d909-4a61-bf21-dfcf0d81a5c4",
-          "entity": "Termination Provision Question",
-          "save_to": "DR_MTerminationProvisionQ",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the exact question text or section heading that asks/states when coverage ends or terminates (coverage ends/termination of coverage/when coverage ends), including benefit-specific termination headings if present.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        },
-        {
-          "id": "3f6cd4c3-22d5-48a5-aabd-c13c7c5d6f64",
-          "entity": "Termination Provision Answer",
-          "save_to": "DR_MTerminationProvisionA",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the verbatim termination timing language that answers when coverage ends, including trigger and timing (EOM, EOM following, day of termination/last day of employment) and any explicitly stated benefit-line split; exclude continuation-only language and administrative/claims text unless it contains explicit termination timing.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        }
-      ],
-      "multi_file_name_field": null,
-      "run_email_mode": "document_only",
-      "toggle_page_question": false,
-      "properties": {
-        "limit_relevant_pages": null,
-        "single_occurrence": false,
-        "skip_ai_page_filter": false,
-        "page_filter_start": null,
-        "page_filter_end": null,
-        "group_name": "Termination Provision Q&A",
-        "page_filter_query": null,
-        "enable_tool_usage": false,
-        "tools": {
-          "web": false,
-          "date": true,
-          "math": false
-        },
-        "table_filter": null,
-        "sheet_filter": null,
-        "page_limit": null,
-        "multiple_occurrences": true
-      },
-      "data_validation_rules": []
-    },
-    {
-      "id": "269fe68e-cfb0-443f-a26b-ebeb9a40365b",
-      "type": "multiple_value",
-      "details": "Extract all exclusions, limitations, restrictions, and non-coverage language found anywhere in the document, including headings, benefit descriptions, tables, footnotes, and “important information” callouts. Capture both (a) any global exclusions/limitations section text and (b) any embedded micro-exclusions/limits within specific services. Treat any statement that uses exclusion/limit language as in-scope, such as “excluded,” “not covered,” “no coverage,” “does not include,” “not payable,” “limited to,” “maximum,” “cap,” “visit limit,” “frequency limit,” “prior authorization required,” “precertification,” “medical necessity required,” “experimental/investigational,” “cosmetic,” “out-of-network restriction,” or “outside the U.S./foreign travel.” Also capture explicit language related to the five priority medical exclusions: Mental Health/Substance Use Disorder, gene therapy/orphan drugs, foreign travel/out-of-country coverage, injury during crime/felony/illegal acts, and weight loss/weight loss drugs. Extract verbatim only; do not infer or summarize.",
-      "entities": [
-        {
-          "id": "a35d7be0-87af-4d49-9db0-821670f1e551",
-          "entity": "Exclusions & Limitations Question",
-          "save_to": "DR_MExclusionLimitationQ",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the exact question text if the document is in Q&A format; otherwise extract the closest applicable heading or label verbatim that introduces the exclusion/limitation language. This may be a major section heading (e.g., “Exclusions,” “Limitations,” “What’s Not Covered,” “Non-Covered Services”) or a local label within a benefit table/callout (e.g., “Limitations, Exceptions, & Other Important Information,” “Not covered,” “Excludes,” “Coverage limitations,” “Plan limitations,” “Important”).",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false,
-          "data_validation_rules": []
-        },
-        {
-          "id": "0c6cff60-f006-4494-83f6-b41f25d5529f",
-          "entity": "Exclusions & Limitations Answer",
-          "save_to": "DR_MExclusionLimitationA",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the verbatim exclusion/limitation language associated with the question/heading/label, including any non-coverage statements, limits (visits/frequency/dollar caps), conditions (medical necessity, prior authorization/precertification), network restrictions, geographic restrictions (foreign travel/outside U.S.), and named excluded services/drugs. If the “Question” is a section heading or table label, extract the bullets/rows/footnotes/paragraphs directly under it up to the next major section break or label change, without summarizing. Include even short or intricate clauses and footnotes when they contain exclusion/limitation language, especially for the five priority exclusions.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        }
-      ],
-      "multi_file_name_field": null,
-      "run_email_mode": "document_only",
-      "toggle_page_question": false,
-      "properties": {
-        "limit_relevant_pages": null,
-        "single_occurrence": false,
-        "skip_ai_page_filter": false,
-        "page_filter_start": null,
-        "page_filter_end": null,
-        "group_name": "Exclusions & Limitations Q&A",
-        "page_filter_query": null,
-        "enable_tool_usage": false,
-        "tools": {
-          "web": false,
-          "date": false,
-          "math": false
-        },
-        "table_filter": null,
-        "sheet_filter": null,
-        "page_limit": null,
-        "multiple_occurrences": true
-      },
-      "data_validation_rules": []
     }
   ],
   "variants": [
@@ -1712,20 +1543,6 @@
         "FileUpload2"
       ],
       "group_variants": [
-        {
-          "question_group_id": "1c433f6c-aab0-4be7-9f6c-7594c25c50df",
-          "save_to_fields": [
-            "DR_MTerminationProvisionQ_F2",
-            "DR_MTerminationProvisionA_F2"
-          ]
-        },
-        {
-          "question_group_id": "269fe68e-cfb0-443f-a26b-ebeb9a40365b",
-          "save_to_fields": [
-            "DR_MExclusionLimitationQ_F2",
-            "DR_MExclusionLimitationA_F2"
-          ]
-        },
         {
           "question_group_id": "3dec6a7b-949e-41d1-b791-7572d180e73c",
           "save_to_fields": [
@@ -1912,13 +1729,6 @@
           "question_group_id": "69aa9ce6-84fa-4d03-99b0-c8d4fc7df011",
           "save_to_fields": [
             "DR_MMedicalLeaveProvisions_F2"
-          ]
-        },
-        {
-          "question_group_id": "ca167e1e-a1fa-4044-ac17-c94b6db7e3f2",
-          "save_to_fields": [
-            "DR_MEligibilityLanguageQ_F2",
-            "DR_MEligibilityLanguageA_F2"
           ]
         }
       ]
@@ -2117,27 +1927,6 @@
           "save_to_fields": [
             "DR_MMedicalLeaveProvisions_F3"
           ]
-        },
-        {
-          "question_group_id": "ca167e1e-a1fa-4044-ac17-c94b6db7e3f2",
-          "save_to_fields": [
-            "DR_MEligibilityLanguageQ_F3",
-            "DR_MEligibilityLanguageA_F3"
-          ]
-        },
-        {
-          "question_group_id": "1c433f6c-aab0-4be7-9f6c-7594c25c50df",
-          "save_to_fields": [
-            "DR_MTerminationProvisionQ_F3",
-            "DR_MTerminationProvisionA_F3"
-          ]
-        },
-        {
-          "question_group_id": "269fe68e-cfb0-443f-a26b-ebeb9a40365b",
-          "save_to_fields": [
-            "DR_MExclusionLimitationQ_F3",
-            "DR_MExclusionLimitationA_F3"
-          ]
         }
       ]
     },
@@ -2334,27 +2123,6 @@
           "question_group_id": "69aa9ce6-84fa-4d03-99b0-c8d4fc7df011",
           "save_to_fields": [
             "DR_MMedicalLeaveProvisions_F4"
-          ]
-        },
-        {
-          "question_group_id": "ca167e1e-a1fa-4044-ac17-c94b6db7e3f2",
-          "save_to_fields": [
-            "DR_MEligibilityLanguageQ_F4",
-            "DR_MEligibilityLanguageA_F4"
-          ]
-        },
-        {
-          "question_group_id": "1c433f6c-aab0-4be7-9f6c-7594c25c50df",
-          "save_to_fields": [
-            "DR_MTerminationProvisionQ_F4",
-            "DR_MTerminationProvisionA_F4"
-          ]
-        },
-        {
-          "question_group_id": "269fe68e-cfb0-443f-a26b-ebeb9a40365b",
-          "save_to_fields": [
-            "DR_MExclusionLimitationQ_F4",
-            "DR_MExclusionLimitationA_F4"
           ]
         }
       ]

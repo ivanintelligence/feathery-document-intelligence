@@ -1,0 +1,263 @@
+{
+  "queries": [
+    {
+      "id": "c0eb2680-7f2f-44d5-9f29-f6bae4ff8989",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "38e42e1b-d43f-4a43-bd5c-ea09aec7ea3b",
+          "entity": "Eligibility Language",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "<GROUND_RULES>\nUse ONLY the explicit extracted context. No assumptions.\nIf missing, write Null.\n\nOutput EXACTLY 3 lines (short fragments only):\nEMPLOYEE: <hrs>, <waiting>, <effective>, <active>\nDEPENDENTS: Spouse <key>, Child <key>\nREHIRE: <window>, <waiting impact>\n\nHARD LIMITS:\n- MAX 16 words per line.\n- Use abbreviations: hrs/wk, hrs/mo, WP, eff, AAW, EE, DP, Ch, yrs, mos, d.\n- Commas only. No semicolons. No extra clauses. No examples.\n\nSELECTION RULES (pick only the most important items):\nEMPLOYEE:\n- <hrs> = minimum hours threshold (prefer hrs/wk; include hrs/mo only if stated).\n- <waiting> = WP length + class split if stated (e.g., hourly 90d; salary DOH).\n- <effective> = shortest explicit trigger (e.g., 91st day, DOH, 1st of month).\n- <active> = “AAW req” if explicitly stated; else Null.\n\nDEPENDENTS:\n- Spouse <key> = only 1 phrase (e.g., lawful spouse; DP if explicitly included).\n- Child <key> = only 1 phrase: age limit + one qualifier (e.g., to EOM 26; disabled child ext) if stated. If multiple child types listed, ignore.\n\nREHIRE:\n- <window> = most direct rehire/reemployment window (prefer general rehire; else USERRA windows).\n- <waiting impact> = “no new WP” or “prior svc counts” if explicitly stated; else Null.\n</GROUND_RULES>\n\n<QUESTIONS>\nProduce the required 3-line output.\n</QUESTIONS>\n\n<EXAMPLES>\nEMPLOYEE: 30 hrs/wk, hourly WP 90d; salary DOH, eff 91st day/DOH, AAW req\nDEPENDENTS: Spouse lawful spouse/DP, Child to EOM 26; disabled ext\nREHIRE: 1 yr, prior svc counts; no new WP\n</EXAMPLES>",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "e77f3fa6-64b6-46c1-a1c6-98d5fae56274",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "f7158825-ed47-436a-a4c8-599bb4b68fdc",
+          "entity": "Termination Provision",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "<GROUND_RULES>\nUse ONLY the explicit context provided. No assumptions or external policy knowledge.\nIf termination timing cannot be determined explicitly, output Null.\n\nOutput EXACTLY one line:\nCoverage terminates <timing>\nOR\nNull\n\nWhere <timing> is the shortest explicit timing phrase tied to employee coverage ending\n(e.g., date of employment termination, end of month of employment termination, last day worked).\n\nSelection:\n- If an employment-termination timing phrase exists (employment termination/last day worked/cessation of employment), use it.\n- Otherwise, use the most direct employee coverage-end timing stated (avoid continuation/exception mechanics).\nTelegram fragments only. No extra triggers list. No fluff.\n</GROUND_RULES>\n\n<QUESTION>\nReturn the termination timing in the required format. <timing/Null>\n</QUESTION>\n\n<OUTPUT_FORMAT>\nCoverage terminates <timing>\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nCoverage terminates date of employment termination\nCoverage terminates end of month of employment termination\nCoverage terminates last day worked\nNull\n</EXAMPLES>",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "728352fd-e633-4b56-907a-a50e4136c843",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "5fef3cc5-2ae6-4b24-bbfc-295c6f0bfac4",
+          "entity": "Partial Disability Definition",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "<GROUND_RULES>\nUse ONLY explicit context. No assumptions.\nClassify PARTIAL/RESIDUAL benefit approach (ignore general offsets).\nIf partial/residual not described, output Null.\n\nOutput EXACTLY ONE:\nProgressive partial disability\nProportionate loss\n50% offset\nOther partial formula\nDefinition only (no formula)\nNull\n\nPick FIRST match:\n1) Progressive partial disability = work incentive / excess-only cap: “incentive to work”, “benefit+earnings exceeds X%”, “reduced by excess”, “not reduced first X months”, “total benefit unless…”.\n2) Proportionate loss = proportional/ratio formula: “proportionate/proportional”, “% of earnings lost”, “loss ÷ pre-disability”, “benefit × ratio”.\n3) 50% offset = reduced by 50% (½) of earnings: “50% of earnings”, “50 cents per $1”, “offset by 1/2”.\n4) Other partial formula = any other explicit partial/residual benefit calc.\n5) Definition only (no formula) = eligibility only; no partial/residual benefit calc/cap/reduction.\n\nDo NOT use earnings thresholds that only define “Disabled” unless tied to partial/residual benefit calc.\n</GROUND_RULES>\n\n<QUESTION>\nClassify the approach. <label/Null>\n</QUESTION>\n\n<EXAMPLES>\nProgressive partial disability\nProportionate loss\n50% offset\nOther partial formula\nDefinition only (no formula)\nNull\n</EXAMPLES>",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "dcb2e212-7600-493b-abe6-f7cf6674b24e",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "d6533028-9d83-49fc-9e87-4c01486a2d82",
+          "entity": "Disability Definition",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "<GROUND_RULES>\nUse ONLY the explicit context provided. No assumptions or external policy knowledge.\nIf the disability definition cannot be determined, output Null.\n\nOutput EXACTLY ONE of these:\n- Duties and <loss>% earnings loss\n- Duties and earnings loss\n- Duties only\n- Earnings loss only\n- Null\n\nRULES:\n1) Duties present only if the definition explicitly requires inability/prevention to perform material duties.\n2) Earnings present only if the definition explicitly requires an earnings/income test.\n\nNUMERIC RULE:\n- If BOTH duties + earnings are present AND an explicit earnings threshold X% is stated, compute loss = 100 - X and output:\n  \"Duties and <loss>% earnings loss\"\n- If BOTH duties + earnings are present BUT no explicit X% threshold is stated, output:\n  \"Duties and earnings loss\"\n\nSINGLE-FACTOR:\n- If duties only, output \"Duties only\".\n- If earnings only, output \"Earnings loss only\".\n\nDo NOT include any other wording, numbers, or clauses.\nIgnore own-occ/any-occ transitions and duration language unless needed to detect duties/earnings/threshold.\n</GROUND_RULES>\n\n<QUESTION>\nReturn the label as required. <label/Null>\n</QUESTION>\n\n<EXAMPLES>\nDuties and 1% earnings loss\nDuties and earnings loss\nDuties only\nEarnings loss only\nNull\n</EXAMPLES>",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": true
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "76dd4e76-479c-4f4a-9578-98705666a28a",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "eff1f269-1800-4720-b028-b91206824177",
+          "entity": "Exclusions & Limitations",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "<GROUND_RULES>\nUse ONLY explicit text in the provided context. No assumptions.\nUse ONLY these flag values: Included or Not Included.\nIf a topic is Included, include 1 verbatim supporting snippet.\nIf Not Included, output Language: Null.\nDo NOT rewrite the snippet; copy verbatim only.\n\nTRUNCATION RULE:\n- If the best supporting language is longer than ~25 words, truncate it and end with \"...\"\n- If not truncated, do not add \"...\"\n\nFIELD RULES:\n- Pre-Existing Condition: also output Timeframe: <3/12, 3/6/12, etc. / Null> based ONLY on explicit numbers in the snippet/context.\n- Mental Health / Substance Use Disorder: also output Limit: <# months / Null> if a months limitation is explicitly stated.\n- Self-Reported Symptoms: also output Limit: <# months / Null> if a months limitation is explicitly stated.\n</GROUND_RULES>\n\n<QUESTIONS>\nProduce the Exclusions & Limitations checklist in the required format. <Answer>\n</QUESTIONS>\n\n<OUTPUT_FORMAT>\nA) EXCLUSIONS & LIMITATIONS SECTION\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/Null>\"\n\nB) KEY EXCLUSIONS\n1) PRE-EXISTING CONDITION\n- FLAG: <Included/Not Included>\n- TIMEFRAME: <timeframe/Null>\n- LANGUAGE: \"<snippet/Null>\"\n\n2) MENTAL HEALTH / SUBSTANCE USE DISORDER\n- FLAG: <Included/Not Included>\n- LIMIT: <# months/Null>\n- LANGUAGE: \"<snippet/Null>\"\n\n3) SELF-REPORTED SYMPTOMS\n- FLAG: <Included/Not Included>\n- LIMIT: <# months/Null>\n- LANGUAGE: \"<snippet/Null>\"\n\n4) SELF-INFLICTED INJURY\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/Null>\"\n\n5) ON-THE-JOB / WORK-RELATED INJURY\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/Null>\"\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nA) EXCLUSIONS & LIMITATIONS SECTION\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/Null>\"\n\nB) KEY EXCLUSIONS\n1) PRE-EXISTING CONDITION\n- FLAG: <Included/Not Included>\n- TIMEFRAME: <timeframe/Null>\n- LANGUAGE: \"<snippet/Null>\"\n</EXAMPLES>",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "185a2ca1-f502-4692-91c8-720180874252",
+      "type": "free_form",
+      "details": "",
+      "entities": [
+        {
+          "id": "52022127-a0fd-467d-bdf3-5c758177ce6a",
+          "entity": "Maximum Benefit Duration",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "<GROUND_RULES>\nUse ONLY the explicit context provided. No assumptions or external policy knowledge.\nIf Maximum Benefit Duration cannot be determined, output Null.\n\nOutput MUST be bullets only. Each bullet:\n- [Age or Age Range]: [duration/rule] (, whichever is longer/longest if stated)\n\nRules:\n- Copy duration/rule wording exactly (e.g., to SSNRA/to age X, N months/years, lifetime).\n- Include all rows; sort by age ascending.\n- If “whichever is longer/longest” appears, include it verbatim.\nNo extra commentary.\n</GROUND_RULES>\n\n<QUESTIONS>\nSummarize Maximum Benefit Duration in the required bullet format. <Answer/Null>\n</QUESTIONS>\n\n<EXAMPLES>\n- 60–64: to SSNRA, whichever is longer\n- 65: 24 months\n- 69: 12 months\n\n- 62: to age 67, whichever is longer\n- 63–64: 42 months\n</EXAMPLES>",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    }
+  ],
+  "variants": []
+}

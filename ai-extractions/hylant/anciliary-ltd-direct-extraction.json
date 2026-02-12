@@ -199,7 +199,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Percentage of covered earnings or fixed amount payable as a monthly LTD benefit.",
+          "criteria": "Percentage of covered earnings or fixed amount payable as a monthly LTD benefit. Output should be 'X%', where 'X' is a numerical value.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -212,8 +212,10 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Benefit percentage or amount applicable to Class 1 employees.",
-          "examples": [],
+          "criteria": "Benefit percentage or amount applicable to Class 1 employees. Output should be 'X%', where 'X' is a numerical value.",
+          "examples": [
+            "60% "
+          ],
           "required": false,
           "default_option": "",
           "select_multiple": false
@@ -225,8 +227,10 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Benefit percentage or amount applicable to Class 2 employees.",
-          "examples": [],
+          "criteria": "Benefit percentage or amount applicable to Class 2 employees. Output should be 'X%', where 'X' is a numerical value.",
+          "examples": [
+            "60%"
+          ],
           "required": false,
           "default_option": "",
           "select_multiple": false
@@ -238,8 +242,10 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Benefit percentage or amount applicable to Class 3 employees.",
-          "examples": [],
+          "criteria": "Benefit percentage or amount applicable to Class 3 employees. Output should be 'X%', where 'X' is a numerical value.",
+          "examples": [
+            "60% "
+          ],
           "required": false,
           "default_option": "",
           "select_multiple": false
@@ -281,7 +287,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Minimum monthly LTD benefit payable. Output must be a dollar value OR '$X', where 'X' is a numerical value",
+          "criteria": "Minimum monthly LTD benefit payable. Output must be a dollar value OR '$X', where 'X' is a numerical value. Do NOT output text after the dollar value. ",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -315,7 +321,7 @@
     {
       "id": "671e3e16-0129-47fb-8187-d1e62ecacf2c",
       "type": "multiple_value",
-      "details": "Maximum Monthly Benefit exactly as it is written on the document.\nIf more than one employee class exists and the Maximum Monthly Benefit differs by class or is presented in a class-based table,\nleave the “Maximum Monthly Benefit” row blank.\n\nWhen there are Class 1 / 2 / 3 values, the global row should exist but be blank, and all values should live at the class level",
+      "details": "Maximum Monthly Benefit exactly as it is written on the document.\nIf more than one employee class exists and the Maximum Monthly Benefit differs by class or is presented in a class-based table,\nleave the “Maximum Monthly Benefit” row blank.\n\nWhen there are Class 1 / 2 / 3 values, the global row should exist but be blank, and all values should live at the class level\n\nOutput must be a dollar value OR '$X', where 'X' is a numerical value. Do NOT output text after the dollar value.",
       "entities": [
         {
           "id": "1da9388c-c6e8-437c-8460-15410d1150ba",
@@ -324,8 +330,10 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Maximum Monthly Benefit",
-          "examples": [],
+          "criteria": "Maximum Monthly Benefit. Output must be a dollar value OR '$X', where 'X' is a numerical value. Do NOT output text after the dollar value. ",
+          "examples": [
+            "$50"
+          ],
           "required": false,
           "default_option": "",
           "select_multiple": false
@@ -337,8 +345,10 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Maximum monthly benefit applicable to Class 1 employees",
-          "examples": [],
+          "criteria": "Maximum monthly benefit applicable to Class 1 employees. Output must be a dollar value OR '$X', where 'X' is a numerical value. Do NOT output text after the dollar value. ",
+          "examples": [
+            "$50"
+          ],
           "required": false,
           "default_option": "",
           "select_multiple": false
@@ -350,8 +360,10 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Maximum monthly benefit applicable to Class 2 employees",
-          "examples": [],
+          "criteria": "Maximum monthly benefit applicable to Class 2 employees. Output must be a dollar value OR '$X', where 'X' is a numerical value. Do NOT output text after the dollar value. ",
+          "examples": [
+            "$50"
+          ],
           "required": false,
           "default_option": "",
           "select_multiple": false
@@ -363,8 +375,10 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Maximum monthly benefit applicable to Class 3 employees",
-          "examples": [],
+          "criteria": "Maximum monthly benefit applicable to Class 3 employees. Output must be a dollar value OR '$X', where 'X' is a numerical value. Do NOT output text after the dollar value. ",
+          "examples": [
+            "$50"
+          ],
           "required": false,
           "default_option": "",
           "select_multiple": false
@@ -397,7 +411,7 @@
     {
       "id": "252c8514-0f09-4982-a853-312a505144a5",
       "type": "multiple_value",
-      "details": "Locate the Maximum Benefit Duration by finding the section or table that defines how long LTD benefits are payable (e.g., “Maximum Benefit Duration,” “Duration of Benefits,” or age-based schedules).\n\nIf the document presents Maximum Benefit Duration in a class-based table (e.g., Class 1, Class 2, Class 3), extract the duration exactly as stated for each class. Do not infer or combine class values.\n\nWhen Maximum Benefit Duration differs by class, leave the global Maximum Benefit Duration blank and populate only the applicable class-level values.",
+      "details": "Locate the Maximum Benefit Duration by finding the section or table that defines how long LTD benefits are payable (e.g., “Maximum Benefit Duration,” “Duration of Benefits,” or age-based schedules).\n\nIf the document presents Maximum Benefit Duration in a class-based table (e.g., Class 1, Class 2, Class 3), extract the duration exactly as stated for each class. Do not infer or combine class values.\n\nWhen Maximum Benefit Duration differs by class, leave the global Maximum Benefit Duration blank and populate only the applicable class-level values.\n\n\nReturn only the duration phrase (e.g., “5 Years”, “SSNRA”, “To SSNRA”, “Age 65”, etc.).\n\nDo not infer, standardize, combine, or modify the wording.\nIf multiple classes exist, extract the duration for each class exactly as shown.\nDo not pull duration language from Life Waiver of Premium sections.",
       "entities": [
         {
           "id": "ef86073c-265f-40c5-872e-c9c7a4342433",
@@ -406,7 +420,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Longest period LTD benefits are payable",
+          "criteria": "Longest period LTD benefits are payable. Return only the duration phrase (e.g., “5 Years”, “SSNRA”, “To SSNRA”, “Age 65”, etc.).\n\nDo not infer, standardize, combine, or modify the wording.\nIf multiple classes exist, extract the duration for each class exactly as shown.\nDo not pull duration language from Life Waiver of Premium sections.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -419,7 +433,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Maximum benefit duration applicable to Class 1 employees",
+          "criteria": "Maximum benefit duration applicable to Class 1 employees. Return only the duration phrase (e.g., “5 Years”, “SSNRA”, “To SSNRA”, “Age 65”, etc.).\n\nDo not infer, standardize, combine, or modify the wording.\nIf multiple classes exist, extract the duration for each class exactly as shown.\nDo not pull duration language from Life Waiver of Premium sections.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -432,7 +446,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Maximum benefit duration applicable to Class 2 employees",
+          "criteria": "Maximum benefit duration applicable to Class 2 employees. Return only the duration phrase (e.g., “5 Years”, “SSNRA”, “To SSNRA”, “Age 65”, etc.).\n\nDo not infer, standardize, combine, or modify the wording.\nIf multiple classes exist, extract the duration for each class exactly as shown.\nDo not pull duration language from Life Waiver of Premium sections.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -445,7 +459,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Maximum benefit duration applicable to Class 3 employees",
+          "criteria": "Maximum benefit duration applicable to Class 3 employees. Return only the duration phrase (e.g., “5 Years”, “SSNRA”, “To SSNRA”, “Age 65”, etc.).\n\nDo not infer, standardize, combine, or modify the wording.\nIf multiple classes exist, extract the duration for each class exactly as shown.\nDo not pull duration language from Life Waiver of Premium sections.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -939,7 +953,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": true,
+          "date": false,
           "math": false
         },
         "table_filter": null,
@@ -1323,497 +1337,6 @@
         "multiple_occurrences": true
       },
       "data_validation_rules": []
-    },
-    {
-      "id": "39293def-6392-4617-8e23-cf7f0d74e99f",
-      "type": "multiple_value",
-      "details": "Extract any and all source language that defines employee eligibility and dependent eligibility/definitions. Capture eligibility rules whether written as Q&A, headings, bullets, tables, or narrative. Include: (1) employee definition/eligible class (full-time/part-time, scheduled hours, hours/week or hours/month), (2) waiting/probation/eligibility waiting period (not the benefit elimination period payable after disability) and when eligibility is met, (3) coverage effective date trigger (e.g., date of hire, 1st of month following eligibility, 91st day, first day after waiting period), (4) active-at-work/active service requirement that delays coverage, and (5) rehire/reinstatement/reemployment rules (no new waiting period, prior service counts, return-within X days/months/1 year), including leave/layoff/termination and any explicitly stated windows. Also capture Spouse and Child/Dependent Child definitions (including age limits, disabled dependent extension, student rules) even if located in a Definitions/Dependents section. Do not summarize; copy language verbatim.  Include waiting or probationary period for eligibility only. Do NOT capture the benefit elimination period that applies after disability.",
-      "entities": [
-        {
-          "id": "5fa57d68-a3ff-4ca0-9587-4a80de02788d",
-          "entity": "Eligibility Language Question",
-          "save_to": "AP_LTDEligibilityLanguageQ",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the heading/label/lead-in line for the captured eligibility language (examples: “ELIGIBLE EMPLOYEES”, “EMPLOYEE ELIGIBILITY”, “DEPENDENT ELIGIBILITY”, “ELIGIBLE DEPENDENTS”, “Spouse”, “Child”, “REHIRE/REINSTATEMENT/REEMPLOYMENT”, “ACTIVE AT WORK”, “WAITING PERIOD”, “EFFECTIVE DATE”). If no heading exists, output the first sentence of the captured eligibility language.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        },
-        {
-          "id": "7467a1c4-a5e9-4b9e-92e8-d7f1a1d3a8ce",
-          "entity": "Eligibility Language Answer",
-          "save_to": "AP_LTDEligibilityLanguageA",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the full relevant paragraph(s)/bullets/table rows verbatim for the anchor above, including all stated numbers/timing (hours/week or month, days, “first day of month”, “date of hire”, “provided actively at work”, “within X days/months/1 year”, “no new waiting period”, “prior service counts”). Include surrounding sentences needed to keep the rule complete. Do NOT capture the benefit Elimination Period that applies after disability begins. Capture only timing language tied directly to eligibility for coverage.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        }
-      ],
-      "multi_file_name_field": null,
-      "run_email_mode": "document_only",
-      "toggle_page_question": false,
-      "properties": {
-        "limit_relevant_pages": null,
-        "single_occurrence": false,
-        "skip_ai_page_filter": false,
-        "page_filter_start": null,
-        "page_filter_end": null,
-        "group_name": "Eligibility Language Q&A",
-        "page_filter_query": null,
-        "enable_tool_usage": false,
-        "tools": {
-          "web": false,
-          "date": false,
-          "math": false
-        },
-        "table_filter": null,
-        "sheet_filter": null,
-        "page_limit": null,
-        "multiple_occurrences": true
-      },
-      "data_validation_rules": []
-    },
-    {
-      "id": "9e13640f-b3ab-42d3-8ba6-39c7bd58d352",
-      "type": "multiple_value",
-      "details": "Extract the termination provision that states when LTD coverage/insurance ends. Capture termination rules whether written as questions/answers, headings, or narrative clauses (e.g., “Termination of Insurance/Coverage,” “When Insurance Ends,” “Coverage will end,” “Insurance ends,” “Termination Date”). Prioritize rules tied to employment termination / cessation of employment / last day worked / termination date / end of active employment (including end-of-month/pay-period wording if stated). If the document uses “no longer eligible,” also capture any definition of eligibility that explicitly links ineligibility to employment ending. If an employment-termination rule exists, include it even if other termination triggers appear.",
-      "entities": [
-        {
-          "id": "00bb6c41-e8ae-49df-b0f8-020852bf33cd",
-          "entity": "Termination Provision Question",
-          "save_to": "AP_LTDTerminationProvisionQ",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the exact question, heading, or clause label that introduces the termination rule (e.g., “When does coverage end?”, “When Insurance Ends”, “Termination of Insurance/Coverage”, “Coverage will end”). If no label exists, extract the leading phrase that signals the rule (e.g., “Insurance ends…”).",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        },
-        {
-          "id": "183e0420-c10c-4295-bf70-fd26f9f32490",
-          "entity": "Termination Provision Answer",
-          "save_to": "AP_LTDTerminationProvisionA",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the termination rule text that states the timing + trigger, preserving timing language exactly (e.g., “date of employment termination,” “last day worked,” “end of month,” “end of pay period”). Prefer the clause tied to employment termination when present; otherwise capture the most direct “coverage ends” rule stated.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        }
-      ],
-      "multi_file_name_field": null,
-      "run_email_mode": "document_only",
-      "toggle_page_question": false,
-      "properties": {
-        "limit_relevant_pages": null,
-        "single_occurrence": false,
-        "skip_ai_page_filter": false,
-        "page_filter_start": null,
-        "page_filter_end": null,
-        "group_name": "Termination Provision Q&A",
-        "page_filter_query": null,
-        "enable_tool_usage": false,
-        "tools": {
-          "web": false,
-          "date": true,
-          "math": false
-        },
-        "table_filter": null,
-        "sheet_filter": null,
-        "page_limit": null,
-        "multiple_occurrences": true
-      },
-      "data_validation_rules": []
-    },
-    {
-      "id": "6272d2ad-72fc-4870-8190-8a659ef50b4c",
-      "type": "multiple_value",
-      "details": "Extract all questions/answers or clause/heading + corresponding provision text that define partial disability and how partial benefits work under LTD. Capture the definition test (material duty + earnings threshold + timing), and prioritize any partial benefit mechanics that indicate an earnings-integrated design (e.g., 20% earnings threshold, benefit+earnings cap such as 100% of BME, reduction-by-excess formula, “incentive to work,” step changes like “after 2 years,” and maximum payable percent such as 85% of BME). Include only information explicitly stated.",
-      "entities": [
-        {
-          "id": "a22dabf0-8feb-41d1-88dd-ba8b4ba8389f",
-          "entity": "Definition of Partial Disability Question",
-          "save_to": "AP_LTDPartialDisabilityDefinitionQ",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Questions, headings, or clause labels related to partial disability/residual benefits/earnings test/return-to-work and partial benefit calculation (e.g., “Partial Disability,” “Monthly Benefit for Partial Disability,” “Earnings Test,” “Work Incentive”).",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        },
-        {
-          "id": "aeb4c0c1-486b-4c63-b362-5c481fe9723c",
-          "entity": "Definition of Partial Disability Answer",
-          "save_to": "AP_LTDPartialDisabilityDefinitionA",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "The corresponding answer/provision text preserving explicit thresholds and formulas (percent of BME, caps like 100% of BME, reduction rules, timing triggers such as after elimination period or after 2 years).",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        }
-      ],
-      "multi_file_name_field": null,
-      "run_email_mode": "document_only",
-      "toggle_page_question": false,
-      "properties": {
-        "limit_relevant_pages": null,
-        "single_occurrence": false,
-        "skip_ai_page_filter": false,
-        "page_filter_start": null,
-        "page_filter_end": null,
-        "group_name": "Definition of Partial Disability Q&A",
-        "page_filter_query": null,
-        "enable_tool_usage": false,
-        "tools": {
-          "web": false,
-          "date": false,
-          "math": false
-        },
-        "table_filter": null,
-        "sheet_filter": null,
-        "page_limit": null,
-        "multiple_occurrences": true
-      },
-      "data_validation_rules": []
-    },
-    {
-      "id": "55e4eeaa-078c-4184-acbe-1c4b57ac8053",
-      "type": "multiple_value",
-      "details": "Extract questions/answers (or headings/clauses + provision text) that define Disability/Disabled under the LTD policy. Prioritize capturing the duty-based test (e.g., inability to perform material duties) and any earnings-based test (e.g., earnings must not exceed a stated % of pre-disability/basic monthly earnings). Capture any time-based transitions (e.g., after 24 months any occupation) only if explicitly part of the definition.",
-      "entities": [
-        {
-          "id": "d6b6bae3-0e64-43c1-936e-2773da64c567",
-          "entity": "Definition of Disability Question",
-          "save_to": "AP_LTDDisabilityDefinitionQ",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Questions/headings/clauses about the definition of Disability/Disabled, especially those stating material duty requirements and any earnings threshold.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        },
-        {
-          "id": "cdba46fb-ac05-4580-b742-cc0a7166f78e",
-          "entity": "Definition of Disability Answer",
-          "save_to": "AP_LTDDisabilityDefinitionA",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "The corresponding definition text, preserving the duty test and earnings threshold wording/percent exactly.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        }
-      ],
-      "multi_file_name_field": null,
-      "run_email_mode": "document_only",
-      "toggle_page_question": false,
-      "properties": {
-        "limit_relevant_pages": null,
-        "single_occurrence": false,
-        "skip_ai_page_filter": false,
-        "page_filter_start": null,
-        "page_filter_end": null,
-        "group_name": "Definition of Disability Q&A",
-        "page_filter_query": null,
-        "enable_tool_usage": false,
-        "tools": {
-          "web": false,
-          "date": false,
-          "math": false
-        },
-        "table_filter": null,
-        "sheet_filter": null,
-        "page_limit": null,
-        "multiple_occurrences": true
-      },
-      "data_validation_rules": []
-    },
-    {
-      "id": "7f44f63b-635f-43f8-abf8-f6c2bdafa337",
-      "type": "multiple_value",
-      "details": "Extract the document’s Exclusions & Limitations language for LTD and capture evidence for five high-priority exclusions/limitations. First, identify whether a dedicated exclusions/limitations section exists and extract the heading and the verbatim text that belongs to that section (bullets/paragraphs/table rows) until the next major section break. Then, specifically locate and extract the exact wording (verbatim) for each targeted item if present: Pre-Existing Condition exclusion (include timeframes like 3/12, 3/6/12, etc.), Mental Health & Substance Use Disorder limitation/exclusion (include months if limited), Self-reported symptoms limitation/exclusion (include months if limited), Self-inflicted injury exclusion (present/not), and On-the-job injury/work-related injury exclusion (present/not). Do not infer; extract only explicit text.",
-      "entities": [
-        {
-          "id": "dc18e41c-def9-4546-a7a6-48169618f6b4",
-          "entity": "Exclusions & Limitations Question",
-          "save_to": "AP_LTDExclusionLimitationQ",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the exact question text if the document is in Q&A form; otherwise extract the closest relevant section heading or subheading verbatim (e.g., “Exclusions,” “Limitations,” “Exclusions and Limitations,” “What’s Not Covered,” “General Exclusions,” “Limitations”). If extracting targeted items, use the closest heading/subheading that introduces that item (e.g., “Pre-Existing Condition Limitation,” “Mental Disorders Limitation,” “Self-Reported Symptoms,” “Self-Inflicted Injury,” “Work-Related Injury”).",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        },
-        {
-          "id": "da4826ed-9bd1-435e-8dd9-bf279f637e69",
-          "entity": "Exclusions & Limitations Answer",
-          "save_to": "AP_LTDExclusionLimitationA",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the verbatim text under the identified heading/question that contains the exclusions/limitations language. Include the full relevant clause(s) for the overall exclusions/limitations section and for each targeted item when found. Preserve timeframes (lookback/exclusion durations), month limits, definitions, and qualifiers exactly as written. If the section is long, capture the complete list content up to the next major section break; if that is not possible, capture the most complete continuous excerpt that contains the full exclusion list. Do not summarize; do not infer.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        }
-      ],
-      "multi_file_name_field": null,
-      "run_email_mode": "document_only",
-      "toggle_page_question": false,
-      "properties": {
-        "limit_relevant_pages": null,
-        "single_occurrence": false,
-        "skip_ai_page_filter": false,
-        "page_filter_start": null,
-        "page_filter_end": null,
-        "group_name": "Exclusions & Limitations Q&A",
-        "page_filter_query": null,
-        "enable_tool_usage": false,
-        "tools": {
-          "web": false,
-          "date": false,
-          "math": false
-        },
-        "table_filter": null,
-        "sheet_filter": null,
-        "page_limit": null,
-        "multiple_occurrences": true
-      },
-      "data_validation_rules": []
-    },
-    {
-      "id": "36a66c0e-d486-453e-bb6f-e40551eb10e5",
-      "type": "multiple_value",
-      "details": "Extract the document language that defines Maximum Benefit Duration (MBD) for LTD, including tables or narrative clauses. Capture age-based schedules (age bands or specific ages) and the corresponding duration/rule (e.g., “to age 65,” “to SSNRA,” “24 months,” “5 years,” “lifetime”), including any qualifiers such as “whichever is longer/longest,” “but not beyond…,” or similar. If the document is not in Q&A form, treat headings/subheadings or lead-in phrases as the “question” and extract the associated table rows or clause text as the “answer.” Do not infer; extract verbatim.",
-      "entities": [
-        {
-          "id": "5a93a522-487f-4308-8b77-9a940f875f4d",
-          "entity": "Maximum Benefit Duration Question",
-          "save_to": "AP_LTDMaximumBenefitDurationQ",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the exact question text if Q&A format exists; otherwise extract the closest relevant heading/subheading or lead-in phrase verbatim (e.g., “Maximum Benefit Duration,” “Maximum Payment Period,” “Duration of Benefits,” “When Benefits End,” “Benefit Duration Schedule,” “Age Reductions”).",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        },
-        {
-          "id": "e7d162ff-3c17-4d7c-91ab-a63893e62379",
-          "entity": "Maximum Benefit Duration Answer",
-          "save_to": "AP_LTDMaximumBenefitDurationA",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the verbatim MBD content tied to the question/heading, including full table rows and/or clauses showing age/age range and the corresponding duration/rule. Preserve numbers, age ranges, units (months/years), “to age/SSNRA” wording, and “whichever is longer/longest” language exactly.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        }
-      ],
-      "multi_file_name_field": null,
-      "run_email_mode": "document_only",
-      "toggle_page_question": false,
-      "properties": {
-        "limit_relevant_pages": null,
-        "single_occurrence": false,
-        "skip_ai_page_filter": false,
-        "page_filter_start": null,
-        "page_filter_end": null,
-        "group_name": "Maximum Benefit Duration Q&A",
-        "page_filter_query": null,
-        "enable_tool_usage": false,
-        "tools": {
-          "web": false,
-          "date": false,
-          "math": false
-        },
-        "table_filter": null,
-        "sheet_filter": null,
-        "page_limit": null,
-        "multiple_occurrences": true
-      },
-      "data_validation_rules": []
-    },
-    {
-      "id": "1512bbed-a097-437d-835a-06faeb0f8a9f",
-      "type": "multiple_value",
-      "details": "Extract verbatim document language that defines or applies a gainful occupation/gainful earnings/any occupation earnings threshold test, typically within any-occupation or gainful occupation language. Capture the heading/label/lead-in line where the rule appears (or the first sentence if no heading) and capture the full rule language around it (paragraph/bullets/table rows) including any % thresholds, earnings basis wording (indexed pre-disability/monthly earnings, basic monthly earnings, etc.), and any working vs not working split thresholds if stated. Do not summarize or infer; copy source language verbatim.",
-      "entities": [
-        {
-          "id": "bcea8d8e-d73c-44a0-91e5-949997f64535",
-          "entity": "Gainful Earnings Test Question",
-          "save_to": "AP_LTDGainfulEarningsTestQ",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the heading/label/lead-in line introducing the gainful occupation/earnings threshold test; if none, output the first sentence of the rule text.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        },
-        {
-          "id": "c6edaa68-aaf1-491f-9cd2-d260626e273d",
-          "entity": "Gainful Earnings Test Answer",
-          "save_to": "AP_LTDGainfulEarningsTestA",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the full verbatim rule language for the gainful earnings/any occupation earnings test (paragraph/bullets/table rows), keeping all numbers, %s, and earnings-basis wording intact; include surrounding sentences needed to understand the test.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        }
-      ],
-      "multi_file_name_field": null,
-      "run_email_mode": "document_only",
-      "toggle_page_question": false,
-      "properties": {
-        "limit_relevant_pages": null,
-        "single_occurrence": false,
-        "skip_ai_page_filter": false,
-        "page_filter_start": null,
-        "page_filter_end": null,
-        "group_name": "Gainful Earnings Test Q&A",
-        "page_filter_query": null,
-        "enable_tool_usage": false,
-        "tools": {
-          "web": false,
-          "date": false,
-          "math": false
-        },
-        "table_filter": null,
-        "sheet_filter": null,
-        "page_limit": null,
-        "multiple_occurrences": true
-      },
-      "data_validation_rules": []
-    },
-    {
-      "id": "f8076f5f-98cb-4b15-9c11-81c31c0b6d37",
-      "type": "multiple_value",
-      "details": "Extract verbatim document language that describes return-to-work/work incentive/rehabilitation incentive benefits or incentive periods tied to working while disabled, often in Partial/Residual Disability, Rehabilitation/Vocational, or benefit calculation sections. Capture the heading/label/lead-in line where the rule appears (or the first sentence if no heading) and capture the full relevant rule language around it (paragraph/bullets/table rows), prioritizing any explicit duration wording (e.g., first X months, up to X months). Do not summarize or infer; copy source language verbatim.",
-      "entities": [
-        {
-          "id": "3e2a54fa-db9f-4399-a5c1-b5d5221d628f",
-          "entity": "Return to Work Incentive Benefit Question",
-          "save_to": "AP_LTDReturnToWorkIncentiveBenefitQ",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the heading/label/lead-in line introducing the return-to-work/work incentive/rehab incentive rule; if none, output the first sentence of the extracted rule text.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        },
-        {
-          "id": "bea4bb0a-dbbd-489f-a719-99ed595ae4b2",
-          "entity": "Return to Work Incentive Benefit Answer",
-          "save_to": "AP_LTDReturnToWorkIncentiveBenefitA",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the full verbatim rule language describing the return-to-work/work incentive/rehab incentive benefit, especially any month duration wording, plus surrounding sentences needed to interpret what the duration applies to.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        }
-      ],
-      "multi_file_name_field": null,
-      "run_email_mode": "document_only",
-      "toggle_page_question": false,
-      "properties": {
-        "limit_relevant_pages": null,
-        "single_occurrence": false,
-        "skip_ai_page_filter": false,
-        "page_filter_start": null,
-        "page_filter_end": null,
-        "group_name": "Return to Work Incentive Benefit Q&A",
-        "page_filter_query": null,
-        "enable_tool_usage": false,
-        "tools": {
-          "web": false,
-          "date": false,
-          "math": false
-        },
-        "table_filter": null,
-        "sheet_filter": null,
-        "page_limit": null,
-        "multiple_occurrences": true
-      },
-      "data_validation_rules": []
-    },
-    {
-      "id": "4d95e089-11c7-46d6-a64c-ed8976784867",
-      "type": "one_value",
-      "details": "",
-      "entities": [
-        {
-          "id": "57a8de13-44c5-4a9f-8de3-a6aa0778dd14",
-          "entity": "Effective Dates",
-          "save_to": "",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the plan effective date or coverage period exactly as stated in the document. Look for effective dates on the front cover, first page, Summary of Benefits (SOB), benefit plan year section, or within “amended and restated as of” language. Capture the date text as written and do not substitute eligibility language.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        }
-      ],
-      "multi_file_name_field": null,
-      "run_email_mode": "document_only",
-      "toggle_page_question": false,
-      "properties": {
-        "limit_relevant_pages": null,
-        "single_occurrence": false,
-        "skip_ai_page_filter": false,
-        "page_filter_start": null,
-        "page_filter_end": null,
-        "group_name": null,
-        "page_filter_query": null,
-        "enable_tool_usage": false,
-        "tools": {
-          "web": false,
-          "date": false,
-          "math": false
-        },
-        "table_filter": null,
-        "sheet_filter": null,
-        "page_limit": null,
-        "multiple_occurrences": true
-      },
-      "data_validation_rules": []
     }
   ],
   "variants": [
@@ -1894,48 +1417,6 @@
           "question_group_id": "f9488ef5-bb51-425e-b09d-6f694d51d73c",
           "save_to_fields": [
             "AP_LTDEffectiveDate_AP1"
-          ]
-        },
-        {
-          "question_group_id": "39293def-6392-4617-8e23-cf7f0d74e99f",
-          "save_to_fields": [
-            "AP_LTDEligibilityLanguageQ_AP1",
-            "AP_LTDEligibilityLanguageA_AP1"
-          ]
-        },
-        {
-          "question_group_id": "9e13640f-b3ab-42d3-8ba6-39c7bd58d352",
-          "save_to_fields": [
-            "AP_LTDTerminationProvisionQ_AP1",
-            "AP_LTDTerminationProvisionA_AP1"
-          ]
-        },
-        {
-          "question_group_id": "6272d2ad-72fc-4870-8190-8a659ef50b4c",
-          "save_to_fields": [
-            "AP_LTDPartialDisabilityDefinitionQ_AP1",
-            "AP_LTDPartialDisabilityDefinitionA_AP1"
-          ]
-        },
-        {
-          "question_group_id": "55e4eeaa-078c-4184-acbe-1c4b57ac8053",
-          "save_to_fields": [
-            "AP_LTDDisabilityDefinitionQ_AP1",
-            "AP_LTDDisabilityDefinitionA_AP1"
-          ]
-        },
-        {
-          "question_group_id": "7f44f63b-635f-43f8-abf8-f6c2bdafa337",
-          "save_to_fields": [
-            "AP_LTDExclusionLimitationQ_AP1",
-            "AP_LTDExclusionLimitationA_AP1"
-          ]
-        },
-        {
-          "question_group_id": "36a66c0e-d486-453e-bb6f-e40551eb10e5",
-          "save_to_fields": [
-            "AP_LTDMaximumBenefitDurationQ_AP1",
-            "AP_LTDMaximumBenefitDurationA_AP1"
           ]
         },
         {
@@ -2026,20 +1507,6 @@
           "question_group_id": "9ac08e94-534c-4e5b-8713-b47be1b0df07",
           "save_to_fields": [
             "AP_LTDReturntoWork_AP1"
-          ]
-        },
-        {
-          "question_group_id": "f8076f5f-98cb-4b15-9c11-81c31c0b6d37",
-          "save_to_fields": [
-            "AP_LTDReturnToWorkIncentiveBenefitQ_AP1",
-            "AP_LTDReturnToWorkIncentiveBenefitA_AP1"
-          ]
-        },
-        {
-          "question_group_id": "1512bbed-a097-437d-835a-06faeb0f8a9f",
-          "save_to_fields": [
-            "AP_LTDGainfulEarningsTestQ_AP1",
-            "AP_LTDGainfulEarningsTestA_AP1"
           ]
         }
       ]
@@ -2183,62 +1650,6 @@
           ]
         },
         {
-          "question_group_id": "36a66c0e-d486-453e-bb6f-e40551eb10e5",
-          "save_to_fields": [
-            "AP_LTDMaximumBenefitDurationQ_AP2",
-            "AP_LTDMaximumBenefitDurationA_AP2"
-          ]
-        },
-        {
-          "question_group_id": "1512bbed-a097-437d-835a-06faeb0f8a9f",
-          "save_to_fields": [
-            "AP_LTDGainfulEarningsTestQ_AP2",
-            "AP_LTDGainfulEarningsTestA_AP2"
-          ]
-        },
-        {
-          "question_group_id": "f8076f5f-98cb-4b15-9c11-81c31c0b6d37",
-          "save_to_fields": [
-            "AP_LTDReturnToWorkIncentiveBenefitQ_AP2",
-            "AP_LTDReturnToWorkIncentiveBenefitA_AP2"
-          ]
-        },
-        {
-          "question_group_id": "39293def-6392-4617-8e23-cf7f0d74e99f",
-          "save_to_fields": [
-            "AP_LTDEligibilityLanguageQ_AP2",
-            "AP_LTDEligibilityLanguageA_AP2"
-          ]
-        },
-        {
-          "question_group_id": "9e13640f-b3ab-42d3-8ba6-39c7bd58d352",
-          "save_to_fields": [
-            "AP_LTDTerminationProvisionQ_AP2",
-            "AP_LTDTerminationProvisionA_AP2"
-          ]
-        },
-        {
-          "question_group_id": "6272d2ad-72fc-4870-8190-8a659ef50b4c",
-          "save_to_fields": [
-            "AP_LTDPartialDisabilityDefinitionQ_AP2",
-            "AP_LTDPartialDisabilityDefinitionA_AP2"
-          ]
-        },
-        {
-          "question_group_id": "55e4eeaa-078c-4184-acbe-1c4b57ac8053",
-          "save_to_fields": [
-            "AP_LTDDisabilityDefinitionQ_AP2",
-            "AP_LTDDisabilityDefinitionA_AP2"
-          ]
-        },
-        {
-          "question_group_id": "7f44f63b-635f-43f8-abf8-f6c2bdafa337",
-          "save_to_fields": [
-            "AP_LTDExclusionLimitationQ_AP2",
-            "AP_LTDExclusionLimitationA_AP2"
-          ]
-        },
-        {
           "question_group_id": "842a29a1-d499-4141-a963-28ba1a5d8b07",
           "save_to_fields": [
             "AP_LTDCarrier_AP2",
@@ -2288,48 +1699,6 @@
           "question_group_id": "f9488ef5-bb51-425e-b09d-6f694d51d73c",
           "save_to_fields": [
             "AP_LTDEffectiveDate_AP3"
-          ]
-        },
-        {
-          "question_group_id": "39293def-6392-4617-8e23-cf7f0d74e99f",
-          "save_to_fields": [
-            "AP_LTDEligibilityLanguageQ_AP3",
-            "AP_LTDEligibilityLanguageA_AP3"
-          ]
-        },
-        {
-          "question_group_id": "9e13640f-b3ab-42d3-8ba6-39c7bd58d352",
-          "save_to_fields": [
-            "AP_LTDTerminationProvisionQ_AP3",
-            "AP_LTDTerminationProvisionA_AP3"
-          ]
-        },
-        {
-          "question_group_id": "6272d2ad-72fc-4870-8190-8a659ef50b4c",
-          "save_to_fields": [
-            "AP_LTDPartialDisabilityDefinitionQ_AP3",
-            "AP_LTDPartialDisabilityDefinitionA_AP3"
-          ]
-        },
-        {
-          "question_group_id": "55e4eeaa-078c-4184-acbe-1c4b57ac8053",
-          "save_to_fields": [
-            "AP_LTDDisabilityDefinitionQ_AP3",
-            "AP_LTDDisabilityDefinitionA_AP3"
-          ]
-        },
-        {
-          "question_group_id": "7f44f63b-635f-43f8-abf8-f6c2bdafa337",
-          "save_to_fields": [
-            "AP_LTDExclusionLimitationQ_AP3",
-            "AP_LTDExclusionLimitationA_AP3"
-          ]
-        },
-        {
-          "question_group_id": "36a66c0e-d486-453e-bb6f-e40551eb10e5",
-          "save_to_fields": [
-            "AP_LTDMaximumBenefitDurationQ_AP3",
-            "AP_LTDMaximumBenefitDurationA_AP3"
           ]
         },
         {
@@ -2481,20 +1850,6 @@
             "AP_LTDRatePer_AP3",
             "AP_LTDRate_AP3"
           ]
-        },
-        {
-          "question_group_id": "f8076f5f-98cb-4b15-9c11-81c31c0b6d37",
-          "save_to_fields": [
-            "AP_LTDReturnToWorkIncentiveBenefitQ_AP3",
-            "AP_LTDReturnToWorkIncentiveBenefitA_AP3"
-          ]
-        },
-        {
-          "question_group_id": "1512bbed-a097-437d-835a-06faeb0f8a9f",
-          "save_to_fields": [
-            "AP_LTDGainfulEarningsTestQ_AP3",
-            "AP_LTDGainfulEarningsTestA_AP3"
-          ]
         }
       ]
     },
@@ -2598,62 +1953,6 @@
           "question_group_id": "f9488ef5-bb51-425e-b09d-6f694d51d73c",
           "save_to_fields": [
             "AP_LTDEffectiveDate_AP4"
-          ]
-        },
-        {
-          "question_group_id": "39293def-6392-4617-8e23-cf7f0d74e99f",
-          "save_to_fields": [
-            "AP_LTDEligibilityLanguageQ_AP4",
-            "AP_LTDEligibilityLanguageA_AP4"
-          ]
-        },
-        {
-          "question_group_id": "9e13640f-b3ab-42d3-8ba6-39c7bd58d352",
-          "save_to_fields": [
-            "AP_LTDTerminationProvisionQ_AP4",
-            "AP_LTDTerminationProvisionA_AP4"
-          ]
-        },
-        {
-          "question_group_id": "6272d2ad-72fc-4870-8190-8a659ef50b4c",
-          "save_to_fields": [
-            "AP_LTDPartialDisabilityDefinitionQ_AP4",
-            "AP_LTDPartialDisabilityDefinitionA_AP4"
-          ]
-        },
-        {
-          "question_group_id": "55e4eeaa-078c-4184-acbe-1c4b57ac8053",
-          "save_to_fields": [
-            "AP_LTDDisabilityDefinitionQ_AP4",
-            "AP_LTDDisabilityDefinitionA_AP4"
-          ]
-        },
-        {
-          "question_group_id": "7f44f63b-635f-43f8-abf8-f6c2bdafa337",
-          "save_to_fields": [
-            "AP_LTDExclusionLimitationQ_AP4",
-            "AP_LTDExclusionLimitationA_AP4"
-          ]
-        },
-        {
-          "question_group_id": "36a66c0e-d486-453e-bb6f-e40551eb10e5",
-          "save_to_fields": [
-            "AP_LTDMaximumBenefitDurationQ_AP4",
-            "AP_LTDMaximumBenefitDurationA_AP4"
-          ]
-        },
-        {
-          "question_group_id": "1512bbed-a097-437d-835a-06faeb0f8a9f",
-          "save_to_fields": [
-            "AP_LTDGainfulEarningsTestQ_AP4",
-            "AP_LTDGainfulEarningsTestA_AP4"
-          ]
-        },
-        {
-          "question_group_id": "f8076f5f-98cb-4b15-9c11-81c31c0b6d37",
-          "save_to_fields": [
-            "AP_LTDReturnToWorkIncentiveBenefitQ_AP4",
-            "AP_LTDReturnToWorkIncentiveBenefitA_AP4"
           ]
         },
         {
@@ -2877,62 +2176,6 @@
           "question_group_id": "f9488ef5-bb51-425e-b09d-6f694d51d73c",
           "save_to_fields": [
             "AP_LTDEffectiveDate_Renewal"
-          ]
-        },
-        {
-          "question_group_id": "39293def-6392-4617-8e23-cf7f0d74e99f",
-          "save_to_fields": [
-            "AP_LTDEligibilityLanguageQ_Renewal",
-            "AP_LTDEligibilityLanguageA_Renewal"
-          ]
-        },
-        {
-          "question_group_id": "9e13640f-b3ab-42d3-8ba6-39c7bd58d352",
-          "save_to_fields": [
-            "AP_LTDTerminationProvisionQ_Renewal",
-            "AP_LTDTerminationProvisionA_Renewal"
-          ]
-        },
-        {
-          "question_group_id": "6272d2ad-72fc-4870-8190-8a659ef50b4c",
-          "save_to_fields": [
-            "AP_LTDPartialDisabilityDefinitionQ_Renewal",
-            "AP_LTDPartialDisabilityDefinitionA_Renewal"
-          ]
-        },
-        {
-          "question_group_id": "55e4eeaa-078c-4184-acbe-1c4b57ac8053",
-          "save_to_fields": [
-            "AP_LTDDisabilityDefinitionQ_Renewal",
-            "AP_LTDDisabilityDefinitionA_Renewal"
-          ]
-        },
-        {
-          "question_group_id": "7f44f63b-635f-43f8-abf8-f6c2bdafa337",
-          "save_to_fields": [
-            "AP_LTDExclusionLimitationQ_Renewal",
-            "AP_LTDExclusionLimitationA_Renewal"
-          ]
-        },
-        {
-          "question_group_id": "36a66c0e-d486-453e-bb6f-e40551eb10e5",
-          "save_to_fields": [
-            "AP_LTDMaximumBenefitDurationQ_Renewal",
-            "AP_LTDMaximumBenefitDurationA_Renewal"
-          ]
-        },
-        {
-          "question_group_id": "1512bbed-a097-437d-835a-06faeb0f8a9f",
-          "save_to_fields": [
-            "AP_LTDGainfulEarningsTestQ_Renewal",
-            "AP_LTDGainfulEarningsTestA_Renewal"
-          ]
-        },
-        {
-          "question_group_id": "f8076f5f-98cb-4b15-9c11-81c31c0b6d37",
-          "save_to_fields": [
-            "AP_LTDReturnToWorkIncentiveBenefitQ_Renewal",
-            "AP_LTDReturnToWorkIncentiveBenefitA_Renewal"
           ]
         },
         {

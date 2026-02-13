@@ -8,11 +8,11 @@
         {
           "id": "3e0053d9-ce47-4c1b-9e71-e5ccad636bf8",
           "entity": "Eligibility Language",
-          "save_to": "",
+          "save_to": "DR_MEligibilityLanguageNewFFQ",
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "<GROUND_RULES>\nUse ONLY the explicit extracted context. No assumptions.\nIf missing, write Null.\n\nOutput EXACTLY 3 lines (short fragments only):\nEMPLOYEE: <hrs>, <waiting>, <effective>, <active>\nDEPENDENTS: Spouse <key>, Child <key>\nREHIRE: <window>, <waiting impact>\n\nHARD LIMITS:\n- MAX 16 words per line.\n- Use abbreviations: hrs/wk, hrs/mo, WP, eff, AAW, EE, DP, Ch, yrs, mos, d.\n- Commas only. No semicolons. No extra clauses. No examples.\n- Ignore open enrollment/QLE/change rules unless they directly affect initial eligibility/eff date.\n\nSELECTION RULES (pick only the most important items):\nEMPLOYEE:\n- <hrs> = minimum hours threshold (prefer hrs/wk; include hrs/mo only if stated).\n- <waiting> = eligibility WP length + class split if stated.\n- <effective> = shortest explicit trigger (e.g., 90th day, DOH, 1st of month).\n- <active> = “AAW req” if explicitly stated; else Null.\n\nDEPENDENTS:\n- Spouse <key> = only 1 phrase (e.g., lawful spouse; DP if explicitly included).\n- Child <key> = only 1 phrase: age limit + one qualifier (e.g., to EOM 26; disabled ext) if stated.\n\nREHIRE:\n- <window> = most direct rehire window if stated.\n- <waiting impact> = “no new WP” or “prior svc counts” if explicitly stated; else Null.\n</GROUND_RULES>\n\n<QUESTIONS>\nProduce the required 3-line output.\n</QUESTIONS>\n\n<EXAMPLES>\nEMPLOYEE: 30 hrs/wk, WP 30d, eff 1st of mo after 30d, AAW req\nDEPENDENTS: Spouse lawful spouse/DP, Child to EOM 26\nREHIRE: 90 d, prior svc counts; no new WP\n</EXAMPLES>",
+          "criteria": "<GROUND_RULES>\nUse ONLY the explicit extracted context. No assumptions.\nIf missing, write Null.\n\nOutput EXACTLY 3 lines (short fragments only):\nEMPLOYEE: <hrs>, <waiting>, <effective>, <active>\nDEPENDENTS: Spouse <key>, Child <key>\nREHIRE: <window>, <waiting impact>\n\nHARD LIMITS:\n- MAX 16 words per line.\n- Use abbreviations: hrs/wk, hrs/mo, WP, eff, AAW, EE, DP, Ch, yrs, mos, d.\n- Commas only. No semicolons. No extra clauses. No examples.\n- Ignore open enrollment/QLE/change rules unless they directly affect initial eligibility/eff date.\n- NULLS: no bare Null. Use: hrs Null, WP Null, eff Null, AAW Null, Spouse Null, Child Null, window Null, impact Null.\n\nSELECTION RULES (pick only the most important items):\nEMPLOYEE:\n- <hrs> = minimum hours threshold (prefer hrs/wk; include hrs/mo only if stated).\n- <waiting> = eligibility WP length + class split if stated.\n- <effective> = shortest explicit trigger (e.g., 90th day, DOH, 1st of month).\n- <active> = “AAW req” if explicitly stated; else Null.\n\nDEPENDENTS:\n- Spouse <key> = only 1 phrase (e.g., lawful spouse; DP if explicitly included).\n- Child <key> = only 1 phrase: age limit + one qualifier (e.g., to EOM 26; disabled ext) if stated.\n\nREHIRE:\n- <window> = most direct rehire window if stated.\n- <waiting impact> = “no new WP” or “prior svc counts” if explicitly stated; else Null.\n</GROUND_RULES>\n\n<QUESTIONS>\nProduce the required 3-line output.\n</QUESTIONS>\n\n<EXAMPLES>\nEMPLOYEE: 30 hrs/wk, WP 30d, eff 1st of mo after 30d, AAW req\nDEPENDENTS: Spouse lawful spouse/DP, Child to EOM 26\nREHIRE: 90 d, prior svc counts; no new WP\n</EXAMPLES>",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -51,7 +51,7 @@
         {
           "id": "67c642c7-c957-44a7-a976-e5413618b15d",
           "entity": "Termination Provision",
-          "save_to": "",
+          "save_to": "DR_MTerminationProvisionNewFFQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -94,7 +94,7 @@
         {
           "id": "2305e4fa-abd9-4449-b534-70503ebd842c",
           "entity": "Exclusions & Limitations",
-          "save_to": "",
+          "save_to": "DR_MExclusionLimitationNewFFQ",
           "type": "",
           "unique": false,
           "options": [],

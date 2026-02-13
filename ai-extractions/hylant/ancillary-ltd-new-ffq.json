@@ -8,11 +8,11 @@
         {
           "id": "f998bd14-f672-4638-9e61-996aa70b254e",
           "entity": "Eligibility Language",
-          "save_to": "",
+          "save_to": "AP_LTDEligibilityLanguageNewFFQ",
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "<GROUND_RULES>\nUse ONLY the explicit extracted context. No assumptions.\nIf missing, write Null.\n\nOutput EXACTLY 3 lines (short fragments only):\nEMPLOYEE: <hrs>, <waiting>, <effective>, <active>\nDEPENDENTS: Spouse <key>, Child <key>\nREHIRE: <window>, <waiting impact>\n\nHARD LIMITS:\n- MAX 16 words per line.\n- Use abbreviations: hrs/wk, hrs/mo, WP, eff, AAW, EE, DP, Ch, yrs, mos, d.\n- Commas only. No semicolons. No extra clauses. No examples.\n\nSELECTION RULES (pick only the most important items):\nEMPLOYEE:\n- <hrs> = minimum hours threshold (prefer hrs/wk; include hrs/mo only if stated).\n- <waiting> = WP length + class split if stated (e.g., hourly 90d; salary DOH).\n- <effective> = shortest explicit trigger (e.g., 91st day, DOH, 1st of month).\n- <active> = “AAW req” if explicitly stated; else Null.\n\nDEPENDENTS:\n- Spouse <key> = only 1 phrase (e.g., lawful spouse; DP if explicitly included).\n- Child <key> = only 1 phrase: age limit + one qualifier (e.g., to EOM 26; disabled child ext) if stated. If multiple child types listed, ignore.\n\nREHIRE:\n- <window> = most direct rehire/reemployment window (prefer general rehire; else USERRA windows).\n- <waiting impact> = “no new WP” or “prior svc counts” if explicitly stated; else Null.\n</GROUND_RULES>\n\n<QUESTIONS>\nProduce the required 3-line output.\n</QUESTIONS>\n\n<EXAMPLES>\nEMPLOYEE: 30 hrs/wk, hourly WP 90d; salary DOH, eff 91st day/DOH, AAW req\nDEPENDENTS: Spouse lawful spouse/DP, Child to EOM 26; disabled ext\nREHIRE: 1 yr, prior svc counts; no new WP\n</EXAMPLES>",
+          "criteria": "<GROUND_RULES>\nUse ONLY explicit document text provided with this prompt. No assumptions. Scan all text.\n\nOutput EXACTLY 3 lines (commas only):\nEMPLOYEE: <hrs>, <WP>, <eff>, <AAW>\nDEPENDENTS: Spouse <key>, Child <key>\nREHIRE: <window>, <impact>\n\nLIMITS: MAX 16 words/line. Use: hrs/wk, hrs/mo, WP, eff, AAW, DOH, 1st of mo, d.\nNULLS: no bare Null. Use: hrs Null, WP Null, eff Null, AAW Null, Spouse Null, Child Null, window Null, impact Null.\n\nANCHORS (must search for these):\nEMPLOYEE: \"Minimum Hours\" OR \"hours per week\" OR \"Waiting Period\" OR \"When Insurance Begins\" OR \"first day of the month\"\nAAW: \"Actively Working\" OR \"Active Work\" OR \"return to Active Work\"\nSPOUSE: \"Spouse means\" OR \"domestic partner\" OR \"civil union\"\nCHILD: \"Dependent Child means\" OR \"stepchild\" OR \"foster\" OR \"adopted\" OR \"child of your spouse/domestic partner/civil union\"\nREHIRE: \"Reinstatement\" OR \"rehire\" OR \"reinstated\" OR \"within 90 days\" OR \"without satisfying another Waiting Period\"\n\nPICK RULES:\nEMPLOYEE: hrs=min hrs (prefer hrs/wk; add hrs/mo only if stated). WP=shortest WP (class split only if explicit). eff=shortest trigger (prefer 1st of mo/DOH). AAW=\"AAW req\" if any Actively Working/return-to-Active-Work gating; else \"AAW Null\".\nDEPENDENTS: use ONLY definitions: \"Spouse means\" and \"Dependent Child means\". Spouse key=\"lawful spouse\" + add \"/DP/civil union\" if explicit. Child key=relationship list (bio/adopt/step/foster + add DP/civil union if explicit); else Child Null.\nREHIRE: window=day-based reinstatement/rehire window (prefer general). impact=\"no new WP\" if no additional/another waiting period; else \"prior svc counts\" if stated; else impact Null.\n</GROUND_RULES>\n\n<QUESTIONS>\nProduce the 3-line output.\n</QUESTIONS>\n\n<EXAMPLES>\nEMPLOYEE: 35 hrs/wk, WP 30 d, eff 1st of mo, AAW req\nDEPENDENTS: Spouse lawful spouse/DP/civil union, Child bio/step/adopt/foster/DP/civil union\nREHIRE: 90 d, no new WP\n</EXAMPLES>",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -51,7 +51,7 @@
         {
           "id": "16cfef8c-38ce-4665-90a5-3877a8a229c4",
           "entity": "Termination Provision",
-          "save_to": "",
+          "save_to": "AP_LTDTerminationProvisionNewFFQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -76,7 +76,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": true,
+          "date": false,
           "math": false
         },
         "table_filter": null,
@@ -94,7 +94,7 @@
         {
           "id": "2379079c-9989-4b51-8ed1-9ec7a20f993a",
           "entity": "Partial Disability Definition",
-          "save_to": "",
+          "save_to": "AP_LTDPartialDisabilityDefinitionNewFFQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -137,7 +137,7 @@
         {
           "id": "d1ecffbe-c6ed-45f4-8eba-4c4e94b996b8",
           "entity": "Disability Definition",
-          "save_to": "",
+          "save_to": "AP_LTDDisabilityDefinitionNewFFQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -180,7 +180,7 @@
         {
           "id": "86b72507-c15f-414d-ab43-a7031be8dde3",
           "entity": "Exclusions & Limitations",
-          "save_to": "",
+          "save_to": "AP_LTDExclusionLimitationNewFFQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -223,7 +223,7 @@
         {
           "id": "20e65dd4-8c04-41aa-a7a4-bd36f0284190",
           "entity": "Maximum Benefit Duration",
-          "save_to": "",
+          "save_to": "AP_LTDMaximumBenefitDurationNewFFQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -266,7 +266,7 @@
         {
           "id": "c69e3539-a0a5-4d55-bfec-d374c0c919c3",
           "entity": "Gainful Earnings Test",
-          "save_to": "",
+          "save_to": "AP_LTDGainfulEarningsTestNewFFQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -309,7 +309,7 @@
         {
           "id": "56559264-1361-40d7-ad06-47441ec2843d",
           "entity": "Return to Work Incentive Benefit",
-          "save_to": "",
+          "save_to": "AP_LTDReturnToWorkIncentiveBenefitNewFFQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -334,7 +334,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": false,
+          "date": true,
           "math": false
         },
         "table_filter": null,

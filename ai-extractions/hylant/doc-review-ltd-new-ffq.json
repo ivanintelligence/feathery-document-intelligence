@@ -8,11 +8,11 @@
         {
           "id": "38e42e1b-d43f-4a43-bd5c-ea09aec7ea3b",
           "entity": "Eligibility Language",
-          "save_to": "",
+          "save_to": "DR_LEligibilityLanguageNewFFQ",
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "<GROUND_RULES>\nUse ONLY the explicit extracted context. No assumptions.\nIf missing, write Null.\n\nOutput EXACTLY 3 lines (short fragments only):\nEMPLOYEE: <hrs>, <waiting>, <effective>, <active>\nDEPENDENTS: Spouse <key>, Child <key>\nREHIRE: <window>, <waiting impact>\n\nHARD LIMITS:\n- MAX 16 words per line.\n- Use abbreviations: hrs/wk, hrs/mo, WP, eff, AAW, EE, DP, Ch, yrs, mos, d.\n- Commas only. No semicolons. No extra clauses. No examples.\n\nSELECTION RULES (pick only the most important items):\nEMPLOYEE:\n- <hrs> = minimum hours threshold (prefer hrs/wk; include hrs/mo only if stated).\n- <waiting> = WP length + class split if stated (e.g., hourly 90d; salary DOH).\n- <effective> = shortest explicit trigger (e.g., 91st day, DOH, 1st of month).\n- <active> = “AAW req” if explicitly stated; else Null.\n\nDEPENDENTS:\n- Spouse <key> = only 1 phrase (e.g., lawful spouse; DP if explicitly included).\n- Child <key> = only 1 phrase: age limit + one qualifier (e.g., to EOM 26; disabled child ext) if stated. If multiple child types listed, ignore.\n\nREHIRE:\n- <window> = most direct rehire/reemployment window (prefer general rehire; else USERRA windows).\n- <waiting impact> = “no new WP” or “prior svc counts” if explicitly stated; else Null.\n</GROUND_RULES>\n\n<QUESTIONS>\nProduce the required 3-line output.\n</QUESTIONS>\n\n<EXAMPLES>\nEMPLOYEE: 30 hrs/wk, hourly WP 90d; salary DOH, eff 91st day/DOH, AAW req\nDEPENDENTS: Spouse lawful spouse/DP, Child to EOM 26; disabled ext\nREHIRE: 1 yr, prior svc counts; no new WP\n</EXAMPLES>",
+          "criteria": "<GROUND_RULES>\nUse ONLY explicit document text provided with this prompt. No assumptions. Scan all text.\n\nOutput EXACTLY 3 lines (commas only):\nEMPLOYEE: <hrs>, <WP>, <eff>, <AAW>\nDEPENDENTS: Spouse <key>, Child <key>\nREHIRE: <window>, <impact>\n\nLIMITS: MAX 16 words/line. Use: hrs/wk, hrs/mo, WP, eff, AAW, DOH, 1st of mo, d.\nNULLS: no bare Null. Use: hrs Null, WP Null, eff Null, AAW Null, Spouse Null, Child Null, window Null, impact Null.\n\nANCHORS (must search for these):\nEMPLOYEE: \"Minimum Hours\" OR \"hours per week\" OR \"Waiting Period\" OR \"When Insurance Begins\" OR \"first day of the month\"\nAAW: \"Actively Working\" OR \"Active Work\" OR \"return to Active Work\"\nSPOUSE: \"Spouse means\" OR \"domestic partner\" OR \"civil union\"\nCHILD: \"Dependent Child means\" OR \"stepchild\" OR \"foster\" OR \"adopted\" OR \"child of your spouse/domestic partner/civil union\"\nREHIRE: \"Reinstatement\" OR \"rehire\" OR \"reinstated\" OR \"within 90 days\" OR \"without satisfying another Waiting Period\"\n\nPICK RULES:\nEMPLOYEE: hrs=min hrs (prefer hrs/wk; add hrs/mo only if stated). WP=shortest WP (class split only if explicit). eff=shortest trigger (prefer 1st of mo/DOH). AAW=\"AAW req\" if any Actively Working/return-to-Active-Work gating; else \"AAW Null\".\nDEPENDENTS: use ONLY definitions: \"Spouse means\" and \"Dependent Child means\". Spouse key=\"lawful spouse\" + add \"/DP/civil union\" if explicit. Child key=relationship list (bio/adopt/step/foster + add DP/civil union if explicit); else Child Null.\nREHIRE: window=day-based reinstatement/rehire window (prefer general). impact=\"no new WP\" if no additional/another waiting period; else \"prior svc counts\" if stated; else impact Null.\n</GROUND_RULES>\n\n<QUESTIONS>\nProduce the 3-line output.\n</QUESTIONS>\n\n<EXAMPLES>\nEMPLOYEE: 35 hrs/wk, WP 30 d, eff 1st of mo, AAW req\nDEPENDENTS: Spouse lawful spouse/DP/civil union, Child bio/step/adopt/foster/DP/civil union\nREHIRE: 90 d, no new WP\n</EXAMPLES>",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -51,7 +51,7 @@
         {
           "id": "f7158825-ed47-436a-a4c8-599bb4b68fdc",
           "entity": "Termination Provision",
-          "save_to": "",
+          "save_to": "DR_LTerminationProvisionNewFFQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -94,7 +94,7 @@
         {
           "id": "5fef3cc5-2ae6-4b24-bbfc-295c6f0bfac4",
           "entity": "Partial Disability Definition",
-          "save_to": "",
+          "save_to": "DR_LPartialDisabilityDefinitionNewFFQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -137,7 +137,7 @@
         {
           "id": "d6533028-9d83-49fc-9e87-4c01486a2d82",
           "entity": "Disability Definition",
-          "save_to": "",
+          "save_to": "DR_LDisabilityDefinitionNewFFQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -180,7 +180,7 @@
         {
           "id": "eff1f269-1800-4720-b028-b91206824177",
           "entity": "Exclusions & Limitations",
-          "save_to": "",
+          "save_to": "DR_LExclusionLimitationNewFFQ",
           "type": "",
           "unique": false,
           "options": [],
@@ -223,7 +223,7 @@
         {
           "id": "52022127-a0fd-467d-bdf3-5c758177ce6a",
           "entity": "Maximum Benefit Duration",
-          "save_to": "",
+          "save_to": "DR_LMaximumBenefitDurationNewFFQ",
           "type": "",
           "unique": false,
           "options": [],

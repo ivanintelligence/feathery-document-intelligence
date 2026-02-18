@@ -8,11 +8,11 @@
         {
           "id": "3e0053d9-ce47-4c1b-9e71-e5ccad636bf8",
           "entity": "Eligibility Language",
-          "save_to": "DR_MEligibilityLanguageNewFFQ",
+          "save_to": "DR_MEligibilityLanguageFFQ",
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "<GROUND_RULES>\nUse ONLY the explicit extracted context. No assumptions.\nIf missing, write Null.\n\nOutput EXACTLY 3 lines (short fragments only):\nEMPLOYEE: <hrs>, <waiting>, <effective>, <active>\nDEPENDENTS: Spouse <key>, Child <key>\nREHIRE: <window>, <waiting impact>\n\nHARD LIMITS:\n- MAX 16 words per line.\n- Use abbreviations: hrs/wk, hrs/mo, WP, eff, AAW, EE, DP, Ch, yrs, mos, d.\n- Commas only. No semicolons. No extra clauses. No examples.\n- Ignore open enrollment/QLE/change rules unless they directly affect initial eligibility/eff date.\n- NULLS: no bare Null. Use: hrs Null, WP Null, eff Null, AAW Null, Spouse Null, Child Null, window Null, impact Null.\n\nSELECTION RULES (pick only the most important items):\nEMPLOYEE:\n- <hrs> = minimum hours threshold (prefer hrs/wk; include hrs/mo only if stated).\n- <waiting> = eligibility WP length + class split if stated.\n- <effective> = shortest explicit trigger (e.g., 90th day, DOH, 1st of month).\n- <active> = “AAW req” if explicitly stated; else Null.\n\nDEPENDENTS:\n- Spouse <key> = only 1 phrase (e.g., lawful spouse; DP if explicitly included).\n- Child <key> = only 1 phrase: age limit + one qualifier (e.g., to EOM 26; disabled ext) if stated.\n\nREHIRE:\n- <window> = most direct rehire window if stated.\n- <waiting impact> = “no new WP” or “prior svc counts” if explicitly stated; else Null.\n</GROUND_RULES>\n\n<QUESTIONS>\nProduce the required 3-line output.\n</QUESTIONS>\n\n<EXAMPLES>\nEMPLOYEE: 30 hrs/wk, WP 30d, eff 1st of mo after 30d, AAW req\nDEPENDENTS: Spouse lawful spouse/DP, Child to EOM 26\nREHIRE: 90 d, prior svc counts; no new WP\n</EXAMPLES>",
+          "criteria": "<GROUND_RULES>\nUse ONLY the explicit extracted context. No assumptions. If missing, write Null.\n\nOutput EXACTLY 3 lines (short fragments only):\nEmployee: <hrs>, <waiting>, <effective>, <active>\nDependents: Spouse <key>, Child <key>\nRehire: <window>, <waiting impact>\n\nHARD LIMITS:\n- MAX 16 words per line.\n- Use abbreviations: hrs/wk, hrs/mo, WP, eff, AAW, EE, DP, Ch, yrs, mos, d.\n- Commas only. No semicolons. No extra clauses. No examples.\n- Ignore open enrollment/QLE/change rules unless they directly affect initial eligibility/eff date.\n- NULLS: no bare Null. Use: hrs Null, WP Null, eff Null, AAW Null, Spouse Null, Child Null, window Null, impact Null.\n\nSELECTION RULES (pick only the most important items):\nEMPLOYEE:\n- <hrs> = minimum hours threshold (prefer hrs/wk; include hrs/mo only if stated).\n- <waiting> = eligibility WP length + class split if stated.\n- <effective> = shortest explicit trigger (e.g., 90th day, DOH, 1st of month).\n- <active> = “AAW req” if explicitly stated; else Null.\n\nDEPENDENTS:\n- Spouse <key> = only 1 phrase (e.g., lawful spouse; DP if explicitly included).\n- Child <key> = only 1 phrase: age limit + one qualifier (e.g., to EOM 26; disabled ext) if stated.\n\nREHIRE:\n- <window> = most direct rehire window if stated.\n- <waiting impact> = “no new WP” or “prior svc counts” if explicitly stated; else Null.\n</GROUND_RULES>\n\n<QUESTIONS>\nProduce the required 3-line output.\n</QUESTIONS>\n\n<EXAMPLES>\nEmployee: 30 hrs/wk, WP 30d, eff 1st of mo after 30d, AAW req\nDependents: Spouse lawful spouse/DP, Child to EOM 26\nRehire: 90 d, prior svc counts; no new WP\n</EXAMPLES>",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -51,11 +51,11 @@
         {
           "id": "67c642c7-c957-44a7-a976-e5413618b15d",
           "entity": "Termination Provision",
-          "save_to": "DR_MTerminationProvisionNewFFQ",
+          "save_to": "DR_MTerminationProvisionFFQ",
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "<GROUND_RULES>\nUse ONLY the explicit Q&A in context. No assumptions.\nIf no explicit termination timing rule is stated, output Null.\n\nOUTPUT:\n- Only termination timing. Ignore COBRA/continuation, HRA, contacts/Marketplace.\n- If no benefit split: output exactly 1 line:\n  Coverage terminates <timing> <trigger>\n- If benefit timing differs: output 1 line per unique timing:\n  <BenefitGroup>: Coverage terminates <timing>\n  Use SHORT labels and combine same-timing benefits with slashes (e.g., Med/Vis/Rx). No duplicate-timing lines.\nNo extra lines.\n\nLABELS:\nUse short benefit labels (capitalize): Med, Vis, Dtl, Rx, Hra, Fsa, Hsa, Std, Ltd, Life, etc. If doc uses different labels, map to closest.\n\nNORMALIZE:\nlast day of the month -> end of month\nend of the month following termination -> end of month following termination\nlast day of employment -> day of termination\n</GROUND_RULES>\n\n<QUESTIONS>\nReturn the termination provision in the required format. <Answer/Null>\n</QUESTIONS>\n\n<EXAMPLES>\nCoverage terminates end of month of employment termination\nMed/Vis: Coverage terminates end of month following termination\nDtl: Coverage terminates day of termination\nMed/Vis/Rx: Coverage terminates end of month following termination\nNull\n</EXAMPLES>",
+          "criteria": "<GROUND_RULES>\nUse ONLY the explicit Q&A in context. No assumptions. If no explicit termination timing rule is stated, output Null.\n\nOUTPUT:\n- Only termination timing. Ignore COBRA/continuation, HRA, contacts/Marketplace.\n- If no benefit split: output exactly 1 line:\n  Coverage terminates <timing> <trigger>\n- If benefit timing differs: output 1 line per unique timing:\n  <BenefitGroup>: Coverage terminates <timing>\n  Use SHORT labels and combine same-timing benefits with slashes (e.g., Med/Vis/Rx). No duplicate-timing lines.\nNo extra lines.\n\nLABELS:\nUse short benefit labels (capitalize): Med, Vis, Dtl, Rx, Hra, Fsa, Hsa, Std, Ltd, Life, etc. If doc uses different labels, map to closest.\n\nNORMALIZE:\nlast day of the month -> end of month\nend of the month following termination -> end of month following termination\nlast day of employment -> day of termination\n</GROUND_RULES>\n\n<QUESTIONS>\nReturn the termination provision in the required format. <Answer/Null>\n</QUESTIONS>\n\n<EXAMPLES>\nCoverage terminates end of month of employment termination\nMed/Vis: Coverage terminates end of month following termination\nDtl: Coverage terminates day of termination\nMed/Vis/Rx: Coverage terminates end of month following termination\nNull\n</EXAMPLES>",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -94,11 +94,11 @@
         {
           "id": "2305e4fa-abd9-4449-b534-70503ebd842c",
           "entity": "Exclusions & Limitations",
-          "save_to": "DR_MExclusionLimitationNewFFQ",
+          "save_to": "DR_MExclusionLimitationFFQ",
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "<GROUND_RULES>\nUse ONLY explicit text in the provided context. No assumptions. Use ONLY these status values: Included or Not Included. If a topic is Included, include 1 verbatim supporting snippet. If Not found, output Language: N/A. Do NOT rewrite the snippet; copy verbatim only.\n\nTRUNCATION RULE:\n- If the best supporting language is longer than ~25 words, truncate it and end with \"...\"\n- If not truncated, do not add \"...\"\n</GROUND_RULES>\n\n<QUESTIONS>\nProduce the Exclusions & Limitations checklist in the required format. <Answer>\n</QUESTIONS>\n\n<OUTPUT_FORMAT>\nA) EXCLUSIONS & LIMITATIONS SECTION\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/(N/A)>\"\n\nB) KEY EXCLUSIONS\n1) MENTAL HEALTH / SUBSTANCE USE DISORDER\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/(N/A)>\"\n\n2) GENE THERAPY / ORPHAN DRUGS\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/(N/A)>\"\n\n3) FOREIGN TRAVEL / ABROAD\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/(N/A)>\"\n\n4) CRIME / FELONY / ILLEGAL ACTS INJURY\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/(N/A)>\"\n\n5) WEIGHT LOSS / WEIGHT LOSS DRUGS\n- FLAG: <Included/Not Included>\n- LANGUAGE: \"<snippet/(N/A)>\"\n</OUTPUT_FORMAT>\n\n<EXAMPLES>\nA) EXCLUSIONS & LIMITATIONS SECTION\n- FLAG: Included\n- LANGUAGE: \"EXCLUSIONS AND LIMITATIONS: The following services are not covered...\"\n\nB) KEY EXCLUSIONS\n1) MENTAL HEALTH / SUBSTANCE USE DISORDER\n- FLAG: Not found\n- LANGUAGE: N/A\n\n2) GENE THERAPY / ORPHAN DRUGS\n- FLAG: Included\n- LANGUAGE: \"Gene therapy and orphan drugs are excluded.\"\n\n3) FOREIGN TRAVEL / ABROAD\n- FLAG: Included\n- LANGUAGE: \"No coverage outside the United States...\"\n\n4) CRIME / FELONY / ILLEGAL ACTS INJURY\n- FLAG: Included\n- LANGUAGE: \"Injury sustained while committing a felony is excluded.\"\n\n5) WEIGHT LOSS / WEIGHT LOSS DRUGS\n- FLAG: Not Included\n- LANGUAGE: N/A\n</EXAMPLES>",
+          "criteria": "<GROUND_RULES>\nUse ONLY explicit text in context. No assumptions. FLAG values only: Included, Not Included. If Included: provide 1 verbatim SNIPPET + concise SUMMARY (phrase or 1–2 sentences) covering all related content in context. If Not Included: SNIPPET: N/A and SUMMARY: N/A. Do NOT rewrite SNIPPET.\n\nSNIPPET TRUNCATION: if >~25 words, truncate and end with \"...\"; else no \"...\".\n</GROUND_RULES>\n\n<QUESTIONS>\nProduce the Exclusions & Limitations checklist in the required format. <Answer>\n</QUESTIONS>\n\n<OUTPUT_FORMAT>\nA) Exclusions & Limitations Section\n- Flag: <Included/Not Included>\n- Snippet: \"<snippet/(N/A)>\"\n- Summary: <summary/(N/A)>\n\nB) Key Exclusions\n1) Mental Health / Substance Use Disorder\n- Flag: <Included/Not Included>\n- Snippet: \"<snippet/(N/A)>\"\n- Summary: <summary/(N/A)>\n\n2) Gene Therapy / Orphan Drugs\n- Flag: <Included/Not Included>\n- Snippet: \"<snippet/(N/A)>\"\n- Summary: <summary/(N/A)>\n\n3) Foreign Travel / Abroad\n- Flag: <Included/Not Included>\n- Snippet: \"<snippet/(N/A)>\"\n- Summary: <summary/(N/A)>\n\n4) Crime / Felony / Illegal Acts Injury\n- Flag: <Included/Not Included>\n- Snippet: \"<snippet/(N/A)>\"\n- Summary: <summary/(N/A)>\n\n5) Weight Loss / Weight Loss Drugs\n- Flag: <Included/Not Included>\n- Snippet: \"<snippet/(N/A)>\"\n- Summary: <summary/(N/A)>\n</OUTPUT_FORMAT>\n\n<EXAMPLE>\nA) Exclusions & Limitations Section\n- Flag: Included\n- Snippet: \"EXCLUSIONS AND LIMITATIONS: The following services are not covered...\"\n- Summary: Exclusions/limitations section present; review full list.\n</EXAMPLE>",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -130,5 +130,87 @@
       "data_validation_rules": []
     }
   ],
-  "variants": []
+  "variants": [
+    {
+      "id": "2c9f36b0-7dd6-47b5-9e66-41db7588b3ef",
+      "variant_name": "File 3",
+      "file_sources": [
+        "FileUpload3"
+      ],
+      "group_variants": [
+        {
+          "question_group_id": "f038f151-ba7b-46b0-9623-8873d53a792c",
+          "save_to_fields": [
+            "DR_MEligibilityLanguageFFQ_F3"
+          ]
+        },
+        {
+          "question_group_id": "4239a9f8-aa1b-4b1f-b717-ec1bc079a38d",
+          "save_to_fields": [
+            "DR_MTerminationProvisionFFQ_F3"
+          ]
+        },
+        {
+          "question_group_id": "57172d03-73c6-439c-9bac-f1d856026d8a",
+          "save_to_fields": [
+            "DR_MExclusionLimitationFFQ_F3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fe3046ca-cc7b-4d50-ab7c-4d1964a28e66",
+      "variant_name": "File 4",
+      "file_sources": [
+        "FileUpload4"
+      ],
+      "group_variants": [
+        {
+          "question_group_id": "f038f151-ba7b-46b0-9623-8873d53a792c",
+          "save_to_fields": [
+            "DR_MEligibilityLanguageFFQ_F4"
+          ]
+        },
+        {
+          "question_group_id": "4239a9f8-aa1b-4b1f-b717-ec1bc079a38d",
+          "save_to_fields": [
+            "DR_MTerminationProvisionFFQ_F4"
+          ]
+        },
+        {
+          "question_group_id": "57172d03-73c6-439c-9bac-f1d856026d8a",
+          "save_to_fields": [
+            "DR_MExclusionLimitationFFQ_F4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "da6da481-126c-4bc3-a41e-a2001d09f435",
+      "variant_name": "File 2",
+      "file_sources": [
+        "FileUpload2"
+      ],
+      "group_variants": [
+        {
+          "question_group_id": "f038f151-ba7b-46b0-9623-8873d53a792c",
+          "save_to_fields": [
+            "DR_MEligibilityLanguageFFQ_F2"
+          ]
+        },
+        {
+          "question_group_id": "4239a9f8-aa1b-4b1f-b717-ec1bc079a38d",
+          "save_to_fields": [
+            "DR_MTerminationProvisionFFQ_F2"
+          ]
+        },
+        {
+          "question_group_id": "57172d03-73c6-439c-9bac-f1d856026d8a",
+          "save_to_fields": [
+            "DR_MExclusionLimitationFFQ_F2"
+          ]
+        }
+      ]
+    }
+  ]
 }

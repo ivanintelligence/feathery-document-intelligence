@@ -25,7 +25,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Delivering/Contra/From/Relinquishing firm account # (often labeled “Delivering Firm Account #”, “Contra Account #”, “From Account Number”, “Account to be transferred”). Copy exactly as shown (including masks).",
+          "criteria": "Delivering/Contra/From/Relinquishing firm account # (e.g., “Delivering Firm Account #”, “Contra Account #”, “From Account Number”, “Account to be transferred”). Copy exactly (including masks).",
           "examples": [],
           "required": false,
           "default_option": "",

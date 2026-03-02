@@ -3,7 +3,7 @@
     {
       "id": "1cedfe43-56c7-4b49-b818-cbce35780ad9",
       "type": "multiple_value",
-      "details": "Extract each account-mapping/transfer pair (Delivering firm → Janney). Use ACAT/transfer/account opening/statement header sections. Copy verbatim; no guessing. If missing, return Null. (One item per account pair.)",
+      "details": "Extract each account-mapping/transfer pair between the Delivering firm and Janney. Use ACAT/transfer/account opening/statement header sections. Copy verbatim; no guessing. If missing, return Null. (One item per account pair.)",
       "entities": [
         {
           "id": "b6a6a5f3-0f42-4a44-8b4b-7aaa714b4e3d",
@@ -25,7 +25,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Delivering/Contra/From/Relinquishing firm account # (e.g., “Delivering Firm Account #”, “Contra Account #”, “From Account Number”, “Account to be transferred”). Copy exactly (including masks).",
+          "criteria": "From Delivering/Contra/From/Relinquishing fields, return only the account number digits (keep spaces/hyphens/masking as shown). Exclude firm/bank names, “#”, labels, and any surrounding words.",
           "examples": [],
           "required": false,
           "default_option": "",

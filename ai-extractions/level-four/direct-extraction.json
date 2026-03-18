@@ -3,7 +3,7 @@
     {
       "id": "a893f28a-c026-4e57-8c38-effa19653490",
       "type": "multiple_value",
-      "details": "Use Account Number as the row key. Aggregate rows with the same Account Number. If a row has the same Account Number, then use Taxpayer ID as the second key. If a row has the same Account Number and Taxpayer ID, then use Account Functions as the third key.",
+      "details": "Use the combination of Account Number, Taxpayer ID, and Account Functions as the row key. Aggregate rows with the same row key. Extract Account Number 'A23DE67H', 'AB3456G8', and 'A2345FG8' only.",
       "entities": [
         {
           "id": "5398e810-ba0f-45d7-b82b-6474edf28290",

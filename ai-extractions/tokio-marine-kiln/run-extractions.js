@@ -1,17 +1,19 @@
-// ----- # run extractions in parallel
+const id1 = '04aee576-70f2-44dd-b41b-c8965a61a3de'; // non-spreadsheet
+const id2 = 'e49c5e31-cb4b-4971-bf51-28d38de3bae6'; // spreadsheet
 
-const extractionIds = [
-  '04aee576-70f2-44dd-b41b-c8965a61a3de', // (2a) Cyber Documents
-  'e49c5e31-cb4b-4971-bf51-28d38de3bae6' // (2b) Spreadsheet: Cyber Documents
-];
+const file = await FileUpload.value;
+const extension = file?.name?.split('.').pop()?.toLowerCase();
 
-// start all extractions
-await Promise.all(
-  extractionIds.map((extractionId) =>
-    feathery.runAIExtraction(extractionId, {
-      waitForCompletion: true,
-      variantId: undefined,
-      pages: undefined
-    })
-  )
-);
+if (['xls', 'xlsx'].includes(extension)) {
+  await feathery.runAIExtraction(id2, {
+    waitForCompletion: true,
+    variantId: undefined,
+    pages: undefined
+  });
+} else {
+  await feathery.runAIExtraction(id1, {
+    waitForCompletion: true,
+    variantId: undefined,
+    pages: undefined
+  });
+}

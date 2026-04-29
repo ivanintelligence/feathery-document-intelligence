@@ -152,7 +152,7 @@
     {
       "id": "d1be4e86-6431-4aee-9a86-1f2624460d57",
       "type": "multiple_value",
-      "details": "Extract asset or holding-level financial data from the financial statement. Create one result per security, investment, fund, property holding, account, or cash balance. Use exact values shown. Treat fair value, market value, current value, investment value, holdings value, cash balance, account value, total assets, or total investments as asset values when clearly tied to assets. Leave blank if not shown.",
+      "details": "Extract asset or holding-level financial data from the financial statement. Create one result per security, investment, fund, property holding, account, or cash balance. Use exact values shown. Treat fair value, market value, current value, investment value, holdings value, cash balance, account value, total assets, or total investments as asset values when clearly tied to assets. If the same asset value appears in multiple sections, extract it once using the most detailed holding-level row; Do not duplicate summary, total, or repeated statement values. Leave blank if not shown.",
       "entities": [
         {
           "id": "4dbf66a7-8fbe-471a-91a4-c3aa5d10ed8b",
@@ -161,7 +161,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Name of the specific account, investment, security, fund, property holding, or cash balance that holds the asset. Do not use generic line-item categories such as “investments,” “real estate entities,” or “cash equivalents” when a specific holding name is shown.",
+          "criteria": "Name of the specific named account, investment, security, fund, or property holding tied to the asset value. Look across Schedule of Investments, holding tables, and statement headers for the named entity. Do not return asset category or line-item labels. Return Null if no named entity is shown.",
           "examples": [],
           "required": false,
           "default_option": "",

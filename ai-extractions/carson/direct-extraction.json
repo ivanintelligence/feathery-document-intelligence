@@ -161,7 +161,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Name of the account, investment, security, fund, property holding, or cash balance that holds the asset.",
+          "criteria": "Name of the specific account, investment, security, fund, property holding, or cash balance that holds the asset. Do not use generic line-item categories such as “investments,” “real estate entities,” or “cash equivalents” when a specific holding name is shown.",
           "examples": [],
           "required": false,
           "default_option": "",

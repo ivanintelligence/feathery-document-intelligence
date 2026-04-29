@@ -152,7 +152,7 @@
     {
       "id": "d1be4e86-6431-4aee-9a86-1f2624460d57",
       "type": "multiple_value",
-      "details": "Extract holding level data from the financial statement. Use exact values shown. Create one result per holding or line item. Leave blank if not shown.",
+      "details": "Extract asset/holding-level data from the financial statement. Use exact values shown. Create one result per holding or cash asset. Exclude liabilities, equity, members’ capital, contributions, income/loss, expenses, and totals unless they are clearly asset totals. Leave blank if not shown.",
       "entities": [
         {
           "id": "4dbf66a7-8fbe-471a-91a4-c3aa5d10ed8b",
@@ -252,7 +252,7 @@
           "type": "number",
           "unique": false,
           "options": [],
-          "criteria": "Current market value of the holding or line item.",
+          "criteria": "Current market value of the asset, holding, investment, or cash balance only. Do not extract equity, members’ capital, liabilities, contributions, income/loss, or expenses.",
           "examples": [],
           "required": false,
           "default_option": "",

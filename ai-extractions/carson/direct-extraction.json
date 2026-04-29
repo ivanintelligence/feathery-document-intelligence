@@ -3,7 +3,7 @@
     {
       "id": "d1be4e86-6431-4aee-9a86-1f2624460d57",
       "type": "multiple_value",
-      "details": "Extract asset or holding-level financial data from the financial statement. Create one result per security, investment, fund, property holding, account, or cash balance. Use exact values shown. Treat fair value, market value, current value, investment value, holdings value, cash balance, account value, total assets, or total investments as asset values when clearly tied to assets. If the same asset value appears in multiple sections, extract it once using the most detailed holding-level row; Do not duplicate summary, total, or repeated statement values. Leave blank if not shown.",
+      "details": "Extract asset or holding-level financial data only from financial or investment statements. Do not create financial statement results from tax forms such as 1099-INT, 1099-DIV, 1099-B, W-2, or IRS forms. Create one result per security, investment, fund, property holding, account, or cash balance. Use exact values shown. Treat fair value, market value, current value, investment value, holdings value, cash balance, account value, total assets, or total investments as asset values when clearly tied to assets. If the same asset value appears in multiple sections, extract it once using the most detailed holding-level row; Do not duplicate summary, total, or repeated statement values. Leave blank if not shown.",
       "entities": [
         {
           "id": "4dbf66a7-8fbe-471a-91a4-c3aa5d10ed8b",
@@ -427,27 +427,27 @@
           "id": "de37ac22-8ee5-48ef-9ebb-5cfb1bcd6284",
           "entity": "Beginning Balance",
           "save_to": "beginningBalance",
+          "type": "",
           "unique": false,
           "options": [],
           "criteria": "Opening balance at the start of the statement period. Use the exact amount shown.",
           "examples": [],
           "required": false,
           "default_option": "",
-          "select_multiple": false,
-          "type": ""
+          "select_multiple": false
         },
         {
           "id": "b98638ba-adce-4931-b84e-ac8277c3b493",
           "entity": "Ending Balance",
           "save_to": "endingBalance",
+          "type": "",
           "unique": false,
           "options": [],
           "criteria": "Closing balance at the end of the statement period. Use the exact amount shown.",
           "examples": [],
           "required": false,
           "default_option": "",
-          "select_multiple": false,
-          "type": ""
+          "select_multiple": false
         },
         {
           "id": "18b80c71-5f98-4422-9e84-612b3e27d686",

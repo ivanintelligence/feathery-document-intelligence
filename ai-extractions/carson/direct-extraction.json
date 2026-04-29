@@ -174,7 +174,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Type or classification of the account, investment, asset, or holding as shown in the document. Examples may include brokerage, IRA, trust, 401(k), cash, margin, equity, bond, mutual fund, ETF, annuity, real estate entity, fund, security, or cash equivalents.",
+          "criteria": "Type or classification of the account, investment, asset, or holding as shown in the document. Do not shorten combined terms such as “Cash and cash equivalents.” Examples may include brokerage, IRA, trust, 401(k), cash and cash equivalents, margin, equity, bond, mutual fund, ETF, annuity, real estate entity, fund, or security.",
           "examples": [],
           "required": false,
           "default_option": "",

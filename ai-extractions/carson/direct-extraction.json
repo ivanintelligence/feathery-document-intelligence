@@ -169,7 +169,7 @@
     {
       "id": "e4cc238c-2824-4975-af02-341dd4b3175b",
       "type": "multiple_value",
-      "details": "Extract insurance or annuity statement data. Use exact values shown. Create one result per policy, contract, holding, or fund line item as presented. For life insurance or annuity statements, capture policy accounts, subaccounts, fixed accounts, loan accounts, and indexed accounts. Repeat policy-level values, such as surrender charge, total value, policy loan, and surrender value, across all entries under the same policy when they apply to the entire policy. Leave blank if not shown. For whole life policies, capture Policy Loan and Surrender Value when present. Use Asset Name + Type of Funds as the uniqueness key; If the same fund/account appears in multiple sections or pages, merge its information into one result and do not duplicate it.",
+      "details": "Extract insurance or annuity statement data. Use exact values shown. Create one result per unique policy, contract, holding, or fund line item as presented. For life insurance or annuity statements, capture policy accounts, subaccounts, fixed accounts, loan accounts, and indexed accounts. Repeat policy-level values, such as surrender charge, total value, policy loan, and surrender value, across all entries under the same policy when they apply to the entire policy. Leave blank if not shown. For whole life policies, capture Policy Loan and Surrender Value when present. Use Asset Name + Type of Funds as the uniqueness key; if the same fund/account appears in multiple sections or pages, merge its information into one result and do not duplicate it. Do not create separate entries from insurer, carrier, institution, brand, logo names, coverage, rider, face amount, or death benefit lines such as Basic Life Coverage or Annual Renewable Term Rider; merge them under the same policy/product and fund/account.",
       "entities": [
         {
           "id": "e3be114e-f689-4d33-8066-d9fb05694b0d",
@@ -178,7 +178,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Name of the policy, contract, holding, or fund exactly as shown. For life insurance policies, use the overall policy/product name as the Asset Name, not policy numbers, contract numbers, account numbers, policy account names, subaccounts, fixed accounts, loan accounts, or indexed account names. Include qualifiers such as Non Qualified, Qualified, IRA, or Roth IRA when they appear as part of the displayed name. Do not append or return policy, contract, or account numbers unless they are explicitly part of the displayed asset name.",
+          "criteria": "Name of the policy, contract, holding, or fund exactly as shown. For life insurance policies, use the overall policy/product name as the Asset Name, not policy numbers, contract numbers, account numbers, policy account names, subaccounts, fixed accounts, loan accounts, indexed account names, coverage names, rider names, face amount labels, insurer names, carrier names, institution names, or brand names. Include qualifiers such as Non Qualified, Qualified, IRA, or Roth IRA when they appear as part of the displayed name. Do not append or return policy, contract, or account numbers unless they are explicitly part of the displayed asset name.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -195,7 +195,10 @@
           "examples": [],
           "required": false,
           "default_option": "",
-          "select_multiple": false
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Prefer the full legal carrier/company name when shown. Treat shortened names, brand names, or logo names as the same institution and do not create separate entries from them."
+          ]
         },
         {
           "id": "89a47d27-ccb7-4efb-ad87-65e5572ea7a8",
@@ -204,7 +207,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Product type as shown, such as whole life, universal life, annuity, variable annuity, individual annuity, or MYGA. For annuity policies, return both the parent annuity type and specific subtype when shown. Do not include adjustment features unless part of the product name.",
+          "criteria": "Product type as shown, such as whole life, universal life, annuity, variable annuity, individual annuity, or MYGA. For life insurance, return only the most specific product type shown, e.g., Indexed Universal Life Insurance instead of Universal Life. For annuity policies, return both the parent annuity type and specific subtype when shown. Do not include adjustment features unless part of the product name.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -243,7 +246,7 @@
           "type": "number",
           "unique": false,
           "options": [],
-          "criteria": "Value of the holding, fund, subaccount, or annuity accumulation value. For annuities, use Ending Accumulation Value when shown.",
+          "criteria": "Value of the holding, fund, subaccount, or annuity accumulation value. For annuities, use Ending Accumulation Value when shown. Do not use face amounts, death benefit amounts, coverage amounts, rider amounts, premiums, or loan availability amounts as Holdings Value.",
           "examples": [],
           "required": false,
           "default_option": "",

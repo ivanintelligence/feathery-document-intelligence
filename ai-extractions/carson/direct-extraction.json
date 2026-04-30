@@ -12,13 +12,14 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Name of the specific named account, investment, security, fund, or property holding tied to the asset value. Look across Schedule of Investments, holding tables, and statement headers for the named entity. Do not return asset category or line-item labels. Return Null if no named entity is shown.",
+          "criteria": "Name of the specific named account, investment, security, fund, or property holding tied to the asset value. Look across Schedule of Investments, holding tables, and statement headers for the named entity. When a row has a labeled Account Name, Account Title, or Account Holder field, use that value and do not use Management Strategy, Model, Allocation, or Benchmark fields as the account name. Do not return asset category or line-item labels. Return Null if no named entity is shown.",
           "examples": [],
           "required": false,
           "default_option": "",
           "select_multiple": false,
           "data_validation_rules": [
-            "Do not use owner, annuitant, insured, client, or taxpayer names as the account name unless the document explicitly labels that person’s name as the account/investment name."
+            "Do not use owner, annuitant, insured, client, or taxpayer names as the account name unless the document explicitly labels that person’s name as the account/investment name.",
+            "Do not use Management Strategy, Model, Allocation, or Benchmark fields as the account name."
           ]
         },
         {
@@ -28,7 +29,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Type or classification of the account, investment, asset, or holding as shown in the document. Do not shorten combined terms such as “Cash and cash equivalents.” Examples may include brokerage, IRA, trust, 401(k), cash and cash equivalents, margin, equity, bond, mutual fund, ETF, annuity, real estate entity, fund, or security.",
+          "criteria": "Type or classification of the account, investment, asset, or holding as shown in the document. Do not shorten combined terms such as “Cash and cash equivalents” or “529 Education Savings.” Examples may include brokerage, IRA, trust, 401(k), 529 education savings, cash and cash equivalents, margin, equity, bond, mutual fund, ETF, annuity, real estate entity, fund, or security.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -102,28 +103,28 @@
         {
           "id": "662e604c-c256-4782-a00d-a8722057ab40",
           "entity": "Asset Value",
-          "save_to": "",
-          "type": "number",
+          "save_to": "assetValue",
           "unique": false,
           "options": [],
           "criteria": "Current value of the asset, holding, investment, security, account, or cash balance. Include fair value, market value, current value, holdings value, cash balance, account value, total assets, or total investments only when clearly labeled as asset-related. Do not use equity, members’ capital, partner capital, liabilities, contributions, income/loss, expenses, or operating activity amounts as asset values.",
           "examples": [],
           "required": false,
           "default_option": "",
-          "select_multiple": false
+          "select_multiple": false,
+          "type": ""
         },
         {
           "id": "a3db4c72-b275-4cab-9a08-1b786a3bce0d",
           "entity": "Cost Basis",
-          "save_to": "",
-          "type": "number",
+          "save_to": "costBasis",
           "unique": false,
           "options": [],
           "criteria": "Cost basis shown for the holding, investment, security, account, or asset.",
           "examples": [],
           "required": false,
           "default_option": "",
-          "select_multiple": false
+          "select_multiple": false,
+          "type": ""
         },
         {
           "id": "149c9062-c10b-470e-bb3d-9f11128b8bb4",

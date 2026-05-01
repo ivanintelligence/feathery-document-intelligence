@@ -1,0 +1,540 @@
+{
+  "queries": [
+    {
+      "id": "c91fa073-b4df-46b8-b7ad-d5d490a737b3",
+      "type": "multiple_value",
+      "details": "Lines of insurance or coverage types a quote is being requested for. Do not extract from a policy number.",
+      "entities": [
+        {
+          "id": "5b918906-568d-46cf-9647-1be860c0187d",
+          "entity": "Line of Business",
+          "save_to": "E_line_of_business",
+          "type": "",
+          "unique": true,
+          "options": [],
+          "criteria": "The line of insurance or coverage type that a quote is being requested for. Do not extract this value from the policy number.",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "email_document",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Line of Business",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "5ff25fc1-0af0-4b5a-b318-a49f837c7642",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "413610c1-3268-4c72-b429-ff9f2113dca6",
+          "entity": "Is Renewal",
+          "save_to": "E_IsRenewal",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Whether a renewal to an existing policy is explicitly being requested on the email.",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "email_document",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "10fc89c4-d6ad-4cda-a659-9ef46514fba5",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "d0489037-13de-46ee-9052-b9d70c9541ab",
+          "entity": "Insurance Broker Address",
+          "save_to": "E_BrokerAddress",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The primary street address of the insurance brokerage mentioned on the email.",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "email_document",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "64726faa-b9a0-470a-bf44-88fa4260c941",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "3adbe947-82a0-45d5-bf44-ad077a780508",
+          "entity": "Insurance Broker State",
+          "save_to": "E_BrokerState",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The state of the primary address of the insurance broker mentioned in the email.",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "email_document",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "dda5a8de-4a78-43dd-b995-45324bb8fd01",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "a280e05f-dc58-4dd8-93a7-c90f896f7ccf",
+          "entity": "Insurance Broker Zip Code",
+          "save_to": "E_BrokerZip",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The zip code of the primary address of the insurance broker mentioned in the email.",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "email_document",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "ade3b9e6-69c2-43f9-9f5c-b0b4404b674d",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "b9296f8d-ab06-4811-96c8-11f20bc2d35a",
+          "entity": "Broker Email Address",
+          "save_to": "E_BrokerEmail",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The email address of the original person that emailed either blaxner@nexusunderwriting.com or smiller@nexusunderwriting.com. Only return an email address not from Nexus Underwriting.\nDo not include any email associated with @tokiomarinekiln.com .",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "email_document",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "c9fd7e59-2c02-4813-939b-efec6d23f9cd",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "1e0cad5f-fef0-49e9-ace0-175fe646bb5b",
+          "entity": "Broker Contact Full Name",
+          "save_to": "E_BrokerContact",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The full name of the original person that emailed either blaxner@nexusunderwriting.com or smiller@nexusunderwriting.com. Only return a name not from Nexus Underwriting.\n\nDo not include any information associated with @tokiomarinekiln.com ",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "email_document",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "fcd108db-4dc5-40b8-8307-19a9ba06f257",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "06163ada-0e56-4bac-9d2f-2976936c3ad0",
+          "entity": "Broker Company",
+          "save_to": "E_BrokerCompany",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The full name of the company of the original person that emailed either blaxner@nexusunderwriting.com or smiller@nexusunderwriting.com. Only return a company name that is not Nexus Underwriting.",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "email_document",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "b0f2be9f-900d-497d-8614-7ca518f616fb",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "3658fc6c-9557-46cd-88fe-539e23f32655",
+          "entity": "MGA Sending Referral",
+          "save_to": "E_MGASendingReferral",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the Managing General Agency (MGA) Sending Referral.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "9c8cba1c-d503-496c-8553-19505054f3c8",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "a344c03a-ca9e-4f8d-8adf-ceba5709a3cd",
+          "entity": "MGA Point of Contact",
+          "save_to": "E_MGAPointOfContact",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the Managing General Agency (MGA) Point of Contact.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "369a4af9-a633-477b-949a-fe516be7f2dc",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "4d2ab698-d73d-4dc4-91e6-de0954580e95",
+          "entity": "Insured Name",
+          "save_to": "E_InsuredName",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the company name of the insured.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "94f18c69-7005-44d3-a680-bab5a80162e3",
+      "type": "multiple_value",
+      "details": "For each document, determine whether it appears spreadsheet-derived. Return only one value per file: Spreadsheet or PDF.",
+      "entities": [
+        {
+          "id": "03f8c229-6693-4ff4-877a-4b281bb0bda5",
+          "entity": "File type",
+          "save_to": "fileType",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Look for worksheet-like layouts, cell grids, rows/columns, column letters, row numbers, sheet-style tables, or Excel-like formatting."
+          ]
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "File types",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    }
+  ],
+  "variants": []
+}

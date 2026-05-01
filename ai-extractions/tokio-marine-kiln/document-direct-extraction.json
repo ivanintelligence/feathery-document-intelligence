@@ -1,0 +1,2545 @@
+{
+  "queries": [
+    {
+      "id": "40e9888a-01c0-4d87-86f5-c48e1957905e",
+      "type": "multiple_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "b7f49f8b-53aa-40eb-b70b-7329bada8c0e",
+          "entity": "Named Insured",
+          "save_to": "C_InsuredName",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The name of the insured or applicant company.",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        },
+        {
+          "id": "aa7e00a0-2ac3-41c9-81e7-4cadd197cc38",
+          "entity": "Named Insured Address",
+          "save_to": "C_InsuredAddress",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The complete address or location of the named insured.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "page_filter_whitelist": [],
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Named Insured Details",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "dcb30aea-ab3f-4695-af79-dfd2d4435299",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "e9f0f22d-f72f-4128-a8ed-59e32f031dd3",
+          "entity": "Primary Website",
+          "save_to": "C_Website",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "Return the website address of the insured company. Do not return the broker's website address.",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "page_filter_whitelist": [],
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "1711ad2f-6632-4303-b9dd-be8919ee950b",
+      "type": "multiple_value",
+      "details": "Details of the 'fiscal year' and yearly revenues of the applicant company.",
+      "entities": [
+        {
+          "id": "9f1110e7-22f1-4915-bce7-9c59bb88d767",
+          "entity": "Current Fiscal Year Revenue",
+          "save_to": "C_RevenueCurrentFY",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "32cf5aa2-7e07-4c78-9266-23e1f8bea3d1",
+          "entity": "Previous Fiscal Year Revenue",
+          "save_to": "C_RevenueMostRecentFY",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "201a5a6b-8287-45b4-bbd0-29277e95c510",
+          "entity": "Projected Fiscal Year Revenue",
+          "save_to": "C_RevenueProjectedFY",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "6252a9be-4a3d-4b76-b907-b44c2b2f6c60",
+          "entity": "Current Year Revenue",
+          "save_to": "C_CurrentRevenue",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The current year revenue. This is not the fiscal year revenue.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "2aa29cd1-ec81-4370-86cd-d011b6796441",
+          "entity": "Previous Year Revenue",
+          "save_to": "C_PrevRevenue",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The previous year revenue. This is not the fiscal year revenue.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "1e331c26-1ffd-4e6b-836d-c468e9de5572",
+          "entity": "Projected Year Revenue",
+          "save_to": "C_ProjRevenue",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The projected year revenue. This is not the fiscal year revenue.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "dbc15c2e-86a1-44fb-ad7e-f8bc0eb009a5",
+          "entity": "Annual Gross Profit",
+          "save_to": "C_GrossProfit",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Fiscal Year Revenues",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "3c22b2f0-258b-4551-9c9e-bc9654b54fb7",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "037976b3-9370-41c5-acd5-d0dbd79f7c36",
+          "entity": "Currency",
+          "save_to": "C_CurrencyForMonetaryResponses",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The currency for monetary responses that the organization uses. ",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "e9c647a6-0874-43d9-89bc-abf123e1dbe3",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "e1bc8f31-53c8-4abd-a1fb-99550e08e9d0",
+          "entity": "Number of IT Employees",
+          "save_to": "C_NumITEmployees",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The number of full time IT employees the organization has. Do NOT INCLUDE outsourced or contract personnel",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "260aa90c-0cb2-4eba-b4c3-1d1116803129",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "eeeb2ce1-893c-4db4-8470-548eefe45945",
+          "entity": "Ticker Symbol",
+          "save_to": "C_TickerSymbol",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "Return the ticker symbol of the applicant company. Found under ID Numbers section.",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "page_filter_whitelist": [
+          "address"
+        ],
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "ad08e10a-c889-4cd6-838b-ca386a0ec7f9",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "5771d59c-d150-44b0-a672-0728dbafcdb6",
+          "entity": "Annual PCI Transactions",
+          "save_to": "C_AnnualPCITransactions",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "Return the total annual PCI payment card transaction count. Return 0 if the policy shows no PCI/card data is handled. Return “N/A” if it cannot be determined.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": true
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "82bad349-b7fc-464c-9e00-725894faa711",
+      "type": "multiple_value",
+      "details": "Return all countries or regions where the insured explicitly operates or where their teams, offices, or operations are located. Exclude any text block that is classified as Legal Boilerplate (Statutory Disclosures, Policy Terms, Warranties), Instructional Text (Directions on how to complete the form, definitions), or Administrative Notes (Date fields, Company Logos, Section Titles, etc.).",
+      "entities": [
+        {
+          "id": "21c498d6-864f-4fee-8f79-6535302caa37",
+          "entity": "Country/Region of Operation",
+          "save_to": "C_RegionOfOperations",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Region of Operations",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "a9527f23-77a9-4225-bea4-9b3662242a46",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "10d6ae6d-ae65-4d62-8069-b42b0315a229",
+          "entity": "Number of Employees",
+          "save_to": "C_NumofEmployees",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The employee count or total number of people employed by the company.",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "84d0da6a-b951-4f43-9cc7-5a9513f8c215",
+      "type": "multiple_value",
+      "details": "The information related to the revenue allocation of the insured company in different geographies listed under the Basic Demographics section.",
+      "entities": [
+        {
+          "id": "8efe7698-2aa1-467d-93b9-1991763c3176",
+          "entity": "Geography",
+          "save_to": "C_Geography",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "Return the geography listed. This is usually a country.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "3100ed14-c3f2-43d1-b9cc-f72fe36c3bf7",
+          "entity": "Revenue Allocation",
+          "save_to": "C_RevenueAllocation",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "Return the revenue allocation of the organization for the geography.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Geographies and Revenue Allocation",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "7c25af37-de17-40c6-9f35-4170b50a1cba",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "14ff6db0-325f-4a3b-af9d-93f2fa8a3090",
+          "entity": "Number of IT Security Personnel",
+          "save_to": "C_NumITPersonnel",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The number of IT Cyber Security Personnel or the total number of IT employees dedicated to security. Do NOT INCLUDE outsourced or contract personnel",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "0082e67e-9756-4274-babf-ad9f3cbd6b4b",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "36ff2187-26b1-410a-b4ac-3105a3f385a1",
+          "entity": "Applicant uses Google Workspace Security",
+          "save_to": "C_GoogleWorkspaceSec",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [
+            "Yes",
+            "No"
+          ],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "page_filter_whitelist": [
+          "Microsoft"
+        ],
+        "page_filter_blacklist": [
+          "SVC_TRENDM",
+          "GLOSSARY",
+          "APPENDIX"
+        ],
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "47d96309-2d0d-471e-a9ef-1185884053da",
+      "type": "multiple_value",
+      "details": "Extract the names of all entities explicitly identified as subsidiaries of the applicant company.  A subsidiary must be majority-owned or controlled and must be listed in sections labeled “Subsidiaries,” “Entities to be insured,” “Group companies,” “Operating companies,” or similar.",
+      "entities": [
+        {
+          "id": "b29c0478-3db4-4e11-a77f-02b6f686acfc",
+          "entity": "Subsidiary Name",
+          "save_to": "C_SubsidiaryName",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Subsidiary Name",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "a3c5386e-6c1e-449a-a935-b420b28f41f7",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "daffe445-7bc8-4d6f-ab50-92ba56a2d1fd",
+          "entity": "Productivity Suite",
+          "save_to": "C_ProdSuite",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "Which productivity suite does the applicant use to operate their business? Check the selected checkboxes for either Microsoft 365 or Google Workspace. Choose the best suited example. \n",
+          "examples": [
+            "Office 365",
+            "Microsoft Office 365",
+            "Google Workspace"
+          ],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "page_filter_whitelist": [
+          "Microsoft"
+        ],
+        "page_filter_blacklist": [
+          "SVC_TRENDM",
+          "GLOSSARY",
+          "APPENDIX"
+        ],
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "10cbaf30-cf81-4a7b-af0c-a8b92f8b1d6a",
+      "type": "multiple_value",
+      "details": "Details of the primary or principal contact person of the applicant company. This is usually the person signing the application form. Examples are: risk management officers, compliance officers, it management, legal, operations, finance, etc.",
+      "entities": [
+        {
+          "id": "3e7c5b35-b72d-4718-8b14-23fe25f2fa6c",
+          "entity": "Primary Contact Name",
+          "save_to": "C_PrimaryContactName",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "Return the name of the primary contact of the insured company.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "80bae116-c80e-4a8e-b411-79d9f688c610",
+          "entity": "Primary Contact Title",
+          "save_to": "C_PrimaryContactTitle",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "Return the title of the primary contact of the insured company.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "6572dbd9-6056-4103-bfc4-491b3a7459ec",
+          "entity": "Primary Contact Role",
+          "save_to": "C_PrimaryContactRole",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "Return the role of the primary contact of the insured company.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "2a5f2fa7-61bd-4b3e-9254-d189254dc5e3",
+          "entity": "Primary Contact Email",
+          "save_to": "C_PrimaryContactEmail",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "Return the email of the primary contact of the insured company.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "cfa3381f-55e3-48f4-a110-7944d4d811e0",
+          "entity": "Primary Contact Phone",
+          "save_to": "C_PrimaryContactPhone",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "Return the phone of the primary contact of the insured company.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "page_filter_whitelist": [],
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Primary Contact Information",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "defbdea4-4d06-468d-820b-30504da91dc0",
+      "type": "multiple_value",
+      "details": "The information related to the industries under the Basic Demographics section. Identify and return the industry or line of business of the insured. Extract the industry explicitly stated in descriptions of what the organization does (e.g., ‘provider of ___’, ‘manufacturer of ___’, ‘company engaged in ___’, or similar operational statements).",
+      "entities": [
+        {
+          "id": "bbcf96b4-3353-4537-bd4a-f2d254472fe5",
+          "entity": "Primary Industry",
+          "save_to": "C_PrimaryIndustry",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "Return the primary industry of the organization.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "98f8c349-35ef-439f-bf8d-a7bb6480cc7c",
+          "entity": "Secondary Industry",
+          "save_to": "C_SecondaryIndustry",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "Return the secondary industry of the organization.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "f19e7847-e848-4e02-be81-7c0e2de73007",
+          "entity": "Tertiary Industry",
+          "save_to": "C_TertiaryIndustry",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "Return the tertiary industry of the organization.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Industries",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "e6bb47d2-c184-4f5f-b61c-d7f5834617d4",
+      "type": "multiple_value",
+      "details": "Return all the possible Cybersecurity point of contact (CISO or equivalent), Information, CFO, or the dedicated IT Contact or breach contact person.",
+      "entities": [
+        {
+          "id": "ffbd7bed-08c3-419d-975b-9140cdf900d3",
+          "entity": "Cybersecurity Point of Contact Name",
+          "save_to": "C_CybersecurityPointOfContactName",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "d7250769-d5f2-42af-9db2-a3805b0cb6ae",
+          "entity": "Cybersecurity Point of Contact Title",
+          "save_to": "C_CybersecurityPointOfContactTitle",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "d308a391-037c-417c-ae41-68db2e05e442",
+          "entity": "Cybersecurity Point of Contact Email",
+          "save_to": "C_CybersecurityPointOfContactEmail",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "78e275b3-54a0-49c1-a101-c4ac682bd404",
+          "entity": "Cybersecurity Point of Contact Phone Number",
+          "save_to": "C_CybersecurityPointOfContactPhoneNumber",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Cybersecurity Point of Contact Info",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "34590a00-d02d-4041-9a67-ae6ea140f47b",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "7b4ccf9c-4601-4414-bb4b-0c12ce7bbc86",
+          "entity": "DUNS Number",
+          "save_to": "C_DUNSNumber",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The DUNS Number found in the document.",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "42790d12-1ddd-4347-a1cb-1739735463f1",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "88a684ae-1d7c-4754-8600-e4a836d6f1ae",
+          "entity": "Number of Endpoints",
+          "save_to": "C_NumofEndpoints",
+          "type": "",
+          "rules": [
+            ""
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the number of endpoints, devices, or systems in scope for the organization (including laptops, desktops, servers, mobile devices, or similar). Return nothing if cant be found.",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "0ac93578-d927-478a-9a04-8c7894a8208e",
+      "type": "multiple_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "aa9c25b4-d6fa-4498-9e9f-5fed31801776",
+          "entity": "Number of Private or Sensitive Information",
+          "save_to": "C_NumberOfPrivateOrSensitiveInformation",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "Return the number of private information the organization collects such as social security numbers, payment card information, biometrics,  personal identification numbers (PINs), usernames, passwords, healthcare records and email addresses. Return in the format: <Type of Information>: <Number of Records>. ",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Number of Private and Biometric Info",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": true
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "77bf779a-6557-4fb6-ab8f-9b4b5b539680",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "22af0f78-5954-45cc-97c6-a39a122e6d4c",
+          "entity": "Applicant uses Microsoft 365 Defender for Office",
+          "save_to": "C_365defender",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "Only return 'Yes' if applicant explicitly uses Microsoft 365 Defender",
+          "examples": [
+            "Yes",
+            "No"
+          ],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "page_filter_whitelist": [
+          "Microsoft"
+        ],
+        "page_filter_blacklist": [
+          "SVC_TRENDM",
+          "GLOSSARY",
+          "APPENDIX"
+        ],
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "1ac85cb4-2abb-45b9-a5a8-1f8321f705ac",
+      "type": "one_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "b1e4ef10-6ae4-4f11-bbc7-bf7ed4c99b7d",
+          "entity": "Nature of Business",
+          "save_to": "C_NOB",
+          "type": "",
+          "rules": [],
+          "unique": false,
+          "options": [],
+          "criteria": "The nature of business or industry of the insured company.",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "c314a151-ca49-408c-80c9-590b8a38709e",
+      "type": "multiple_value",
+      "details": "Questions relating to Application Security such as secure software development practices, vulnerabilities and scanning, penetration testing, CVSS, security patching and firewalls. [Yes, No] are options, not answers. Do not return them or any structure that contains [Choice 1, Choice 2,..].",
+      "entities": [
+        {
+          "id": "5e9f3900-3efe-462b-8627-8e5b6f12bbe5",
+          "entity": "Application Security Question",
+          "save_to": "C_ASQ",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item]"
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "The question asking about Application Security  such as secure software development practices, hardened baseline, vulnerabilities and scanning, and firewalls",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "4ab404b1-ffee-4a14-8f24-6462bce69a4d",
+          "entity": "Application Security Answer",
+          "save_to": "C_ASA",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The answer to the question asking about Application Security",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "page_filter_blacklist": [],
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Application Security QA",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'."
+      ]
+    },
+    {
+      "id": "40e2b98b-db4c-4ce0-990e-8c74af87e610",
+      "type": "multiple_value",
+      "details": "Covers security and monitoring of network infrastructure, including firewalls, segmentation (IT/OT segregation, VLAN, air-gaps), RDP exposure, intrusion detection/prevention, SIEM logging and alerts, anomaly detection, wireless security, and monitoring of privileged account or service account activity. Also includes email/phishing defenses and malware protections. [Yes, No] are options, not answers. Do not return them or any structure that contains [Choice 1, Choice 2,..].",
+      "entities": [
+        {
+          "id": "09e942db-e853-4fdc-a5c6-4c7dad002e48",
+          "entity": "Network Security and Monitoring Question",
+          "save_to": "C_NetworkSecurityMQ",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item]"
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "Questions relating to network protections, IT/OT segregation, RDP exposure, SIEM logging/alerts, and monitoring privileged activity.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "af365df8-b82d-41d4-b740-941718e53906",
+          "entity": "Network Security and Monitoring Answer",
+          "save_to": "C_NetworkSecurityMA",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The answer to the question.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Network Security and Monitoring",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'."
+      ]
+    },
+    {
+      "id": "bf8a58b0-9360-43c8-b84b-0a99ef0b9626",
+      "type": "multiple_value",
+      "details": "Covers workstation and server endpoint protections, including EDR/AV/MDM tools, device configuration baselines, lockout/inactivity policies, lifecycle and disposal, and EDR effectiveness (coverage % across endpoints and servers, autonomous threat containment/block mode). [Yes, No] are options, not answers. Do not return them or any structure that contains [Choice 1, Choice 2,..].",
+      "entities": [
+        {
+          "id": "cd32be50-432b-4657-a50c-3f3eb777659e",
+          "entity": "Endpoint and Device Security Question",
+          "save_to": "C_EndpointDSQ",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item]"
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "Questions relating to endpoint protection tools (EDR/AV/MDM), deployment coverage across endpoints and servers, and advanced features like block mode.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "67708fe9-f12b-4abf-9343-5663202d6f24",
+          "entity": "Endpoint and Device Security Answer",
+          "save_to": "C_EndpointDSA",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The answer to the question.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Endpoint & Device Security",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'."
+      ]
+    },
+    {
+      "id": "468bd571-6782-4eb6-930c-edc882a1c89e",
+      "type": "multiple_value",
+      "details": "Only return questions and answers relating to domain administrators, privileged accounts, privileged account management, or service accounts from the application form. [Yes, No] are options, not answers. Do not return them or any structure that contains [Choice 1, Choice 2,..].",
+      "entities": [
+        {
+          "id": "31a7cf5b-1218-4f68-b32a-ae744b662fd4",
+          "entity": "Domain Administrators Question",
+          "save_to": "C_DAQ",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item]"
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "Questions relating to domain administrators",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "bbacedf5-c530-4253-b1c4-9bb0d1f34d1a",
+          "entity": "Domain Administrators Answer",
+          "save_to": "C_DAA",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "Answers to the questions asked about the domain administrator",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "page_filter_blacklist": [],
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Domain Administrators QA",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'."
+      ]
+    },
+    {
+      "id": "b4e63998-e8e5-4f96-b076-e4537f421b76",
+      "type": "multiple_value",
+      "details": "Covers incident response planning, escalation, ransomware preparedness, and recovery controls including backups (offline, immutable, MFA-protected), restoration testing, disaster recovery, and business continuity planning. [Yes, No] are options, not answers. Do not return them or any structure that contains [Choice 1, Choice 2,..].",
+      "entities": [
+        {
+          "id": "ae22df27-e843-4ecd-8493-dc3dd16a95d7",
+          "entity": "Incident Response and Recovery Question",
+          "save_to": "C_IncidentRRQ",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item]"
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "Questions relating to backup protection methods (offline, immutable, MFA), incident response plans, and recovery testing.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "ab86e1cb-00f0-4bce-b164-6826d8dbc9c0",
+          "entity": "Incident Response and Recovery Answer",
+          "save_to": "C_IncidentRRA",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The answer to the question.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Incident Response and Recovery",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'."
+      ]
+    },
+    {
+      "id": "5dfe3736-25b9-4cce-97d9-62b252a27bb9",
+      "type": "multiple_value",
+      "details": "Questions relating to loss history or loss information. [Yes, No] are options, not answers. Do not return them or any structure that contains [Choice 1, Choice 2,..].",
+      "entities": [
+        {
+          "id": "9e0392fc-e902-47fe-986c-d81065d8ab4a",
+          "entity": "Loss History Information Question",
+          "save_to": "C_LHIQ",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item]"
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "Questions relating to loss history or information",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "2ce56a07-0890-4f86-aca3-3ea373dd1dc5",
+          "entity": "Loss History Information Answer",
+          "save_to": "C_LHIA",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The answer to the question asking about loss history or information",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Loss History Information QA",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'."
+      ]
+    },
+    {
+      "id": "63376da2-3d5d-45df-8398-2688cbc5e577",
+      "type": "multiple_value",
+      "details": "Covers additional or specialized tools, layered defenses, or technical measures not fitting elsewhere. May include removable device/USB policy in OT, specialized monitoring, or proprietary defenses. [Yes, No] are options, not answers. Do not return them or any structure that contains [Choice 1, Choice 2,..].",
+      "entities": [
+        {
+          "id": "249474f8-ba23-49ea-8404-bbed32d7e68d",
+          "entity": "Other Preventative and Technical Controls Question",
+          "save_to": "C_OtherPreventativeTCQ",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item]"
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "Questions relating to policies and solutions not fitting other categories, including OT removable device controls.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "a6d3cb8e-61bd-46c1-a05e-a95fce6f87c1",
+          "entity": "Other Preventative and Technical Controls Answer",
+          "save_to": "C_OtherPreventativeTCA",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The answer to the question.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Other Preventative and Technical Controls",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'."
+      ]
+    },
+    {
+      "id": "0c3adf34-8f07-49dd-a97e-656df614dd83",
+      "type": "multiple_value",
+      "details": "Questions relating to Microsoft 365 Productivity and Tools. [Yes, No] are options, not answers. Do not return them or any structure that contains [Choice 1, Choice 2,..].",
+      "entities": [
+        {
+          "id": "fe381e7b-6dca-4bf1-b9bc-dc0eabb37fe9",
+          "entity": "Microsoft 365 Productivity and Tools Question",
+          "save_to": "C_M365Q",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item]"
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "The question asking about Microsoft 365 Productivity and Tools ",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "256419df-9d4a-4ec4-9a2c-8b22f56d251a",
+          "entity": "Microsoft 365 Productivity and Tools Answer",
+          "save_to": "C_M365A",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The answer to the question asking about Microsoft 365 Productivity and Tools ",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "page_filter_whitelist": [],
+        "page_filter_blacklist": [],
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Microsoft 365 Productivity and Tools QA",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'."
+      ]
+    },
+    {
+      "id": "41daba31-c21a-4882-9e29-ecf685c3fb1d",
+      "type": "multiple_value",
+      "details": "Questions on account and access controls, including provisioning, password policies, MFA, domain admin accounts, privileged/service account management, privileged access management (PAM), and third-party or remote access. [Yes, No] are options, not answers. Do not return them or any structure that contains [Choice 1, Choice 2,..]. Group related Q&A sets under a shared heading when they belong to the same category (e.g., Privileged Service Accounts, Domain Admin Accounts, Remote Access Controls). Each grouped entry should have the category heading prefixed to the questions (e.g., “Privileged Service Accounts: What is the name of the account?”) so that it is clear all the sub-questions and answers are connected.",
+      "entities": [
+        {
+          "id": "eff46cd4-ce80-48ca-9136-68240ccab352",
+          "entity": "Identity and Access Management Question",
+          "save_to": "C_IdentityAMQ",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item]"
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "Questions relating to privileged access management, PAM tool usage, MFA enforcement for privileged accounts, password policies (length, rotation), login restrictions, account auditing, and service account management.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "2ecc58b9-8224-4777-8f2a-018a3f6028d6",
+          "entity": "Identity and Access Management Answer",
+          "save_to": "C_IdentityAMA",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The answer to the question.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Identity and Access Management (IAM)",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'."
+      ]
+    },
+    {
+      "id": "df507aab-cbcc-4746-ae9a-e85080f77902",
+      "type": "multiple_value",
+      "details": "Covers vulnerability identification and mitigation, including vulnerability scanning scope (environment %), frequency, patch management timelines, unsupported or legacy system detection, and penetration testing. [Yes, No] are options, not answers. Do not return them or any structure that contains [Choice 1, Choice 2,..].",
+      "entities": [
+        {
+          "id": "66ca167e-ed18-4404-9461-3b17b87e98e5",
+          "entity": "Vulnerability and Threat Management Question",
+          "save_to": "C_VulnerabilityTMQ",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item]"
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "Questions relating to vulnerability scanning scope, frequency, and critical patch deployment timelines.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "27acd239-a5e8-4e1c-93bf-fd838f305abd",
+          "entity": "Vulnerability and Threat Management Answer",
+          "save_to": "C_VulnerabilityTMA",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The answer to the question.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Vulnerability and Threat Management",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": true,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'."
+      ]
+    },
+    {
+      "id": "69280d82-2490-40c8-95e0-50261e74e30d",
+      "type": "multiple_value",
+      "details": "Questions relating to Email Security such as measures and technologies used to protect email communications from unauthorized access, data breaches, phishing, malware, and other cyber threats. [Yes, No] are options, not answers. Do not return them or any structure that contains [Choice 1, Choice 2,..].",
+      "entities": [
+        {
+          "id": "83ff3052-b454-4a5e-999d-2ec5da976385",
+          "entity": "Email Security Question",
+          "save_to": "C_EmailQ",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item]"
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "The questions relating to Email Security ",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "be2e99e8-eab3-4ab9-b837-7a6573b0a7a5",
+          "entity": "Email Security Answer",
+          "save_to": "C_EmailA",
+          "type": "",
+          "rules": [],
+          "unique": false,
+          "options": [],
+          "criteria": "The answer associated to Email Security ",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Email Security QA",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'.",
+        "Always include the main question as a heading. If the query contains subquestions, append each one after the main question using the format: [Main Question]: [Subquestion]."
+      ]
+    },
+    {
+      "id": "1bf4c22c-557f-4efe-a28e-102afe968368",
+      "type": "multiple_value",
+      "details": "Questions and Answers relating to Data Protection such as data encryption, data loss prevention, backup systems, backup strategies, backup and recovery process, business critical systems, controls surrounding insured company's backups, backup solutions, data security controls, and classification and handling of sensitive data.",
+      "entities": [
+        {
+          "id": "3b436c37-6a8c-46ab-9592-e12431e99748",
+          "entity": "Data Protection Question",
+          "save_to": "C_DP_Q",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item] [Follow Up Question]",
+            "\"Check all that apply\" is never a valid question. It must always start with the actual question being asked before it.",
+            "Always include every follow-up questions."
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "dc16ed51-307e-4908-8cd7-06814fcc8345",
+          "entity": "Data Protection Answer",
+          "save_to": "C_DP_A",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Data Protection",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'."
+      ]
+    },
+    {
+      "id": "3b2b63fa-5a8e-48d3-8985-ba9d7d81b9c0",
+      "type": "multiple_value",
+      "details": "Covers vendor and managed service provider security controls, third-party risk assessments, access limitations, contractual security obligations, and supply chain cyber risk management. [Yes, No] are options, not answers. Do not return them or any structure that contains [Choice 1, Choice 2,..].",
+      "entities": [
+        {
+          "id": "4784aa41-7359-4ada-b21d-a1cee99f6b66",
+          "entity": "Third Party and Supply Chain Security Question",
+          "save_to": "C_ThirdPartySCSQ",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item]"
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "Questions relating to third-party/vendor access, MSP controls, vendor assessments, and contractual obligations.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "e6959d96-e75e-4c69-849a-7895864a2a46",
+          "entity": "Third Party and Supply Chain Security Answer",
+          "save_to": "C_ThirdPartySCSA",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The answer to the question.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Third Party and Supply Chain Security",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'."
+      ]
+    },
+    {
+      "id": "c6d25ae3-6687-4e0e-b11e-d48e198a8105",
+      "type": "multiple_value",
+      "details": "Covers how the organization governs, oversees, and funds cybersecurity, including designated officers (CISO/security team), budgets, enterprise-wide policies and procedures, adoption of frameworks/standards (ISO, NIST, CIS), and results of independent audits or risk assessments. [Yes, No] are options, not answers. Do not return them or any structure that contains [Choice 1, Choice 2,..].",
+      "entities": [
+        {
+          "id": "aa47546e-b0f3-49d3-80d8-69cedc30149e",
+          "entity": "Governance and Risk Management Question",
+          "save_to": "C_GovernanceRMQ",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item]"
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "Questions relating to the organization’s oversight, budgets, policies, frameworks, independent audits, and risk assessments.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "ebbabdfe-2119-42ac-9cf6-9493fcc18fc5",
+          "entity": "Governance and Risk Management  Answer",
+          "save_to": "C_GovernanceRMA",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The answer to the question.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Governance and Risk Management",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'."
+      ]
+    },
+    {
+      "id": "5964109e-7fde-43b2-95f2-8d78e5dd8917",
+      "type": "multiple_value",
+      "details": "Details of the audit logs and records section. [Yes, No] are options, not answers. Do not return them or any structure that contains [Choice 1, Choice 2,..].",
+      "entities": [
+        {
+          "id": "67b8cbf4-cea8-4ffb-a967-077e790387b3",
+          "entity": "Audit Logs and Records Question",
+          "save_to": "C_AuditLRQ",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item]"
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "The question asking about audit logs and records.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "16fe5c3d-4113-4400-a8e3-7da58b8d450d",
+          "entity": "Audit Logs and Records Answer",
+          "save_to": "C_AuditLRA",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The answer to the question asking about audit logs and records.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Audit Logs and Records",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'."
+      ]
+    },
+    {
+      "id": "c354b02e-1cb9-44d9-9eb0-45b9c7efab8e",
+      "type": "multiple_value",
+      "details": "Questions relating to multi-factor authentication (MFA) in general. [Yes, No] are options, not answers. Do not return them or any structure that contains [Choice 1, Choice 2,..].",
+      "entities": [
+        {
+          "id": "caec76b1-1537-4ac4-93a0-ed9b8dc7cca9",
+          "entity": "Multi-factor Authentication Question",
+          "save_to": "C_MFAQ",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item]"
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "The question asking about multi-factor authentication usage",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "abb767cc-8ba2-43b4-8690-776ce06c7782",
+          "entity": "Multi-factor Authentication Answer",
+          "save_to": "C_MFAA",
+          "type": "",
+          "rules": [
+            "If the value is a definition of terms relating to Multi-Factor Authentication, return N/A."
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "The answer to the question asking about multi-factor authentication usage.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "page_filter_blacklist": [],
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Multifactor Authentication QA",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'."
+      ]
+    },
+    {
+      "id": "2d2963f6-875c-44b3-8709-c89ce64cadbd",
+      "type": "multiple_value",
+      "details": "Covers organizational controls governing the initiation, modification, approval, and execution of financial transactions and funds transfers. Includes procedures to prevent unauthorized or fraudulent payments, such as controls requiring independent verification of changes to payment instructions or beneficiary bank account details using a secondary communication method (e.g., phone verification, callback confirmation, or other out-of-band validation) and dual authorization or approval by two authorized personnel before executing money transfers. Also includes payment approval workflows, separation-of-duties practices, and operational procedures ensuring that updates to payment details and outgoing transfers are validated and approved prior to release of funds.",
+      "entities": [
+        {
+          "id": "5962fc9d-9d38-4555-bf5c-21e6cf6937b2",
+          "entity": "Funds Transfer and Payment Authorization Controls Question",
+          "save_to": "C_FTPA_Q",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item] [Follow Up Question]",
+            "\"Check all that apply\" is never a valid question. It must always start with the actual question being asked before it.",
+            "Always include every follow-up questions."
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "1055870f-9fb0-490f-9183-ce98187c2a8b",
+          "entity": "Funds Transfer and Payment Authorization Controls Answer",
+          "save_to": "C_FTPA_A",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Funds Transfer and Payment Authorization Controls",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'."
+      ]
+    },
+    {
+      "id": "f70b6d66-5169-44f0-a7df-ad2f34ee957a",
+      "type": "multiple_value",
+      "details": "Questions relating to Security Awareness and Training such as employee training programs and phishing controls and simulations. [Yes, No] are options, not answers. Do not return them or any structure that contains [Choice 1, Choice 2,..].",
+      "entities": [
+        {
+          "id": "a60fbb66-af79-403a-a9b7-6435115be07a",
+          "entity": "Security Awareness and Training Question",
+          "save_to": "C_SATQ",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item]"
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "The question asking about Security Awareness and Training such as employee training programs and phishing controls and simulations.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "046f8e2a-6823-42fa-a4aa-1b8c5a274793",
+          "entity": "Security Awareness and Training Answer",
+          "save_to": "C_SATA",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The answer to the question asking about Security Awareness and Training such as employee training programs and phishing controls and simulations.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "page_filter_whitelist": [],
+        "page_filter_blacklist": [],
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Security Awareness and Training QA",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'."
+      ]
+    },
+    {
+      "id": "0a6c579b-6f27-4d34-b5d1-23d42ba2f6db",
+      "type": "multiple_value",
+      "details": "Covers how the organization inventories, tracks, and manages assets (hardware, software, OT, legacy/unsupported systems), and protects sensitive or regulated data (PII, PHI, PCI). Includes encryption practices, disposal, classification, end-to-end/payment card encryption, tokenization, and data retention/handling policies. [Yes, No] are options, not answers. Do not return them or any structure that contains [Choice 1, Choice 2,..].",
+      "entities": [
+        {
+          "id": "d94ebe73-08ed-4ccc-8939-1232e9d3d8aa",
+          "entity": "Asset and Data Management Question",
+          "save_to": "C_AssetDMQ",
+          "type": "",
+          "rules": [
+            "When extracting questions and answers from form fields, always include the full context from the main question stem. Example: \"Please check all controls surrounding the insured's backups: How frequently are backups run?\" NOT just: \"How frequently are backups run?\". Apply this to each sub-item under the main question, maintaining the full context in every question statement.",
+            "Question: [Full introductory text]: [Specific sub-item]"
+          ],
+          "unique": false,
+          "options": [],
+          "criteria": "Questions relating to asset inventory, unsupported/legacy system use, sensitive data storage, PCI compliance, encryption/tokenization, and data handling policies.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        },
+        {
+          "id": "593cf9e5-92a4-4de1-aeae-c2c31ef73fb7",
+          "entity": "Asset and Data Management  Answer",
+          "save_to": "C_AssetDMA",
+          "type": "",
+          "rules": null,
+          "unique": false,
+          "options": [],
+          "criteria": "The answer to the question.",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Asset and Data Management",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": [
+        "NEVER PULL FROM THE GLOSSARY AND APPENDIX SECTION",
+        "INCLUDE FOLLOW-UP QUESTION AND ANSWER, IF IT EXISTS.",
+        "In Checklist/Select all that apply cases, the details of each checkbox is the question and the checkbox itself is the answer. If the checkbox is not selected or it appears as '[ ]', it is considered 'No', if the checkbox has a selected checkmark or it may appear as '[X]', it is considered 'Yes'.",
+        "If single option question (e.g. Yes/No) is left unanswered, return 'Unanswered'.",
+        "If the checkbox is not selected, it appears as '[ ]'; if the checkbox has a selected checkmark, it may appear as '[X]' or '[/]'."
+      ]
+    }
+  ],
+  "variants": []
+}

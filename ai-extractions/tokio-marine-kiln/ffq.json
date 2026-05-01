@@ -1,0 +1,1872 @@
+{
+  "queries": [
+    {
+      "id": "b69f91b2-e53f-4946-a91a-974c83d77361",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "2f6a427a-babc-437a-8fff-8ee73aca7f19",
+          "entity": "<GROUND RULES>: \n1. Answer ONLY if the document explicitly provides the information.\n2. Do not use external knowledge. Only use the context provided to you.\n3. For PCI: extract only the value explicitly stated for \"Number of records in the custody of the organization by PCI (Payment Card Industry/Information).\" Do not use any other PCI-related value.\n4. If the exact answer cannot be found, return “Null”.\n</GROUND RULES>\n\n<CONTEXT>\nNumber of Records Stored: {{C_NumberOfPrivateOrSensitiveInformation}}\n</CONTEXT>\n\n<QUESTION> From the \"Number of Records Stored\" context only, how many records are explicitly stated for PII, PCI, PHI, and Biometric Data? </QUESTION>\n\n<OUTPUT>\nPersonally Identifiable Information (PII): <value>\nPayment Card Industry Information (PCI) : <value>\nProtected Health Information (PHI): <value>\nBiometric Data: <value>\n</OUTPUT>",
+          "save_to": "FF_UniqueRecords",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "PII Records, PHI Records, Biometric, PCI Records",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "b9cdfaad-5c22-4c51-bc0b-81e241360927",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "4e329316-f8ad-4e39-b2fb-91d46a027951",
+          "entity": "<CONTEXT>\n{{C_LHI_QA}}\n{{C_IncidentRR_QA}}\n</CONTEXT>\n\nHas the Applicant or any other person or organization proposed for this insurance received any complaints or written demands or been subject to any litigation involving the rendering or failure to render professional services?\n\nOnly use the context provided to you to answer the question, do not infer or interpret text. If the question is not asked or answered, absolutely return Null. Do not return N/A. Blank or “Unanswered” data is always equivalent to Null. If the context explicitly states Yes or No for that question, use it as-is and do not reinterpret it.\n\n<OUTPUT>\nYes/No/Null\n</OUTPUT>",
+          "save_to": "FF_ServicesLitigation",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Has the Applicant or any other person or organization proposed for this insurance received any complaints or written demands or been subject to any litigation involving the rendering or failure to render professional services?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "4ebfaf87-4a5d-4b82-8eee-af433baa6e17",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "87d04714-7ab5-4e14-9e61-9efa7b0c2017",
+          "entity": "<CONTEXT>\n{{C_LHI_QA}}\n{{C_IncidentRR_QA}}\n</CONTEXT>\n\nHas the Applicant or any other person or organization proposed for this insurance Received any complaints or written demands or been a subject in litigation  involving matters of privacy injury, breach of private information, network security,  defamation, content infringement, identity theft, denial of service attacks, computer  virus infections, theft of information, damage to third party networks or the ability  of third parties to rely on the Applicant’s network?\n\nOnly use the context provided to you to answer the question, do not infer or interpret text. If the question is not asked or answered, absolutely return Null. Do not return N/A. Blank or “Unanswered” data is always equivalent to Null. If the context explicitly states Yes or No for that question, use it as-is and do not reinterpret it.\n\n<OUTPUT>\nYes/No/Null \n</OUTPUT>",
+          "save_to": "FF_SecurityLitigation",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Has the Applicant or any other person or organization proposed for this insurance Received any complaints or written demands or been a subject in litigation involving matters of privacy injury, breach of private information, network security, defamation, content infringement, identity theft, denial of service attacks, computer virus infections, theft of information, damage to third party networks or the ability of third parties to rely on the Applicant’s network?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "cb62dcf0-03e5-412f-a4ef-8b148210d077",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "0bee0b9b-a867-49fa-b4ea-803763339244",
+          "entity": " <CONTEXT>\n{{C_LHI_QA}}\n{{C_IncidentRR_QA}}\n</CONTEXT>\n\nHas the Applicant or any other person or organization proposed for this insurance been the subject of any government action, investigation or other proceedings regarding any alleged violation of privacy law or regulation?\n\nOnly use the context provided to you to answer the question, do not infer or interpret text. If the question is not asked or answered, absolutely return Null. Do not return N/A.  Blank or “Unanswered” data is always equivalent to Null. If the context explicitly states Yes or No for that question, use it as-is and do not reinterpret it.\n\n<OUTPUT>\nYes/No/Null\n</OUTPUT>",
+          "save_to": "FF_PrivacyInvestigation",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Has the Applicant or any other person or organization proposed for this insurance been the subject of any government action, investigation or other proceedings regarding any alleged violation of privacy law or regulation?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "228ed4ce-7d45-47f0-96cd-ebe5084f9d63",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "118ff4f4-4537-4ae3-a91e-578264ba1c68",
+          "entity": "<CONTEXT>\n{{C_LHI_QA}}\n{{C_IncidentRR_QA}}\n</CONTEXT>\n\nHas the Applicant or any other person or organization proposed for this insurance Notified customers, clients or any third party of any security breach or privacy breach? \n\nOnly use the context provided to you to answer the question, do not infer or interpret text. If the question is not asked or answered, absolutely return Null. Do not return N/A. Blank or “Unanswered” data is always equivalent to Null. If the context explicitly states Yes or No for that question, use it as-is and do not reinterpret it.\n\n<OUTPUT>\nYes/No/Null\n</OUTPUT>",
+          "save_to": "FF_PrivacyBreachNotifs",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Has the Applicant or any other person or organization proposed for this insurance Notified customers, clients or any third party of any security breach or privacy breach?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "50ebabea-03ed-4607-8520-b31121219efe",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "8e08a641-cc84-4cc3-abcf-03f4c602835b",
+          "entity": "<CONTEXT>\n{{C_LHI_QA}}\n{{C_IncidentRR_QA}}\n</CONTEXT>\n\nHas the Applicant or any other person or organization proposed for this insurance Received any cyber extortion demand or threat?\n\nOnly use the context provided to you to answer the question, do not infer or interpret text. If the question is not asked or answered, absolutely return Null. Do not return N/A. Blank or “Unanswered” data is always equivalent to Null. If the context explicitly states Yes or No for that question, use it as-is and do not reinterpret it.\n\n<OUTPUT>\nYes/No/Null\n</OUTPUT>",
+          "save_to": "FF_CyberExtortion",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Has the Applicant or any other person or organization proposed for this insurance Received any cyber extortion demand or threat?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "92e79ee1-30d5-407d-a309-fa2bf45bacad",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "b222344a-2856-4204-b7ce-2cf422f8d1d6",
+          "entity": "<CONTEXT>\n{{C_LHI_QA}}\n{{C_IncidentRR_QA}}\n</CONTEXT>\n\nHas the Applicant or any other person/organization sustained any property damage or business or system interruption losses as a result of a cyber-attack?\n\nOnly use the context provided to you to answer the question, do not infer or interpret text. If the question is not asked or answered, absolutely return Null. Do not return N/A. Blank or “Unanswered” data is always equivalent to Null. If the context explicitly states Yes or No for that question, use it as-is and do not reinterpret it.\n\n\n<OUTPUT>\nYes/No/Null\n</OUTPUT>",
+          "save_to": "FF_CyberPropertyDamage",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Has the Applicant or any other person/organization sustained any property damage or business or system interruption losses as a result of a cyber-attack?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "ac0f342c-f4db-4406-824e-923e54dd46f8",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "48281d7d-1a5b-493e-b8f2-017172f35d39",
+          "entity": "<CONTEXT>\n{{C_LHI_QA}}\n{{C_IncidentRR_QA}}\n</CONTEXT>\n\nHas the Applicant or any other person or organization proposed for this insurance Sustained any losses due to wire transfer fraud, telecommunications fraud or phishing (theft of information) fraud?\n\nOnly use the context provided to you to answer the question, do not infer or interpret text. If the question is not asked or answered, absolutely return Null. Do not return N/A. Blank or “Unanswered” data is always equivalent to Null. If the context explicitly states Yes or No for that question, use it as-is and do not reinterpret it.\n\n<OUTPUT>\nYes/No/Null\n</OUTPUT>",
+          "save_to": "FF_FraudLosses",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Has the Applicant or any other person or organization proposed for this insurance Sustained any losses due to wire transfer fraud, telecommunications fraud or phishing (theft of information) fraud?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "bf2d914a-c69b-4d7e-8682-678a3c16526a",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "ca07050a-e0e7-4ebd-8292-2f782eebcc2f",
+          "entity": "<CONTEXT>\n{{C_LHI_QA}}\n{{C_IncidentRR_QA}}\n</CONTEXT>\n\nDoes the applicant or any person or organization have knowledge of any security breach, privacy breach, privacy-related event or incident or allegations of breach of privacy that may give rise to a claim?\n\nOnly use the context provided to you to answer the question, do not infer or interpret text. If the question is not asked or answered, absolutely return Null. Do not return N/A. Blank or “Unanswered” data is always equivalent to Null. If the context explicitly states Yes or No for that question, use it as-is and do not reinterpret it.\n\n<OUTPUT>\nYes/No/Null\n</OUTPUT>",
+          "save_to": "FF_KnowledgeClaims",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Does the applicant or any person or organization have knowledge of any security breach, privacy breach, privacy-related event or incident or allegations of breach of privacy that may give rise to a claim?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "ab573589-9374-4614-ae56-8b0bc7b593db",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "c36ca552-daae-4ea8-8840-4d62b5ee3c93",
+          "entity": "<CONTEXT>\n{{C_LHI_QA}}\n{{C_IncidentRR_QA}}\n</CONTEXT>\n\nIs the Applicant aware of any fact, circumstance, situation, event or Wrongful  Act which reasonably could give rise to a Cyber Event, Loss or Claim being made against them that would fall within the scope of the Policy for which the Applicant is applying?\n\nOnly use the context provided to you to answer the question, do not infer or interpret text. If the question is not asked or answered, absolutely return Null. Do not return N/A. Blank or “Unanswered” sub-fields never imply Yes. If the context explicitly states Yes or No for that question, use it as-is and do not reinterpret it.\n\n<OUTPUT>\nYes/No/Null\n</OUTPUT>",
+          "save_to": "FF_AwarenessCircumstances",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Is the Applicant aware of any fact, circumstance, situation, event or Wrongful  Act which reasonably could give rise to a Cyber Event, Loss or Claim being made against them that would fall within the scope of the Policy for which the Applicant is applying?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "57603ee7-3907-4ddf-baee-835ae2367313",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "a05db969-8a84-4766-ba41-bf53f8221192",
+          "entity": "<GROUND RULES>: \nOnly return an answer if the exact statement or equivalent wording is found in the text provided. Only use the context provided to you, do not infer or interpret text. If the specific question is not asked or answered, absolutely return Null. Do not return N/A.\n </GROUND RULES>\n\n<QUESTION> Are financial transaction and funds transfer procedures implemented in accordance with the following controls? </QUESTION>\n\n<CONTEXT>\n{{C_FTPA_QA}}\n</CONTEXT>\n\n<OUTPUT>\nChanges to payment instructions or beneficiary bank details are independently verified using a secondary communication method: <Yes/No/Null>\nMoney transfers require dual authorization from authorized personnel before execution: <Yes/No/Null>\n</OUTPUT>",
+          "save_to": "FF_MoneyTransfer",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Money Transfer controls in place?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "237fe539-2584-46b2-8eb3-fb20feba67a5",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "2ef9f7da-148c-4234-aae2-1613cca58d38",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n</GROUND_RULES>\n\nIdentity Access Management Question and Answer:\n<CONTEXT>\n{{C_IdentityAM_QA}}\n</CONTEXT>\n\nMFA Question and Answer:\n<CONTEXT>\n{{C_MFA_QA}}\n</CONTEXT>\n\nEmail Security Question and Answer:\n<CONTEXT>\n{{C_Email_QA}}\n</CONTEXT>\n\nBased on the Identity Access Management, MFA, and Email Security Question and Answer Variables, answer the questions:\n<QUESTIONS>\nIs Multi-Factor Authentication (MFA) required for all Remote Access: <Yes/No/Null>\nIs MFA required for off-network email access: <Yes/No/Null>\nIs MFA required for off-network Cloud Application Access: <Yes/No/Null>\nIs MFA required for emails accessed via a web-browser (web-based email): <Yes/No/Null>\n</QUESTIONS>\n\nReturn the answers in the same order, showing each question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_MFA",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "MFA for all remote access, MFA for email access",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "5771aa1e-3784-4e2c-9426-2530f6a3e454",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "2ef9f7da-148c-4234-aae2-1613cca58d38",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n</GROUND_RULES>\n\nIdentity Access Management Question and Answer:\n<CONTEXT>\n{{C_IdentityAM_QA}}\n</CONTEXT>\n\nMFA Question and Answer:\n<CONTEXT>\n{{C_MFA_QA}}\n</CONTEXT>\n\nVulnerability and Threat Management Question and Answer:\n<CONTEXT>\n{{C_VulnerabilityTM_QA}}\n</CONTEXT>\n\nNetwork Security and Monitoring Question and Answer:\n<CONTEXT>\n{{C_NetworkSecurityM_QA}}\n</CONTEXT>\n\nBased on the Identity Access Management, MFA, Vulnerability and Threat Management, and Network Security and Monitoring Question and Answer Variables, answer the questions:\n<QUESTIONS>\n- Does the insured use On-Premises Microsoft Exchange Servers: <Yes/No/Null>\n- Is Remote Desktop Protocol (RDP) Exposed to the Internet; ie. is there any externally visible/accessible RDP directly from the internet: <Yes/No/Null>\n</QUESTIONS>\n\nReturn the answers in the same order, showing each question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_RDP",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "RDP exposed to the internet?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "751336f9-b196-4e83-80a2-f86dd4920566",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "0d3939c5-9431-46a0-978e-400659c4a5ad",
+          "entity": "<CONTEXT>\n{{C_SAT_QA}}\n</CONTEXT>\n\n<QUESTIONS>\n1. Does the organization provide any phishing-related awareness or training activities (e.g., formal training, phishing simulations, campaigns, or similar initiatives) for employees?\n2. How frequently are any phishing-related awareness or training activities conducted, such as training sessions, simulated phishing exercises, campaigns, or other initiatives?\n</QUESTIONS>\n\n<INSTRUCTIONS>\n- Base your response only on the explicit questions asked and answers provided in the context.\n- Use only the context provided. Do not infer, interpret, summarize, or assume.\n- If the answer cannot be found explicitly in the context, return Null.\n- Do not return N/A.\n- Put exactly 1 question-answer pair on each line. Separate each question-answer pair by a new line.\n- Do not combine multiple question-answer pairs on one line.\n- Do not add bullets, numbering, explanations, or extra text.\n- Follow the exact format shown below.\n</INSTRUCTIONS>\n\n<OUTPUT_FORMAT>\nDoes the organization provide any phishing-related awareness or training activities (e.g., formal training, phishing simulations, campaigns, or similar initiatives) for employees: <Answer/Null>\nHow frequently are any phishing-related awareness or training activities conducted, such as training sessions, simulated phishing exercises, campaigns, or other initiatives: <Answer/Null>\n</OUTPUT_FORMAT>",
+          "save_to": "FF_PhishingTraining",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Phishing training",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "8347fd26-1a20-45de-8a2e-4b1e7b53756d",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "2df72eb8-3179-4d3a-ae6b-e1f6e7767624",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n</GROUND_RULES>\n\nIdentity Access Management Question and Answer:\n<CONTEXT>\n{{C_IdentityAM_QA}}\n{{C_DA_QA}}\n</CONTEXT>\n\nBased on the Identity Access Management Question and Answer Variables, answer the question:\n<QUESTIONS>\nAre all Local admin accounts Enrolled in a PAM Tool or does the insured utilise Microsoft local admin password solution (LAPS) tool: <Yes/No/Null>\n</QUESTIONS>\n\nReturn the answer showing the question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_local_admin_1",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Local admin passwords unique or use LAPS?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "bbb7279e-f78f-444e-934b-9e5b08085a72",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "c924582b-40d7-4a8b-9e17-fa574b2710ac",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n</GROUND_RULES>\n\nIdentity Access Management Question and Answer:\n<CONTEXT>\n{{C_IdentityAM_QA}}\n</CONTEXT>\n\nMFA Question and Answer:\n<CONTEXT>\n{{C_MFA_QA}}\n</CONTEXT>\n\nBased on the Identity Access Management and Multifactor Authentication (MFA) Question and Answer Variables, answer the question:\n<QUESTIONS>\nIs MFA Required for privileged accounts: <Yes/No/Null>\nIs MFA Required for Every Login Attempt for any additional privileged accounts outside the DA group: <Yes/No/Null>\n</QUESTIONS>\n\nReturn the answer showing the question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_MFA_4",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "MFA for privileged accounts",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "b75a7637-5c73-4fa0-b0da-6129f5ce506d",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "2f883fe3-22f9-448c-86bf-ba592f2f430e",
+          "entity": "<GROUND RULES>: \n1. Only return an answer if the exact statement or equivalent wording is found in the text provided. Only use the context provided to you, do not infer or interpret text. endpoint detection and response (EDR) must be explicitly found in the statements.\n2. Treat distinct industry terms as mutually exclusive. If the question asks for \"Concept A\" and the text only contains \"Concept B\"—even if they are closely related fields—you must answer \"Null\". \n3. Do not infer from Vendors used (e.g. Crowdstrike, Sophos, Arctic Wolf, CEG)\n</GROUND RULES>\n\n<CONTEXT>\n{{C_EndpointDS_QA}}\n{{C_NetworkSecurityM_QA}}\n</CONTEXT>\n\n<QUESTIONS>\nDoes the applicant use an endpoint detection and response (EDR) tool?\n</QUESTION>\n\n<OUTPUT>\n<Yes/No/Null> (EDR Provider: <value>)\n</OUTPUT>",
+          "save_to": "FF_EDRProduct",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "EDR Product deployed",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "89c62a37-a9c8-48d5-966c-d503cdbe3501",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "6556e91a-c55e-4689-b3d9-de2781661217",
+          "entity": "<CONTEXT>\n{{C_NetworkSecurityM_QA}}\n{{C_EndpointDS_QA}}\n</CONTEXT>\n\nWhat capabilities are included in the insured company's Security Operations Center (SOC) operations? \n\nCompletely ignore all mentions of security tools, software products, platforms, or vendors (e.g., EDR, XDR, IPS, SIEM, CrowdStrike, Darktrace, Sentinel, etc.). Do not use them as evidence. Do not reference them. Do not infer capabilities based on them. If a value depends on these tools, always return Null. Do not return N/A. Use the provided context to answer the question. The context must explicitly contain an answer you can reference, do not infer from other answers. Only return ‘Y’ or ‘N’ if the exact capability itself is explicitly named in the context using the same or near-identical wording. Otherwise return ‘Null’.\n\n<INSTRUCTIONS>\n- Base your response only on the explicit questions asked and answers provided in the context.\n- Use only the context provided. Do not infer, interpret, summarize, or assume.\n- If the answer cannot be found explicitly in the context, return Null.\n- Do not return N/A.\n- Put exactly 1 question-answer pair on each line.\n- Do not combine multiple question-answer pairs on one line.\n- Do not add bullets, numbering, explanations, or extra text.\n- Follow the exact format shown below.\n</INSTRUCTIONS>\n\n<OUTPUT>\n24/7 operations: <Y/N/Null>\nIncident response, containment, and remediation capabilities: <Y/N/Null>\nContinuous process improvement for SOC workflows and tools: <Y/N/Null>\n</OUTPUT>",
+          "save_to": "FF_SOCCapabilities",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "24/7 SOC or MDR?",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "e07ebdab-76ea-4b85-9355-8a321dffab20",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "314736a9-1a32-4912-b2dd-e529c6775bea",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n2. If the document explicitly distinguishes between different environment types (e.g., Internet-Facing vs. Internal), separate the answers accordingly. Format: '<Question>: <Environment Type 1>: <Answer 1/Null>; <Environment Type 2>: <Answer 2/Null>'. Only report environment types with explicit information in the context.\n</GROUND_RULES>\n\nVulnerability Management Question and Answer:\n<CONTEXT>\n{{C_VulnerabilityTM_QA}}\n</CONTEXT>\n\nAsset Management Question and Answer:\n<CONTEXT>\n{{C_AssetDM_QA}}\n</CONTEXT>\n\nApplication Security Question and Answer:\n<CONTEXT>\n{{C_AS_QA}}\n</CONTEXT>\n\nBased on the Vulnerability Management, Asset Management, and Application Security Question and Answer Variables, answer the questions:\n<QUESTIONS>\nWhat is the percentage of the Environment that is Covered by Vulnerability Scanning: <Answer/Null>\nWhat is the frequency of Vulnerability Scanning: <Answer/Null>\nWhat is the frequency of patching: <Answer/Null>\nHow quickly are Critical Patches Deployed in days: <Answer/Null>\nIs there any use of Un-Supported or Legacy Systems within the network: <Yes/No/Null>\n</QUESTIONS>\n\nReturn the answers in the same order, showing each question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_EDR_2",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Patching cadence",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "51d3a0aa-97a6-4157-8fee-24dc8714412f",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "ca3795e6-b148-48e8-903f-3cc1c5d4fd63",
+          "entity": "<GROUND RULES>: \nOnly return an answer if the exact statement or equivalent wording is found in the text provided. Only use the context provided to you, do not infer or interpret text. \n </GROUND RULES>\n\n<QUESTION> At minimum, how often does the insured company run backup processes for critical systems and essential operational data? </QUESTION>\n\n<CONTEXT>\n{{C_DP_QA}}\n{{C_IncidentRR_QA}}\n</CONTEXT>\n\n<OUTPUT>\nDaily\nWeekly\nMonthly\nOther\nNull\n</OUTPUT>",
+          "save_to": "FF_BackupCadence",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Backup cadence",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "e20ed633-116b-44c0-9223-6f9ec801cd2a",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "23277c81-6c8e-4ed4-8da2-d28b66e76d6d",
+          "entity": "<CONTEXT>\n{{C_DP_QA}}\n{{C_IncidentRR_QA}}\n</CONTEXT>\n\n<QUESTION>\nWhich of the following backup types does the insured company include in its backup processes?\n</QUESTION>\n\nCompletely ignore all mentions of security tools, software products, platforms, or vendors (e.g., EDR, XDR, IPS, SIEM, CrowdStrike, Darktrace, Sentinel, etc.). Do not use them as evidence. Do not reference them. Do not infer capabilities based on them. If a value depends on these tools, always return Null. Do not return N/A. The context must explicitly contain an answer you can reference, do not infer from other answers. Treat “Corporate network” as onsite, regular backups, “Cloud Service” as offsite, regular backups (Cloud or Continuity of Operations Site), and “Offline” as offline (archive) backups. Return ‘Y’ only if the mapped backup type is explicitly included or selected in the context. Return ‘N’ only if the context explicitly says it is not included, or selects “None of the above/Don’t know.” Otherwise return ‘Null’.\n\n<OUTPUT>\nCorporate network: <Y/N/Null>\nCloud Service: <Y/N/Null>\nOffline: <Y/N/Null>\n</OUTPUT>",
+          "save_to": "FF_BackupTypes",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Backup types",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "ce4c8887-0a17-4fc8-adfb-3e429d3dac25",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "2ef9f7da-148c-4234-aae2-1613cca58d38",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n</GROUND_RULES>\n\nMFA Question and Answer Variables:\n<CONTEXT>\n{{C_MFA_QA}}\n</CONTEXT>\n\nBased on the MFA Q&A Variable, answer the question:\n<QUESTIONS>\nWhich type of MFA is in use: <Answer/Null>\n</QUESTIONS>\n\nReturn the answer showing the question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_MFA_TYPE",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "4633f1ca-375f-4dab-af23-a06ef10fdd52",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "e5d3e1b5-a2b1-434d-b1f9-8bc382cbbb41",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n</GROUND_RULES>\n\nDomain Administrators Question and Answer:\n<CONTEXT>\n{{C_DA_QA}}\n</CONTEXT>\n\nMFA:\n<CONTEXT>\n{{C_MFA_QA}}\n</CONTEXT>\n\nIdentity and Access Management Question and Answer:\n<CONTEXT>\n{{C_IdentityAM_QA}}\n</CONTEXT>\n\nBased on the Domain Administrators, MFA, and Identity and Access Management Q&A Variables, answer the question:\n<QUESTIONS>\nWhich PAM Tool is Used: <Answer/Null>\n</QUESTIONS>\n\nReturn the answer showing the question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_PAMTools",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "e85c279d-14c6-46bc-ae50-c13aee2d195b",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "78807804-4efb-4cdd-b72d-cb1461c08d26",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n2. Do not assume domain administrators are enrolled in PAM unless explicitly stated.\n</GROUND_RULES>\n\nDomain Administrators Question and Answer:\n<CONTEXT>\n{{C_DA_QA}}\n</CONTEXT>\n\nMFA Question and Answer:\n<CONTEXT>\n{{C_MFA_QA}}\n</CONTEXT>\n\nIdentity and Access Management Question and Answer:\n<CONTEXT>\n{{C_IdentityAM_QA}}\n</CONTEXT>\n\nBased on the Domain Administrators, MFA, and Identity and Access Management Q&A Variables, answer the questions:\n<QUESTIONS>\nAre Domain admin accounts enrolled in a privileged access management (PAM) tool: <Yes/No/Null>\nIs MFA Required for Every domain admin Login Attempt: <Yes/No/Null>\n</QUESTIONS>\n\nReturn the answers in the same order, showing each question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_domain_admin",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "b51a6aa4-98f6-434d-adcd-dc55ef8b40ef",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "868c863a-de9b-4f4d-97a4-f6f29cfef21c",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n2. Domain administrative accounts are NOT privileged service accounts.\n3. Do not assume password requirements from examples within questions.\n</GROUND_RULES>\n\nIdentity Access Management Question and Answer:\n<CONTEXT>\n{{C_IdentityAM_QA}}\n</CONTEXT>\n\nMFA Question and Answer:\n<CONTEXT>\n{{C_MFA_QA}}\n</CONTEXT>\n\nDomain Administrators Question and Answer:\n<CONTEXT>\n{{C_DA_QA}}\n</CONTEXT>\n\nBased on the Identity Access Management, MFA, and Domain Administrators Question and Answer Variables, answer the questions:\n<QUESTIONS>\nWhat is the minimum password length requirements for domain administrative account: <Answer/Null>\nWhat is the password rotation frequency in days for domain administrative accounts: <Answer/Null>\n</QUESTIONS>\n\nReturn the answers in the same order, showing each question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_domain_admin_password",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "74666c15-36bb-4cba-8db1-9c814d2638c4",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "868c863a-de9b-4f4d-97a4-f6f29cfef21c",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n2. Statements about the OT environment apply ONLY to the OT environment and cannot be generalized to IT systems.\n</GROUND_RULES>\n\nIdentity Access Management Question and Answer:\n<CONTEXT>\n{{C_IdentityAM_QA}}\n</CONTEXT>\n\nNetwork Security Question and Answer:\n<CONTEXT>\n{{C_NetworkSecurityM_QA}}\n</CONTEXT>\n\nDomain Administrators Question and Answer:\n<CONTEXT>\n{{C_DA_QA}}\n</CONTEXT>\n\nBased on the Identity Access Management, Network Security, and Domain Administrators Question and Answer Variables, answer the questions:\n<QUESTIONS>\nAre Domain Admin accounts limited to being able to authenticate only to the Domain controller (DC): <Yes/No/Null>\nDoes the Domain Controller (DC) only host active directory (AD) services and no additional services: <Yes/No/Null>\nAre alerts sent to a Security Information and Event Management (SIEM) centre to log any Domain Admin (DA) group Changes: <Yes/No/Null>\n</QUESTIONS>\n\nReturn the answers in the same order, showing each question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_domain_admin_2",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "14059946-9fbd-4cc2-9885-9ec97758cccb",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "2df72eb8-3179-4d3a-ae6b-e1f6e7767624",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n</GROUND_RULES>\n\nIdentity Access Management Question and Answer:\n<CONTEXT>\n{{C_IdentityAM_QA}}\n</CONTEXT>\n\nBased on the Identity Access Management Question and Answer Variables, answer the question:\n<QUESTIONS>\nAre Unique Credentials Always Used for local admin accounts: <Yes/No/Null>\n</QUESTIONS>\n\nReturn the answer showing the question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_local_admin_unique_credentials",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "ae7525f3-03eb-42fe-9268-de6a9941fe26",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "69afb31b-9797-48bd-a26f-e57dcce9142b",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n</GROUND_RULES>\n\nIdentity Access Management Question and Answer:\n<CONTEXT>\n{{C_IdentityAM_QA}}\n</CONTEXT>\n\nDomain Administrator Question and Answer:\n<CONTEXT>\n{{C_DA_QA}}\n</CONTEXT>\n\nBased on the Identity Access Management and Domain Administrator Question and Answer Variables, answer the questions:\n<QUESTIONS>\nAre all service accounts Enrolled in PAM Tool: <Yes/No/Null>\nWhat is the Number of Service Accounts with Domain Admin Privileges: <Answer/Null>\nHow often are Service Accounts audited: <Answer/Null>\nWhat is the Minimum Password Length for service accounts: <Answer/Null>\nWhat is the Password Rotation Frequency for service accounts: <Answer/Null>\n</QUESTIONS>\n\nReturn the answers in the same order, showing each question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_service_accounts",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": true,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "b899ac5b-8922-42f2-8e65-896e960e0ce7",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "69afb31b-9797-48bd-a26f-e57dcce9142b",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n2. Statements about the OT environment apply ONLY to the OT environment and cannot be generalized to IT systems.\n</GROUND_RULES>\n\nIdentity Access Management Question and Answer:\n<CONTEXT>\n{{C_IdentityAM_QA}}\n</CONTEXT>\n\nNetwork Security Question and Answer:\n<CONTEXT>\n{{C_NetworkSecurityM_QA}}\n</CONTEXT>\n\nAudit Logs and Records Question and Answer:\n<CONTEXT>\n{{C_AuditLR_QA}}\n</CONTEXT>\n\nEndpoint and Device Security Question and Answer:\n<CONTEXT>\n{{C_EndpointDS_QA}}\n</CONTEXT>\n\nBased on the Identity Access Management, Network Security, Audit Logs and Records, and Endpoint and Device Security Question and Answer Variables, answer the questions:\n<QUESTIONS>\nIs Interactive Login Disabled for service accounts: <Yes/No/Null>\nDoes the SIEM Monitor Service Account Activity: <Yes/No/Null>\n</QUESTIONS>\n\nReturn the answers in the same order, showing each question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_service_accounts_2",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "604a4b62-0f1c-410e-9ef6-de178a0fc401",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "c924582b-40d7-4a8b-9e17-fa574b2710ac",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n</GROUND_RULES>\n\nIdentity Access Management Question and Answer:\n<CONTEXT>\n{{C_IdentityAM_QA}}\n</CONTEXT>\n\nDomain Administrator Question and Answer:\n<CONTEXT>\n{{C_DA_QA}}\n</CONTEXT>\n\nBased on the Identity Access Management and Domain Administrator Question and Answer Variables, answer the questions:\n<QUESTIONS>\nAre any other privileged accounts included in the PAM Tool implementation outside the Domain Administrative (DA) group: <Yes/No/Null>\nWhat is the Minimum Password Length for any additional privileged accounts outside the Domain Administrative (DA) group: <Answer/Null>\nWhat is the Password Rotation Frequency for any additional privileged accounts outside the Domain Administrative (DA) group: <Answer/Null>\n</QUESTIONS>\n\nReturn the answers in the same order, showing each question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_privileged_accounts",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "404bc8d9-254d-4999-8525-534b660d6263",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "63148955-a239-4e85-87ee-4c1f48c7d2b8",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n2. Do NOT assume other security tools are used as the Endpoint Detection and Response (EDR) tool unless explicitly stated to be.\n3. If the document explicitly states that all workstations or servers are monitored by the EDR tool, return the value as 100%.\n</GROUND_RULES>\n\nEndpoint and Device Security Question and Answer:\n<CONTEXT>\n{{C_EndpointDS_QA}}\n</CONTEXT>\n\nNetwork Security Question and Answer:\n<CONTEXT>\n{{C_NetworkSecurityM_QA}}\n</CONTEXT>\n\nBased on Endpoint and Device Security and Network Security Question and Answer Variables, answer the questions:\n<QUESTIONS>\nWhich Endpoint Detection and Response (EDR) Tool is Used: <Answer/Null>\nOn what percentage of the workstations is monitored by the EDR tool: <Answer/Null>\nOn what percentage of the Servers is monitored by the EDR tool: <Answer/Null>\nIs the EDR tool able to contain and isolate threats autonomously? Sometimes referred to as Block Mode: <Yes/No/Null>\n</QUESTIONS>\n\nReturn the answers in the same order, showing each question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_EDR",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "6e395f46-f2dc-4c4b-bee1-c1c06868b1dd",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "e9b2a02a-5f4d-4120-862d-3cbccf220ecf",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n</GROUND_RULES>\n\nIncident Response and Recovery Question and Answer:\n<CONTEXT>\n{{C_IncidentRR_QA}}\n</CONTEXT>\n\nAsset and Data Management Question and Answer:\n<CONTEXT>\n{{C_AssetDM_QA}}\n</CONTEXT>\n\nBased on the Incident Response and Recovery and Asset and Data Management Question and Answer Variables, answer the questions:\n<QUESTIONS>\nAre Backups Physically Disconnected from the network and completely offline: <Yes/No/Null>\nAre the backups configured to be Immutable: <Yes/No/Null>\n</QUESTIONS>\n\nReturn the answers in the same order, showing each question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_backups_1",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "997c82de-fab8-4568-a0ec-363a30acdf01",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "e9b2a02a-5f4d-4120-862d-3cbccf220ecf",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n</GROUND_RULES>\n\nMultifactor Authentication (MFA) Question and Answer:\n<CONTEXT>\n{{C_MFA_QA}}\n</CONTEXT>\n\nBased on the Multifactor Authentication (MFA) Question and Answer Variables, answer the question:\n<QUESTIONS>\nIs MFA Required to Access any backup software or solution: <Yes/No/Null>\n</QUESTIONS>\n\nReturn the answer showing the question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_backups_2",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "d98f446d-af71-4b40-acc1-a0b3e6d2d210",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "e9b2a02a-5f4d-4120-862d-3cbccf220ecf",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n</GROUND_RULES>\n\nAsset Management Question and Answer:\n<CONTEXT>\n{{C_AssetDM_QA}}\n</CONTEXT>\n\nNetwork Security Question and Answer:\n<CONTEXT>\n{{C_NetworkSecurityM_QA}}\n</CONTEXT>\n\nBased on the Asset Management and Network Security Question and Answer Variables, answer the question:\n<QUESTIONS>\nWhat is the Minimum Level of IT- Operational Technology (OT) Segregation (VLAN, air gapped, none, etc): <Answer/Null>\n</QUESTIONS>\n\nReturn the answer showing the question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_minimum_security",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "a35986ed-2584-40c6-9619-d9f999ef491a",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "6ff0f2d6-9375-4f2c-a95a-ed231019c31e",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n2. The MFA must be explicitly required  for remote access to OT environment, otherwise return Null.\n</GROUND_RULES>\n\nThird Party Security Question and Answer:\n<CONTEXT>\n{{C_ThirdPartySCS_QA}}\n</CONTEXT>\n\nMFA Question and Answer:\n<CONTEXT>\n{{C_MFA_QA}}\n</CONTEXT>\n\nBased on the Third Party Security and Multifactor Authentication (MFA) Question and Answer Variables, answer the question:\n<QUESTIONS>\nIs MFA Required for Remote Access to the OT environment: <Yes/No/Null>\n</QUESTIONS>\n\nReturn the answer showing the question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_MFA_3",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "eb545aee-b976-4451-a94a-e10534577b93",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "6ff0f2d6-9375-4f2c-a95a-ed231019c31e",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n</GROUND_RULES>\n\nOther Preventative and Technical Controls Question and Answer:\n<CONTEXT>\n{{C_OtherPreventativeTC_QA}}\n</CONTEXT>\n\nAsset and Data Management Question and Answer:\n<CONTEXT>\n{{C_AssetDM_QA}}\n</CONTEXT>\n\nBased on the Other Preventative and Technical Controls and Asset and Data Management Question and Answer Variables, answer the question:\n<QUESTIONS>\nWhat is the Removable Device Policy for the OT environment: <Answer/Null>\n</QUESTIONS>\n\nReturn the answer showing the question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_removable",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "1b90f2c2-11e9-43f3-84bd-3f51a861afe5",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "6ff0f2d6-9375-4f2c-a95a-ed231019c31e",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer. \n2. The end-of-life or unsupported legacy system must explicitly be used in 'OT network', otherwise return Null.\n</GROUND_RULES>\n\nAsset and Data Management Question and Answer:\n<CONTEXT>\n{{C_AssetDM_QA}}\n</CONTEXT>\n\nVulnerability and Threat Management Question and Answer:\n<CONTEXT>\n{{C_VulnerabilityTM_QA}}\n</CONTEXT>\n\nBased on the Asset and Data Management and Vulnerability and Threat Management Question and Answer Variables, answer the question:\n<QUESTIONS>\nIs there use of Un-Supported or Legacy Systems in the OT Network: <Yes/No/Null>\n</QUESTIONS>\n\nReturn the answer showing the question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_legacy_systems",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "456e4c85-35cf-47ca-99c6-53e9fd85ed1b",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "527bbdfe-4b9f-4fca-8049-db55178ee09d",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n2. Payment Card Data includes information from all types of cards used for payments (e.g., credit card data, debit card data, charge card data, prepaid card data, and gift card data).\n3. Do not return N/A.\n4. Put exactly 1 question-answer pair on each line.\n5. Do not combine multiple question-answer pairs on one line.\n6. Do not add bullets, numbering, explanations, or extra text.\n</GROUND_RULES>\n\nAsset and Data Management Question and Answer:\n<CONTEXT>\n{{C_AssetDM_QA}}\n</CONTEXT>\n\nBased on the Asset and Data Management Question and Answer Variables, answer the questions:\n<QUESTIONS>\nIs the insured Payment Card Information (PCI) compliant: <Yes/No/Null>\nFor all Payment Card Information data does the ensured use end to end encryption and or Point to point encryption: <Yes/No/Null>\nDoes the insured store any Payment Card Data or is it limited to tokenization or other security measures: <Yes/No/Null>\n</QUESTIONS>\n\nReturn the answers in the same order, showing each question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_PCI",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": true,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": null,
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "b78958af-2535-4887-b150-8205ae3af887",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "f078e780-8287-4045-9587-cb9834a532e5",
+          "entity": "<GROUND_RULES>\n1. Base your response ONLY on information explicitly stated in the provided context. Do NOT infer, deduce, or assume information that is not directly stated. Answer Null if the specific question is not addressed in the context, the answer is ambiguous, related information exists but doesn't directly answer the question, or you would need to make assumptions to answer.\n2. Return a semicolon delimited list of countries or regions where the insured operates or where their teams, offices, or operations are located. If multiple states or provinces of a country are present, include the country in the list only.\n</GROUND_RULES>\n\nRegions Question and Answer:\n<CONTEXT>\nQ: What are the regions where the insured operates?\nA: {{C_RegionOfOperations_A}}\n</CONTEXT>\n\nBased on the Regions Question and Answer Variable, answer the question:\n<QUESTIONS>\nRegion of Operations: <Answer/Null>\n</QUESTIONS>\n\nReturn the answer showing the question followed by its corresponding answer.\n\n<EXAMPLES>\nDoes the insured encrypt sensitive or private data at rest: Yes\nDoes the insured encrypt sensitive or private data in transit: Null\n</EXAMPLES>",
+          "save_to": "FF_RegionOfOperations",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": ""
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Region of Operations",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "2528710a-8cd3-4039-996a-da084d4081a1",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "f5be8443-c851-4993-a76f-af39fbe0ed81",
+          "entity": "<GROUND RULES>: \n1. Only return an answer if the exact statement or equivalent wording is found in the text provided. Only use the context provided to you, do not infer or interpret text. Managed Detection and Response (MDR) must be explicitly found in the statements.\n2. Treat distinct industry terms as mutually exclusive. If the question asks for \"Concept A\" and the text only contains \"Concept B\"—even if they are closely related fields—you must answer \"Null\". \n3. Do not infer from Vendors used (e.g. Crowdstrike, Sophos, Arctic Wolf, CEG)\n</GROUND RULES>\n\n<CONTEXT>\n{{C_EndpointDS_QA}}\n{{C_NetworkSecurityM_QA}}\n</CONTEXT>\n\n<QUESTIONS>\nDoes the applicant use a Managed Detection and Response (MDR) Solution? \n</QUESTION>\n\n<OUTPUT>\n<Yes/No/Null> (MDR Provider: <value>)\n</OUTPUT>",
+          "save_to": "FF_MDRProduct",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "MDR Product",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "ffe623ae-c855-4d7d-b5a5-fcdbd5874f12",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "0b87cdcb-8b33-402b-bf0a-fdf8d4772d24",
+          "entity": "<GROUND RULES>: \nOnly return an answer if the exact statement or equivalent wording is found in the text provided. Only use the context provided to you, do not infer or interpret text. If the specific question is not asked or answered, absolutely return Null. Do not return N/A.\n </GROUND RULES>\n\n<QUESTION> Are local administrator passwords configured according to the following security controls? </QUESTION>\n\n<CONTEXT>\n{{C_EndpointDS_QA}}\n{{C_NetworkSecurityM_QA}}\n</CONTEXT>\n\n<OUTPUT>\nLocal administrator passwords are unique for each endpoint or system: <Yes/No/Null>\nLocal administrator passwords are centrally managed using Microsoft Local Administrator Password Solution (LAPS) or an equivalent privileged access management solution: <Yes/No/Null>\n</OUTPUT>",
+          "save_to": "FF_LocalAdminPasswords",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Local Admin Passwords",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "3bda7b81-9c47-490c-ad90-1eea6d69b0ab",
+      "type": "column_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "e8c7ee7a-ba2f-41d6-aaad-d436783a530d",
+          "entity": "<GROUND RULES>: \nOnly return an answer if the exact statement or equivalent wording is found in the text provided. Only use the context provided to you, do not infer or interpret text. If the specific question is not asked or answered, absolutely return Null. Do not return N/A.\n </GROUND RULES>\n\n<QUESTION> Is Remote Desktop Protocol (RDP) configured in accordance with the following security controls? </QUESTION>\n\n<CONTEXT>\n{{C_NetworkSecurityM_QA}}\n{{C_EndpointDS_QA}}\n</CONTEXT>\n\n<OUTPUT>\nRemote Desktop Protocol (RDP) is not directly exposed to the public internet: <Yes/No/Null>\nRemote Desktop access is restricted through secure access methods such as a Virtual Private Network (VPN), Zero Trust Network Access (ZTNA), or a secure remote access gateway: <Yes/No/Null>\n</OUTPUT>",
+          "save_to": "FF_RDPControls",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "RDP",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    }
+  ],
+  "variants": []
+}

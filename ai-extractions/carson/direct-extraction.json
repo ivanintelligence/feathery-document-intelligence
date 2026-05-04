@@ -3,7 +3,7 @@
     {
       "id": "d1be4e86-6431-4aee-9a86-1f2624460d57",
       "type": "multiple_value",
-      "details": "Extract asset or holding-level financial data only from financial or investment statements. Do not create financial statement results from tax forms such as 1099-INT, 1099-DIV, 1099-B, W-2, or IRS forms. Do not create financial statement results from life insurance or annuity policy statements. Create one result per security, investment, fund, property holding, account, or cash balance. Use exact values shown. Treat fair value, market value, current value, investment value, holdings value, cash balance, account value, total assets, or total investments as asset values when clearly tied to financial/investment assets. If the same asset value appears in multiple sections, extract it once using the most detailed holding-level row; Do not duplicate summary, total, or repeated statement values. Leave blank if not shown.",
+      "details": "Extract asset or holding-level financial data only from financial or investment statements. Do not create financial statement results from tax forms such as 1099-INT, 1099-DIV, 1099-B, W-2, or IRS forms. Do not create financial statement results from life insurance or annuity policy statements. Create one result only for a specific named security, investment, fund, property holding, account, or cash balance shown in detailed holding-level sections such as Investment Detail, Holdings, Positions, Schedule of Investments, or Portfolio Holdings. Do not create results from Asset Composition, Overview, Allocation, Summary, Change in Account Value, account total, asset-class total, or category-level rows. Generic labels such as Fixed Income, Equities, Bond Funds, Equity Funds, ETFs, Other Assets, Total Assets, or Total Account Value are summary categories, not account names. Use exact values shown. Treat fair value, market value, current value, investment value, holdings value, cash balance, or account value as asset values only when tied to a specific named holding, security, fund, account, or cash balance. If the same asset value appears in multiple sections, extract it once using the most detailed holding-level row. Do not duplicate summary, total, or repeated statement values. Leave blank if not shown.",
       "entities": [
         {
           "id": "4dbf66a7-8fbe-471a-91a4-c3aa5d10ed8b",
@@ -19,7 +19,9 @@
           "select_multiple": false,
           "data_validation_rules": [
             "Do not use owner, annuitant, insured, client, or taxpayer names as the account name unless the document explicitly labels that person’s name as the account/investment name.",
-            "Do not use Management Strategy, Model, Allocation, or Benchmark fields as the account name."
+            "Do not use Management Strategy, Model, Allocation, or Benchmark fields as the account name.",
+            "If a holding name is followed by a ticker, symbol, CUSIP, or security identifier after a colon, return only the holding name as the Account Name. Remove only the identifier text, not nearby descriptive holding-name lines.",
+            "For securities with wrapped description lines, do not stop at the first line; combine descriptive lines that describe the same holding, even if a SYMBOL or CUSIP line appears between them, but exclude the identifier/rating text itself. For equities or ADRs, include unlabeled wrapped share-description lines, such as “1 NEW YORK SH REP 1 ORD,” even when they appear after a SYMBOL line."
           ]
         },
         {
@@ -29,7 +31,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Type or classification of the account, investment, asset, or holding as shown in the document. Do not shorten combined terms such as “Cash and cash equivalents” or “529 Education Savings.” Examples may include brokerage, IRA, trust, 401(k), 529 education savings, cash and cash equivalents, margin, equity, bond, mutual fund, ETF, annuity, real estate entity, fund, or security.",
+          "criteria": "Type or classification of the account, investment, asset, or holding as shown in the document. Preserve bracketed or parenthetical qualifiers shown in the section header or label, such as “[Non-Sweep].” When a combined section header contains multiple types, use the more specific row or subsection label as the Account Type. Do not shorten combined terms such as “Cash and cash equivalents” or “529 Education Savings.” Examples may include brokerage, IRA, trust, 401(k), 529 education savings, cash and cash equivalents, margin, equity, bond, mutual fund, ETF, annuity, real estate entity, fund, or security.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -94,7 +96,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Per unit or per share price.",
+          "criteria": "Current market price per unit or share. Use values from Market Price, Price, or Current Price fields only. Do not use Cost Per Unit, Cost Per Share, purchase price, or acquisition cost as Price. If Market Price is N/A or not shown, return Null.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -120,7 +122,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Cost basis shown for the holding, investment, security, account, or asset.",
+          "criteria": "Cost basis shown for the holding, investment, security, account, or asset. Use Cost Basis, Total Cost Basis, or lot-level cost basis when clearly tied to the same holding. If Adjusted Cost Basis is N/A but Cost Basis is shown elsewhere for that holding, return the shown Cost Basis.",
           "examples": [],
           "required": false,
           "default_option": "",

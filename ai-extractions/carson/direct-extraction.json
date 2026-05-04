@@ -104,7 +104,7 @@
           "id": "662e604c-c256-4782-a00d-a8722057ab40",
           "entity": "Asset Value",
           "save_to": "assetValue",
-          "type": "number",
+          "type": "",
           "unique": false,
           "options": [],
           "criteria": "Current value of the asset, holding, investment, security, account, or cash balance. Include fair value, market value, current value, holdings value, cash balance, account value, total assets, or total investments only when clearly labeled as asset-related. Do not use equity, members’ capital, partner capital, liabilities, contributions, income/loss, expenses, or operating activity amounts as asset values.",
@@ -117,7 +117,7 @@
           "id": "a3db4c72-b275-4cab-9a08-1b786a3bce0d",
           "entity": "Cost Basis",
           "save_to": "costBasis",
-          "type": "number",
+          "type": "",
           "unique": false,
           "options": [],
           "criteria": "Cost basis shown for the holding, investment, security, account, or asset.",
@@ -169,7 +169,7 @@
     {
       "id": "e4cc238c-2824-4975-af02-341dd4b3175b",
       "type": "multiple_value",
-      "details": "Extract insurance or annuity statement data. Use exact values shown. Create one result per unique policy, contract, holding, or fund line item as presented. For life insurance or annuity statements, capture policy accounts, subaccounts, fixed accounts, loan accounts, and indexed accounts. Repeat policy-level values, such as surrender charge, total value, policy loan, and surrender value, across all entries under the same policy when they apply to the entire policy. Leave blank if not shown. For whole life policies, capture Policy Loan and Surrender Value when present. Use Asset Name + Type of Funds as the uniqueness key; if the same fund/account appears in multiple sections or pages, merge its information into one result and do not duplicate it. Do not create separate entries from insurer, carrier, institution, brand, logo names, coverage, rider, face amount, or death benefit lines such as Basic Life Coverage or Annual Renewable Term Rider; merge them under the same policy/product and fund/account.",
+      "details": "Extract insurance or annuity statement data. Use exact values shown. Leave blank if not shown. Create one result per unique Asset Name + Type of Funds combination, not per page, section, table, or repeated appearance. For life insurance or annuity statements, capture displayed policy accounts, subaccounts, fixed accounts, loan accounts, indexed accounts, and annuity fund/account lines as Type of Funds. Do not skip displayed policy accounts, subaccounts, fixed accounts, loan accounts, indexed accounts, or annuity fund/account lines with $0.00 values. If the same fund/account appears in multiple sections or pages, merge its information into one result and return only one output row for that fund/account. Repeat policy-level values, such as surrender charge, total value, policy loan, and surrender value, across all fund/account entries under the same policy when they apply to the entire policy. For whole life policies, capture Policy Loan and Surrender Value when present. Do not create separate entries from insurer, carrier, institution, brand, logo names, coverage, rider, face amount, death benefit lines, policy numbers, contract numbers, or account numbers. Merge them under the same policy/product and fund/account.",
       "entities": [
         {
           "id": "e3be114e-f689-4d33-8066-d9fb05694b0d",
@@ -182,7 +182,10 @@
           "examples": [],
           "required": false,
           "default_option": "",
-          "select_multiple": false
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Exclude product-type wording already captured in Asset Type, such as “Indexed Universal Life Insurance.\""
+          ]
         },
         {
           "id": "f08ff256-e5dc-4593-ad3a-c1d8536f3415",
@@ -197,7 +200,7 @@
           "default_option": "",
           "select_multiple": false,
           "data_validation_rules": [
-            "Prefer the full legal carrier/company name when shown. Treat shortened names, brand names, or logo names as the same institution and do not create separate entries from them."
+            "Return one name only: the full legal carrier/company name when shown. Treat shortened names, brand names, logos, and aliases as the same carrier and exclude them. Example: If both “Pacific Life” and “Pacific Life Insurance Company” appear, return only “Pacific Life Insurance Company.”"
           ]
         },
         {
@@ -224,7 +227,8 @@
           "examples": [],
           "required": false,
           "default_option": "",
-          "select_multiple": false
+          "select_multiple": false,
+          "data_validation_rules": []
         },
         {
           "id": "36e3f03c-05dd-4b8b-ba54-869f8e9004d8",
@@ -243,7 +247,7 @@
           "id": "576d50c5-9308-48ea-a68f-c09d83f11879",
           "entity": "Holdings Value",
           "save_to": "holdingsValue",
-          "type": "number",
+          "type": "",
           "unique": false,
           "options": [],
           "criteria": "Value of the holding, fund, subaccount, or annuity accumulation value. For annuities, use Ending Accumulation Value when shown. Do not use face amounts, death benefit amounts, coverage amounts, rider amounts, premiums, or loan availability amounts as Holdings Value.",
@@ -256,7 +260,7 @@
           "id": "6fc46f45-2381-4140-85e9-4edf54996f86",
           "entity": "Cash Balance",
           "save_to": "cashBalance",
-          "type": "number",
+          "type": "",
           "unique": false,
           "options": [],
           "criteria": "Value explicitly labeled cash balance or cash value.",
@@ -295,7 +299,7 @@
           "id": "0c17e1f0-3387-4313-aaa7-8d2cbd88ef47",
           "entity": "Margin Balance",
           "save_to": "marginBalance",
-          "type": "number",
+          "type": "",
           "unique": false,
           "options": [],
           "criteria": "Margin or debit balance shown, if any.",
@@ -308,7 +312,7 @@
           "id": "12632d38-c819-4d57-94b8-49d26e2d429e",
           "entity": "Total Value",
           "save_to": "totalValue",
-          "type": "number",
+          "type": "",
           "unique": false,
           "options": [],
           "criteria": "Total account value, contract value, policy value, or annuity accumulation value. For annuity statements, use Ending Accumulation Value or final Accumulation Value when shown. Do not use surrender value as total value.",
@@ -444,7 +448,7 @@
           "id": "b98638ba-adce-4931-b84e-ac8277c3b493",
           "entity": "Ending Balance",
           "save_to": "endingBalance",
-          "type": "number",
+          "type": "",
           "unique": false,
           "options": [],
           "criteria": "Closing balance at the end of the statement period. Use the exact amount shown.",

@@ -102,6 +102,18 @@ const FIELD_CFG_LIST = [
     Q: 'C_AuditLRQ',
     A: 'C_AuditLRA',
     store: 'C_AuditLR_QA'
+  },
+  {
+    title: 'Funds Transfer and Payment Authorization Controls',
+    Q: 'C_FTPA_Q',
+    A: 'C_FTPA_A',
+    store: 'C_FTPA_QA'
+  },
+  {
+    title: 'Data Protection',
+    Q: 'C_DP_Q',
+    A: 'C_DP_A',
+    store: 'C_DP_QA'
   }
 ];
 

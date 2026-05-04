@@ -35,7 +35,10 @@
           "examples": [],
           "required": false,
           "default_option": "",
-          "select_multiple": false
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the most specific row or subsection label directly tied to the holding; Do not use broad parent headers such as “Investment Detail — Fixed Income” when a more specific type such as “US Treasuries,” “Corporate Bonds,” or “Municipal Bonds” is shown."
+          ]
         },
         {
           "id": "cf9f8e27-5ab4-412d-8cca-6c303a546f8b",
@@ -122,11 +125,12 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Cost basis shown for the holding, investment, security, account, or asset. Use Cost Basis, Total Cost Basis, or lot-level cost basis when clearly tied to the same holding. If Adjusted Cost Basis is N/A but Cost Basis is shown elsewhere for that holding, return the shown Cost Basis.",
+          "criteria": "Cost basis shown for the holding, investment, security, account, or asset. Extract the purchase/acquisition basis from fields labeled Cost Basis, Total Cost Basis, or lot-level Cost Basis tied to the same holding. Do not use Adjusted Cost Basis as Cost Basis when a separate Cost Basis or Total Cost Basis is shown. If only Adjusted Cost Basis is shown and no Cost Basis is available for that holding, return the adjusted value.",
           "examples": [],
           "required": false,
           "default_option": "",
-          "select_multiple": false
+          "select_multiple": false,
+          "data_validation_rules": []
         },
         {
           "id": "149c9062-c10b-470e-bb3d-9f11128b8bb4",
@@ -135,7 +139,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Gain or loss shown or clearly derivable for the holding, investment, security, account, or asset. Include interest credited, earnings, appreciation/depreciation, or Asset Value minus Cost Basis when both values are shown.",
+          "criteria": "Gain or loss value explicitly labeled or shown for the holding, investment, security, account, or asset, such as realized gain/loss, unrealized gain/loss, unrealized appreciation/depreciation, or change in fair value. Do not calculate gain/loss from Asset Value and Cost Basis. Return Null if no gain/loss value is explicitly shown.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -379,7 +383,7 @@
     {
       "id": "33ae6627-46c9-445f-a711-01fe15c844ad",
       "type": "multiple_value",
-      "details": "Extract bank statement transaction records from bank statements, including cash, bank sweep, and deposits/withdrawals activity such as checks, Visa/card purchases, BANK CREDIT FROM BROKERAGE, BANK TRANSFER TO BROKERAGE, and BANK INTEREST. Create one result per posted transaction, and repeat the bank name, account holder name, account number, and statement period for each transaction to identify the source account. Do not extract summary totals, balances, disclosures, or fee-waiver messages as transactions. Exclude investment-only activity such as buys, sells, dividends for reinvestment, and reinvested shares. Use exact values shown. Leave blank if not shown.",
+      "details": "Extract bank statement transaction records from bank statements, including cash, bank sweep, deposits/withdrawals, bank interest, and fees/charges activity such as checks, Visa/card purchases, BANK CREDIT FROM BROKERAGE, BANK TRANSFER TO BROKERAGE, BANK INTEREST/BANK INT, and actual service/advisory fees. Create one result per posted transaction, and repeat the bank name, account holder name, account number, and statement period for each transaction to identify the source account. A valid transaction must have its own transaction, posted, process, or settle date; exclude Cash Transactions Summary category rows such as “Withdrawals and Other Debits” and “Fees and Charges. Do not extract summary totals, balances, disclosures, or fee-waiver messages as transactions, but include actual fee/charge transactions. Do not create transactions from summary balances, but use the most specific source-account balance for the transaction: for Bank Sweep, BANK INTEREST, or BANK INT activity, use Bank Sweep Opening Balance and Ending Balance; otherwise use Starting Cash and Ending Cash when no transaction-level running balance is shown. Exclude investment-only activity such as buys, sells, dividends for reinvestment, and reinvested shares. Exclude security/fund income such as money market fund dividends and Treasury/bond interest; Include only interest explicitly tied to bank or sweep activity. Use exact values shown. Leave blank if not shown.",
       "entities": [
         {
           "id": "9132c670-9207-415d-bac9-27edd5d75de6",
@@ -388,7 +392,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Name of the bank or financial institution issuing the statement. Use the full legal institution name exactly as shown, including names shown in footer, copyright, disclosure, or legal text. Do not shorten to a logo or brand name when a fuller legal institution name appears. Example: return “Charles Schwab & Co., Inc.”, not “Charles Schwab.",
+          "criteria": "Name of the bank or financial institution issuing the statement. Use the full legal institution name exactly as shown, including names shown in footer, copyright, disclosure, or legal text. Do not shorten to a logo or brand name when a fuller legal institution name appears. Example: return “Charles Schwab & Co., Inc.”, not “Charles Schwab\".",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -440,7 +444,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Opening balance at the start of the statement period. Use the exact amount shown; If no transaction-level balance is shown, use the statement-level opening or starting cash balance.",
+          "criteria": "Opening balance at the start of the statement period for the source cash/bank account. Use the exact amount shown; If no transaction-level running balance is shown, use the statement-level opening/starting cash balance and repeat it for each transaction from the same statement. Do not return Null only because the transaction row has no balance.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -453,7 +457,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Closing balance at the end of the statement period. Use the exact amount shown; If no transaction-level balance is shown, use the statement-level closing or ending cash balance.",
+          "criteria": "Closing balance at the end of the statement period for the source cash/bank account. Use the exact amount shown; If no transaction-level running balance is shown, use the statement-level closing/ending cash balance and repeat it for each transaction from the same statement. Do not return Null only because the transaction row has no balance.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -531,7 +535,7 @@
           "type": "singleOption",
           "unique": false,
           "options": [],
-          "criteria": "Return Yes if the transaction is an outgoing withdrawal, debit, check/funds-paid transaction, Visa/card purchase, or transfer from an investment, brokerage, retirement, or securities account/institution. Do not require the description to explicitly say “investment.” Otherwise return No.",
+          "criteria": "Return Yes if the transaction is an outgoing withdrawal, debit, check/funds-paid transaction, Visa/card purchase, service/advisory fee, or transfer from an investment, brokerage, retirement, or securities account/institution. Do not require the description to explicitly say “investment.” Otherwise return No.",
           "examples": [],
           "required": false,
           "default_option": "",

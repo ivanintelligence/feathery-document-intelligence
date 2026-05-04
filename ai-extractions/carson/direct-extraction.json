@@ -535,7 +535,7 @@
           "type": "singleOption",
           "unique": false,
           "options": [],
-          "criteria": "Return Yes if the transaction is an outgoing withdrawal, debit, check/funds-paid transaction, Visa/card purchase, service/advisory fee, or transfer from an investment, brokerage, retirement, or securities account/institution. Do not require the description to explicitly say “investment.” Otherwise return No.",
+          "criteria": "Return Yes if the transaction is an outgoing withdrawal, debit, check/funds-paid transaction, service/advisory fee, or transfer involving an investment, brokerage, retirement, or securities account/institution. Do not treat ordinary merchant/card purchases as investment withdrawals unless the merchant/payee is clearly investment-, brokerage-, retirement-, or securities-related, or unless the transaction is an outgoing check, card, or cash debit from a brokerage/investment account statement. Do not require the description to explicitly say “investment.” Otherwise return No.",
           "examples": [],
           "required": false,
           "default_option": "",

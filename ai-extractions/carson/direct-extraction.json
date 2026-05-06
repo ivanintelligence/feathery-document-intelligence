@@ -6,6 +6,20 @@
       "details": "Extract asset or holding-level financial data only from financial or investment statements. Do not create financial statement results from tax forms such as 1099-INT, 1099-DIV, 1099-B, W-2, or IRS forms. Do not create financial statement results from life insurance or annuity policy statements. Create one result only for a specific named security, investment, fund, property holding, account, or cash balance shown in detailed holding-level sections such as Investment Detail, Holdings, Positions, Schedule of Investments, or Portfolio Holdings. Do not create results from Asset Composition, Overview, Allocation, Summary, Change in Account Value, account total, asset-class total, or category-level rows. Generic labels such as Fixed Income, Equities, Bond Funds, Equity Funds, ETFs, Other Assets, Total Assets, or Total Account Value are summary categories, not account names. Use exact values shown. Treat fair value, market value, current value, investment value, holdings value, cash balance, or account value as asset values only when tied to a specific named holding, security, fund, account, or cash balance. If the same asset value appears in multiple sections, extract it once using the most detailed holding-level row. Do not duplicate summary, total, or repeated statement values. Leave blank if not shown.",
       "entities": [
         {
+          "id": "c6fa6e4b-b9d8-421b-8c38-c3fd2c707198",
+          "entity": "Institution Name",
+          "save_to": "financialInstitutionName",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "The financial institution, brokerage firm, custodian, or statement issuer that provides or holds the account. Use the full legal institution name exactly as shown in the statement, not the shortened brand or logo name; If both appear, prefer the full legal name. Do not use security names, issuer names, fund names, ticker names, or asset names as the institution name.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": []
+        },
+        {
           "id": "4dbf66a7-8fbe-471a-91a4-c3aa5d10ed8b",
           "entity": "Account Name",
           "save_to": "accountName",
@@ -27,7 +41,7 @@
         {
           "id": "07b3e7c6-5c3a-4bb1-8b61-c02477e756b8",
           "entity": "Account Type",
-          "save_to": "accountType",
+          "save_to": "financialAccountType",
           "type": "",
           "unique": false,
           "options": [],
@@ -196,7 +210,7 @@
         {
           "id": "f08ff256-e5dc-4593-ad3a-c1d8536f3415",
           "entity": "Institution Name",
-          "save_to": "institutionName",
+          "save_to": "insuranceInstitutionName",
           "type": "",
           "unique": false,
           "options": [],
@@ -425,6 +439,19 @@
           "select_multiple": false
         },
         {
+          "id": "a42dea39-5e59-4ea4-b105-9beedea72f96",
+          "entity": "Account Type",
+          "save_to": "bankAccountType",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Bank account type explicitly shown or clearly indicated in the statement, such as Checking, Savings, Money Market Deposit Account, Certificate of Deposit, Bank Sweep, Cash, Business Checking, or Business Savings. Return Null if not stated or clearly identifiable.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
           "id": "138083b0-2086-493c-867b-64ed245dc6e2",
           "entity": "Statement Period",
           "save_to": "statementPeriod",
@@ -557,7 +584,7 @@
         "enable_tool_usage": false,
         "tools": {
           "web": false,
-          "date": false,
+          "date": true,
           "math": false
         },
         "table_filter": null,

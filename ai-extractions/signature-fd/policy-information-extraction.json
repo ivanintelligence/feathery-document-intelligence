@@ -1,0 +1,801 @@
+{
+  "queries": [
+    {
+      "id": "7242e447-7e4e-4ec5-8360-02d46a0fdc2e",
+      "type": "multiple_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "3ffa1d07-f546-4932-907d-a23f73457e9d",
+          "entity": "Prepared Date",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the date shown after Prepared on.",
+          "examples": [
+            "04/23/2026"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Document Information",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": true,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "b4d3f8b4-cc79-4a60-8a61-c1f88416aeb0",
+      "type": "multiple_value",
+      "details": "Extract only the agency or advisory firm information shown near the label Agency. Do not extract client, insured, policyholder, carrier, or insurance company information.",
+      "entities": [
+        {
+          "id": "6faddd09-a051-4ad3-bf91-cf2a052164a7",
+          "entity": "Agency Name",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the firm name listed under Agency.",
+          "examples": [
+            "SignatureFD, LLC."
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "da37c909-16c0-45e6-a18b-a2e2e3acb7f3",
+          "entity": "Agency Street Address",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the first street address line under Agency.",
+          "examples": [
+            "1230 Peachtree Street NE, Suite 1800"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "31953fb0-b1ae-4538-a8fb-fff56753bbfc",
+          "entity": "Agency City, State, ZIP",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the city, state, and ZIP line under Agency.",
+          "examples": [
+            "Atlanta, GA 30309"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "8688a51f-4295-4a01-803a-163619fa7271",
+          "entity": "Agency Phone Number",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the phone number listed under Agency.",
+          "examples": [
+            "(404)253-7600"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "7da80bf1-0b1c-42eb-8842-41f890c06801",
+          "entity": "Agency Website",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the website URL listed under Agency.",
+          "examples": [
+            "https://www.signaturefd.com"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Agency Information",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "34566632-c9a9-4971-b8a0-4c152520b0da",
+      "type": "multiple_value",
+      "details": "Extract only the client information shown near the label For. Do not extract agency, carrier, additional interest, or insured property address unless it is part of the For block.",
+      "entities": [
+        {
+          "id": "8f6035bb-c17b-4a02-b7ba-0833f7c2e6b9",
+          "entity": "Client Name",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the name listed after For.",
+          "examples": [
+            "Kimberly A. and R. Scott Kingsfield"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "08d41429-ef56-4db7-9342-b592e64eb0bc",
+          "entity": "Client Street Address",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the first street address line in the For block.",
+          "examples": [
+            "2119 Linger Longer Dr"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "158cd247-3524-4667-b4bc-2e1b04e30dea",
+          "entity": "Client City, State, ZIP",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the city, state, and ZIP line in the For block.",
+          "examples": [
+            "Greensboro, GA 30642"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "a3225fb4-bd04-4468-a56d-9cc88f7a0e68",
+          "entity": "Client Phone Number",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the phone number in the For block.",
+          "examples": [
+            "Res: (770)352-9636"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "700e66d5-5501-4060-8b26-aeea509fd222",
+          "entity": "Client Email Address",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the email address in the For block.",
+          "examples": [
+            "kkingsfield@comcast.net"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": true,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Client Information",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": false
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "f654da0f-6769-474a-9e67-041fa8e3ef7d",
+      "type": "multiple_value",
+      "details": "Extract only from the table under the document title Policy Overview. One output row must represent one policy row. Do not extract data from Summary of Insurance, Additional Interest Schedule, or Schedule of Personal Property.",
+      "entities": [
+        {
+          "id": "85452bf8-d004-4fc2-bb97-3e0961c87814",
+          "entity": "Policy Type",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the value in the Policy Type column.",
+          "examples": [
+            "Inland Marine (P)"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "8f875299-8ac0-4a5e-8a84-9ede17354248",
+          "entity": "Insurance Company",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the carrier name in the Insurance Company column.",
+          "examples": [
+            "Privilege Underwriters Reciprocal Exchange"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "bd54d39b-f095-4b1d-afc7-a0acf7cb1261",
+          "entity": "Policy Number",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the policy identifier in the Policy Number column.",
+          "examples": [
+            "CO230891004"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "1ac0aac9-8445-4807-8aae-36997e128193",
+          "entity": "Policy Period",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the full date range in the Policy Period column.",
+          "examples": [
+            "4/15/2025 - 4/15/2026"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "e3908b88-3c47-4df2-a134-8acc4ce204a1",
+          "entity": "Total Cost",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the amount in the Total Cost column.",
+          "examples": [
+            "5,568.00"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Policy Overview",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "3e4aa9f6-0aa2-4b29-b5cd-3ac4b61dd770",
+      "type": "multiple_value",
+      "details": "Extract only from the document title Additional Interest Schedule. One output row must represent one additional interest entry. Do not extract agency, client, policy overview, summary, or scheduled personal property data.",
+      "entities": [
+        {
+          "id": "c97128b2-67b0-4167-a204-f468df05fcee",
+          "entity": "Name and Address",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the full name and mailing address of the additional interest.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "2ec0c594-7ce0-4de1-ad55-45f84ed71057",
+          "entity": "Description of Risk",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the property, item, policy, or risk description tied to the additional interest.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "504cfec1-5ec2-406c-aec9-b99e3184f7d2",
+          "entity": "Interest Type",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the stated interest role, such as mortgagee, loss payee, lienholder, additional insured, or additional interest.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Additional Interest Schedule",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "5d8e1185-748b-4e68-85cb-5f5e4b629ed6",
+      "type": "multiple_value",
+      "details": "Extract only from the document title Summary of Insurance. One output row must represent one coverage line or one deductible line. Repeat the same policy and insured property values for each linked coverage or deductible row. If the row is a coverage, return deductible fields as null. If the row is a deductible, return coverage fields as null. Do not extract Policy Overview or Schedule of Personal Property data.",
+      "entities": [
+        {
+          "id": "c2765149-5b8a-484f-89d5-23d52ca092a8",
+          "entity": "Policy Type",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the policy type or line of business shown as the bold policy heading in the Coverage column.",
+          "examples": [
+            "Homeowners",
+            "Inland Marine (P)",
+            "Umbrella (P)"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "5d65b780-1d4b-401b-b00e-d73ac9b0134c",
+          "entity": "Insurance Company",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the carrier name shown on the same policy row.",
+          "examples": [
+            "Privilege Underwriters Reciprocal"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "e2cdb1ab-7142-4ba7-acaa-9be31635a0da",
+          "entity": "Policy Number",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the policy identifier shown on the same policy row.",
+          "examples": [
+            "HO240876002"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "6c5e6b51-4016-4065-86cb-4eb2e931b66a",
+          "entity": "Policy Period",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the full date range shown on the same policy row.",
+          "examples": [
+            "8/3/2024 - 8/3/2025"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "0bbafbcf-c191-455b-a9b3-b74815cfa548",
+          "entity": "Premium",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the amount shown in the Premium column for the policy.",
+          "examples": [
+            "29,685.00"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "2d765920-ee8a-41d8-abe2-51625643929a",
+          "entity": "Insured Property Street Address",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the street address shown under the policy type in the Coverage column. Return null if no insured property address is shown.",
+          "examples": [
+            "118 E 16th St"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "3f010566-0fce-4592-82f7-4e9eb63f3228",
+          "entity": "Insured Property City, State, ZIP",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the city, state, and ZIP shown under the insured property street address. Return null if no insured property city, state, and ZIP is shown.",
+          "examples": [
+            "Sea Island, GA 31561"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "f4c8b7d8-5053-4dca-82b2-93c1f5625c9b",
+          "entity": "Coverage Name",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract every coverage line name shown under the policy. Return null for deductible rows, property address rows, policy heading rows, and notes.",
+          "examples": [
+            "Dwelling",
+            "Coins",
+            "Personal umbrella"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "b1be41db-f2ea-42f4-ac5c-ed88ba1fd4c9",
+          "entity": "Amount Limit",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the amount or limit paired with the Coverage Name. Return null for deductible rows, policy heading rows, address rows, and notes.",
+          "examples": [
+            "4,120,538"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "a2c0ea03-6895-4834-adef-814b9326df55",
+          "entity": "Deductible Type",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract only deductible labels, such as All Peril Ded or Wind/Hail Ded. Return null for coverage rows.",
+          "examples": [
+            "All Peril Ded"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "87527869-ed26-4ddc-9957-6a320774c1b3",
+          "entity": "Deductible Value",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the amount or percentage paired with the Deductible Type. Return null for coverage rows.",
+          "examples": [
+            "5,000"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Summary of Insurance",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "197a8b46-e205-4433-8540-74206d11179f",
+      "type": "multiple_value",
+      "details": "Extract only from the document title Schedule of Personal Property. One output row must represent one scheduled item. Repeat the Policy Number, Line of Business Code, and Scheduled Property Category for each item under that category. Do not extract Summary of Insurance category totals as item records.",
+      "entities": [
+        {
+          "id": "aa41bbd9-0d1d-48c0-876c-4babf0b40874",
+          "entity": "Policy Number",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the policy number shown after Policy No.",
+          "examples": [
+            "CO230891004"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "672e37d7-e013-4e6c-b02e-37dfdac1f20e",
+          "entity": "Line of Business Code",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the code shown after LOB.",
+          "examples": [
+            "INMRP"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "58a46182-f3c5-4d66-89c7-f146934167c6",
+          "entity": "Scheduled Property Category",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the category heading above the item, such as Coins or Jewelry.",
+          "examples": [
+            "Coins",
+            "Jewelry"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "f39cdd50-b394-4734-9f71-c682c7d9ada2",
+          "entity": "Item Number",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the item number shown before the item description.",
+          "examples": [
+            "0001"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "2fad2637-39a8-4cd1-bf60-f8868e1f45aa",
+          "entity": "Description",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the scheduled item description in the Description column.",
+          "examples": [
+            "Stamps, Coins, Silver, Furs Blanket Coverage"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "56570501-1f6a-4faf-b4c2-8d00de0e075f",
+          "entity": "Serial Number",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the serial number in the Serial Number column. Return null if blank.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "8209d88d-fb19-4a97-9dd5-af351f2495f2",
+          "entity": "Valuation Date",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the valuation or appraisal date in the Valuation Date column. Return null if blank.",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "f20e18f4-f552-432f-8347-180d3861fcf6",
+          "entity": "Amount of Insurance",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the insured amount shown in the Amount of Insurance column for the item. Return null if blank.",
+          "examples": [
+            "12,155"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Schedule of Personal Property",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    }
+  ],
+  "variants": []
+}

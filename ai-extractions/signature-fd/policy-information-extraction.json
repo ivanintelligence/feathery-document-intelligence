@@ -447,7 +447,7 @@
     {
       "id": "5d8e1185-748b-4e68-85cb-5f5e4b629ed6",
       "type": "multiple_value",
-      "details": "Extract only from the document title Summary of Insurance. One output row must represent one coverage line, deductible line, vehicle line, or driver line. Repeat the same policy values for each linked row. If a row is a coverage, return deductible, vehicle, and driver fields as null. If a row is a deductible, return coverage, vehicle, and driver fields as null. If a row is a vehicle, return coverage, deductible, and driver fields as null. If a row is a driver, return coverage, deductible, and vehicle fields as null.",
+      "details": "Extract only from the document title Summary of Insurance. Create one row for each coverage, deductible, vehicle, driver, or exposure record. Repeat policy values on every row. Repeat insured property values only for rows under that property. Repeat vehicle values only for the vehicle row and rows under that vehicle. Driver and exposure rows belong to the policy unless explicitly linked to a property or vehicle. Do not extract attachment notes, schedule references, continuation notes, or see attached lines unless the schema has schedule reference fields.",
       "entities": [
         {
           "id": "c2765149-5b8a-484f-89d5-23d52ca092a8",
@@ -456,7 +456,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the policy type or line of business shown as the bold policy heading in the Coverage column.",
+          "criteria": "Extract the policy type or line of business heading for the current policy.",
           "examples": [
             "Homeowners",
             "Inland Marine (P)",
@@ -473,7 +473,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the carrier name shown on the same policy row.",
+          "criteria": "Extract the carrier name shown on the current policy row.",
           "examples": [
             "Privilege Underwriters Reciprocal"
           ],
@@ -488,7 +488,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the policy identifier shown on the same policy row.",
+          "criteria": "Extract the policy identifier shown on the current policy row.",
           "examples": [
             "HO240876002"
           ],
@@ -503,7 +503,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the full date range shown on the same policy row.",
+          "criteria": "Extract the full policy date range shown on the current policy row.",
           "examples": [
             "8/3/2024 - 8/3/2025"
           ],
@@ -518,7 +518,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the amount shown in the Premium column for the policy.",
+          "criteria": "Extract the total policy premium from the policy row. Do not use vehicle premium or coverage premium.",
           "examples": [
             "29,685.00"
           ],
@@ -533,7 +533,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the street address shown under the policy type in the Coverage column. Return null if no insured property address is shown.",
+          "criteria": "For rows under a property, extract the nearest insured property street address above the row. Return null otherwise.",
           "examples": [
             "118 E 16th St"
           ],
@@ -548,9 +548,69 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the city, state, and ZIP shown under the insured property street address. Return null if no insured property city, state, and ZIP is shown.",
+          "criteria": "For rows under a property, extract the nearest insured property city, state, and ZIP above the row. Return null otherwise.",
           "examples": [
             "Sea Island, GA 31561"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "8b81eb06-2ca0-42c9-bfce-af0696c322c7",
+          "entity": "Vehicle Number",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "For a vehicle row or row under a vehicle, extract the number after Vehicle. Return null otherwise.",
+          "examples": [
+            "0001"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "7d1b051e-05f8-4349-9562-427346baf620",
+          "entity": "Vehicle Description",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "For a vehicle row or row under a vehicle, extract the year, make, and model after the vehicle number. Return null otherwise.",
+          "examples": [
+            "2017 Toyota Sienna"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "b44f9a53-7ace-4b61-8f9c-093796a4d984",
+          "entity": "Vehicle VIN",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "For a vehicle row or row under a vehicle, extract the VIN linked to the nearest vehicle. Return null otherwise.",
+          "examples": [
+            "5TDYZ3DC2HS826680"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "df61452f-1683-4ed8-bce4-217bf3831651",
+          "entity": "Vehicle Premium",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "For a vehicle row or row under a vehicle, extract the premium aligned with that vehicle. Do not use total policy premium.",
+          "examples": [
+            "1,923.00"
           ],
           "required": false,
           "default_option": "",
@@ -563,7 +623,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract every coverage line name under the policy, insured property, or vehicle. Do not extract policy headings, addresses, vehicle lines, VIN lines, driver lines, deductible labels, or notes.",
+          "criteria": "Extract the insurance coverage label for coverage rows, even if its amount is blank. Return null for non-coverage row types.",
           "examples": [
             "Dwelling",
             "Coins",
@@ -580,7 +640,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the amount or limit paired with the Coverage Name. Return null if the coverage line has no amount or limit shown.",
+          "criteria": "Extract the amount or limit paired with the Coverage Name. Return null if blank or if the row is not a coverage row.",
           "examples": [
             "4,120,538"
           ],
@@ -595,7 +655,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the premium amount specifically aligned with the coverage line. Do not use the total policy premium or vehicle premium. Return null if no coverage-specific premium is shown.",
+          "criteria": "Extract the premium amount specifically aligned with the coverage row. Do not use policy premium or vehicle premium.",
           "examples": [
             "5,568.00"
           ],
@@ -610,7 +670,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract only deductible labels, such as All Peril Ded, Wind/Hail Ded, Collision, or Comprehensive when paired with a deductible value. Return null for normal coverage rows, vehicle rows, and driver rows.",
+          "criteria": "Extract the deductible label for deductible rows. If a coverage label has a paired deductible value, use that label as Deductible Type.",
           "examples": [
             "All Peril Ded"
           ],
@@ -625,69 +685,9 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the amount or percentage paired with the Deductible Type, including values marked Ded. Return null for normal coverage rows, vehicle rows, and driver rows.",
+          "criteria": "Extract the amount or percentage paired with the Deductible Type, including values labeled Ded.",
           "examples": [
             "5,000"
-          ],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        },
-        {
-          "id": "8b81eb06-2ca0-42c9-bfce-af0696c322c7",
-          "entity": "Vehicle Number",
-          "save_to": "",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the number after Vehicle, such as 0001 from Vehicle 0001. Return null for non-vehicle rows.",
-          "examples": [
-            "0001"
-          ],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        },
-        {
-          "id": "7d1b051e-05f8-4349-9562-427346baf620",
-          "entity": "Vehicle Description",
-          "save_to": "",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the vehicle year, make, model, or description shown after the vehicle number. Return null for non-vehicle rows.",
-          "examples": [
-            "2017 Toyota Sienna"
-          ],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        },
-        {
-          "id": "b44f9a53-7ace-4b61-8f9c-093796a4d984",
-          "entity": "Vehicle VIN",
-          "save_to": "",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the VIN shown after VIN and link it to the nearest preceding vehicle. Return null for non-vehicle rows.",
-          "examples": [
-            "5TDYZ3DC2HS826680"
-          ],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        },
-        {
-          "id": "df61452f-1683-4ed8-bce4-217bf3831651",
-          "entity": "Vehicle Premium",
-          "save_to": "",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the premium amount aligned with the specific vehicle row. Do not use the total policy premium or coverage premium. Return null if no vehicle-specific premium is shown.",
-          "examples": [
-            "1,923.00"
           ],
           "required": false,
           "default_option": "",
@@ -700,7 +700,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the number after Driver, such as 0001 from Driver 0001. Return null for non-driver rows.",
+          "criteria": "For driver rows, extract the number after Driver. Return null otherwise.",
           "examples": [
             "0001"
           ],
@@ -715,9 +715,39 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the person’s name shown after the driver number. Return null for non-driver rows.",
+          "criteria": "For driver rows, extract the name after the driver number. Return null otherwise.",
           "examples": [
             "Melissa Oren"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "6160eb9d-be75-490c-882b-609f15b93529",
+          "entity": "Exposure Type",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract labels that describe a policy exposure, count, rating basis, or insured quantity. Return null for coverage, deductible, vehicle, driver, address, and policy heading rows.",
+          "examples": [
+            "Number of Autos"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "844f9094-9e11-4b05-96a8-9dd9ad5f92a7",
+          "entity": "Exposure Value",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the value paired with the Exposure Type. Return null if blank. Do not calculate or count from other rows.",
+          "examples": [
+            "2"
           ],
           "required": false,
           "default_option": "",

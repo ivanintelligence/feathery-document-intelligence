@@ -1,57 +1,18 @@
 {
   "queries": [
     {
-      "id": "6c988cde-b320-4d0c-be34-3b085919ba00",
-      "type": "auto_detect",
+      "id": "dbb52777-d7a8-46a2-a984-4d903d7b6c60",
+      "type": "cell_value",
       "details": "",
       "entities": [
         {
-          "id": "7963b830-af23-463e-85fe-ed8d461296bc",
-          "entity": "Agency Name",
+          "id": "2fe8bb71-8d41-43e9-a521-f4c9953a1839",
+          "entity": "A2",
           "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the value in the cell directly below the header AgencyName or Agency Name. Return null if blank or not found.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        },
-        {
-          "id": "4e82721d-5361-49d9-a734-121c9d38effe",
-          "entity": "Export Date",
-          "save_to": "",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the value in the cell directly below the header ExportDate or Export Date. Do not extract Comp Date or reporting period values. Return null if blank or not found.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        },
-        {
-          "id": "ec2acbbd-ffea-4dab-a652-98e8822058f6",
-          "entity": "Report",
-          "save_to": "",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the value in the cell directly below the header Report. Do not extract table headers, section names, or row values. Return null if blank or not found.",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false
-        },
-        {
-          "id": "11f6825b-5ce0-43e6-8265-b41761a575d7",
-          "entity": "Type",
-          "save_to": "",
-          "type": "",
-          "unique": false,
-          "options": [],
-          "criteria": "Extract the value in the cell directly below the top-level header Type. Do not extract LOB Type or other table-level type values. Return null if blank or not found.",
+          "criteria": "",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -64,11 +25,11 @@
       "properties": {
         "bounding_box_reference": null,
         "limit_relevant_pages": null,
-        "single_occurrence": true,
+        "single_occurrence": false,
         "skip_ai_page_filter": false,
         "page_filter_start": null,
         "page_filter_end": null,
-        "group_name": "Document Information",
+        "group_name": "Agency Name",
         "page_filter_query": null,
         "enable_tool_usage": false,
         "hide_from_review": false,
@@ -77,7 +38,133 @@
         "sheet_filter": null,
         "json_schema": null,
         "page_limit": null,
-        "multiple_occurrences": false
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "d3703975-e056-4b3c-8db2-1a44d39bd9aa",
+      "type": "cell_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "de48fffa-cd4a-4159-b453-c9a18248ef96",
+          "entity": "B2",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Export Date",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": null,
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "6c93dcf0-8e96-44ee-b199-43c14c3c9b17",
+      "type": "cell_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "ac74b607-5d94-4c74-99ae-e78fe9c04075",
+          "entity": "C2",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Report",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": null,
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "3deb3669-28b4-4897-aed9-8f74c3513bd7",
+      "type": "cell_value",
+      "details": "",
+      "entities": [
+        {
+          "id": "187bc851-aaf2-4440-924f-e6e4b56945ff",
+          "entity": "D2",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Type",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": null,
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
       },
       "data_validation_rules": []
     },

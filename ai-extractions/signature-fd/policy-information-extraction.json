@@ -8,7 +8,7 @@
         {
           "id": "3ffa1d07-f546-4932-907d-a23f73457e9d",
           "entity": "Prepared Date",
-          "save_to": "preparedDate",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -56,7 +56,7 @@
         {
           "id": "6faddd09-a051-4ad3-bf91-cf2a052164a7",
           "entity": "Agency Name",
-          "save_to": "agencyName",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -71,7 +71,7 @@
         {
           "id": "da37c909-16c0-45e6-a18b-a2e2e3acb7f3",
           "entity": "Agency Street Address",
-          "save_to": "agencyStreetAddress",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -86,7 +86,7 @@
         {
           "id": "31953fb0-b1ae-4538-a8fb-fff56753bbfc",
           "entity": "Agency City, State, ZIP",
-          "save_to": "agencyCityStateZip",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -101,7 +101,7 @@
         {
           "id": "8688a51f-4295-4a01-803a-163619fa7271",
           "entity": "Agency Phone Number",
-          "save_to": "agencyPhoneNumber",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -116,7 +116,7 @@
         {
           "id": "7da80bf1-0b1c-42eb-8842-41f890c06801",
           "entity": "Agency Website",
-          "save_to": "agencyWebsite",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -164,7 +164,7 @@
         {
           "id": "8f6035bb-c17b-4a02-b7ba-0833f7c2e6b9",
           "entity": "Client Name",
-          "save_to": "clientName",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -179,7 +179,7 @@
         {
           "id": "08d41429-ef56-4db7-9342-b592e64eb0bc",
           "entity": "Client Street Address",
-          "save_to": "clientStreetAddress",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -194,7 +194,7 @@
         {
           "id": "158cd247-3524-4667-b4bc-2e1b04e30dea",
           "entity": "Client City, State, ZIP",
-          "save_to": "clientCityStateZip",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -209,7 +209,7 @@
         {
           "id": "a3225fb4-bd04-4468-a56d-9cc88f7a0e68",
           "entity": "Client Phone Number",
-          "save_to": "clientPhoneNumber",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -224,7 +224,7 @@
         {
           "id": "700e66d5-5501-4060-8b26-aeea509fd222",
           "entity": "Client Email Address",
-          "save_to": "clientEmailAddress",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -272,7 +272,7 @@
         {
           "id": "85452bf8-d004-4fc2-bb97-3e0961c87814",
           "entity": "Policy Type",
-          "save_to": "policyType_PO",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -287,7 +287,7 @@
         {
           "id": "8f875299-8ac0-4a5e-8a84-9ede17354248",
           "entity": "Insurance Company",
-          "save_to": "insuranceCompany_PO",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -302,7 +302,7 @@
         {
           "id": "bd54d39b-f095-4b1d-afc7-a0acf7cb1261",
           "entity": "Policy Number",
-          "save_to": "policyNumber_PO",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -317,7 +317,7 @@
         {
           "id": "1ac0aac9-8445-4807-8aae-36997e128193",
           "entity": "Policy Period",
-          "save_to": "policyPeriod_PO",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -332,7 +332,7 @@
         {
           "id": "e3908b88-3c47-4df2-a134-8acc4ce204a1",
           "entity": "Total Cost",
-          "save_to": "totalCost",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -380,7 +380,7 @@
         {
           "id": "c97128b2-67b0-4167-a204-f468df05fcee",
           "entity": "Name and Address",
-          "save_to": "nameAndAddress",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -393,7 +393,7 @@
         {
           "id": "2ec0c594-7ce0-4de1-ad55-45f84ed71057",
           "entity": "Description of Risk",
-          "save_to": "descriptionOfRisk",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -406,7 +406,7 @@
         {
           "id": "504cfec1-5ec2-406c-aec9-b99e3184f7d2",
           "entity": "Interest Type",
-          "save_to": "interestType",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -452,7 +452,7 @@
         {
           "id": "c2765149-5b8a-484f-89d5-23d52ca092a8",
           "entity": "Policy Type",
-          "save_to": "policyType_SOI",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -469,7 +469,7 @@
         {
           "id": "5d65b780-1d4b-401b-b00e-d73ac9b0134c",
           "entity": "Insurance Company",
-          "save_to": "insuranceCompany_SOI",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -484,7 +484,7 @@
         {
           "id": "e2cdb1ab-7142-4ba7-acaa-9be31635a0da",
           "entity": "Policy Number",
-          "save_to": "policyNumber_SOI",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -499,7 +499,7 @@
         {
           "id": "6c5e6b51-4016-4065-86cb-4eb2e931b66a",
           "entity": "Policy Period",
-          "save_to": "policyPeriod_SOI",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -514,7 +514,7 @@
         {
           "id": "0bbafbcf-c191-455b-a9b3-b74815cfa548",
           "entity": "Premium",
-          "save_to": "premium",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -529,7 +529,7 @@
         {
           "id": "2d765920-ee8a-41d8-abe2-51625643929a",
           "entity": "Insured Property Street Address",
-          "save_to": "insuredPropertyStreetAddress",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -544,7 +544,7 @@
         {
           "id": "3f010566-0fce-4592-82f7-4e9eb63f3228",
           "entity": "Insured Property City, State, ZIP",
-          "save_to": "insuredPropertyCityStateZip",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -559,7 +559,7 @@
         {
           "id": "8b81eb06-2ca0-42c9-bfce-af0696c322c7",
           "entity": "Vehicle Number",
-          "save_to": "vehicleNumber",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -574,7 +574,7 @@
         {
           "id": "7d1b051e-05f8-4349-9562-427346baf620",
           "entity": "Vehicle Description",
-          "save_to": "vehicleDescription",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -589,7 +589,7 @@
         {
           "id": "b44f9a53-7ace-4b61-8f9c-093796a4d984",
           "entity": "Vehicle VIN",
-          "save_to": "vehicleVin",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -604,7 +604,7 @@
         {
           "id": "df61452f-1683-4ed8-bce4-217bf3831651",
           "entity": "Vehicle Premium",
-          "save_to": "vehiclePremium",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -619,7 +619,7 @@
         {
           "id": "f4c8b7d8-5053-4dca-82b2-93c1f5625c9b",
           "entity": "Coverage Name",
-          "save_to": "coverageName",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -636,7 +636,7 @@
         {
           "id": "b1be41db-f2ea-42f4-ac5c-ed88ba1fd4c9",
           "entity": "Coverage Amount Limit",
-          "save_to": "coverageAmountLimit",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -651,7 +651,7 @@
         {
           "id": "a5b33ff6-293f-4816-89c3-8cceec019f14",
           "entity": "Coverage Premium",
-          "save_to": "coveragePremium",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -666,7 +666,7 @@
         {
           "id": "a2c0ea03-6895-4834-adef-814b9326df55",
           "entity": "Deductible Type",
-          "save_to": "deductibleType",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -681,7 +681,7 @@
         {
           "id": "87527869-ed26-4ddc-9957-6a320774c1b3",
           "entity": "Deductible Value",
-          "save_to": "deductibleValue",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -696,7 +696,7 @@
         {
           "id": "3d72d107-b038-4754-a9c8-ffb2758153d5",
           "entity": "Driver Number",
-          "save_to": "driverNumber",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -711,7 +711,7 @@
         {
           "id": "6ff8ef66-5af6-4924-8ab5-a67ec33c7186",
           "entity": "Driver Name",
-          "save_to": "driverName",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -726,7 +726,7 @@
         {
           "id": "6160eb9d-be75-490c-882b-609f15b93529",
           "entity": "Exposure Type",
-          "save_to": "exposureType",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -741,7 +741,7 @@
         {
           "id": "844f9094-9e11-4b05-96a8-9dd9ad5f92a7",
           "entity": "Exposure Value",
-          "save_to": "exposureValue",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -789,7 +789,7 @@
         {
           "id": "aa41bbd9-0d1d-48c0-876c-4babf0b40874",
           "entity": "Policy Number",
-          "save_to": "policyNumber_SOPP",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -804,7 +804,7 @@
         {
           "id": "672e37d7-e013-4e6c-b02e-37dfdac1f20e",
           "entity": "Line of Business Code",
-          "save_to": "lineOfBusinessCode",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -819,7 +819,7 @@
         {
           "id": "58a46182-f3c5-4d66-89c7-f146934167c6",
           "entity": "Scheduled Property Category",
-          "save_to": "scheduledPropertyCategory",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -835,7 +835,7 @@
         {
           "id": "f39cdd50-b394-4734-9f71-c682c7d9ada2",
           "entity": "Item Number",
-          "save_to": "itemNumber",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -850,7 +850,7 @@
         {
           "id": "2fad2637-39a8-4cd1-bf60-f8868e1f45aa",
           "entity": "Description",
-          "save_to": "description",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -865,7 +865,7 @@
         {
           "id": "56570501-1f6a-4faf-b4c2-8d00de0e075f",
           "entity": "Serial Number",
-          "save_to": "serialNumber",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -878,7 +878,7 @@
         {
           "id": "8209d88d-fb19-4a97-9dd5-af351f2495f2",
           "entity": "Valuation Date",
-          "save_to": "valuationDate",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
@@ -891,7 +891,7 @@
         {
           "id": "f20e18f4-f552-432f-8347-180d3861fcf6",
           "entity": "Amount of Insurance",
-          "save_to": "amountOfInsurance",
+          "save_to": "",
           "type": "",
           "unique": false,
           "options": [],

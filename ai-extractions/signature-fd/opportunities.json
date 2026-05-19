@@ -8,7 +8,7 @@
         {
           "id": "8bb45608-eefc-4c7a-ba04-cbd7063af05f",
           "entity": "Opportunity Name",
-          "save_to": "",
+          "save_to": "opportunityName_O",
           "type": "",
           "unique": false,
           "options": [],
@@ -51,7 +51,7 @@
         {
           "id": "bfd741e6-7cdf-47cd-8677-22a170e83edb",
           "entity": "Household/Business Name",
-          "save_to": "",
+          "save_to": "householdBusinessName_O",
           "type": "",
           "unique": false,
           "options": [],
@@ -94,7 +94,7 @@
         {
           "id": "210758be-fe3d-43da-9ebf-4cee0d2700c9",
           "entity": "Estimated Revenue",
-          "save_to": "",
+          "save_to": "estimatedRevenue_O",
           "type": "",
           "unique": false,
           "options": [],
@@ -137,7 +137,7 @@
         {
           "id": "ee0c54d6-0131-4b7f-bcb8-ed23a3756cee",
           "entity": "Close Date",
-          "save_to": "",
+          "save_to": "closeDate_O",
           "type": "",
           "unique": false,
           "options": [],
@@ -180,7 +180,7 @@
         {
           "id": "f8b79cb4-4b40-4689-9349-ba42358aed3a",
           "entity": "Stage",
-          "save_to": "",
+          "save_to": "stage_O",
           "type": "",
           "unique": false,
           "options": [],
@@ -223,7 +223,7 @@
         {
           "id": "104240b6-300c-4d01-bd8e-46c1f8def00b",
           "entity": "Opportunity Owner Alias",
-          "save_to": "",
+          "save_to": "opportunityOwnerAlias_O",
           "type": "",
           "unique": false,
           "options": [],

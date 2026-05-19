@@ -8,7 +8,7 @@
         {
           "id": "2fe8bb71-8d41-43e9-a521-f4c9953a1839",
           "entity": "A2",
-          "save_to": "",
+          "save_to": "agencyName_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -50,7 +50,7 @@
         {
           "id": "de48fffa-cd4a-4159-b453-c9a18248ef96",
           "entity": "B2",
-          "save_to": "",
+          "save_to": "exportDate_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -92,7 +92,7 @@
         {
           "id": "ac74b607-5d94-4c74-99ae-e78fe9c04075",
           "entity": "C2",
-          "save_to": "",
+          "save_to": "report_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -134,7 +134,7 @@
         {
           "id": "187bc851-aaf2-4440-924f-e6e4b56945ff",
           "entity": "D2",
-          "save_to": "",
+          "save_to": "type_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -176,7 +176,7 @@
         {
           "id": "13c777d6-f77d-47d3-a561-afce14a937b8",
           "entity": "Sort Sequence",
-          "save_to": "",
+          "save_to": "sortSequence_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -218,7 +218,7 @@
         {
           "id": "28df8bb8-b2f4-4381-8bda-e6d43d0f7450",
           "entity": "Sort Name 1",
-          "save_to": "",
+          "save_to": "sortName1_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -260,7 +260,7 @@
         {
           "id": "d662cb48-cf3b-4a95-906d-1d55205980b1",
           "entity": "Sort Name 2",
-          "save_to": "",
+          "save_to": "sortName2_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -302,7 +302,7 @@
         {
           "id": "087b4e7b-ccc7-457c-b83c-19a16e2727e8",
           "entity": "Comparison Date",
-          "save_to": "",
+          "save_to": "comparisonDate_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -344,7 +344,7 @@
         {
           "id": "6b05fb78-6a0e-4539-8c4e-e26d30ed2ba5",
           "entity": "Line of Business Type",
-          "save_to": "",
+          "save_to": "lineOfBusinessType_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -386,7 +386,7 @@
         {
           "id": "12ab66f3-3faf-48bb-af81-88ce2f5019a4",
           "entity": "Line of Business Description",
-          "save_to": "",
+          "save_to": "lineOfBusinessDescription_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -428,7 +428,7 @@
         {
           "id": "f4711c93-67b5-48b8-8eeb-d3d51a27b5b8",
           "entity": "Premium Volume",
-          "save_to": "",
+          "save_to": "premiumVolume_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -470,7 +470,7 @@
         {
           "id": "a36ebce9-acd6-4e91-8354-cd6369de4966",
           "entity": "Non-Premium Commission Volume",
-          "save_to": "",
+          "save_to": "nonPremiumCommissionVolume_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -512,7 +512,7 @@
         {
           "id": "12931add-1be2-4d50-a4b8-523a889e34dd",
           "entity": "Total Volume",
-          "save_to": "",
+          "save_to": "totalVolume_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -554,7 +554,7 @@
         {
           "id": "3a671274-f8a1-4ccd-ab3d-2b88d07719ff",
           "entity": "Percentage of Total Volume",
-          "save_to": "",
+          "save_to": "percentageOfTotalVolume_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -596,7 +596,7 @@
         {
           "id": "aec23387-e810-46a6-88ba-2564f63e62a7",
           "entity": "Agency Commission",
-          "save_to": "",
+          "save_to": "agencyCommission_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -638,7 +638,7 @@
         {
           "id": "3a93ea32-ea63-44d4-a2ab-8a969422ca76",
           "entity": "Commission Percentage of Volume",
-          "save_to": "",
+          "save_to": "commissionPercentageOfVolume_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -680,7 +680,7 @@
         {
           "id": "6eb88377-293e-4b1a-9b11-be6891aef681",
           "entity": "Producer Commission Premium",
-          "save_to": "",
+          "save_to": "producerCommissionPremium_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -722,7 +722,7 @@
         {
           "id": "80856087-9b85-49cc-a8af-cdbe7b2c7274",
           "entity": "Producer Commission Non-Premium",
-          "save_to": "",
+          "save_to": "producerCommissionNonPremium_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -764,7 +764,7 @@
         {
           "id": "9f2fa91c-fc16-43e5-affb-f50c4f70b216",
           "entity": "Broker Commission",
-          "save_to": "",
+          "save_to": "brokerCommission_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -806,7 +806,7 @@
         {
           "id": "a2270206-1d46-4c5d-b01c-f1ed2a3ba864",
           "entity": "Gross Profit",
-          "save_to": "",
+          "save_to": "grossProfit_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -848,7 +848,7 @@
         {
           "id": "c9743abd-1668-40a3-9551-ef9dec192266",
           "entity": "Number of Customers",
-          "save_to": "",
+          "save_to": "numberOfCustomers_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -890,7 +890,7 @@
         {
           "id": "b94ab7a3-c1cd-4f3a-993c-e607fa91298e",
           "entity": "Number of Policies",
-          "save_to": "",
+          "save_to": "numberOfPolicies_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -932,7 +932,7 @@
         {
           "id": "b4ac50eb-9522-4748-9703-bc44a3c9c792",
           "entity": "Number of Invoices",
-          "save_to": "",
+          "save_to": "numberOfInvoices_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -974,7 +974,7 @@
         {
           "id": "7283f52b-f5b3-4a87-855a-185ceb956baf",
           "entity": "Sort Code 1",
-          "save_to": "",
+          "save_to": "sortCode1_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1016,7 +1016,7 @@
         {
           "id": "b341580a-ad74-41fd-9feb-a0b11c9516c3",
           "entity": "Sort Code 2",
-          "save_to": "",
+          "save_to": "sortCode2_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1058,7 +1058,7 @@
         {
           "id": "ad657e0a-3093-4aad-82fd-cf3c2f4e7b69",
           "entity": "Customer ID",
-          "save_to": "",
+          "save_to": "customerID_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1100,7 +1100,7 @@
         {
           "id": "e080a0c1-87ba-4ee1-9dca-bf321429dfa8",
           "entity": "Policy ID",
-          "save_to": "",
+          "save_to": "policyID_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1142,7 +1142,7 @@
         {
           "id": "0b34205f-91ba-4795-84b3-ecffaae7c045",
           "entity": "Customer Number",
-          "save_to": "",
+          "save_to": "customerNumber_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1184,7 +1184,7 @@
         {
           "id": "235f1b6c-7998-49ce-af5b-e2255c3da24e",
           "entity": "Customer Notation",
-          "save_to": "",
+          "save_to": "customerNotation_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1226,7 +1226,7 @@
         {
           "id": "593f6193-0f5b-4886-b658-8363b2178c4a",
           "entity": "Parent NAIC Code",
-          "save_to": "",
+          "save_to": "parentNAICCode_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1268,7 +1268,7 @@
         {
           "id": "172f3601-218a-4832-8d13-80131c19a465",
           "entity": "Writing NAIC Code",
-          "save_to": "",
+          "save_to": "writingNAICCode_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1310,7 +1310,7 @@
         {
           "id": "048be3d6-2192-4761-a1a9-343a40a9584d",
           "entity": "Policy Effective Date",
-          "save_to": "",
+          "save_to": "policyEffectiveDate_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1352,7 +1352,7 @@
         {
           "id": "e22d6437-e9f7-4b3f-b911-945586687afa",
           "entity": "Policy Executive",
-          "save_to": "",
+          "save_to": "policyExecutive_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1394,7 +1394,7 @@
         {
           "id": "a4f92863-993a-4b10-a4ba-e15b983ccc7a",
           "entity": "Policy Representative",
-          "save_to": "",
+          "save_to": "policyRepresentative_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1436,7 +1436,7 @@
         {
           "id": "5f7f6e08-8dd2-4ae2-bf1f-26bbdeb624db",
           "entity": "Policy Broker",
-          "save_to": "",
+          "save_to": "policyBroker_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1478,7 +1478,7 @@
         {
           "id": "7fb3dc42-1e06-4ecd-ac73-17e4ca92ad52",
           "entity": "Policy Company",
-          "save_to": "",
+          "save_to": "policyCompany_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1520,7 +1520,7 @@
         {
           "id": "d1ddd46a-9339-4a50-83a2-98c43e4b7d37",
           "entity": "Policy Company Type",
-          "save_to": "",
+          "save_to": "policyCompanyType_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1562,7 +1562,7 @@
         {
           "id": "6a9860d3-3f91-42b2-8066-6ef2d675763d",
           "entity": "Policy Writing Company",
-          "save_to": "",
+          "save_to": "policyWritingCompany_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1604,7 +1604,7 @@
         {
           "id": "76de8628-1c40-478c-bbaa-498ceaa09f77",
           "entity": "Policy Notation",
-          "save_to": "",
+          "save_to": "policyNotation_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1646,7 +1646,7 @@
         {
           "id": "a9a348b7-cb3a-4fae-93f9-22dd36f34342",
           "entity": "Customer Address Line 1",
-          "save_to": "",
+          "save_to": "customerAddressLine1_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1688,7 +1688,7 @@
         {
           "id": "43f98f01-3b26-4907-9966-a767280c22ea",
           "entity": "Customer Address Line 2",
-          "save_to": "",
+          "save_to": "customerAddressLine2_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1730,7 +1730,7 @@
         {
           "id": "26325136-4234-423e-ac24-525e21b93530",
           "entity": "Customer City",
-          "save_to": "",
+          "save_to": "customerCity_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1772,7 +1772,7 @@
         {
           "id": "30f5d994-945e-42d7-919d-a6cd0a8a5084",
           "entity": "Customer State",
-          "save_to": "",
+          "save_to": "customerState_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1814,7 +1814,7 @@
         {
           "id": "79372825-e733-405b-9c7f-a7e63d464ff3",
           "entity": "Customer ZIP Code",
-          "save_to": "",
+          "save_to": "customerZIPCode_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1856,7 +1856,7 @@
         {
           "id": "ca744e7a-7192-45fd-b267-17e4147735f5",
           "entity": "Is Primary",
-          "save_to": "",
+          "save_to": "isPrimary_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1898,7 +1898,7 @@
         {
           "id": "0a74ca13-f003-4ab8-b396-74fa74260dd0",
           "entity": "New Business Agency",
-          "save_to": "",
+          "save_to": "newBusinessAgency_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1940,7 +1940,7 @@
         {
           "id": "9d92a189-f28b-4658-a960-e23b814fbc76",
           "entity": "Referral Name",
-          "save_to": "",
+          "save_to": "referralName_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -1982,7 +1982,7 @@
         {
           "id": "da623c14-2f18-4fab-b0e8-af4d77d2076e",
           "entity": "Referral Name Code",
-          "save_to": "",
+          "save_to": "referralNameCode_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -2024,7 +2024,7 @@
         {
           "id": "b2c83716-4733-4a8a-b4cd-cb4f3a9fdaca",
           "entity": "Referral Location",
-          "save_to": "",
+          "save_to": "referralLocation_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -2066,7 +2066,7 @@
         {
           "id": "fa03494a-0692-46d6-b523-8847bfee6538",
           "entity": "Referral Location Code",
-          "save_to": "",
+          "save_to": "referralLocationCode_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -2108,7 +2108,7 @@
         {
           "id": "4ee61344-3b7c-4f14-ba0f-5f2df0d7323f",
           "entity": "Business Origin",
-          "save_to": "",
+          "save_to": "businessOrigin_R",
           "type": "",
           "unique": false,
           "options": [],
@@ -2150,7 +2150,7 @@
         {
           "id": "bbe87b74-d7d2-4204-bb40-7663822d52da",
           "entity": "Business Origin Code",
-          "save_to": "",
+          "save_to": "businessOriginCode_R",
           "type": "",
           "unique": false,
           "options": [],

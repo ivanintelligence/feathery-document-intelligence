@@ -8,7 +8,7 @@
         {
           "id": "c1218ee4-56e7-46bc-bd19-e5b9305f7bf7",
           "entity": "Customer Name",
-          "save_to": "",
+          "save_to": "customerName_CPCE",
           "type": "",
           "unique": false,
           "options": [],
@@ -51,7 +51,7 @@
         {
           "id": "e5855fb0-509b-4cf2-8672-c747dfaede95",
           "entity": "Bill Method",
-          "save_to": "",
+          "save_to": "billMethod_CPCE",
           "type": "",
           "unique": false,
           "options": [],
@@ -94,7 +94,7 @@
         {
           "id": "a5c07f3c-9996-4729-bbac-8b32f1e12257",
           "entity": "Premium",
-          "save_to": "",
+          "save_to": "premium_CPCE",
           "type": "",
           "unique": false,
           "options": [],
@@ -137,7 +137,7 @@
         {
           "id": "8018770a-2872-4b99-b305-a0cc76bce28d",
           "entity": "Billed Premium",
-          "save_to": "",
+          "save_to": "billedPremium_CPCE",
           "type": "",
           "unique": false,
           "options": [],
@@ -180,7 +180,7 @@
         {
           "id": "c42abc3c-4cc6-48f5-a93f-6098530c1c8e",
           "entity": "Unbilled Premium/Non-Premium",
-          "save_to": "",
+          "save_to": "unbilledPremiumNonPremium_CPCE",
           "type": "",
           "unique": false,
           "options": [],
@@ -223,7 +223,7 @@
         {
           "id": "61d9bda1-2209-4476-9a6e-e7305f76cfd0",
           "entity": "Policy Number",
-          "save_to": "",
+          "save_to": "policyNumber_CPCE",
           "type": "",
           "unique": false,
           "options": [],
@@ -266,7 +266,7 @@
         {
           "id": "1d4f4d41-adca-47a6-94fd-aae7dfcf6f14",
           "entity": "Transaction Effective Date",
-          "save_to": "",
+          "save_to": "transactionEffectiveDate_CPCE",
           "type": "",
           "unique": false,
           "options": [],
@@ -309,7 +309,7 @@
         {
           "id": "17854de6-ec2f-4716-952d-33bae40c579b",
           "entity": "Line of Business/Non-Premium",
-          "save_to": "",
+          "save_to": "lineOfBusinessNonPremium_CPCE",
           "type": "",
           "unique": false,
           "options": [],
@@ -352,7 +352,7 @@
         {
           "id": "fa0ec9e7-b187-4f3e-ab98-f645faee2649",
           "entity": "Parent Company",
-          "save_to": "",
+          "save_to": "parentCompany_CPCE",
           "type": "",
           "unique": false,
           "options": [],
@@ -395,7 +395,7 @@
         {
           "id": "23b001a0-44fc-4bd3-9ad2-7943fd91419f",
           "entity": "Policy Primary Executive",
-          "save_to": "",
+          "save_to": "policyPrimaryExecutive_CPCE",
           "type": "",
           "unique": false,
           "options": [],
@@ -438,7 +438,7 @@
         {
           "id": "b0a94124-8da4-4d9d-bd47-5dfc35cd948e",
           "entity": "Policy Primary Representative",
-          "save_to": "",
+          "save_to": "policyPrimaryRepresentative_CPCE",
           "type": "",
           "unique": false,
           "options": [],
@@ -481,7 +481,7 @@
         {
           "id": "deee6a48-ab33-420e-a96c-f2d3dda80d04",
           "entity": "Policy Expiration Date",
-          "save_to": "",
+          "save_to": "policyExpirationDate_CPCE",
           "type": "",
           "unique": false,
           "options": [],

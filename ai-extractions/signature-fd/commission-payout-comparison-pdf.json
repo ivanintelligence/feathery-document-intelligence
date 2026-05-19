@@ -8,7 +8,7 @@
         {
           "id": "45614929-2c2e-4983-9a34-f2daa2d6f4fa",
           "entity": "Commission Statement Month",
-          "save_to": "",
+          "save_to": "commissionStatementMonth_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -21,7 +21,7 @@
         {
           "id": "d200f120-843e-4ae6-9727-cd3733414917",
           "entity": "Statement Date",
-          "save_to": "",
+          "save_to": "statementDate_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -67,7 +67,7 @@
         {
           "id": "9c983cff-dbdd-48f6-b19d-a876aa0e3a9a",
           "entity": "Producer Name",
-          "save_to": "",
+          "save_to": "producerName_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -80,7 +80,7 @@
         {
           "id": "6efdad8a-ef69-42c3-bd1f-d142bf1ed095",
           "entity": "Producer Address Line 1",
-          "save_to": "",
+          "save_to": "producerAddressLine1_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -93,7 +93,7 @@
         {
           "id": "207c0397-ae05-4eee-914e-3b9a6399605c",
           "entity": "Producer Address Line 2",
-          "save_to": "",
+          "save_to": "producerAddressLine2_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -106,7 +106,7 @@
         {
           "id": "6c8c109f-0faa-449b-831d-162f9c04081c",
           "entity": "Producer City",
-          "save_to": "",
+          "save_to": "producerCity_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -119,7 +119,7 @@
         {
           "id": "6e919f93-090e-4164-907f-e12c1364abcf",
           "entity": "Producer State",
-          "save_to": "",
+          "save_to": "producerState_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -132,7 +132,7 @@
         {
           "id": "56fd3bc4-054c-422b-af78-5523b9d08c81",
           "entity": "Producer ZIP Code",
-          "save_to": "",
+          "save_to": "producerZipCode_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -145,7 +145,7 @@
         {
           "id": "78b3b017-8909-4905-b27f-b7c5c08a6e09",
           "entity": "Producer Number",
-          "save_to": "",
+          "save_to": "producerNumber_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -191,7 +191,7 @@
         {
           "id": "00b080c9-40ff-45f6-8b31-7f521c0a2af6",
           "entity": "Insurance Brand",
-          "save_to": "",
+          "save_to": "insuranceBrand_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -204,7 +204,7 @@
         {
           "id": "571d33d8-8575-45b4-b98b-6630d77ed5c9",
           "entity": "Insurance Company Name",
-          "save_to": "",
+          "save_to": "insuranceCompanyName_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -217,7 +217,7 @@
         {
           "id": "be3df479-9716-4f46-9887-e5a263d8a01f",
           "entity": "Insurance Company Address Line 1",
-          "save_to": "",
+          "save_to": "insuranceCompanyAddressLine1_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -230,7 +230,7 @@
         {
           "id": "b2f8b644-0f98-44b2-abca-90342a7b47b0",
           "entity": "Insurance Company Address Line 2",
-          "save_to": "",
+          "save_to": "insuranceCompanyAddressLine2_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -243,7 +243,7 @@
         {
           "id": "d9dff94f-7822-45fd-9a49-88f5eb3cdea4",
           "entity": "Insurance Company City",
-          "save_to": "",
+          "save_to": "insuranceCompanyCity_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -256,7 +256,7 @@
         {
           "id": "ca396387-9daa-4730-9788-c4d6bb7cbe84",
           "entity": "Insurance Company State",
-          "save_to": "",
+          "save_to": "insuranceCompanyState_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -269,7 +269,7 @@
         {
           "id": "209c19e6-647a-4485-988b-d23c059e8ac1",
           "entity": "Insurance Company ZIP Code",
-          "save_to": "",
+          "save_to": "insuranceCompanyZipCode_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -282,7 +282,7 @@
         {
           "id": "2f5cb5c1-ec61-45ce-97b5-12b295ed8340",
           "entity": "Insurance Company Phone Number",
-          "save_to": "",
+          "save_to": "insuranceCompanyPhoneNumber_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -295,7 +295,7 @@
         {
           "id": "60655540-4d62-4add-b34a-33cdebe8888a",
           "entity": "Insurance Company Email Address",
-          "save_to": "",
+          "save_to": "insuranceCompanyEmailAddress_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -308,7 +308,7 @@
         {
           "id": "b0202e65-8470-49d4-90c6-150d7d2befd7",
           "entity": "Insurance Company Mailing Address",
-          "save_to": "",
+          "save_to": "insuranceCompanyMailingAddress_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -354,7 +354,7 @@
         {
           "id": "be6017ea-eb65-4111-94df-6a68d8e91581",
           "entity": "Agency Code",
-          "save_to": "",
+          "save_to": "agencyCode_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -367,7 +367,7 @@
         {
           "id": "7c2f8c4a-cf37-4516-8ce4-8a6e85829b7e",
           "entity": "Account Number",
-          "save_to": "",
+          "save_to": "accountNumber_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -380,7 +380,7 @@
         {
           "id": "07d71d2c-579c-4122-930a-7026fc4a5f3b",
           "entity": "Policy Number",
-          "save_to": "",
+          "save_to": "policyNumber_CPCP_PLDR",
           "type": "",
           "unique": false,
           "options": [],
@@ -393,7 +393,7 @@
         {
           "id": "23456c6b-d879-4dde-a5de-973db4692520",
           "entity": "Insured Name",
-          "save_to": "",
+          "save_to": "insuredName_CPCP_PLDR",
           "type": "",
           "unique": false,
           "options": [],
@@ -406,7 +406,7 @@
         {
           "id": "4fed2c65-e92b-49a6-88f4-ed1497c72cac",
           "entity": "Line of Business",
-          "save_to": "",
+          "save_to": "lineOfBusiness_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -419,7 +419,7 @@
         {
           "id": "c29ede9a-4a0b-4fe1-a56e-1722a9ca4d21",
           "entity": "Transaction Type",
-          "save_to": "",
+          "save_to": "transactionType_CPCP_PLDR",
           "type": "",
           "unique": false,
           "options": [],
@@ -432,7 +432,7 @@
         {
           "id": "a2bd4541-9397-47c9-a01c-9accb9540a75",
           "entity": "Policy Effective Date",
-          "save_to": "",
+          "save_to": "policyEffectiveDate_CPCP_PLDR",
           "type": "",
           "unique": false,
           "options": [],
@@ -445,7 +445,7 @@
         {
           "id": "a43467f8-17fd-4699-880d-a8cda152bde1",
           "entity": "Premium Paid",
-          "save_to": "",
+          "save_to": "premiumPaid_CPCP_PLDR",
           "type": "",
           "unique": false,
           "options": [],
@@ -458,7 +458,7 @@
         {
           "id": "636380e3-a1d4-437f-a820-f792f5a04e25",
           "entity": "Commission Rate",
-          "save_to": "",
+          "save_to": "commissionRate_CPCP_PLDR",
           "type": "",
           "unique": false,
           "options": [],
@@ -471,7 +471,7 @@
         {
           "id": "6f660e47-10fc-4051-be4c-6c422e763a66",
           "entity": "Commission Amount Due",
-          "save_to": "",
+          "save_to": "commissionAmountDue_CPCP_PLDR",
           "type": "",
           "unique": false,
           "options": [],
@@ -517,7 +517,7 @@
         {
           "id": "636dc293-c665-454e-bcb3-e6ef4e0c5b21",
           "entity": "Business Type",
-          "save_to": "",
+          "save_to": "businessType_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -530,7 +530,7 @@
         {
           "id": "3a6bc047-a70e-4a62-9dbf-2683bf1195ee",
           "entity": "Premium Paid",
-          "save_to": "",
+          "save_to": "premiumPaid_CPCP_SR",
           "type": "",
           "unique": false,
           "options": [],
@@ -543,7 +543,7 @@
         {
           "id": "f4498c57-1cae-459d-8977-84aae2bd0df2",
           "entity": "Commission Due",
-          "save_to": "",
+          "save_to": "commissionDue_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -556,7 +556,7 @@
         {
           "id": "e4c9b69c-835d-4107-bfd6-5d30034f9107",
           "entity": "Prior Month Carryover",
-          "save_to": "",
+          "save_to": "priorMonthCarryover_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -569,7 +569,7 @@
         {
           "id": "f854c662-65a4-4e0a-b3d7-7d9aaaaea7dc",
           "entity": "Agent Payment",
-          "save_to": "",
+          "save_to": "agentPayment_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -582,7 +582,7 @@
         {
           "id": "5db06971-2e93-4fe2-9377-9366c380b449",
           "entity": "Balance Transfer",
-          "save_to": "",
+          "save_to": "balanceTransfer_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -595,7 +595,7 @@
         {
           "id": "c19bb469-ebf7-4a08-9c61-7a31e8d5f3f3",
           "entity": "Total Payable Commission",
-          "save_to": "",
+          "save_to": "totalPayableCommission_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -608,7 +608,7 @@
         {
           "id": "d58815d7-1358-4f65-aac7-7d55b4c8f262",
           "entity": "Payment Type",
-          "save_to": "",
+          "save_to": "paymentType_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -621,7 +621,7 @@
         {
           "id": "fde7f69d-e298-4e77-8bf6-7e12eb9180f5",
           "entity": "Payment Date",
-          "save_to": "",
+          "save_to": "paymentDate_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -634,7 +634,7 @@
         {
           "id": "e484c35a-fefc-4e94-a775-d34c37f9051b",
           "entity": "Payment Detail",
-          "save_to": "",
+          "save_to": "paymentDetail_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -680,7 +680,7 @@
         {
           "id": "189d8e12-3c98-46d6-9037-11350fe7057e",
           "entity": "Check Voucher Number",
-          "save_to": "",
+          "save_to": "checkVoucherNumber_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -693,7 +693,7 @@
         {
           "id": "74f88d39-58b8-44cd-b0f6-28df4fc35d8a",
           "entity": "Total Written Premium",
-          "save_to": "",
+          "save_to": "totalWrittenPremium_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -706,7 +706,7 @@
         {
           "id": "ea6bb817-55fb-42e2-8417-35532a41eae9",
           "entity": "Current Activity",
-          "save_to": "",
+          "save_to": "currentActivity_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -719,7 +719,7 @@
         {
           "id": "01930504-3571-494e-9727-6304871e97e6",
           "entity": "Previous Balance",
-          "save_to": "",
+          "save_to": "previousBalance_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -732,7 +732,7 @@
         {
           "id": "52669a25-e7a0-4a2b-b54a-6180de3950ac",
           "entity": "Payments Received",
-          "save_to": "",
+          "save_to": "paymentsReceived_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -745,7 +745,7 @@
         {
           "id": "ee384e79-95bb-4673-8a68-9f11a3ff549a",
           "entity": "Commission Adjustment",
-          "save_to": "",
+          "save_to": "commissionAdjustment_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -758,7 +758,7 @@
         {
           "id": "3f8f8486-ea6d-48bb-aca7-7a92ddf9c739",
           "entity": "Total Payout",
-          "save_to": "",
+          "save_to": "totalPayout_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -771,7 +771,7 @@
         {
           "id": "d21dac3a-16a0-4dbc-acdb-1171bac92352",
           "entity": "Comments",
-          "save_to": "",
+          "save_to": "comments_CPCP_FPCS",
           "type": "",
           "unique": false,
           "options": [],
@@ -817,7 +817,7 @@
         {
           "id": "0667cf55-4b86-43b5-82f3-3fa62810872d",
           "entity": "Insured Name",
-          "save_to": "",
+          "save_to": "insuredName_CPCP_FPCR",
           "type": "",
           "unique": false,
           "options": [],
@@ -830,7 +830,7 @@
         {
           "id": "67ad5b04-115b-4077-83e6-2e75869564c1",
           "entity": "Policy Number",
-          "save_to": "",
+          "save_to": "policyNumber_CPCP_FPCR",
           "type": "",
           "unique": false,
           "options": [],
@@ -843,7 +843,7 @@
         {
           "id": "ae505d61-9f1b-49c2-8313-60a437299009",
           "entity": "Transaction Type",
-          "save_to": "",
+          "save_to": "transactionType_CPCP_FPCR",
           "type": "",
           "unique": false,
           "options": [],
@@ -856,7 +856,7 @@
         {
           "id": "55e24593-d761-425f-ac78-df1511157998",
           "entity": "Effective Date",
-          "save_to": "",
+          "save_to": "effectiveDate_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -869,7 +869,7 @@
         {
           "id": "ab2f4946-88ab-4ff3-aa7c-4573c3355edb",
           "entity": "Agent Name",
-          "save_to": "",
+          "save_to": "agentName_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -882,7 +882,7 @@
         {
           "id": "d657eea9-c613-464e-a49f-31636244e335",
           "entity": "Agent ID",
-          "save_to": "",
+          "save_to": "agentId_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -895,7 +895,7 @@
         {
           "id": "91e1366c-06ac-4fb9-b614-605510f1b9ec",
           "entity": "Written Premium",
-          "save_to": "",
+          "save_to": "writtenPremium_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -908,7 +908,7 @@
         {
           "id": "7b09e5c6-2ff3-483f-822f-40fd1697cf2c",
           "entity": "Commission Rate",
-          "save_to": "",
+          "save_to": "commissionRate_CPCP_FPCR",
           "type": "",
           "unique": false,
           "options": [],
@@ -921,7 +921,7 @@
         {
           "id": "86b8eef8-34e4-47c9-b137-35486f4de0fb",
           "entity": "Commission Amount Due",
-          "save_to": "",
+          "save_to": "commissionAmountDue_CPCP_FPCR",
           "type": "",
           "unique": false,
           "options": [],
@@ -967,7 +967,7 @@
         {
           "id": "c556def9-9cb6-439c-a611-130bc42f69d0",
           "entity": "Total Commission Amount",
-          "save_to": "",
+          "save_to": "totalCommissionAmount_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -980,7 +980,7 @@
         {
           "id": "602a1e1f-8273-482a-9537-915a7f22e2fa",
           "entity": "Comments",
-          "save_to": "",
+          "save_to": "comments_CPCP_RCS",
           "type": "",
           "unique": false,
           "options": [],
@@ -1026,7 +1026,7 @@
         {
           "id": "fa45b81e-19d2-4e50-83dc-3f3b74891b2d",
           "entity": "Submission Number",
-          "save_to": "",
+          "save_to": "submissionNumber_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -1039,7 +1039,7 @@
         {
           "id": "fe4f85ec-133f-4aa4-96d4-d6d3643f79ce",
           "entity": "Policy Status ID",
-          "save_to": "",
+          "save_to": "policyStatusId_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -1052,7 +1052,7 @@
         {
           "id": "90e268b9-0a3e-4d43-9f15-7ef51fe4bac5",
           "entity": "Policy Number",
-          "save_to": "",
+          "save_to": "policyNumber_CPCP_RCR",
           "type": "",
           "unique": false,
           "options": [],
@@ -1065,7 +1065,7 @@
         {
           "id": "80cb4926-8962-4a24-afaf-482ea85de5fb",
           "entity": "Policy Effective Date",
-          "save_to": "",
+          "save_to": "policyEffectiveDate_CPCP_RCR",
           "type": "",
           "unique": false,
           "options": [],
@@ -1078,7 +1078,7 @@
         {
           "id": "c3b2aa10-118f-45d4-9534-7c2fa93a87f5",
           "entity": "Insured Name",
-          "save_to": "",
+          "save_to": "insuredName_CPCP_RCR",
           "type": "",
           "unique": false,
           "options": [],
@@ -1091,7 +1091,7 @@
         {
           "id": "09189259-1f62-45ac-853f-5c70659d376c",
           "entity": "Invoice Number",
-          "save_to": "",
+          "save_to": "invoiceNumber_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -1104,7 +1104,7 @@
         {
           "id": "29e53fed-7e52-494f-aa6f-cc511bca3ce8",
           "entity": "Annual Premium",
-          "save_to": "",
+          "save_to": "annualPremium_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -1117,7 +1117,7 @@
         {
           "id": "c6d7f67e-c3b1-4df9-ae37-13ffb2ac8801",
           "entity": "Premium Received to Date",
-          "save_to": "",
+          "save_to": "premiumReceivedToDate_CPCP",
           "type": "",
           "unique": false,
           "options": [],
@@ -1130,7 +1130,7 @@
         {
           "id": "1666752f-7719-4be9-9da8-30c6231706f2",
           "entity": "Commission Rate",
-          "save_to": "",
+          "save_to": "commissionRate_CPCP_RCR",
           "type": "",
           "unique": false,
           "options": [],
@@ -1143,7 +1143,7 @@
         {
           "id": "54a68bc1-bd90-4288-a456-aa9a1eb5f653",
           "entity": "Commission Amount",
-          "save_to": "",
+          "save_to": "commissionAmount_CPCP",
           "type": "",
           "unique": false,
           "options": [],

@@ -447,7 +447,7 @@
     {
       "id": "5d8e1185-748b-4e68-85cb-5f5e4b629ed6",
       "type": "multiple_value",
-      "details": "Extract only from the document title Summary of Insurance. One output row must represent one coverage line or one deductible line. Repeat the same policy and insured property values for each linked coverage or deductible row. If the row is a coverage, return deductible fields as null. If the row is a deductible, return coverage fields as null. Do not extract Policy Overview or Schedule of Personal Property data.",
+      "details": "Extract only from the document title Summary of Insurance. One output row must represent one coverage line, deductible line, vehicle line, or driver line. Repeat the same policy values for each linked row. If a row is a coverage, return deductible, vehicle, and driver fields as null. If a row is a deductible, return coverage, vehicle, and driver fields as null. If a row is a vehicle, return coverage, deductible, and driver fields as null. If a row is a driver, return coverage, deductible, and vehicle fields as null.",
       "entities": [
         {
           "id": "c2765149-5b8a-484f-89d5-23d52ca092a8",
@@ -563,7 +563,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract every coverage line name shown under the policy. Return null for deductible rows, property address rows, policy heading rows, and notes.",
+          "criteria": "Extract every coverage line name under the policy, insured property, or vehicle. Do not extract policy headings, addresses, vehicle lines, VIN lines, driver lines, deductible labels, or notes.",
           "examples": [
             "Dwelling",
             "Coins",
@@ -575,14 +575,29 @@
         },
         {
           "id": "b1be41db-f2ea-42f4-ac5c-ed88ba1fd4c9",
-          "entity": "Amount Limit",
+          "entity": "Coverage Amount Limit",
           "save_to": "",
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the amount or limit paired with the Coverage Name. Return null for deductible rows, policy heading rows, address rows, and notes.",
+          "criteria": "Extract the amount or limit paired with the Coverage Name. Return null if the coverage line has no amount or limit shown.",
           "examples": [
             "4,120,538"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "a5b33ff6-293f-4816-89c3-8cceec019f14",
+          "entity": "Coverage Premium",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the premium amount specifically aligned with the coverage line. Do not use the total policy premium or vehicle premium. Return null if no coverage-specific premium is shown.",
+          "examples": [
+            "5,568.00"
           ],
           "required": false,
           "default_option": "",
@@ -595,7 +610,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract only deductible labels, such as All Peril Ded or Wind/Hail Ded. Return null for coverage rows.",
+          "criteria": "Extract only deductible labels, such as All Peril Ded, Wind/Hail Ded, Collision, or Comprehensive when paired with a deductible value. Return null for normal coverage rows, vehicle rows, and driver rows.",
           "examples": [
             "All Peril Ded"
           ],
@@ -610,9 +625,99 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Extract the amount or percentage paired with the Deductible Type. Return null for coverage rows.",
+          "criteria": "Extract the amount or percentage paired with the Deductible Type, including values marked Ded. Return null for normal coverage rows, vehicle rows, and driver rows.",
           "examples": [
             "5,000"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "8b81eb06-2ca0-42c9-bfce-af0696c322c7",
+          "entity": "Vehicle Number",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the number after Vehicle, such as 0001 from Vehicle 0001. Return null for non-vehicle rows.",
+          "examples": [
+            "0001"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "7d1b051e-05f8-4349-9562-427346baf620",
+          "entity": "Vehicle Description",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the vehicle year, make, model, or description shown after the vehicle number. Return null for non-vehicle rows.",
+          "examples": [
+            "2017 Toyota Sienna"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "b44f9a53-7ace-4b61-8f9c-093796a4d984",
+          "entity": "Vehicle VIN",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the VIN shown after VIN and link it to the nearest preceding vehicle. Return null for non-vehicle rows.",
+          "examples": [
+            "5TDYZ3DC2HS826680"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "df61452f-1683-4ed8-bce4-217bf3831651",
+          "entity": "Vehicle Premium",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the premium amount aligned with the specific vehicle row. Do not use the total policy premium or coverage premium. Return null if no vehicle-specific premium is shown.",
+          "examples": [
+            "1,923.00"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "3d72d107-b038-4754-a9c8-ffb2758153d5",
+          "entity": "Driver Number",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the number after Driver, such as 0001 from Driver 0001. Return null for non-driver rows.",
+          "examples": [
+            "0001"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false
+        },
+        {
+          "id": "6ff8ef66-5af6-4924-8ab5-a67ec33c7186",
+          "entity": "Driver Name",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "Extract the person’s name shown after the driver number. Return null for non-driver rows.",
+          "examples": [
+            "Melissa Oren"
           ],
           "required": false,
           "default_option": "",

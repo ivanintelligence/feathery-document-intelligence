@@ -1,0 +1,1922 @@
+{
+  "queries": [
+    {
+      "id": "165041f8-1fc3-4806-8fa9-fd62a4d907c8",
+      "type": "image_analysis",
+      "details": "Inspect wide exterior property images, surrounding vegetation images, driveway images, road images, address verification images, GPS images, and any image showing general access to the dwelling.",
+      "entities": [
+        {
+          "id": "2de1fd64-59c9-4986-9568-56111cf6f10f",
+          "entity": "Are there wildlands, such as forests, woodlands, dense brush fields, overgrown grasslands, etc., within 1000 ft of dwelling?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Look beyond maintained landscaping.",
+            "Include dense brush, woodland, forest, and unmanaged vegetation."
+          ]
+        },
+        {
+          "id": "0bc34541-7eca-45a3-872a-a7edbbb939d7",
+          "entity": "Does the house have year-round access and are the road surfaces maintained and do they reflect safe access, turnaround ability, no restrictions due to overgrowth of vegetation, and/or grade/maintenance?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Inspect road surface, driveway, access route, and turnaround area.",
+            "Look for blocked access, unsafe grade, poor maintenance, or vegetation restrictions."
+          ]
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Wildland Exposure, General Property View, and Access",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "91407503-8662-4e6f-857b-69bc696f43f0",
+      "type": "image_analysis",
+      "details": "Inspect images showing directional slope, terrain grade, surrounding vegetation, and the relationship between the dwelling and vegetation on each side.",
+      "entities": [
+        {
+          "id": "753a20cd-ea80-4d2a-b707-80ecc36481a6",
+          "entity": "What is the house-to-vegetation position on the north side?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Up Slope",
+            "Down Slope",
+            "Level",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Determine whether north-side vegetation is uphill, downhill, or level from the dwelling."
+          ]
+        },
+        {
+          "id": "d950f3d4-ab4e-4e6a-bb2e-f3c34756a7ff",
+          "entity": "What is the house-to-vegetation position on the south side?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Up Slope",
+            "Down Slope",
+            "Level",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Determine whether south-side vegetation is uphill, downhill, or level from the dwelling."
+          ]
+        },
+        {
+          "id": "8d1a97b1-b4e2-4544-9c65-015dd0df69bc",
+          "entity": "What is the house-to-vegetation position on the east side?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Up Slope",
+            "Down Slope",
+            "Level",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Determine whether east-side vegetation is uphill, downhill, or level from the dwelling."
+          ]
+        },
+        {
+          "id": "e9f05d02-3a6c-411c-ad03-0ea4672409dc",
+          "entity": "What is the house-to-vegetation position on the west side?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Up Slope",
+            "Down Slope",
+            "Level",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Determine whether west-side vegetation is uphill, downhill, or level from the dwelling."
+          ]
+        },
+        {
+          "id": "d73261e6-1311-41e3-8cc8-80c8e111ed89",
+          "entity": "What is the degree range of the north slope?",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [
+            "0-29 degrees",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the labeled slope range if shown.",
+            "Use Unclear if slope is visible but not measurable."
+          ]
+        },
+        {
+          "id": "ae8c27ea-f5ed-40c0-8c9d-cb18abe0d737",
+          "entity": "What is the degree range of the south slope?",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [
+            "0-29 degrees",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the labeled slope range if shown.",
+            "Use Unclear if slope is visible but not measurable."
+          ]
+        },
+        {
+          "id": "9ff5dbe6-655c-4b28-a73f-e4c7688d98bb",
+          "entity": "What is the degree range of the east slope?",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [
+            "0-29 degrees",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the labeled slope range if shown.",
+            "Use Unclear if slope is visible but not measurable."
+          ]
+        },
+        {
+          "id": "d1d75712-fd00-4819-b5d0-d0538cc8fde6",
+          "entity": "What is the degree range of the west slope?",
+          "save_to": "",
+          "type": "",
+          "unique": false,
+          "options": [],
+          "criteria": "",
+          "examples": [
+            "0-29 degrees",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the labeled slope range if shown.",
+            "Use Unclear if slope is visible but not measurable."
+          ]
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Directional Slope and House-to-Vegetation Position",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "bfe67fac-a36b-408d-991a-ebf77d5f2c6c",
+      "type": "image_analysis",
+      "details": "Inspect images showing the roof, roof edges, chimney, chimney top, eaves, soffits, gutters, upper exterior walls, and nearby trees or branches.",
+      "entities": [
+        {
+          "id": "79f2ffc9-d226-4d54-9af9-50ac9624e66f",
+          "entity": "Are there tree branches within 10 feet of or overhanging the chimney?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Focus on the chimney and nearby branches.Use N/A if no chimney is present."
+          ]
+        },
+        {
+          "id": "404743b3-873c-4775-9e9e-1daf1245ce80",
+          "entity": "Are the chimneys unscreened/missing flue cap/missing spark arrestor?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Inspect the chimney top.Use N/A if no chimney is present."
+          ]
+        },
+        {
+          "id": "eeea9b0c-e79f-4887-b246-57c9e861f242",
+          "entity": "Are there tree branches touching or overhanging the roof?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Look for branches above or touching the roof."
+          ]
+        },
+        {
+          "id": "1c9afe88-e691-4d81-9eb1-347fc15e94aa",
+          "entity": "Is the roof wood?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Answer Yes only for wood shake or wood shingle roofing."
+          ]
+        },
+        {
+          "id": "56c21776-0b0b-4dd0-a43e-30773658275b",
+          "entity": "Are eaves boxed in for any single story or first floor roof line?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Boxed in means the underside of the eave is enclosed."
+          ]
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Roof, Chimney, Eaves, and Roof-Contact Vegetation",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "e2121a72-a1cd-407c-8178-d3510eb21d34",
+      "type": "image_analysis",
+      "details": "Inspect close and distant images of siding, exterior walls, wall base, foundation, crawlspace areas, vents, louvers, flanges, and vegetation immediately near or touching the exterior walls.",
+      "entities": [
+        {
+          "id": "4c7a06ba-dee6-41e0-9e16-2da612d3ac74",
+          "entity": "Are there naturally occurring trees/plants/fuels or coniferous landscaping within 0 to 5 ft of the dwelling?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit the inspection to 0 to 5 ft from exterior walls.",
+            "Exclude maintained lawn."
+          ]
+        },
+        {
+          "id": "8a5ac5ea-718f-4d46-b7ec-c9233e82e54b",
+          "entity": "Is the foundation open?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Open foundation means exposed space below the dwelling.",
+            "Answer No if the foundation is enclosed."
+          ]
+        },
+        {
+          "id": "daa887d2-a164-452c-8331-1bda06513abf",
+          "entity": "Is the siding made of non-combustible material?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Stone, brick, cement, stucco, metal, and masonry count as non-combustible.",
+            "Wood and vinyl count as combustible."
+          ]
+        },
+        {
+          "id": "af3820db-2bf7-42ec-ac25-ca5df53e8438",
+          "entity": "Does the lowest 6 inches of the exterior wall, that meets the ground, have non-combustible material?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Inspect the wall base where it meets the ground.",
+            "Stone, brick, concrete, stucco, and metal count as non-combustible."
+          ]
+        },
+        {
+          "id": "a731f3ad-9d1b-442e-a529-4fc200eb2e8e",
+          "entity": "Do all louvers/flanges/vents have metal screens made of 1/8 inch or finer mesh?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Inspect only visible vents, louvers, and flanges.",
+            "Use N/A if no vents are present."
+          ]
+        },
+        {
+          "id": "364588bb-9d7b-45fe-8a71-8a6d84ae8b39",
+          "entity": "Are there tree limbs/vegetation, other than landscaping, touching siding?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Exclude maintained landscaping unless it touches siding."
+          ]
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Siding, Exterior Wall Base, Foundation, Vents, and Wall-Adjacent Vegetation",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "1c99b437-cadf-4c6a-8d04-f127497eaf52",
+      "type": "image_analysis",
+      "details": "Inspect images showing decks, porches, walkways, walking surfaces, joists, underside areas, railings, deck edges, deck-to-wall connections, and flashing.",
+      "entities": [
+        {
+          "id": "3929dd12-37cb-4400-8255-afb08a40c661",
+          "entity": "Are decks made of metal?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Answer Yes only if the deck structure appears metal.",
+            "Use N/A if no deck is present."
+          ]
+        },
+        {
+          "id": "8ebf785c-60db-4bba-b636-ec0c2b9b575e",
+          "entity": "Do all decks use metal joists and have a walking surface other than wood?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Check both joists and walking surface.",
+            "Answer No if any visible deck fails either condition."
+          ]
+        },
+        {
+          "id": "bb8d8326-3729-4c79-9cc3-0bb72f784a76",
+          "entity": "Do wood decks/walkways touching combustible material, such as wood siding or vinyl siding, have flashing?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Inspect the contact point with combustible siding.",
+            "Flashing must be visible.",
+            "Use N/A if there is no wood deck or walkway touching combustible siding."
+          ]
+        },
+        {
+          "id": "c2e84b8d-6621-4af2-8ced-b9267ebeafbc",
+          "entity": "Are decks residing less than 4 feet from the ground enclosed with fire-resistant materials such as metal screening, mesh 1/8 inch or finer, and clear of any flammable material underneath?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Apply only to decks less than 4 feet from the ground.",
+            "Check for fire-resistant enclosure.",
+            "Check for flammable material underneath."
+          ]
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Decks, Walkways, Joists, Walking Surface, Flashing, and Deck Enclosure",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "6d9879e0-96bb-41b0-b95a-0cf3040cf88b",
+      "type": "image_analysis",
+      "details": "Inspect images showing fences, gates, fence attachments, wall connections, siding near fence contact points, and the first 5 feet of fencing attached to the dwelling.",
+      "entities": [
+        {
+          "id": "ac1fbcdd-6248-4e93-ac54-d5124a2506bb",
+          "entity": "Are the first 5 feet of fencing attached to the home made of non-combustible materials?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Apply only to fencing attached to the dwelling.",
+            "Wood and vinyl are not acceptable."
+          ]
+        },
+        {
+          "id": "c199e8fb-3021-428e-b1ec-8cbdc5300ed0",
+          "entity": "Does a wood or vinyl fence have flashing between the fence and the combustible siding?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Apply only to wood or vinyl fencing attached to combustible siding.",
+            "Flashing must be visible."
+          ]
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Attached Fencing and Fence-to-Wall Interface",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "f4353003-f250-4718-9699-6d11b7c40ccf",
+      "type": "image_analysis",
+      "details": "Inspect images showing the ground within 0 to 5 ft of the dwelling, mulch beds, landscaping beds, porches, yard edges, walkways, stored materials, lumber, woodpiles, playsets, pet houses, sheds, and other combustible objects near the dwelling.",
+      "entities": [
+        {
+          "id": "b29e88bd-d813-40a9-a317-f0e0ba81248a",
+          "entity": "Are there combustible mulch products?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Look for wood chips, bark, shredded wood, or rubber mulch.",
+            "Stone, gravel, and bare soil are not combustible mulch."
+          ]
+        },
+        {
+          "id": "98102fab-22be-442a-8e79-31e6d6855e9f",
+          "entity": "Are there woodpiles, lumber, or combustible playsets/pet houses/sheds?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit the inspection to the 0 to 5 ft zone.",
+            "Include firewood, lumber, playsets, pet houses, and sheds."
+          ]
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Immediate 0 to 5 ft Combustible Ground Fuels and Movable Combustibles",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "ab71b196-fb9f-49e0-a83a-002047bd48b0",
+      "type": "image_analysis",
+      "details": "Inspect images showing trees around the dwelling, especially trees in the 5 to 30 ft zone and 30 to 100 ft zone. Prioritize images that show tree trunks, lower branches, ground clearance, tree height, pruning condition, distance zone, and direction.",
+      "entities": [
+        {
+          "id": "623eca9b-f6c8-4690-a60a-7ffe9b25a4e4",
+          "entity": "Are trees 18 feet or taller pruned up at least 6 feet from the ground, and trees less than 18 feet pruned at least 1/3 the height of the tree in the 5 to 30 ft zone?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to trees in the 5 to 30 ft zone.",
+            "Answer No if any visible tree fails."
+          ]
+        },
+        {
+          "id": "4e6caae6-f2ee-4702-94f2-feb0e0289106",
+          "entity": "Are trees in the north 5 to 30 ft zone properly pruned?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the 5 to 30 ft pruning standard.",
+            "Use N/A if no north-side trees are present."
+          ]
+        },
+        {
+          "id": "6b1ea5b1-14e0-425c-988f-c973781fd673",
+          "entity": "Are trees in the south 5 to 30 ft zone properly pruned?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the 5 to 30 ft pruning standard.",
+            "Use N/A if no south-side trees are present."
+          ]
+        },
+        {
+          "id": "5e562ba1-4f7b-4838-ad26-52f28bee1306",
+          "entity": "Are trees in the east 5 to 30 ft zone properly pruned?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the 5 to 30 ft pruning standard.",
+            "Use N/A if no east-side trees are present."
+          ]
+        },
+        {
+          "id": "448fde6e-3ce3-4cbc-a9db-ff6a20afd9c8",
+          "entity": "Are trees in the west 5 to 30 ft zone properly pruned?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the 5 to 30 ft pruning standard.",
+            "Use N/A if no west-side trees are present."
+          ]
+        },
+        {
+          "id": "015faed9-dd6e-4874-b7e3-690ee8d6764b",
+          "entity": "Are trees 18 feet or taller pruned up at least 6 feet from the ground, and trees less than 18 feet pruned at least 1/3 the height of the tree in the 30 to 100 ft zone?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to trees in the 30 to 100 ft zone.",
+            "Answer No if any visible tree fails."
+          ]
+        },
+        {
+          "id": "fe69fdff-447f-40fb-b011-087985587c5c",
+          "entity": "Are trees in the north 30 to 100 ft zone properly pruned?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the 30 to 100 ft pruning standard.",
+            "Use N/A if no north-side trees are present."
+          ]
+        },
+        {
+          "id": "178a4946-9df3-43b0-b752-fc04d3d24964",
+          "entity": "Are trees in the south 30 to 100 ft zone properly pruned?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the 30 to 100 ft pruning standard.",
+            "Use N/A if no south-side trees are present."
+          ]
+        },
+        {
+          "id": "7f8978ab-c1c3-440f-af9c-b75d692aff72",
+          "entity": "Are trees in the east 30 to 100 ft zone properly pruned?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the 30 to 100 ft pruning standard.",
+            "Use N/A if no east-side trees are present."
+          ]
+        },
+        {
+          "id": "a28cb8f4-02bf-48ba-9d8b-9c8171f5ec51",
+          "entity": "Are trees in the west 30 to 100 ft zone properly pruned?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the 30 to 100 ft pruning standard.",
+            "Use N/A if no west-side trees are present."
+          ]
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Tree Pruning by Zone and Direction",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "f3b802f2-be0c-42ba-9b17-781abd6033f4",
+      "type": "image_analysis",
+      "details": "Inspect images showing tree crowns, canopy gaps, tree groups, tree clusters, slope direction, and vegetation around the dwelling. Compare canopy spacing against the applicable slope rule.",
+      "entities": [
+        {
+          "id": "eaf6618c-dfe9-4970-b914-a1d9371a4e33",
+          "entity": "Do tree crowns/canopy have appropriate spacing according to slope in the 5 to 30 ft zone?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to tree crowns in the 5 to 30 ft zone.",
+            "Apply the spacing rule that matches the slope."
+          ]
+        },
+        {
+          "id": "54cf90fc-534b-4c1a-89c5-a2f64d97a62f",
+          "entity": "For flat to mild slope, 0% to 19%, do tree crowns/canopy have at least 10 feet of spacing in the 5 to 30 ft zone?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Apply only when the slope is flat to mild."
+          ]
+        },
+        {
+          "id": "73d5ea2a-addd-4532-8cd0-28226b71568a",
+          "entity": "For mild to moderate slope, 20% to 40%, do tree crowns/canopy have at least 20 feet of spacing in the 5 to 30 ft zone?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Apply only when the slope is mild to moderate."
+          ]
+        },
+        {
+          "id": "53ffe6fa-905c-45db-a6cb-96ce667bfc16",
+          "entity": "For moderate to steep slope, greater than 40%, do tree crowns/canopy have at least 30 feet of spacing in the 5 to 30 ft zone?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Apply only when the slope is moderate to steep."
+          ]
+        },
+        {
+          "id": "5848a545-7591-46f2-9c6a-fc6327ce50d5",
+          "entity": "Are there 4 or more trees in a cluster within the 30 to 100 ft zone?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Count trees that form one visible cluster.",
+            "Limit to the 30 to 100 ft zone."
+          ]
+        },
+        {
+          "id": "1a658217-ad16-4c96-a064-4e9ba4f61bb3",
+          "entity": "Do tree crowns/canopy have appropriate spacing according to slope in the 30 to 100 ft zone?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to tree crowns in the 30 to 100 ft zone.",
+            "Apply the spacing rule that matches the slope."
+          ]
+        },
+        {
+          "id": "22aab49f-fa05-4289-8b84-7a37bbf29b53",
+          "entity": "For flat to mild slope, 0% to 19%, do tree crowns/canopy have at least 10 feet of spacing in the 30 to 100 ft zone?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Apply only when the slope is flat to mild."
+          ]
+        },
+        {
+          "id": "eecccba3-c3af-496d-9e74-45eab3b8b817",
+          "entity": "For mild to moderate slope, 20% to 40%, do tree crowns/canopy have at least 20 feet of spacing in the 30 to 100 ft zone?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Apply only when the slope is mild to moderate."
+          ]
+        },
+        {
+          "id": "21e19f85-4489-4a49-8e88-b5f4b0e06dbb",
+          "entity": "For moderate to steep slope, greater than 40%, do tree crowns/canopy have at least 30 feet of spacing in the 30 to 100 ft zone?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Apply only when the slope is moderate to steep."
+          ]
+        },
+        {
+          "id": "b758e740-7b9e-4a5a-a89d-babe65afa063",
+          "entity": "Are tree crowns/canopy appropriately spaced on the north side in the 30 to 100 ft zone?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the spacing standard for the observed slope.",
+            "Use N/A if no north-side trees are present."
+          ]
+        },
+        {
+          "id": "96ca6a5e-9f19-41e3-a792-85281f265a82",
+          "entity": "Are tree crowns/canopy appropriately spaced on the south side in the 30 to 100 ft zone?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the spacing standard for the observed slope.",
+            "Use N/A if no south-side trees are present."
+          ]
+        },
+        {
+          "id": "54c0f5e2-8a40-4ee6-abd9-58d0aaa1f0c4",
+          "entity": "Are tree crowns/canopy appropriately spaced on the east side in the 30 to 100 ft zone?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the spacing standard for the observed slope.",
+            "Use N/A if no east-side trees are present."
+          ]
+        },
+        {
+          "id": "a5330f8b-e335-4ab0-916f-70edc004df09",
+          "entity": "Are tree crowns/canopy appropriately spaced on the west side in the 30 to 100 ft zone?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the spacing standard for the observed slope.",
+            "Use N/A if no west-side trees are present."
+          ]
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Tree Crown and Canopy Spacing and Tree Clusters",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "f577fda7-c55d-42bc-a96f-bb68aebc13d1",
+      "type": "image_analysis",
+      "details": "Inspect images showing naturally occurring shrubs, brush, unmanaged vegetation, vegetation density, slope, direction, and distance zones around the dwelling. Compare shrub spacing against the applicable slope rule.",
+      "entities": [
+        {
+          "id": "c1729133-f83f-409e-8f33-742a621a868f",
+          "entity": "Do naturally occurring shrubs, other than landscaping, have appropriate spacing according to slope in the 5 to 30 ft zone?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to naturally occurring shrubs in the 5 to 30 ft zone.",
+            "Exclude maintained landscaping."
+          ]
+        },
+        {
+          "id": "3204b4d0-33c3-40da-92e4-beae4be91a65",
+          "entity": "For flat to mild slope, 0% to 19%, are naturally occurring shrubs in the 5 to 30 ft zone spaced at least 2 times the shrub height?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Apply only when the slope is flat to mild."
+          ]
+        },
+        {
+          "id": "40099281-0d16-417b-82b7-6d2f144adb48",
+          "entity": "For mild to moderate slope, 20% to 40%, are naturally occurring shrubs in the 5 to 30 ft zone spaced at least 4 times the shrub height?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Apply only when the slope is mild to moderate."
+          ]
+        },
+        {
+          "id": "37fcfbf9-f5d1-47ac-b994-27924177f3a6",
+          "entity": "For moderate to steep slope, greater than 40%, are naturally occurring shrubs in the 5 to 30 ft zone spaced at least 6 times the shrub height?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Apply only when the slope is moderate to steep."
+          ]
+        },
+        {
+          "id": "b801bc2c-4575-4180-a750-8e899a06d09a",
+          "entity": "Do naturally occurring shrubs, other than landscaping, have appropriate spacing according to slope in the 30 to 100 ft zone?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to naturally occurring shrubs in the 30 to 100 ft zone.",
+            "Exclude maintained landscaping."
+          ]
+        },
+        {
+          "id": "fc76ef05-ee5f-45cc-88f4-6e7451ae68ad",
+          "entity": "For flat to mild slope, 0% to 19%, are naturally occurring shrubs in the 30 to 100 ft zone spaced at least 2 times the shrub height?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Apply only when the slope is flat to mild."
+          ]
+        },
+        {
+          "id": "d2ff775f-39de-4e90-93ba-9fda762ca59a",
+          "entity": "For mild to moderate slope, 20% to 40%, are naturally occurring shrubs in the 30 to 100 ft zone spaced at least 4 times the shrub height?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Apply only when the slope is mild to moderate."
+          ]
+        },
+        {
+          "id": "eb92f67f-6e8a-4c59-a7c6-cc87833db09d",
+          "entity": "For moderate to steep slope, greater than 40%, are naturally occurring shrubs in the 30 to 100 ft zone spaced at least 6 times the shrub height?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Apply only when the slope is moderate to steep."
+          ]
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Naturally Occurring Shrub Spacing by Zone and Slope",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "ed5bd4fc-e4ab-4158-a2d8-37bbf74d52ec",
+      "type": "image_analysis",
+      "details": "Inspect images showing detached structures, sheds, pet houses, playsets, neighboring homes, propane tanks, butane tanks, woodpiles, lumber, and structures around the dwelling.",
+      "entities": [
+        {
+          "id": "d124f353-da6d-4e05-b925-a365467a4cfc",
+          "entity": "Are there structures/outbuildings, such as sheds, pet houses, etc., built with combustible materials, such as wood, vinyl, etc., that do not meet the following requirements: at least 10 feet away from the home or any attached decks, have a five foot noncombustible zone around each structure, have a minimum of six vertical inches of noncombustible siding material at the base, have elevated bases enclosed with 1/8 inch or finer metal wire mesh, are spaced at least 10 feet apart from other structures, and have no more than three such structures within 30 feet of the dwelling?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to structures within 30 ft of the dwelling.",
+            "Answer Yes if any visible structure violates any listed requirement.",
+            "Use N/A if no applicable structures are present."
+          ]
+        },
+        {
+          "id": "35690e06-7ce3-4e3d-9d9d-996e60e2296b",
+          "entity": "Do liquid gas, butane, or propane tanks larger than 20 lb grilling tanks have at least 10 feet of clearance from combustible material or any structure?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Apply only to tanks larger than 20 lb grilling tanks.",
+            "Check clearance from vegetation, mulch, and structures."
+          ]
+        },
+        {
+          "id": "c3425789-14d7-448c-93fa-549b14750257",
+          "entity": "Are there wood piles at least 30 feet away from any structure, with at least 10 ft clearance from combustible material or any structure?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Apply only to visible wood piles.",
+            "Check distance from structures and combustible material."
+          ]
+        },
+        {
+          "id": "090b30e8-5bd8-4b74-9a64-5e8c785bb263",
+          "entity": "Does a neighbor house within 100 ft of the dwelling have a wood roof?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Apply only to neighbor houses within 100 ft.",
+            "Use N/A if no neighbor house is present within 100 ft."
+          ]
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Outbuildings, Accessory Structures, Woodpiles, Tanks, and Neighbor Exposure",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "f5d99ac1-5394-479a-88d2-da94a4c4e0e8",
+      "type": "image_analysis",
+      "details": "Inspect all exterior images showing the roof, gutters, porches, decks, stairways, yard, vegetation, brush, trees, grasses, and ground surfaces within 100 ft of the dwelling.",
+      "entities": [
+        {
+          "id": "9de672e8-cf1f-4911-8718-f683862403cc",
+          "entity": "Is there an accumulation of leaves, needles, or other flammable debris on the property, including roof, gutters, porches, decks, stairways, or yard within 100 feet of the dwelling?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Minor scattered debris is not accumulation.",
+            "Answer Yes for visible buildup of flammable debris."
+          ]
+        },
+        {
+          "id": "b7b5098f-20e2-4bf5-9c41-8957efa76383",
+          "entity": "Are there dead trees or dead vegetation within 100 ft of the dwelling?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Look for dead trees, dead brush, and dry dead vegetation."
+          ]
+        },
+        {
+          "id": "39850250-4425-4bfd-84f1-306ff305d8c7",
+          "entity": "Are there unmaintained native grasses longer than 6 inches within 100 feet of the dwelling?",
+          "save_to": "",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Focus on unmanaged native grasses.",
+            "Exclude maintained lawn."
+          ]
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Whole-Property Debris, Dead Vegetation, and Native Grass Maintenance",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    }
+  ],
+  "variants": []
+}

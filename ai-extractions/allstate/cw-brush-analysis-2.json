@@ -180,16 +180,18 @@
           "id": "d73261e6-1311-41e3-8cc8-80c8e111ed89",
           "entity": "What is the degree range of the north slope?",
           "save_to": "AS_NorthSlopeRange",
-          "type": "",
+          "type": "singleOption",
           "unique": false,
-          "options": [],
-          "criteria": "",
-          "examples": [
-            "0-29 degrees",
+          "options": [
+            "0-29 Degrees",
+            "30-39 Degrees",
+            ">39 Degrees",
             "N/A",
             "Unclear",
             "Null"
           ],
+          "criteria": "",
+          "examples": [],
           "required": false,
           "default_option": "",
           "select_multiple": false,
@@ -202,16 +204,18 @@
           "id": "ae8c27ea-f5ed-40c0-8c9d-cb18abe0d737",
           "entity": "What is the degree range of the south slope?",
           "save_to": "AS_SouthSlopeRange",
-          "type": "",
+          "type": "singleOption",
           "unique": false,
-          "options": [],
-          "criteria": "",
-          "examples": [
-            "0-29 degrees",
+          "options": [
+            "0-29 Degrees",
+            "30-39 Degrees",
+            ">39 Degrees",
             "N/A",
             "Unclear",
             "Null"
           ],
+          "criteria": "",
+          "examples": [],
           "required": false,
           "default_option": "",
           "select_multiple": false,
@@ -224,16 +228,18 @@
           "id": "9ff5dbe6-655c-4b28-a73f-e4c7688d98bb",
           "entity": "What is the degree range of the east slope?",
           "save_to": "AS_EastSlopeRange",
-          "type": "",
+          "type": "singleOption",
           "unique": false,
-          "options": [],
-          "criteria": "",
-          "examples": [
-            "0-29 degrees",
+          "options": [
+            "0-29 Degrees",
+            "30-39 Degrees",
+            ">39 Degrees",
             "N/A",
             "Unclear",
             "Null"
           ],
+          "criteria": "",
+          "examples": [],
           "required": false,
           "default_option": "",
           "select_multiple": false,
@@ -246,16 +252,18 @@
           "id": "d1d75712-fd00-4819-b5d0-d0538cc8fde6",
           "entity": "What is the degree range of the west slope?",
           "save_to": "AS_WestSlopeRange",
-          "type": "",
+          "type": "singleOption",
           "unique": false,
-          "options": [],
-          "criteria": "",
-          "examples": [
-            "0-29 degrees",
+          "options": [
+            "0-29 Degrees",
+            "30-39 Degrees",
+            ">39 Degrees",
             "N/A",
             "Unclear",
             "Null"
           ],
+          "criteria": "",
+          "examples": [],
           "required": false,
           "default_option": "",
           "select_multiple": false,
@@ -316,7 +324,8 @@
           "default_option": "",
           "select_multiple": false,
           "data_validation_rules": [
-            "Focus on the chimney and nearby branches.Use N/A if no chimney is present."
+            "Focus on the chimney and nearby branches.",
+            "Use N/A if no chimney is present."
           ]
         },
         {
@@ -338,7 +347,8 @@
           "default_option": "",
           "select_multiple": false,
           "data_validation_rules": [
-            "Inspect the chimney top.Use N/A if no chimney is present."
+            "Inspect the chimney top.",
+            "Use N/A if no chimney is present."
           ]
         },
         {
@@ -438,7 +448,7 @@
     {
       "id": "e2121a72-a1cd-407c-8178-d3510eb21d34",
       "type": "image_analysis",
-      "details": "Inspect close and distant images of siding, exterior walls, wall base, foundation, crawlspace areas, vents, louvers, flanges, and vegetation immediately near or touching the exterior walls.",
+      "details": "Inspect close and distant images of siding, exterior walls, wall base, foundation, crawlspace areas, vents, louvers, flanges, and vegetation immediately near or touching the exterior walls. Inspect each side of the dwelling when directional answers are required.",
       "entities": [
         {
           "id": "4c7a06ba-dee6-41e0-9e16-2da612d3ac74",
@@ -460,6 +470,98 @@
           "select_multiple": false,
           "data_validation_rules": [
             "Limit the inspection to 0 to 5 ft from exterior walls.",
+            "Exclude maintained lawn."
+          ]
+        },
+        {
+          "id": "29ffe639-4723-420f-a800-8f63a4630fbb",
+          "entity": "Are there naturally occurring trees/plants/fuels or coniferous landscaping within 0 to 5 ft of the north side of the dwelling?",
+          "save_to": "AS_NorthVeg0To5Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the north side.",
+            "Exclude maintained lawn."
+          ]
+        },
+        {
+          "id": "61fbdd36-3679-475d-adc2-34c6348ca9d1",
+          "entity": "Are there naturally occurring trees/plants/fuels or coniferous landscaping within 0 to 5 ft of the south side of the dwelling?",
+          "save_to": "AS_SouthVeg0To5Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the south side.",
+            "Exclude maintained lawn."
+          ]
+        },
+        {
+          "id": "5314c076-005e-4e00-ba4a-d4af176b6e9d",
+          "entity": "Are there naturally occurring trees/plants/fuels or coniferous landscaping within 0 to 5 ft of the east side of the dwelling?",
+          "save_to": "AS_EastVeg0To5Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the east side.",
+            "Exclude maintained lawn."
+          ]
+        },
+        {
+          "id": "5715f157-4c5d-4bdf-9300-d608f5571943",
+          "entity": "Are there naturally occurring trees/plants/fuels or coniferous landscaping within 0 to 5 ft of the west side of the dwelling?",
+          "save_to": "AS_WestVeg0To5Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the west side.",
             "Exclude maintained lawn."
           ]
         },
@@ -893,7 +995,7 @@
     {
       "id": "ab71b196-fb9f-49e0-a83a-002047bd48b0",
       "type": "image_analysis",
-      "details": "Inspect images showing trees around the dwelling, especially trees in the 5 to 30 ft zone and 30 to 100 ft zone. Prioritize images that show tree trunks, lower branches, ground clearance, tree height, pruning condition, distance zone, and direction.",
+      "details": "Inspect images showing trees around the dwelling, especially trees in the 5 to 30 ft zone, 30 to 100 ft zone, and 100 to 200 ft zone. Prioritize images that show tree trunks, lower branches, ground clearance, tree height, pruning condition, distance zone, and direction.",
       "entities": [
         {
           "id": "623eca9b-f6c8-4690-a60a-7ffe9b25a4e4",
@@ -1124,6 +1226,121 @@
             "Use the 30 to 100 ft pruning standard.",
             "Use N/A if no west-side trees are present."
           ]
+        },
+        {
+          "id": "04ded7b4-dfc7-4c08-b441-88aa8b9dfb89",
+          "entity": "Are trees 18 ft or taller pruned up at least 6 ft from the ground, and trees less than 18 ft pruned at least 1/3 the height of the tree in the 100 to 200 ft zone?",
+          "save_to": "AS_TreePrune100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to trees in the 100 to 200 ft zone.",
+            "Answer No if any visible tree fails."
+          ]
+        },
+        {
+          "id": "9ecfde83-229f-4194-b95c-f75ab54ae507",
+          "entity": "Are trees in the north 100 to 200 ft zone properly pruned?",
+          "save_to": "AS_NorthPrune100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the 100 to 200 ft pruning standard.",
+            "Use N/A if no north-side trees are present."
+          ]
+        },
+        {
+          "id": "3d5fd91b-5e05-4035-849d-bc7e6ac6d30a",
+          "entity": "Are trees in the south 100 to 200 ft zone properly pruned?",
+          "save_to": "AS_SouthPrune100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the 100 to 200 ft pruning standard.",
+            "Use N/A if no south-side trees are present."
+          ]
+        },
+        {
+          "id": "59069d87-4e0b-4896-b765-9ab54f005148",
+          "entity": "Are trees in the east 100 to 200 ft zone properly pruned?",
+          "save_to": "AS_EastPrune100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the 100 to 200 ft pruning standard.",
+            "Use N/A if no east-side trees are present."
+          ]
+        },
+        {
+          "id": "3687bae5-a72d-4592-afa8-e434559b1aa5",
+          "entity": "Are trees in the west 100 to 200 ft zone properly pruned?",
+          "save_to": "AS_WestPrune100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Use the 100 to 200 ft pruning standard.",
+            "Use N/A if no west-side trees are present."
+          ]
         }
       ],
       "multi_file_name_field": null,
@@ -1156,7 +1373,7 @@
     {
       "id": "f3b802f2-be0c-42ba-9b17-781abd6033f4",
       "type": "image_analysis",
-      "details": "Inspect images showing tree crowns, canopy gaps, tree groups, tree clusters, slope direction, and vegetation around the dwelling. Compare canopy spacing against the applicable slope rule.",
+      "details": "Inspect images showing tree crowns, canopy gaps, tree groups, tree clusters, slope direction, vegetation, and distance zones around the dwelling. Compare canopy spacing against the applicable slope rule.",
       "entities": [
         {
           "id": "eaf6618c-dfe9-4970-b914-a1d9371a4e33",
@@ -1178,13 +1395,16 @@
           "select_multiple": false,
           "data_validation_rules": [
             "Limit to tree crowns in the 5 to 30 ft zone.",
-            "Apply the spacing rule that matches the slope."
+            "For flat to mild slope, require at least 10 ft of spacing.",
+            "For mild to moderate slope, require at least 20 ft of spacing.",
+            "For moderate to steep slope, require at least 30 ft of spacing.",
+            "Answer No if any visible canopy spacing fails the applicable rule."
           ]
         },
         {
-          "id": "54cf90fc-534b-4c1a-89c5-a2f64d97a62f",
-          "entity": "For flat to mild slope, 0% to 19%, do tree crowns/canopy have at least 10 feet of spacing in the 5 to 30 ft zone?",
-          "save_to": "AS_Canopy10Ft5To30Ft",
+          "id": "202bcae4-5fb8-4f08-8e98-a16c0a010d8b",
+          "entity": "Are tree crowns/canopy appropriately spaced on the north side in the 5 to 30 ft zone?",
+          "save_to": "AS_NorthCanopy5To30Ft",
           "type": "singleOption",
           "unique": false,
           "options": [
@@ -1200,13 +1420,14 @@
           "default_option": "",
           "select_multiple": false,
           "data_validation_rules": [
-            "Apply only when the slope is flat to mild."
+            "Limit to the north side in the 5 to 30 ft zone.",
+            "Apply the slope-based canopy spacing rule."
           ]
         },
         {
-          "id": "73d5ea2a-addd-4532-8cd0-28226b71568a",
-          "entity": "For mild to moderate slope, 20% to 40%, do tree crowns/canopy have at least 20 feet of spacing in the 5 to 30 ft zone?",
-          "save_to": "AS_Canopy20Ft5To30Ft",
+          "id": "e2177ac8-04ea-4270-b94b-5345854148e5",
+          "entity": "Are tree crowns/canopy appropriately spaced on the south side in the 5 to 30 ft zone?",
+          "save_to": "AS_SouthCanopy5To30Ft",
           "type": "singleOption",
           "unique": false,
           "options": [
@@ -1222,13 +1443,14 @@
           "default_option": "",
           "select_multiple": false,
           "data_validation_rules": [
-            "Apply only when the slope is mild to moderate."
+            "Limit to the south side in the 5 to 30 ft zone.",
+            "Apply the slope-based canopy spacing rule."
           ]
         },
         {
-          "id": "53ffe6fa-905c-45db-a6cb-96ce667bfc16",
-          "entity": "For moderate to steep slope, greater than 40%, do tree crowns/canopy have at least 30 feet of spacing in the 5 to 30 ft zone?",
-          "save_to": "AS_Canopy30Ft5To30Ft",
+          "id": "ea91d016-3db9-43e3-8dd2-13e83bab5752",
+          "entity": "Are tree crowns/canopy appropriately spaced on the east side in the 5 to 30 ft zone?",
+          "save_to": "AS_EastCanopy5To30Ft",
           "type": "singleOption",
           "unique": false,
           "options": [
@@ -1244,7 +1466,31 @@
           "default_option": "",
           "select_multiple": false,
           "data_validation_rules": [
-            "Apply only when the slope is moderate to steep."
+            "Limit to the east side in the 5 to 30 ft zone.",
+            "Apply the slope-based canopy spacing rule."
+          ]
+        },
+        {
+          "id": "12708841-5d97-41ec-bfee-801f2d58326e",
+          "entity": "Are tree crowns/canopy appropriately spaced on the west side in the 5 to 30 ft zone?",
+          "save_to": "AS_WestCanopy5To30Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the west side in the 5 to 30 ft zone.",
+            "Apply the slope-based canopy spacing rule."
           ]
         },
         {
@@ -1290,73 +1536,10 @@
           "select_multiple": false,
           "data_validation_rules": [
             "Limit to tree crowns in the 30 to 100 ft zone.",
-            "Apply the spacing rule that matches the slope."
-          ]
-        },
-        {
-          "id": "22aab49f-fa05-4289-8b84-7a37bbf29b53",
-          "entity": "For flat to mild slope, 0% to 19%, do tree crowns/canopy have at least 10 feet of spacing in the 30 to 100 ft zone?",
-          "save_to": "AS_Canopy10Ft30To100Ft",
-          "type": "singleOption",
-          "unique": false,
-          "options": [
-            "Yes",
-            "No",
-            "N/A",
-            "Unclear",
-            "Null"
-          ],
-          "criteria": "",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false,
-          "data_validation_rules": [
-            "Apply only when the slope is flat to mild."
-          ]
-        },
-        {
-          "id": "eecccba3-c3af-496d-9e74-45eab3b8b817",
-          "entity": "For mild to moderate slope, 20% to 40%, do tree crowns/canopy have at least 20 feet of spacing in the 30 to 100 ft zone?",
-          "save_to": "AS_Canopy20Ft30To100Ft",
-          "type": "singleOption",
-          "unique": false,
-          "options": [
-            "Yes",
-            "No",
-            "N/A",
-            "Unclear",
-            "Null"
-          ],
-          "criteria": "",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false,
-          "data_validation_rules": [
-            "Apply only when the slope is mild to moderate."
-          ]
-        },
-        {
-          "id": "21e19f85-4489-4a49-8e88-b5f4b0e06dbb",
-          "entity": "For moderate to steep slope, greater than 40%, do tree crowns/canopy have at least 30 feet of spacing in the 30 to 100 ft zone?",
-          "save_to": "AS_Canopy30Ft30To100Ft",
-          "type": "singleOption",
-          "unique": false,
-          "options": [
-            "Yes",
-            "No",
-            "N/A",
-            "Unclear",
-            "Null"
-          ],
-          "criteria": "",
-          "examples": [],
-          "required": false,
-          "default_option": "",
-          "select_multiple": false,
-          "data_validation_rules": [
-            "Apply only when the slope is moderate to steep."
+            "For flat to mild slope, require at least 10 ft of spacing.",
+            "For mild to moderate slope, require at least 20 ft of spacing.",
+            "For moderate to steep slope, require at least 30 ft of spacing.",
+            "Answer No if any visible canopy spacing fails the applicable rule."
           ]
         },
         {
@@ -1450,6 +1633,147 @@
             "Use the spacing standard for the observed slope.",
             "Use N/A if no west-side trees are present."
           ]
+        },
+        {
+          "id": "cb912337-fb1f-445f-8f4e-e407def50254",
+          "entity": "Are there 4 or more trees in a cluster within the 100 to 200 ft zone?",
+          "save_to": "AS_TreeCluster100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the 100 to 200 ft zone.",
+            "Count trees that form one visible cluster."
+          ]
+        },
+        {
+          "id": "6c5a4eeb-acfa-49f3-8260-fe78c58c8d39",
+          "entity": "Do tree crowns/canopy have appropriate spacing according to slope in the 100 to 200 ft zone?",
+          "save_to": "AS_CanopySpace100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to tree crowns in the 100 to 200 ft zone.",
+            "For flat to mild slope, require at least 10 ft of spacing.",
+            "For mild to moderate slope, require at least 20 ft of spacing.",
+            "For moderate to steep slope, require at least 30 ft of spacing.",
+            "Answer No if any visible canopy spacing fails the applicable rule."
+          ]
+        },
+        {
+          "id": "1b17a664-25eb-4d81-b6ac-3b2ee1c3db56",
+          "entity": "Are tree crowns/canopy appropriately spaced on the north side in the 100 to 200 ft zone?",
+          "save_to": "AS_NorthCanopy100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the north side in the 100 to 200 ft zone.",
+            "Apply the slope-based canopy spacing rule."
+          ]
+        },
+        {
+          "id": "8a6a85d5-01a8-4d24-bd31-b8dc0834d595",
+          "entity": "Are tree crowns/canopy appropriately spaced on the south side in the 100 to 200 ft zone?",
+          "save_to": "AS_SouthCanopy100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the south side in the 100 to 200 ft zone.",
+            "Apply the slope-based canopy spacing rule."
+          ]
+        },
+        {
+          "id": "eeb5bbc1-dfa8-44a3-8be5-aed5be565759",
+          "entity": "Are tree crowns/canopy appropriately spaced on the east side in the 100 to 200 ft zone?",
+          "save_to": "AS_EastCanopy100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the east side in the 100 to 200 ft zone.",
+            "Apply the slope-based canopy spacing rule."
+          ]
+        },
+        {
+          "id": "faff2ba6-7718-4a2b-bb6b-846bb21e8620",
+          "entity": "Are tree crowns/canopy appropriately spaced on the west side in the 100 to 200 ft zone?",
+          "save_to": "AS_WestCanopy100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the west side in the 100 to 200 ft zone.",
+            "Apply the slope-based canopy spacing rule."
+          ]
         }
       ],
       "multi_file_name_field": null,
@@ -1504,13 +1828,16 @@
           "select_multiple": false,
           "data_validation_rules": [
             "Limit to naturally occurring shrubs in the 5 to 30 ft zone.",
-            "Exclude maintained landscaping."
+            "Exclude maintained landscaping.",
+            "For flat to mild slope, require spacing at least 2 times shrub height.",
+            "For mild to moderate slope, require spacing at least 4 times shrub height.",
+            "For moderate to steep slope, require spacing at least 6 times shrub height."
           ]
         },
         {
-          "id": "3204b4d0-33c3-40da-92e4-beae4be91a65",
-          "entity": "For flat to mild slope, 0% to 19%, are naturally occurring shrubs in the 5 to 30 ft zone spaced at least 2 times the shrub height?",
-          "save_to": "AS_Shrub2x5To30Ft",
+          "id": "991bc803-d2e1-4f21-9dbc-1d50034e021f",
+          "entity": "Are naturally occurring shrubs on the north side appropriately spaced according to slope in the 5 to 30 ft zone?",
+          "save_to": "AS_NorthShrub5To30Ft",
           "type": "singleOption",
           "unique": false,
           "options": [
@@ -1526,13 +1853,14 @@
           "default_option": "",
           "select_multiple": false,
           "data_validation_rules": [
-            "Apply only when the slope is flat to mild."
+            "Limit to the north side in the 5 to 30 ft zone.",
+            "Apply the slope-based shrub spacing rule."
           ]
         },
         {
-          "id": "40099281-0d16-417b-82b7-6d2f144adb48",
-          "entity": "For mild to moderate slope, 20% to 40%, are naturally occurring shrubs in the 5 to 30 ft zone spaced at least 4 times the shrub height?",
-          "save_to": "AS_Shrub4x5To30Ft",
+          "id": "1f9fe96d-12a9-422e-bbe5-f48ed3183584",
+          "entity": "Are naturally occurring shrubs on the south side appropriately spaced according to slope in the 5 to 30 ft zone?",
+          "save_to": "AS_SouthShrub5To30Ft",
           "type": "singleOption",
           "unique": false,
           "options": [
@@ -1548,13 +1876,14 @@
           "default_option": "",
           "select_multiple": false,
           "data_validation_rules": [
-            "Apply only when the slope is mild to moderate."
+            "Limit to the south side in the 5 to 30 ft zone.",
+            "Apply the slope-based shrub spacing rule."
           ]
         },
         {
-          "id": "37fcfbf9-f5d1-47ac-b994-27924177f3a6",
-          "entity": "For moderate to steep slope, greater than 40%, are naturally occurring shrubs in the 5 to 30 ft zone spaced at least 6 times the shrub height?",
-          "save_to": "AS_Shrub6x5To30Ft",
+          "id": "4cd12a81-95a1-4c39-832c-c3bd9eecffce",
+          "entity": "Are naturally occurring shrubs on the east side appropriately spaced according to slope in the 5 to 30 ft zone?",
+          "save_to": "AS_EastShrub5To30Ft",
           "type": "singleOption",
           "unique": false,
           "options": [
@@ -1570,7 +1899,31 @@
           "default_option": "",
           "select_multiple": false,
           "data_validation_rules": [
-            "Apply only when the slope is moderate to steep."
+            "Limit to the east side in the 5 to 30 ft zone.",
+            "Apply the slope-based shrub spacing rule."
+          ]
+        },
+        {
+          "id": "ca0aa42f-c619-403d-847e-3b9b667a8b01",
+          "entity": "Are naturally occurring shrubs on the west side appropriately spaced according to slope in the 5 to 30 ft zone?",
+          "save_to": "AS_WestShrub5To30Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the west side in the 5 to 30 ft zone.",
+            "Apply the slope-based shrub spacing rule."
           ]
         },
         {
@@ -1593,13 +1946,16 @@
           "select_multiple": false,
           "data_validation_rules": [
             "Limit to naturally occurring shrubs in the 30 to 100 ft zone.",
-            "Exclude maintained landscaping."
+            "Exclude maintained landscaping.",
+            "For flat to mild slope, require spacing at least 2 times shrub height.",
+            "For mild to moderate slope, require spacing at least 4 times shrub height.",
+            "For moderate to steep slope, require spacing at least 6 times shrub height."
           ]
         },
         {
-          "id": "fc76ef05-ee5f-45cc-88f4-6e7451ae68ad",
-          "entity": "For flat to mild slope, 0% to 19%, are naturally occurring shrubs in the 30 to 100 ft zone spaced at least 2 times the shrub height?",
-          "save_to": "AS_Shrub2x30To100Ft",
+          "id": "2729f3f7-4c36-48ad-8017-0b1e48c5cfec",
+          "entity": "Are naturally occurring shrubs on the north side appropriately spaced according to slope in the 30 to 100 ft zone?",
+          "save_to": "AS_NorthShrub30To100Ft",
           "type": "singleOption",
           "unique": false,
           "options": [
@@ -1615,13 +1971,14 @@
           "default_option": "",
           "select_multiple": false,
           "data_validation_rules": [
-            "Apply only when the slope is flat to mild."
+            "Limit to the north side in the 30 to 100 ft zone.",
+            "Apply the slope-based shrub spacing rule."
           ]
         },
         {
-          "id": "d2ff775f-39de-4e90-93ba-9fda762ca59a",
-          "entity": "For mild to moderate slope, 20% to 40%, are naturally occurring shrubs in the 30 to 100 ft zone spaced at least 4 times the shrub height?",
-          "save_to": "AS_Shrub4x30To100Ft",
+          "id": "1ae0d857-9349-4a27-b123-ef49407bf75a",
+          "entity": "Are naturally occurring shrubs on the south side appropriately spaced according to slope in the 30 to 100 ft zone?",
+          "save_to": "AS_SouthShrub30To100Ft",
           "type": "singleOption",
           "unique": false,
           "options": [
@@ -1637,13 +1994,14 @@
           "default_option": "",
           "select_multiple": false,
           "data_validation_rules": [
-            "Apply only when the slope is mild to moderate."
+            "Limit to the south side in the 30 to 100 ft zone.",
+            "Apply the slope-based shrub spacing rule."
           ]
         },
         {
-          "id": "eb92f67f-6e8a-4c59-a7c6-cc87833db09d",
-          "entity": "For moderate to steep slope, greater than 40%, are naturally occurring shrubs in the 30 to 100 ft zone spaced at least 6 times the shrub height?",
-          "save_to": "AS_Shrub6x30To100Ft",
+          "id": "f2f3ad3b-6836-4ce6-a36b-a9df04f25e05",
+          "entity": "Are naturally occurring shrubs on the east side appropriately spaced according to slope in the 30 to 100 ft zone?",
+          "save_to": "AS_EastShrub30To100Ft",
           "type": "singleOption",
           "unique": false,
           "options": [
@@ -1659,7 +2017,149 @@
           "default_option": "",
           "select_multiple": false,
           "data_validation_rules": [
-            "Apply only when the slope is moderate to steep."
+            "Limit to the east side in the 30 to 100 ft zone.",
+            "Apply the slope-based shrub spacing rule."
+          ]
+        },
+        {
+          "id": "3448d84c-903d-40e7-a8a9-dbefb95497e9",
+          "entity": "Are naturally occurring shrubs on the west side appropriately spaced according to slope in the 30 to 100 ft zone?",
+          "save_to": "AS_WestShrub30To100Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the west side in the 30 to 100 ft zone.",
+            "Apply the slope-based shrub spacing rule."
+          ]
+        },
+        {
+          "id": "a280d4a3-65d5-4ebd-ab9a-1a9e7446e9b6",
+          "entity": "Do naturally occurring shrubs, other than landscaping, have appropriate spacing according to slope in the 100 to 200 ft zone?",
+          "save_to": "AS_ShrubSpace100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to naturally occurring shrubs in the 100 to 200 ft zone.",
+            "Exclude maintained landscaping.",
+            "For flat to mild slope, require spacing at least 2 times shrub height.",
+            "For mild to moderate slope, require spacing at least 4 times shrub height.",
+            "For moderate to steep slope, require spacing at least 6 times shrub height."
+          ]
+        },
+        {
+          "id": "e375d8d4-62c6-4f27-b1a9-fb4052951686",
+          "entity": "Are naturally occurring shrubs on the north side appropriately spaced according to slope in the 100 to 200 ft zone?",
+          "save_to": "AS_NorthShrub100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the north side in the 100 to 200 ft zone.",
+            "Apply the slope-based shrub spacing rule."
+          ]
+        },
+        {
+          "id": "f43e31fd-31f9-4668-801e-1d8f2a1dddc7",
+          "entity": "Are naturally occurring shrubs on the south side appropriately spaced according to slope in the 100 to 200 ft zone?",
+          "save_to": "AS_SouthShrub100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the south side in the 100 to 200 ft zone.",
+            "Apply the slope-based shrub spacing rule."
+          ]
+        },
+        {
+          "id": "60b5a9ed-e277-48b2-bf1d-949a4311d672",
+          "entity": "Are naturally occurring shrubs on the east side appropriately spaced according to slope in the 100 to 200 ft zone?",
+          "save_to": "AS_EastShrub100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the east side in the 100 to 200 ft zone.",
+            "Apply the slope-based shrub spacing rule."
+          ]
+        },
+        {
+          "id": "564c5dc7-2efa-4df4-9224-13171b9d0f40",
+          "entity": "Are naturally occurring shrubs on the west side appropriately spaced according to slope in the 100 to 200 ft zone?",
+          "save_to": "AS_WestShrub100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the west side in the 100 to 200 ft zone.",
+            "Apply the slope-based shrub spacing rule."
           ]
         }
       ],
@@ -1693,7 +2193,7 @@
     {
       "id": "ed5bd4fc-e4ab-4158-a2d8-37bbf74d52ec",
       "type": "image_analysis",
-      "details": "Inspect images showing detached structures, sheds, pet houses, playsets, neighboring homes, propane tanks, butane tanks, woodpiles, lumber, and structures around the dwelling.",
+      "details": "Inspect images showing detached structures, sheds, pet houses, playsets, neighboring homes, propane tanks, butane tanks, woodpiles, lumber, and structures around the dwelling. For outbuilding-risk questions, treat a combustible structure as noncompliant if it fails any of these: at least 10 ft from the home or attached deck, 5 ft noncombustible zone, 6 inches of noncombustible base, 1/8 inch or finer metal mesh if elevated, 10 ft spacing from other structures, and no more than three structures within 30 ft of the dwelling.",
       "entities": [
         {
           "id": "d124f353-da6d-4e05-b925-a365467a4cfc",
@@ -1715,7 +2215,103 @@
           "select_multiple": false,
           "data_validation_rules": [
             "Limit to structures within 30 ft of the dwelling.",
-            "Answer Yes if any visible structure violates any listed requirement.",
+            "Answer Yes if any visible applicable structure is noncompliant.",
+            "Use N/A if no applicable structures are present."
+          ]
+        },
+        {
+          "id": "d5fbe9c0-bf89-4533-858c-cf1c65156f4a",
+          "entity": "On the north side, are there combustible structures/outbuildings that do not meet the required clearance, noncombustible zone, base, mesh, spacing, or quantity requirements?",
+          "save_to": "AS_NorthOutbuildingRisk",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the north side within 30 ft.",
+            "Answer Yes if any visible applicable structure is noncompliant.",
+            "Use N/A if no applicable structures are present."
+          ]
+        },
+        {
+          "id": "eea66ad2-aea0-4670-8fca-223f1de99606",
+          "entity": "On the south side, are there combustible structures/outbuildings that do not meet the required clearance, noncombustible zone, base, mesh, spacing, or quantity requirements?",
+          "save_to": "AS_SouthOutbuildingRisk",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the south side within 30 ft.",
+            "Answer Yes if any visible applicable structure is noncompliant.",
+            "Use N/A if no applicable structures are present."
+          ]
+        },
+        {
+          "id": "41253994-140b-4c75-bcd8-d7b656cc04b8",
+          "entity": "On the east side, are there combustible structures/outbuildings that do not meet the required clearance, noncombustible zone, base, mesh, spacing, or quantity requirements?",
+          "save_to": "AS_EastOutbuildingRisk",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the east side within 30 ft.",
+            "Answer Yes if any visible applicable structure is noncompliant.",
+            "Use N/A if no applicable structures are present."
+          ]
+        },
+        {
+          "id": "8689daed-164e-4e7a-b4e7-88803f9d1fd1",
+          "entity": "On the west side, are there combustible structures/outbuildings that do not meet the required clearance, noncombustible zone, base, mesh, spacing, or quantity requirements?",
+          "save_to": "AS_WestOutbuildingRisk",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the west side within 30 ft.",
+            "Answer Yes if any visible applicable structure is noncompliant.",
             "Use N/A if no applicable structures are present."
           ]
         },
@@ -1901,6 +2497,271 @@
         "page_filter_start": null,
         "page_filter_end": null,
         "group_name": "Whole-Property Debris, Dead Vegetation, and Native Grass Maintenance",
+        "page_filter_query": null,
+        "enable_tool_usage": false,
+        "hide_from_review": false,
+        "tools": {
+          "web": false,
+          "date": false,
+          "math": false
+        },
+        "table_filter": null,
+        "sheet_filter": null,
+        "json_schema": null,
+        "page_limit": null,
+        "multiple_occurrences": true
+      },
+      "data_validation_rules": []
+    },
+    {
+      "id": "56e3c1b1-0e25-4bf4-81ec-0684b36d14a8",
+      "type": "image_analysis",
+      "details": "Inspect exterior images showing vegetation, trees, shrubs, brush, grass, fuel reduction areas, defensible space, cleared areas, thinned areas, pruned trees, removed vegetation, and debris cleanup. Inspect each distance zone and direction separately when directional answers are required.",
+      "entities": [
+        {
+          "id": "6dfdfb77-2ad2-4f1f-bdd6-0ffc0b489732",
+          "entity": "Is there visible evidence of mitigation in the 30 to 100 ft zone?",
+          "save_to": "AS_Mitigation30To100Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the 30 to 100 ft zone.",
+            "Look for clearing, thinning, pruning, mowing, spacing, or debris removal.",
+            "Answer Yes only when mitigation evidence is visible."
+          ]
+        },
+        {
+          "id": "bf967419-8a5e-4d7f-a0a1-9b29cda6dca0",
+          "entity": "Is there visible evidence of mitigation on the north side in the 30 to 100 ft zone?",
+          "save_to": "AS_NorthMitigation30To100Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the north side in the 30 to 100 ft zone.",
+            "Look for clearing, thinning, pruning, mowing, spacing, or debris removal."
+          ]
+        },
+        {
+          "id": "b9684d55-c4da-4453-bdc9-932ba8ff4ec8",
+          "entity": "Is there visible evidence of mitigation on the south side in the 30 to 100 ft zone?",
+          "save_to": "AS_SouthMitigation30To100Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the south side in the 30 to 100 ft zone.",
+            "Look for clearing, thinning, pruning, mowing, spacing, or debris removal."
+          ]
+        },
+        {
+          "id": "a6ade1d7-6bb5-4ea3-8fbf-3ccade5a9c0b",
+          "entity": "Is there visible evidence of mitigation on the east side in the 30 to 100 ft zone?",
+          "save_to": "AS_EastMitigation30To100Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the east side in the 30 to 100 ft zone.",
+            "Look for clearing, thinning, pruning, mowing, spacing, or debris removal."
+          ]
+        },
+        {
+          "id": "269708d3-4dcb-4d93-92e0-238be0fdf807",
+          "entity": "Is there visible evidence of mitigation on the west side in the 30 to 100 ft zone?",
+          "save_to": "AS_WestMitigation30To100Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the west side in the 30 to 100 ft zone.",
+            "Look for clearing, thinning, pruning, mowing, spacing, or debris removal."
+          ]
+        },
+        {
+          "id": "3f93a98c-8f44-4978-8d22-e34293be98a2",
+          "entity": "Is there visible evidence of mitigation in the 100 to 200 ft zone?",
+          "save_to": "AS_Mitigation100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the 100 to 200 ft zone.",
+            "Look for clearing, thinning, pruning, mowing, spacing, or debris removal.",
+            "Answer Yes only when mitigation evidence is visible."
+          ]
+        },
+        {
+          "id": "f7ce473a-4c68-4631-837f-3dd8a7c49221",
+          "entity": "Is there visible evidence of mitigation on the north side in the 100 to 200 ft zone?",
+          "save_to": "AS_NorthMitigation100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the north side in the 100 to 200 ft zone.",
+            "Look for clearing, thinning, pruning, mowing, spacing, or debris removal."
+          ]
+        },
+        {
+          "id": "ba79fa26-6df2-40bf-bf4a-8923a16eb521",
+          "entity": "Is there visible evidence of mitigation on the south side in the 100 to 200 ft zone?",
+          "save_to": "AS_SouthMitigation100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the south side in the 100 to 200 ft zone.",
+            "Look for clearing, thinning, pruning, mowing, spacing, or debris removal."
+          ]
+        },
+        {
+          "id": "d4e73d53-cbb3-4009-abef-3afb5b89e616",
+          "entity": "Is there visible evidence of mitigation on the east side in the 100 to 200 ft zone?",
+          "save_to": "AS_EastMitigation100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the east side in the 100 to 200 ft zone.",
+            "Look for clearing, thinning, pruning, mowing, spacing, or debris removal."
+          ]
+        },
+        {
+          "id": "9ae0288c-37a4-4396-a10e-a692fcd495dc",
+          "entity": "Is there visible evidence of mitigation on the west side in the 100 to 200 ft zone?",
+          "save_to": "AS_WestMitigation100To200Ft",
+          "type": "singleOption",
+          "unique": false,
+          "options": [
+            "Yes",
+            "No",
+            "N/A",
+            "Unclear",
+            "Null"
+          ],
+          "criteria": "",
+          "examples": [],
+          "required": false,
+          "default_option": "",
+          "select_multiple": false,
+          "data_validation_rules": [
+            "Limit to the west side in the 100 to 200 ft zone.",
+            "Look for clearing, thinning, pruning, mowing, spacing, or debris removal."
+          ]
+        }
+      ],
+      "multi_file_name_field": null,
+      "run_email_mode": "document_only",
+      "toggle_page_question": false,
+      "properties": {
+        "bounding_box_reference": null,
+        "limit_relevant_pages": null,
+        "single_occurrence": false,
+        "skip_ai_page_filter": false,
+        "page_filter_start": null,
+        "page_filter_end": null,
+        "group_name": "Mitigation Evidence by Zone and Direction",
         "page_filter_query": null,
         "enable_tool_usage": false,
         "hide_from_review": false,

@@ -334,9 +334,9 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "The coverage type associated with the claim (e.g. Cyber, E&O). Only return an entry if the coverage type is Cyber/Tech E&O. If unclear, refer to the loss description.",
+          "criteria": "The coverage type associated with the claim (e.g. Cyber, E&O). Only return an entry if the coverage type is Cyber/Tech E&O. If the claim-level coverage type is not explicitly stated, return an empty string. Do not infer it from the loss description, claimant name, insurer branding, or line of business.",
           "examples": [],
-          "required": true,
+          "required": false,
           "default_option": ""
         },
         {
@@ -348,7 +348,7 @@
           "options": [],
           "criteria": "The policy number this claim is related to. A claim is always tied to a policy. ",
           "examples": [],
-          "required": true,
+          "required": false,
           "default_option": ""
         },
         {
@@ -405,7 +405,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "The line(s) of business covered by the loss runs, evaluated across all loss run attachments. Only return an entry when the coverage type is Cyber or Technology E&O. Exclude any coverage types that are not specific to the cyber line (e.g. General Liability, Property, D&O, EPL, Crime, Auto, Workers' Compensation, or non-tech Professional Liability). If the coverage type is unclear or unlabeled, determine it from the loss description before deciding whether to include it.",
+          "criteria": "The line(s) of business covered by the loss runs, evaluated across all loss run attachments. Only return an entry when the coverage type is Cyber or Technology E&O. Exclude any coverage types that are not specific to the cyber line (e.g. General Liability, Property, D&O, EPL, Crime, Auto, Workers' Compensation, or non-tech Professional Liability). If the coverage type is unclear or unlabeled, infer it from the policy, product, program, package name, or loss description, then normalize it to “Cyber,” “Tech E&O,” or “Cyber/Tech E&O”; do not return source-specific product names.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -431,9 +431,9 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "Combine all open and closed claims from the Cyber and Technology E&O loss run attachments into one dataset.\n\nAssign each claim a year using the policy expiration date of the policy period it is listed under: the claim's year is the expiration date's year. Use only the policy expiration year — do not use loss dates,as of date, report dates, or effective dates to assign years. Every claim must be assigned a year; if a claim's policy expiration date is not shown, use the expiration date of the policy section or period heading it appears under.\n\nDeduplicate: claims are the same when claim number, claimant, and policy period all match. If claim numbers are missing, match on claimant plus claim description plus policy period instead. Keep the record from the most recently valued document.\n\nInclude only Cyber or Technology E&O coverage types — if unlabeled or unclear, classify from the loss description; exclude anything else.\n\nSelect the loss years using this exact procedure:\n\nList every distinct policy expiration year in the dataset, sorted descending.\nThe first year in that list is the latest year — even if it is in the future or the policy period is still in force. Never skip it.\nTake the first three years. If fewer than three distinct years exist, use all available years — even a single year. Never return empty just because the data covers fewer than three years. Do not assume the years are consecutive (e.g., expiration years present 2019, 2021, 2024, 2025 → use 2025, 2024, 2021).\n\n###IMPORTANT: Before summing, verify the selected years include the largest expiration year in the data; if not, redo the selection.\n\nSum the incurred losses for all claims whose policy expiration year falls in the selected years. Use each claim's total incurred amount; if no incurred column exists, sum all payment components shown for the claim (e.g., indemnity plus legal) plus any outstanding reserves. Produce one combined figure across all attachments — do not compute per-document totals. Return the years used and the total incurred sum. Return an empty string only if the attachments cannot be found or no claims qualify.",
+          "criteria": "Combine all open and closed claims from the Cyber and Technology E&O loss run attachments into one dataset.\n\nAssign each claim a year using the policy expiration date of the policy period it is listed under: the claim's year is the expiration date's year. Use only the policy expiration year — do not use loss dates,as of date, report dates, or effective dates to assign years. Every claim must be assigned a year; if a claim's policy expiration date is not shown, use the expiration date of the policy section or period heading it appears under.\n\nDeduplicate: claims are the same when claim number, claimant, and policy period all match. If claim numbers are missing, match on claimant plus claim description plus policy period instead. Keep the record from the most recently valued document.\n\nInclude only Cyber or Technology E&O coverage types — if unlabeled or unclear, classify from the loss description; exclude anything else.\n\nSelect the loss years using this exact procedure:\n\nList every distinct policy expiration year in the dataset, sorted descending.\nThe first year in that list is the latest year — even if it is in the future or the policy period is still in force. Never skip it.\nTake the first three years. If fewer than three distinct years exist, use all available years — even a single year. Never return empty just because the data covers fewer than three years. Do not assume the years are consecutive (e.g., expiration years present 2019, 2021, 2024, 2025 → use 2025, 2024, 2021).\n\n###IMPORTANT: Before summing, verify the selected years include the largest expiration year in the data; if not, redo the selection.\n\nSum the incurred losses for all claims whose policy expiration year falls in the selected years. Use each claim's explicitly stated total incurred amount. If no total incurred is shown, calculate incurred from payment components plus outstanding reserves only when the outstanding reserve amount is explicitly stated, including an explicit zero. Do not treat paid amounts alone as incurred or assume missing reserves are zero. Produce one combined figure across all attachments — do not compute per-document totals. Return the years used and the total incurred sum. Return an empty string if the attachments cannot be found, no claims qualify, or the complete incurred total cannot be determined from explicit incurred or reserve data.",
           "examples": [],
-          "required": true,
+          "required": false,
           "default_option": "",
           "select_multiple": false
         },
@@ -446,7 +446,7 @@
           "options": [],
           "criteria": "Combine all open and closed claims from the Cyber and Technology E&O loss run attachments into one dataset.\n\nAssign each claim a year using the policy expiration date of the policy period it is listed under: the claim's year is the expiration date's year. Use only the policy expiration year — do not use loss dates, as of date, report dates, or effective dates to assign years. Every claim must be assigned a year; if a claim's policy expiration date is not shown, use the expiration date of the policy section or period heading it appears under.\n\nDeduplicate: claims are the same when claim number, claimant, and policy period all match. If claim numbers are missing, match on claimant plus claim description plus policy period instead. Keep the record from the most recently valued document.\n\nInclude only Cyber or Technology E&O coverage types — if unlabeled or unclear, classify from the loss description; exclude anything else.\n\nSelect the count years using this exact procedure:\n\nList every distinct policy expiration year in the dataset, sorted descending.\nThe first year in that list is the latest year — even if it is in the future or the policy period is still in force. Never skip it.\nTake the first three years. If fewer than three distinct years exist, use all available years — even a single year. Never return empty just because the data covers fewer than three years. Do not assume the years are consecutive (e.g., expiration years present 2019, 2021, 2024, 2025 → use 2025, 2024, 2021).\n\n###IMPORTANT: Before counting, verify the selected years include the largest expiration year in the data; if not, redo the selection.\n\nCount all claims (open and closed) whose policy expiration year falls in the selected years. Produce one combined count across all attachments — do not compute per-document totals. Return the years used and the total count. Return an empty string only if the attachments cannot be found or no claims qualify.",
           "examples": [],
-          "required": true,
+          "required": false,
           "default_option": "",
           "select_multiple": false
         },

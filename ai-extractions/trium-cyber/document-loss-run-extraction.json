@@ -108,7 +108,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "The explicit outstanding (o/s) reserves.",
+          "criteria": "The explicit outstanding (o/s) reserves. If no total is explicitly stated and separate O/S Loss Reserve and O/S Expense Reserve amounts are shown for the same claim, return their sum.",
           "examples": [],
           "required": false,
           "default_option": ""
@@ -206,7 +206,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "",
+          "criteria": "The total incurred indemnity or loss amount for the claim. Use an explicitly stated indemnity/loss incurred total; if none is stated and Paid Loss and O/S Loss Reserve are explicitly shown for the same claim, return their sum.",
           "examples": [],
           "required": false,
           "default_option": ""
@@ -218,7 +218,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "",
+          "criteria": "The total incurred expense amount for the claim. Use an explicitly stated expense incurred total; if none is stated and Paid Expense and O/S Expense Reserve are explicitly shown for the same claim, return their sum.",
           "examples": [],
           "required": false,
           "default_option": ""
@@ -269,7 +269,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "",
+          "criteria": "If the claim-level table explicitly shows separate “Loss Paid” and “Expense Paid” columns, return the claim-level “Loss Paid” value as Indemnity Paid. Otherwise, only return an explicitly stated indemnity-paid value. Do not use policy-level totals.",
           "examples": [],
           "required": false,
           "default_option": "",
@@ -382,7 +382,7 @@
         "tools": {
           "web": false,
           "date": true,
-          "math": false
+          "math": true
         },
         "table_filter": null,
         "sheet_filter": null,
@@ -396,7 +396,7 @@
     {
       "id": "4b103f0d-414c-48e1-9e71-4e72c58bfc9b",
       "type": "multiple_value",
-      "details": "Overview of the complete cyber and tech e&o loss run history. Parse EVERY loss run attachment/document provided in the submission (there may be multiple carriers, policy terms, or files), but only include data from Cyber and Technology E&O coverage; exclude any coverage types that are not specific to the cyber line. Aggregate results across ALL qualifying loss run documents combined, not per individual file. If a document's or claim's coverage type is unclear, refer to the loss description to determine it. If the coverage type is not stated and there are no claims or loss descriptions to evaluate, treat the loss run as Cyber/Tech E&O unless it clearly identifies a non-cyber line. Treat an explicit “No Losses Reported” statement as zero incurred loss, zero paid loss, and zero claims for the applicable policy periods. Return an empty string if a value can't be found. Return dates in the format: YYYY-MM-DD.",
+      "details": "Overview of the complete cyber and tech e&o loss run history. Parse EVERY loss run attachment/document provided in the submission (there may be multiple carriers, policy terms, or files), but only include data from Cyber and Technology E&O coverage; exclude any coverage types that are not specific to the cyber line. Aggregate results across ALL qualifying loss run documents combined, not per individual file. If a document's or claim's coverage type is unclear, including when it only has a generic umbrella label such as “Professional Lines,” refer to the loss description to determine it. If the coverage type is not stated and there are no claims or loss descriptions to evaluate, treat the loss run as Cyber/Tech E&O unless it clearly identifies a non-cyber line. Treat an explicit “No Losses Reported” statement as zero incurred loss, zero paid loss, and zero claims for the applicable policy periods. Return an empty string if a value can't be found. Return dates in the format: YYYY-MM-DD.",
       "entities": [
         {
           "id": "6ad971f4-87d6-4931-869f-7b6576276690",
@@ -418,7 +418,7 @@
           "type": "",
           "unique": false,
           "options": [],
-          "criteria": "The date each loss run was created/valued (often labeled 'as of', 'valuation date', or 'run date'). Only consider Cyber and Technology E&O loss run documents; ignore documents for coverage types that are not specific to the cyber line. If a document's coverage type is unclear, determine it from the loss description. If multiple qualifying loss run attachments exist with different creation dates, return the most recent one.",
+          "criteria": "The date each loss run was created/valued (often labeled “as of,” “valuation date,” “run date,” or simply “Date” in the document-level header). Only consider Cyber and Technology E&O loss run documents; ignore documents for coverage types that are not specific to the cyber line. If a document's coverage type is unclear, determine it from the loss description. If multiple qualifying loss run attachments exist with different creation dates, return the most recent one.",
           "examples": [],
           "required": false,
           "default_option": "",
